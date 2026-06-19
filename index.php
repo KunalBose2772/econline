@@ -297,7 +297,6 @@ if ($slug === 'home') {
         <div class="container">
             <h1 style="max-width: 900px; margin: 0 auto 1.5rem auto;">' . htmlspecialchars($t['hero_title']) . '</h1>
             <p>' . htmlspecialchars($t['hero_subtitle']) . '</p>
-            <p style="color: #2ecc71; font-weight: bold; font-size: 1.1rem; margin-top: 1rem;">Auto Deploy Test: Active</p>
             <div class="search-container">
                 <input type="text" placeholder="' . htmlspecialchars($t['search_placeholder']) . '" aria-label="Search documents">
                 <button>' . htmlspecialchars($t['search_btn']) . '</button>
