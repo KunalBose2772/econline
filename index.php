@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/config/db_init.php';
 
 // 1. Get requested slug from URL (redirected by .htaccess)
 $slug = isset($_GET['slug']) ? trim($_GET['slug'], '/') : '';
