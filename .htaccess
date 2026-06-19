@@ -10,9 +10,8 @@ RewriteCond %{HTTP_HOST} ^econline\.in$ [NC]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# Sitemaps & Robots
-RewriteRule ^sitemap\.xml$ sitemap.xml.php [L]
-RewriteRule ^robots\.txt$ robots.txt.php [L]
+# Sitemaps
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
 # Admin route protection - ignore rewrite for admin resources
 RewriteRule ^admin/(.*) - [L]
