@@ -1,0 +1,34 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Production only: Force HTTPS and Non-WWW
+# Match main domain and exclude localhost/dev entirely
+RewriteCond %{HTTP_HOST} ^www\.econline\.in$ [NC]
+RewriteRule ^(.*)$ https://econline.in/$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^econline\.in$ [NC]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Sitemaps & Robots
+RewriteRule ^sitemap\.xml$ sitemap.xml.php [L]
+RewriteRule ^robots\.txt$ robots.txt.php [L]
+
+# Admin route protection - ignore rewrite for admin resources
+RewriteRule ^admin/(.*) - [L]
+
+# If it's a real file, stop rewriting
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Enforce trailing slash for paths not pointing to files
+RewriteCond %{REQUEST_URI} [^/]$
+RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI}/ [R=301,L]
+
+# Route all other URLs to index.php passing slug
+# Since the URL has a trailing slash, we match `^(.*)/$`
+RewriteRule ^(.*)/$ index.php?slug=$1 [QSA,L]
+</IfModule>
