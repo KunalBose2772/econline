@@ -41,10 +41,7 @@ try {
     $schema_type = 'WebPage';
 
     $content = '
-    <div class="disclaimer-box">
-        <strong>Important E-E-A-T Disclaimer:</strong> This portal is a free, independent educational guide developed by property experts. We provide verified step-by-step procedures to check property titles on official state registry websites. We are not a government agency and do not charge any processing fees.
-    </div>
-
+    
     <!-- What is EC Section -->
     <div class="card">
         <h2>What is an Encumbrance Certificate ec online?</h2>
