@@ -63,7 +63,7 @@ try {
                 <h3 class="state-title">Tamil Nadu (TNREGINET)</h3>
                 <p class="state-desc">Search and view Villangam ec online, Patta Chitta, and guideline values online via the official Inspector General of Registration portal.</p>
             </div>
-            <a href="#tn-guide" class="btn-primary">View TN Guide</a>
+            <a href="/online-ec-tamilnadu/" class="btn-primary">View TN Guide</a>
         </div>
 
         <!-- Karnataka -->

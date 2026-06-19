@@ -2,8 +2,15 @@
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/db_init.php';
 
-// 1. Get requested slug from URL (redirected by .htaccess)
-$slug = isset($_GET['slug']) ? trim($_GET['slug'], '/') : '';
+// 1. Get requested slug from URL (redirected by .htaccess or parsed from REQUEST_URI)
+$slug = '';
+if (isset($_GET['slug'])) {
+    $slug = trim($_GET['slug'], '/');
+} else {
+    // Fallback for built-in PHP web server
+    $request_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $slug = trim($request_path, '/');
+}
 
 // If slug is empty, we serve the homepage
 if (empty($slug)) {
@@ -211,7 +218,7 @@ if ($slug === 'home') {
                 <div class="sidebar-widget">
                     <h4 class="widget-title">Important Guides</h4>
                     <ul class="widget-list">
-                        <li><a href="#">Tamil Nadu EC Online</a></li>
+                        <li><a href="/online-ec-tamilnadu/">Tamil Nadu EC Online</a></li>
                         <li><a href="#">Kaveri Karnataka EC</a></li>
                         <li><a href="#">TS IGRS Telangana EC</a></li>
                         <li><a href="#">AP IGRS Andhra Pradesh EC</a></li>
