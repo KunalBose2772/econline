@@ -7639,6 +7639,457 @@ try {
         'schema_type' => $schema_type_oea
     ]);
 
+    // --- 19. AUTO-INITIALIZE ONLINE EC CHECK PAGE ---
+    $slug_oech = 'online-ec-check';
+    $keyword_oech = 'online ec check';
+    $title_oech = 'Online EC Check: View Encumbrance Status & Land Records';
+    $h1_oech = 'Online EC Check: Detailed State-wise Status & Verification Guide';
+    $meta_desc_oech = 'Learn how to perform an online EC check for your property. Step-by-step guide to verify registration status, survey details, and download certified copies across states.';
+    $content_oech = '<p class="content-text">
+    An Encumbrance Certificate (EC) is a vital legal document for any real estate transaction in India. It serves as evidence of free title and reveals whether a property has any registered liabilities, pending legal disputes, or mortgages. Conducting an <strong>online ec check</strong> is the first critical step before buying a home, land, or commercial building. Thanks to digital governance, most state registration departments allow property owners and prospective buyers to verify these records online instantly.
+</p>
+
+<!-- Widget 1: State Portal Quick Router -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: 1px solid var(--border);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--primary);"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        State Portal Quick Router
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your state to instantly retrieve the official portal name, service fee information, and direct registration links.
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label for="state-selector" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #1e293b;">Select State:</label>
+            <select id="state-selector" onchange="updateStateRouter()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem; color: #1e293b; background-color: #ffffff;">
+                <option value="tn">Tamil Nadu (TNREGINET)</option>
+                <option value="ka">Karnataka (Kaveri 2.0)</option>
+                <option value="ts">Telangana (IGRS TS)</option>
+                <option value="ap">Andhra Pradesh (IGRS AP)</option>
+                <option value="mh">Maharashtra (IGR Maharashtra)</option>
+                <option value="kl">Kerala (Pearl Portal)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="router-result" style="background-color: #ffffff; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); transition: all 0.3s ease;">
+        <!-- Filled dynamically by JavaScript -->
+    </div>
+</div>
+
+<script>
+function updateStateRouter() {
+    var selector = document.getElementById("state-selector");
+    var resultBox = document.getElementById("router-result");
+    var state = selector.value;
+    
+    var stateData = {
+        tn: {
+            portal: "TNREGINET Portal (Registration Department, Tamil Nadu)",
+            link: "https://tnreginet.gov.in/",
+            fee: "₹15 base fee + ₹5 per additional year of search.",
+            duration: "Instant for draft search results. 3-5 days for digitally certified copy.",
+            tips: "Requires a registered citizen user profile to apply for a signed certificate. Simple search can be viewed as on-screen text for free."
+        },
+        ka: {
+            portal: "Kaveri 2.0 Portal (Department of Stamps and Registration, Karnataka)",
+            link: "https://kaverionline.karnataka.gov.in/",
+            fee: "₹15 base search fee + ₹10 per additional search year.",
+            duration: "2 to 3 working days from submission.",
+            tips: "You must enter the SRO office jurisdiction and Hobli correctly. If the transaction was registered via Kaveri 2.0, the record loads within minutes."
+        },
+        ts: {
+            portal: "IGRS Telangana Portal",
+            link: "https://registration.telangana.gov.in/",
+            fee: "₹200 base fee + ₹10 search fee per additional calendar year.",
+            duration: "1 to 2 working days after online fee payment verification.",
+            tips: "Verify that the survey number doesn\'t have sub-division numbers under prohibited land categories."
+        },
+        ap: {
+            portal: "IGRS Andhra Pradesh Portal",
+            link: "https://registration.ap.gov.in/",
+            fee: "₹200 base fee + ₹10 per subsequent year.",
+            duration: "1 to 2 working days.",
+            tips: "Ensure search is made using both the survey numbers and specific document reference IDs to crosscheck discrepancies."
+        },
+        mh: {
+            portal: "e-ASR & e-Search Portal (Maharashtra)",
+            link: "https://igrmaharashtra.gov.in/",
+            fee: "Free for basic property lookups. ₹300 per search query for detailed database downloads.",
+            duration: "Instant on-screen download for digitized years (generally post-2002).",
+            tips: "Select the correct year-wise index type (Index II check) corresponding to the registration period."
+        },
+        kl: {
+            portal: "Pearl Registration Portal (Kerala)",
+            link: "https://keralaregistration.gov.in/",
+            fee: "₹120 base inspection charge + ₹20 search charge per year.",
+            duration: "2 working days.",
+            tips: "Requires payment via e-Treasury integration on the portal before submitting the request."
+        }
+    };
+    
+    var data = stateData[state];
+    resultBox.innerHTML = \'<div style="font-weight: 700; font-size: 1.1rem; color: var(--primary); margin-bottom: 0.75rem;">\' + data.portal + \'</div>\' +
+        \'<div style="display: grid; grid-template-columns: 1fr; gap: 0.5rem; font-size: 0.95rem; color: #475569; margin-bottom: 1rem;">\' +
+            \'<div><strong>Government Charges:</strong> \' + data.fee + \'</div>\' +
+            \'<div><strong>Estimated Processing Duration:</strong> \' + data.duration + \'</div>\' +
+            \'<div><strong>Important Note:</strong> \' + data.tips + \'</div>\' +
+        \'</div>\' +
+        \'<a href="\' + data.link + \'" target="_blank" rel="noopener" style="display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; background-color: var(--primary); color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s;">\' +
+            \'Go to Official Portal →\' +
+        \'</a>\';
+}
+// Run on initial load
+document.addEventListener("DOMContentLoaded", function() {
+    updateStateRouter();
+});
+</script>
+
+<p class="content-text">
+    Before starting an <strong>online ec check</strong>, it is vital to know that the registration data is indexed by the State Sub-Registrar Offices (SRO). Therefore, you must have exact details of the property, including the district name, taluk name, village name, survey number, sub-division number, and the specific search timeline (e.g., last 15 years, 30 years, or since 1975). Using a systematic guide ensures that you don\'t end up with empty search results.
+</p>
+
+<h2>Why Perform an Online EC Check?</h2>
+<p class="content-text">
+    A property\'s title can be affected by multiple issues over its history. By completing an <a href="https://econline.in/">ec online</a> verification, you protect your hard-earned savings from several transaction risks:
+</p>
+<div class="info-grid">
+    <div class="info-card">
+        <h4 style="margin-top:0; color:var(--primary); font-size:1.1rem; margin-bottom:0.5rem;">1. Mortgage Identification</h4>
+        <p class="content-text" style="font-size:0.9rem; margin-bottom:0;">It reveals whether the owner has collateralized the property with a bank or financial institution to secure a home loan or business credit.</p>
+    </div>
+    <div class="info-card">
+        <h4 style="margin-top:0; color:var(--primary); font-size:1.1rem; margin-bottom:0.5rem;">2. Title Continuity Verify</h4>
+        <p class="content-text" style="font-size:0.9rem; margin-bottom:0;">You can verify if all prior transfers (sales, partitions, gift deeds) match the legal succession chain, confirming the seller has the actual right to transfer.</p>
+    </div>
+    <div class="info-card">
+        <h4 style="margin-top:0; color:var(--primary); font-size:1.1rem; margin-bottom:0.5rem;">3. Court Attachments Check</h4>
+        <p class="content-text" style="font-size:0.9rem; margin-bottom:0;">If a civil court has attached the land or structure due to loan defaults or inheritance disputes, this restriction is recorded at the SRO office.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    Having verified the liabilities, a home buyer can proceed with confidence. If you want to submit a formal application, read our guide on how to <a href="/online-ec-apply/">online ec apply</a>. For downloading digitized copies, refer to our <a href="/online-ec-download/">online ec download</a> document verification portal.
+</p>
+
+<!-- Widget 2: Interactive EC Document Status Checker (Simulator) -->
+<div class="custom-card" style="margin: 2.5rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--secondary);"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        EC Document Status Checker (Simulator)
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Check the status of your online EC application or transaction lookup using this interactive simulation. Enter a mock application number to run a check.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+        <div>
+            <label style="display:block; font-weight:600; margin-bottom:0.5rem; font-size:0.85rem; color:#475569;">Application Number / Query ID</label>
+            <input type="text" id="sim-app-number" value="EC/2026/88921" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem;" placeholder="e.g. EC/2026/12345">
+        </div>
+        <div>
+            <label style="display:block; font-weight:600; margin-bottom:0.5rem; font-size:0.85rem; color:#475569;">Select Portal</label>
+            <select id="sim-portal" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem; background-color:#fff;">
+                <option value="tnreginet">TNREGINET EC Check</option>
+                <option value="kaveri">Kaveri Online EC Check</option>
+                <option value="tsigrs">IGRS Telangana EC Check</option>
+                <option value="apigrs">IGRS Andhra Pradesh EC Check</option>
+            </select>
+        </div>
+    </div>
+    
+    <button type="button" onclick="startSimulation()" style="width:100%; padding:0.75rem; font-size:1rem; border-radius:6px; background-color:var(--primary); color:#ffffff; font-weight:600; border:none; cursor:pointer; margin-bottom:1.5rem;">
+        Run Status Verification
+    </button>
+    
+    <div id="sim-progress-wrapper" style="display:none; margin-bottom:1.5rem;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.85rem; font-weight:600; color:#475569;">
+            <span id="sim-step-text">Connecting to database...</span>
+            <span id="sim-percent">0%</span>
+        </div>
+        <div style="width:100%; height:8px; background-color:#e2e8f0; border-radius:4px; overflow:hidden;">
+            <div id="sim-progress-bar" style="width:0%; height:100%; background-color:var(--primary); transition: width 0.4s ease;"></div>
+        </div>
+    </div>
+    
+    <div id="sim-result-wrapper" style="display:none; padding:1.25rem; border-radius:8px; border:1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function startSimulation() {
+    var appNum = document.getElementById("sim-app-number").value.trim();
+    if (!appNum) {
+        alert("Please enter an Application Number to test.");
+        return;
+    }
+    
+    var progressWrapper = document.getElementById("sim-progress-wrapper");
+    var resultWrapper = document.getElementById("sim-result-wrapper");
+    var stepText = document.getElementById("sim-step-text");
+    var percentText = document.getElementById("sim-percent");
+    var progressBar = document.getElementById("sim-progress-bar");
+    
+    progressWrapper.style.display = "block";
+    resultWrapper.style.display = "none";
+    progressBar.style.width = "0%";
+    percentText.innerText = "0%";
+    
+    var steps = [
+        { pct: 25, text: "Authenticating token with Registration database..." },
+        { pct: 50, text: "Retrieving transaction ledger index files..." },
+        { pct: 75, text: "Checking digital certificate signature status..." },
+        { pct: 100, text: "Status compilation completed successfully." }
+    ];
+    
+    var currentStep = 0;
+    
+    function runNextStep() {
+        if (currentStep < steps.length) {
+            progressBar.style.width = steps[currentStep].pct + "%";
+            percentText.innerText = steps[currentStep].pct + "%";
+            stepText.innerText = steps[currentStep].text;
+            currentStep++;
+            setTimeout(runNextStep, 400);
+        } else {
+            showSimulationResult();
+        }
+    }
+    
+    runNextStep();
+}
+
+function showSimulationResult() {
+    var appNum = document.getElementById("sim-app-number").value;
+    var portal = document.getElementById("sim-portal").value;
+    var resultWrapper = document.getElementById("sim-result-wrapper");
+    
+    var portalName = "";
+    if (portal === "tnreginet") portalName = "TNREGINET (Tamil Nadu)";
+    else if (portal === "kaveri") portalName = "Kaveri Online (Karnataka)";
+    else if (portal === "tsigrs") portalName = "IGRS Telangana";
+    else if (portal === "apigrs") portalName = "IGRS Andhra Pradesh";
+    
+    resultWrapper.style.display = "block";
+    resultWrapper.style.backgroundColor = "#f0fdf4";
+    resultWrapper.style.borderColor = "#bbf7d0";
+    
+    resultWrapper.innerHTML = \'<div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem;">\' +
+            \'<span style="display:inline-block; width:10px; height:10px; border-radius:50%; background-color:#22c55e;"></span>\' +
+            \'<strong style="color:#166534; font-size:1.05rem;">APPLICATION STATUS: Approved & Digitally Signed</strong>\' +
+        \'</div>\' +
+        \'<div style="font-size:0.9rem; color:#1e3a1e; line-height:1.5;">\' +
+            \'<div><strong>Application Reference:</strong> \' + appNum + \'</div>\' +
+            \'<div><strong>Target Portal:</strong> \' + portalName + \'</div>\' +
+            \'<div><strong>Digital Signature Status:</strong> Verified (Approved by Sub-Registrar)</div>\' +
+            \'<div style="margin-top:0.75rem; font-style:italic; color:#3f6212;">Note: This simulation shows how a finalized EC appears. In the actual state portal, you would now click the "Download PDF" icon to inspect the stamp.</div>\' +
+        \'</div>\';
+}
+</script>
+
+<h2>How to Do an Online EC Check: Detailed State Manuals</h2>
+<p class="content-text">
+    The steps to execute an <a href="https://econline.in/">ec online</a> inspection differ by state. Below are the precise workflows for the four major southern states:
+</p>
+
+<h3>1. Tamil Nadu (TNREGINET)</h3>
+<p class="content-text">
+    Tamil Nadu has a highly digitized registration department. Homebuyers can execute a free search for draft copies. If you are looking to run an <a href="https://econline.in/">ec online</a> lookup, the portal lists properties based on exact boundary directions.
+</p>
+<ul class="guide-list">
+    <li>Go to the official portal: <strong>tnreginet.gov.in</strong>.</li>
+    <li>Navigate to the top menu and hover over <strong>"E-Services"</strong>, then select <strong>"Encumbrance Certificate"</strong> → <strong>"View EC"</strong>.</li>
+    <li>Choose between <strong>EC Document Wise</strong> (if you know the deed document number, SRO, and year) or <strong>Property Wise</strong>.</li>
+    <li>For Property Wise, enter the District, Sub-Registrar Office, Taluk, Village, and Survey Number. Enter the subdivision field if applicable.</li>
+    <li>Input the start date and end date for search history and submit.</li>
+</ul>
+<p class="content-text">
+    For detailed guidelines, read our dedicated <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> guide or look up <a href="/tn-ec-online/">tn ec online</a> directories for quick check links.
+</p>
+
+<h3>2. Karnataka (Kaveri Portal)</h3>
+<p class="content-text">
+    Karnataka requires citizens to log in to search the land registry databases. To run a standard <a href="https://econline.in/">ec online</a> verify on Kaveri 2.0, you must first register as a citizen.
+</p>
+<ul class="guide-list">
+    <li>Visit the Kaveri 2.0 website: <strong>kaverionline.karnataka.gov.in</strong>.</li>
+    <li>Log in using your credentials. If you are a new user, register your account using PAN or Aadhaar card validation.</li>
+    <li>Under the services panel, click on <strong>"Online EC Search"</strong>.</li>
+    <li>Select the property type (Agricultural or Non-Agricultural), district, SRO, hobli, and village index.</li>
+    <li>Enter the search boundaries, survey details, and choose the timeline. The draft list will load on-screen.</li>
+</ul>
+<p class="content-text">
+    Learn more details in our <a href="/online-ec-karnataka/">online ec karnataka</a> handbook and the <a href="/ec-online-karnataka/">ec online karnataka</a> verification page.
+</p>
+
+<h3>3. Telangana (IGRS TS)</h3>
+<p class="content-text">
+    Telangana offers property ledger inspection on the IGRS portal. If the portal returns Nil, downloading the official <a href="https://econline.in/">ec online</a> ledger provides peace of mind before bank mortgage processes.
+</p>
+<ul class="guide-list">
+    <li>Visit the portal: <strong>registration.telangana.gov.in</strong>.</li>
+    <li>Click on the <strong>"Encumbrance Search (EC)"</strong> button on the landing dashboard.</li>
+    <li>Read the user terms and conditions disclaimer page and click "Submit".</li>
+    <li>Log in using your portal credentials. Enter your survey number or document number to look up records.</li>
+</ul>
+<p class="content-text">
+    To locate TS registration offices, review our <a href="/ec-online-telangana/">ec online telangana</a> manual or research on <a href="/ec-telangana-online-search/">ec telangana online search</a> databases.
+</p>
+
+<h3>4. Andhra Pradesh (IGRS AP)</h3>
+<p class="content-text">
+    Andhra Pradesh uses the IGRS portal to search land records. If you want to perform an <a href="https://econline.in/">ec online</a> audit, make sure you compile all past survey subdivisions first.
+</p>
+<ul class="guide-list">
+    <li>Go to the portal: <strong>registration.ap.gov.in</strong>.</li>
+    <li>Click the <strong>"Encumbrance Certificate"</strong> button on the quick services panel.</li>
+    <li>Select search criteria: Document Number, Memo Number, or None (to search by survey number).</li>
+    <li>Enter SRO office codes and village details. Complete the search checklist.</li>
+</ul>
+<p class="content-text">
+    For AP land details, read the <a href="/online-ec-ap/">online ec ap</a> registry directory.
+</p>
+
+<!-- Widget 3: EC Search Error Troubleshooter (Diagnostic Tool) -->
+<div class="custom-card" style="margin: 2.5rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #fefefe 0%, #f8fafc 100%);">
+    <h3 style="margin-top:0; color:#1e293b; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--accent);"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        EC Search Error Troubleshooter
+    </h3>
+    <p class="content-text" style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.5rem;">
+        Are you encountering an error while running an online EC check? Click on your symptom below to diagnose potential solutions and workarounds.
+    </p>
+    
+    <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.5rem;">
+        <button type="button" onclick="diagnose(\'no_record\')" style="text-align:left; padding:0.75rem 1rem; border-radius:6px; border:1px solid var(--border); background-color:#fff; color:#334155; font-weight:600; cursor:pointer; font-size:0.9rem; transition:all 0.2s;">
+            Symptom 1: Portal returns "No Record Found"
+        </button>
+        <button type="button" onclick="diagnose(\'no_village\')" style="text-align:left; padding:0.75rem 1rem; border-radius:6px; border:1px solid var(--border); background-color:#fff; color:#334155; font-weight:600; cursor:pointer; font-size:0.9rem; transition:all 0.2s;">
+            Symptom 2: SRO dropdown does not list my village
+        </button>
+        <button type="button" onclick="diagnose(\'sig_error\')" style="text-align:left; padding:0.75rem 1rem; border-radius:6px; border:1px solid var(--border); background-color:#fff; color:#334155; font-weight:600; cursor:pointer; font-size:0.9rem; transition:all 0.2s;">
+            Symptom 3: Digitally signed PDF displays "?" error in Adobe
+        </button>
+    </div>
+    
+    <div id="diagnostic-result" style="display:none; padding:1.25rem; border-radius:8px; border:1px solid var(--border); background-color:#ffffff;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function diagnose(symptom) {
+    var resultBox = document.getElementById("diagnostic-result");
+    resultBox.style.display = "block";
+    resultBox.style.transition = "all 0.3s ease";
+    
+    if (symptom === "no_record") {
+        resultBox.innerHTML = 
+            "<div style=\\"font-weight:700; color:#c2410c; margin-bottom:0.5rem;\\">Diagnosis: Search Boundary or Survey Number Mismatch</div>" +
+            "<p style=\\"font-size:0.9rem; color:#475569; margin:0 0 0.75rem 0; line-height:1.5;\\">" +
+                "This error happens when the portal database has a different formatting convention than your search input. For example, <code>142/3A</code> might be stored as survey <code>142</code> and subdivision <code>3A</code>, or sometimes without any slash as <code>1423A</code>." +
+            "</p>" +
+            "<div style=\\"font-size:0.9rem; font-weight:600; color:#1e293b;\\">Workarounds:</div>" +
+            "<ol style=\\"font-size:0.85rem; color:#475569; padding-left:1.25rem; margin:0.25rem 0 0 0;\\">" +
+                "<li>Try searching with only the parent survey number (e.g. <code>142</code>) and leave the subdivision blank to see all matching subdivision results in the portal ledger list.</li>" +
+                "<li>Verify your boundaries directions (North, South, East, West). Try entering simpler descriptions.</li>" +
+            "</ol>";
+    } else if (symptom === "no_village") {
+        resultBox.innerHTML = 
+            "<div style=\\"font-weight:700; color:#c2410c; margin-bottom:0.5rem;\\">Diagnosis: Jurisdictional Restructuring or Alternate Village Spelling</div>" +
+            "<p style=\\"font-size:0.9rem; color:#475569; margin:0 0 0.75rem 0; line-height:1.5;\\">" +
+                "If your village name is missing in the dropdown menu for the selected SRO, the registration office jurisdiction might have changed recently, or the village is indexed under an alternate historical spelling in the revenue records database." +
+            "</p>" +
+            "<div style=\\"font-size:0.9rem; font-weight:600; color:#1e293b;\\">Workarounds:</div>" +
+            "<ol style=\\"font-size:0.85rem; color:#475569; padding-left:1.25rem; margin:0.25rem 0 0 0;\\">" +
+                "<li>Search the state revenue department website to find which SRO code covers your survey numbers.</li>" +
+                "<li>Check adjacent SRO dropdown lists in the menu to verify if the village is still indexed under the parent SRO location.</li>" +
+            "</ol>";
+    } else if (symptom === "sig_error") {
+        resultBox.innerHTML = 
+            "<div style=\\"font-weight:700; color:#c2410c; margin-bottom:0.5rem;\\">Diagnosis: Unverified Digital Root Certificate Authority</div>" +
+            "<p style=\\"font-size:0.9rem; color:#475569; margin:0 0 0.75rem 0; line-height:1.5;\\">" +
+                "The \\"?\\" question mark indicates that Adobe Acrobat Reader on your device has not yet trusted the State Sub-Registrar\'s digital signature certificate chain." +
+            "</p>" +
+            "<div style=\\"font-size:0.9rem; font-weight:600; color:#1e293b;\\">Workarounds:</div>" +
+            "<ol style=\\"font-size:0.85rem; color:#475569; padding-left:1.25rem; margin:0.25rem 0 0 0;\\">" +
+                "<li>Open the EC PDF document using standard Adobe Acrobat on a PC (not inside web browser view).</li>" +
+                "<li>Right-click on the signature box displaying the \\"?\\" sign, choose <strong>\\"Signature Properties\\"</strong>.</li>" +
+                "<li>Click <strong>\\"Show Signer\'s Certificate\\"</strong>, select the <strong>\\"Trust\\"</strong> tab, click <strong>\\"Add to Trusted Certificates\\"</strong>, and choose trust for all options. Revalidate the signature.</li>" +
+            "</ol>";
+    }
+}
+</script>
+
+<h2>Understanding Encumbrance Certificate Terminology</h2>
+<p class="content-text">
+    When you verify the document draft after an <strong>online ec check</strong>, you will see a table formatted with specific columns. Understanding these terms is necessary to avoid transaction mistakes:
+</p>
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">EC Term</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Meaning / Definition</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Impact on Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Executant</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">The party executing the transaction (e.g. the seller, donor, or mortgagor).</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Confirms who is transferring or liability-linking the property title.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Claimant</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">The party receiving the title benefit (e.g. the buyer, donee, or bank).</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Specifies who currently holds or has a security claim on the property.</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Schedule of Property</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">The exact description of boundaries, land survey, and measurements.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Determines the exact limits and area size of the legal ownership deed.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Nil Encumbrance</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Indicates no transactions have been registered during the search window.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Clear indicator that no loans or transfers were indexed in the selected timeline.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p class="content-text">
+    To ensure your land mutation matches these details, always verify the Patta or RTC document after the search. For online database records, check our <a href="/online-ec-search/">online ec search</a> handbook or lookup registry guides.
+</p>
+
+<h2>Best Practices for Property Title Verification</h2>
+<p class="content-text">
+    Executing an <strong>online ec check</strong> is the first step, but not the final step of due diligence. To ensure maximum legal security for your transaction, follow these additional practices:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Run Search for 30 Years</strong>: While banks require a minimum of 13 or 15 years search history for home loans, a 30-year search is recommended to rule out old partition deeds or minor inheritance claims.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Compare EC with Mother Deed</strong>: Check every transaction date, book reference, and page number in the online EC ledger against the physical documents given by the seller.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Verify Prohibited Lands Database</strong>: Some state portals feature a prohibited property list. Check if the survey number falls under public utilities, forest land, or waqf property categories.</li>
+</ol>
+<p class="content-text">
+    If you need to retrieve state registry details or run additional searches, refer to the <a href="/online-ec-search/">online ec search</a> tools, review the <a href="/ec-online-tamil/">ec online tamil</a> resources, or search for TS records on the <a href="/ec-telangana-online-search/">ec telangana online search</a> index. The main portal can always be accessed via the homepage references.
+</p>';
+    $faq_oech = '[{"question":"How long is an online EC check valid?","answer":"An EC check shows the property history up to the date and time of the search. It does not have an expiration date, but when performing a new transaction, you should run a fresh check to ensure no new liabilities have been registered."},{"question":"Can I run an online EC check for free?","answer":"Yes, in states like Tamil Nadu and Maharashtra, you can search and view basic transaction details on-screen for free. However, if you require a signed certified copy for bank loans or legal disputes, a small government fee is charged."},{"question":"What is the difference between Nil EC and Encumbered EC?","answer":"A Nil EC means there are no registered transaction records (sales, mortgages, or court attachments) during the specified search period. An Encumbered EC displays a list of all registered transactions and liabilities on the property."},{"question":"What should I do if my survey number is not in the portal?","answer":"If the survey number is not found, verify that you selected the correct village and SRO. If the portal still does not display it, you should visit the physical Sub-Registrar Office to submit a manual search request."}]';
+    $schema_type_oech = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_oech,
+        'keyword' => $keyword_oech,
+        'title' => $title_oech,
+        'meta_desc' => $meta_desc_oech,
+        'h1_title' => $h1_oech,
+        'content' => $content_oech,
+        'faq_data' => $faq_oech,
+        'schema_type' => $schema_type_oech
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
