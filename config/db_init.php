@@ -661,6 +661,42 @@ try {
     <p class="content-text">
         The <strong>tamilnadu online ec view portal</strong> offers two primary services for citizens, depending on their ultimate requirement. It is vital to understand the difference between the free draft view and the paid certified copy before initiating your search.
     </p>
+    
+    <!-- RESPONSIVE COMPARISON TABLE WRAPPER -->
+    <div style="overflow-x: auto; margin: 1.5rem 0; width: 100%;">
+        <table class="comparison-table" style="width:100%; border-collapse: collapse; margin: 0; min-width: 500px;">
+            <thead>
+                <tr style="background-color: var(--primary); color: white; border-bottom: 2px solid var(--border);">
+                    <th style="padding: 12px; text-align: left; font-weight: 600;">Feature</th>
+                    <th style="padding: 12px; text-align: left; font-weight: 600;">Free View EC</th>
+                    <th style="padding: 12px; text-align: left; font-weight: 600;">Certified Copy (Paid)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px; font-weight: 600; border: 1px solid var(--border);">Purpose</td>
+                    <td style="padding: 12px; border: 1px solid var(--border);">Quick checking, title inspection, verification.</td>
+                    <td style="padding: 12px; border: 1px solid var(--border);">Bank loans, court submissions, registration.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px; font-weight: 600; border: 1px solid var(--border);">Fee</td>
+                    <td style="padding: 12px; border: 1px solid var(--border);">Free of Cost (₹0)</td>
+                    <td style="padding: 12px; border: 1px solid var(--border);">₹15 per search year + Application Fees</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px; font-weight: 600; border: 1px solid var(--border);">Legality</td>
+                    <td style="padding: 12px; border: 1px solid var(--border);">Informational only, not legally binding.</td>
+                    <td style="padding: 12px; border: 1px solid var(--border);">Contains Digital Signature, legally admissible.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--border);">
+                    <td style="padding: 12px; font-weight: 600; border: 1px solid var(--border);">Time taken</td>
+                    <td style="padding: 12px; border: 1px solid var(--border);">Instant (Few seconds)</td>
+                    <td style="padding: 12px; border: 1px solid var(--border);">2 to 7 working days for officer approval.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
     <p class="content-text">
         For most preliminary checks, performing a free <strong>ec view online tamilnadu</strong> is more than sufficient. This enables you to review past sales deeds and verify if the survey number matches the seller\'s records without spending money. However, if you are applying for a home loan, the bank will strictly require you to submit the certified document.
     </p>
