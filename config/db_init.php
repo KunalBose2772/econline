@@ -9537,6 +9537,291 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_htge
     ]);
 
+    // --- 24. AUTO-INITIALIZE EC VIEW TAMILNADU ONLINE FREE PAGE ---
+    $slug_evtof = 'ec-view-tamilnadu-online-free';
+    $keyword_evtof = 'ec view tamilnadu online free';
+    $title_evtof = 'EC View Tamilnadu Online Free: Trace Property Records Instantly';
+    $h1_evtof = 'EC View Tamilnadu Online Free: Complete Guide & Search Manual';
+    $meta_desc_evtof = 'Free guide to run an EC view Tamilnadu online free on the official TNREGINET portal. Search SRO land indices, verify subdivision codes, and download draft PDFs.';
+    $content_evtof = '<p class="content-text">
+    Verifying property deeds is a necessary step before entering into real estate transactions in Tamil Nadu. The Registration Department of Tamil Nadu (TNREGINET) provides a digitized search database that allows prospective buyers to conduct an <strong>ec view tamilnadu online free</strong> inspection of land ledgers. This service allows citizens to view property transfer histories, mortgage records, and ownership changes without paying government fees for basic inspections.
+</p>
+
+<!-- Widget 1: Free vs. Certified EC Feature Comparator -->
+<div class="custom-card" style="margin:2rem 0; padding:2rem; border-radius:12px; background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border:1px solid var(--border);">
+    <h3 style="margin-top:0; color:var(--primary); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--primary);"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        EC Document Type Comparator
+    </h3>
+    <p class="content-text" style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.5rem;">
+        Compare the characteristics of a free draft EC look-up against a digitally signed certified copy on the TNREGINET portal.
+    </p>
+    
+    <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; background-color:#ffffff; font-size:0.85rem; text-align:left; border:1px solid var(--border);">
+            <thead>
+                <tr style="background-color:var(--primary); color:#ffffff;">
+                    <th style="padding:10px; border:1px solid var(--border);">Feature Parameter</th>
+                    <th style="padding:10px; border:1px solid var(--border);">Free Draft Copy</th>
+                    <th style="padding:10px; border:1px solid var(--border);">Certified Signed Copy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding:10px; border:1px solid var(--border); font-weight:600;">Government Fee</td>
+                    <td style="padding:10px; border:1px solid var(--border); color:#16a34a; font-weight:700;">₹0 (Completely Free)</td>
+                    <td style="padding:10px; border:1px solid var(--border);">₹15 base + ₹5/yr + ₹100 post/app</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px; border:1px solid var(--border); font-weight:600;">Digital Signature</td>
+                    <td style="padding:10px; border:1px solid var(--border); color:#dc2626;">No (Watermarked Draft)</td>
+                    <td style="padding:10px; border:1px solid var(--border); color:#16a34a; font-weight:700;">Yes (Approved by SRO)</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px; border:1px solid var(--border); font-weight:600;">Legal Admissibility</td>
+                    <td style="padding:10px; border:1px solid var(--border);">For informational check only</td>
+                    <td style="padding:10px; border:1px solid var(--border);">Valid in Courts & Bank Loans</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px; border:1px solid var(--border); font-weight:600;">Delivery Speed</td>
+                    <td style="padding:10px; border:1px solid var(--border); color:#16a34a; font-weight:700;">Instant PDF Download</td>
+                    <td style="padding:10px; border:1px solid var(--border);">2 to 3 Working Days</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p class="content-text">
+    To execute an <strong>ec view tamilnadu online free</strong> lookup, users must visit the TNREGINET website. The website is managed by the Registration Department, Government of Tamil Nadu, and provides bilingual support (Tamil and English). Homebuyers can view property transactions, check deed reference indexes, and verify land boundaries without creating citizen user profiles for draft copies.
+</p>
+
+<h2>Importance of Free EC Search in Tamil Nadu</h2>
+<p class="content-text">
+    Public users can query the databases to inspect records by running an <a href="https://econline.in/">ec online</a> search query. Running a quick <a href="https://econline.in/">ec online</a> lookup is essential for several reasons:
+</p>
+<ul class="guide-list">
+    <li><strong>Verify Seller Identity</strong>: Confirming if the seller name matches the owner recorded in the SRO database.</li>
+    <li><strong>Check Mortgages</strong>: Verifying if the survey numbers have any pending bank mortgages or financial liabilities.</li>
+    <li><strong>Inspect Document History</strong>: Tracing older registration details, gift deeds, partitions, or court attachment logs.</li>
+</ul>
+
+<p class="content-text">
+    For detailed guidelines, read our dedicated land lookup handbooks like <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> or look up <a href="/tn-ec-online/">tn ec online</a> directories for quick check links. To trace current document verification status, check the <a href="/online-ec-check/">online ec check</a> portal.
+</p>
+
+<!-- Widget 2: TNREGINET Captcha Verification Simulator -->
+<div class="custom-card" style="margin:2.5rem 0; padding:2rem; border-radius:12px; border:1px solid var(--border); background-color:#ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top:0; color:#0f172a; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--secondary);"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        TNREGINET Captcha Simulator
+    </h3>
+    <p class="content-text" style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.5rem;">
+        TNREGINET uses Captcha validation to secure database search operations. Test this interactive simulator to learn how to resolve common Captcha errors.
+    </p>
+    
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.25rem;">
+        <div style="padding:0.5rem 1rem; background-color:#e2e8f0; border-radius:6px; font-weight:700; font-size:1.25rem; letter-spacing:4px; font-family:monospace; user-select:none; color:#1e293b;">
+            TN88E
+        </div>
+        <div style="flex-grow:1;">
+            <input type="text" id="captcha-input" placeholder="Enter Captcha Code" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem;">
+        </div>
+    </div>
+    
+    <button type="button" onclick="verifySimCaptcha()" style="width:100%; padding:0.75rem; font-size:1rem; border-radius:6px; background-color:var(--primary); color:#ffffff; font-weight:600; border:none; cursor:pointer; margin-bottom:1.25rem;">
+        Verify Code
+    </button>
+    
+    <div id="captcha-result" style="display:none; padding:1rem; border-radius:6px; border:1px solid var(--border); font-size:0.9rem;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function verifySimCaptcha() {
+    var val = document.getElementById("captcha-input").value.trim().toUpperCase();
+    var resultBox = document.getElementById("captcha-result");
+    
+    resultBox.style.display = "block";
+    if (val === "TN88E") {
+        resultBox.style.backgroundColor = "#f0fdf4";
+        resultBox.style.borderColor = "#bbf7d0";
+        resultBox.style.color = "#166534";
+        resultBox.innerHTML = "<strong>✓ Captcha Verified!</strong> In the TNREGINET portal, the search engine will now trigger the PDF generation script.";
+    } else {
+        resultBox.style.backgroundColor = "#fef2f2";
+        resultBox.style.borderColor = "#fecaca";
+        resultBox.style.color = "#991b1b";
+        resultBox.innerHTML = "<strong>⚠️ Captcha Failed:</strong> Ensure you type letters exactly as shown. Captcha on TNREGINET is case-sensitive. Click the refresh icon on the portal if the image does not load.";
+    }
+}
+</script>
+
+<h2>How to Search and View EC in Tamil Nadu for Free</h2>
+<p class="content-text">
+    To execute a free search for an <a href="https://econline.in/">ec online</a> draft copy on the TNREGINET portal, follow these steps:
+</p>
+
+<h3>Step 1: Navigate to the View EC Section</h3>
+<p class="content-text">
+    Visit the official portal at <strong>tnreginet.gov.in</strong>. Select your preferred language (English or Tamil) from the top-right header menu. In the navigation menu, hover over <strong>"E-Services"</strong>, slide your cursor to <strong>"Encumbrance Certificate"</strong>, and click <strong>"View EC"</strong>.
+</p>
+
+<h3>Step 2: Enter Property Search Details</h3>
+<p class="content-text">
+    The portal provides two methods to search for records:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">
+        <strong>Property Wise Search</strong>: Select this option to search using survey numbers. You must enter the District, Sub-Registrar Office (SRO), Taluk, Village, and Survey Number.
+    </li>
+    <li style="margin-bottom: 0.5rem;">
+        <strong>Document Wise Search</strong>: Select this option if you know the registration reference. You must select the SRO, Document Number, and Year of registration.
+    </li>
+</ol>
+
+<h3>Step 3: Enter Survey and Subdivision Fields</h3>
+<p class="content-text">
+    If you selected Property Wise Search, entering the survey details accurately is necessary. In Tamil Nadu, properties are split into subdivisions. Enter the parent survey number in the first box and the subdivision text in the second box.
+</p>
+
+<!-- Widget 3: SRO Zone Directory Coordinates -->
+<div class="custom-card" style="margin:2.5rem 0; padding:2rem; border-radius:12px; border:1px solid var(--border); background: linear-gradient(135deg, #fefefe 0%, #f8fafc 100%);">
+    <h3 style="margin-top:0; color:#1e293b; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--accent);"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        TNREGINET SRO Zone Directory
+    </h3>
+    <p class="content-text" style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.5rem;">
+        Select your region to view major SRO office contact points and search guidelines.
+    </p>
+    
+    <div style="margin-bottom:1.25rem;">
+        <label style="display:block; font-weight:600; margin-bottom:0.5rem; font-size:0.85rem; color:#475569;">Select Region Zone</label>
+        <select id="tn-region-select" onchange="updateTNZoneDetails()" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem; background-color:#fff;">
+            <option value="chennai">Chennai Zone</option>
+            <option value="cbe">Coimbatore Zone</option>
+            <option value="madurai">Madurai Zone</option>
+        </select>
+    </div>
+    
+    <div id="tn-zone-result" style="background-color:#ffffff; padding:1.25rem; border-radius:8px; border:1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function updateTNZoneDetails() {
+    var zone = document.getElementById("tn-region-select").value;
+    var resultBox = document.getElementById("tn-zone-result");
+    
+    var zoneData = {
+        chennai: {
+            desc: "Chennai region oversees registrations across Chennai North, South, and Central zones.",
+            offices: "SRO Adyar (ADY), SRO Mylapore (MYL), SRO Tambaram (TAM).",
+            tip: "Chennai properties have legacy digitized records from 1975 onwards."
+        },
+        cbe: {
+            desc: "Coimbatore region coordinates western districts land records.",
+            offices: "SRO Coimbatore Central (CBE-C), SRO Singanallur (SNG), SRO Ganapathy (GNP).",
+            tip: "Verify if your property falls under agricultural land or municipal corporation limits."
+        },
+        madurai: {
+            desc: "Madurai region coordinates land index registers for southern districts.",
+            offices: "SRO Madurai South (MDU-S), SRO Tallakulam (TAL).",
+            tip: "Check legacy records when searching for large agricultural land parcels."
+        }
+    };
+    
+    var data = zoneData[zone];
+    resultBox.innerHTML = "<div style=\\"font-weight: 700; font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem;\\">" + data.desc + "</div>" +
+        "<div style=\\"font-size: 0.95rem; color: #475569; line-height: 1.6;\\">" +
+            "<div><strong>Key Offices:</strong> " + data.offices + "</div>" +
+            "<div><strong>Search Tip:</strong> " + data.tip + "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    updateTNZoneDetails();
+});
+</script>
+
+<h3>Step 4: View the PDF Output</h3>
+<p class="content-text">
+    After entering the start year and end year, complete the security Captcha code and click <strong>"Search"</strong>. The portal will generate a link to download the EC PDF document. This is a draft version. If you require a certified copy, log in to your account, make a payment, and download the digitally signed certificate.
+</p>
+
+<p class="content-text">
+    To trace document listings in detail, read our <a href="/online-ec-view-tamilnadu/">online ec view tamilnadu</a> manual or research TN registries at the <a href="/tnreginet-ec-view-online/">tnreginet ec view online</a> page.
+</p>
+
+<h2>Understanding Your TN Encumbrance Certificate</h2>
+<p class="content-text">
+    When you perform an <a href="https://econline.in/">ec online</a> lookup, the generated PDF document features a detailed ledger listing. The ledger has columns such as Serial Number, Date of Registration, Document Number, Volume/Book reference, Executant details, Claimant details, and Schedule of property. Understanding these fields ensures that you don\'t overlook critical property risks:
+</p>
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">Column Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">What it Contains</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">What you should check</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Registration Date</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">The exact calendar date when the deed was registered at the SRO.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Ensure the transaction timeline matches the dates written in the physical sale deed.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Document Number</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">The registration ID assigned by the SRO (e.g. Doc 1234/2026).</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Verify that the parent deed document reference number appears in this database column.</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Executant (Seller)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">The seller or power agent executing the transfer of title.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Cross-reference if the executant\'s name matches the current owner listed on the Patta document.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Claimant (Buyer)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">The buyer, bank, or mortgagee receiving the title or security lien.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Ensure no bank name is listed as a claimant unless the loan is fully discharged.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p class="content-text">
+    To perform an <a href="https://econline.in/">ec online</a> lookup for verification of other southern regions, consult the <a href="/online-ec-check/">online ec check</a> reference system or check regional land records.
+</p>
+
+<h2>Best Practices for Property Buying in Tamil Nadu</h2>
+<p class="content-text">
+    An <a href="https://econline.in/">ec online</a> lookup is a primary step, but property buyers should execute these additional checks to ensure a secure transaction:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Obtain Patta Mutation copy</strong>: Always verify the Patta copy on the Tamil Nadu e-Services website (eservices.tn.gov.in) to confirm mutation is completed and current land boundaries match SRO database indices.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Verify Layout Approval</strong>: Confirm if the plot is DTCP (Directorate of Town and Country Planning) or CMDA (Chennai Metropolitan Development Authority) approved to prevent regularization issues.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Check for Prohibited Properties</strong>: Review the prohibited register list on the TNREGINET website before making advance payments to ensure the property can be legally transferred.</li>
+</ol>
+<p class="content-text">
+    If you want to read more about land record verification processes, check out the <a href="/tn-ec-online/">tn ec online</a> overview, review the <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> portal guides, or verify documents on the <a href="/online-ec-check/">online ec check</a> system. Homepage details can be retrieved at the main web server location.
+</p>';
+    $faq_evtof = '[{"question":"Is the free EC view legally valid?","answer":"No, the free online EC is for informational verification only. For legal matters, property registration, or bank home loan validation, you must apply and pay for a certified signed copy."},{"question":"How can I download the free EC PDF?","answer":"Once you complete the search parameters and security verification on the TNREGINET portal, a download link will generate. Click on it to save the PDF to your device."},{"question":"From which year can I view Tamil Nadu ECs online for free?","answer":"You can search and view records registered from 1975 onwards for free on the portal. Older records require a physical application."},{"question":"Do I need to register an account for a free EC check?","answer":"No, you do not need to register or log in to search and view free ECs on TNREGINET. You can access the View EC utility as a guest user."}]';
+    $schema_type_evtof = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_evtof,
+        'keyword' => $keyword_evtof,
+        'title' => $title_evtof,
+        'meta_desc' => $meta_desc_evtof,
+        'h1_title' => $h1_evtof,
+        'content' => $content_evtof,
+        'faq_data' => $faq_evtof,
+        'schema_type' => $schema_type_evtof
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
