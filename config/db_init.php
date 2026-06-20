@@ -5799,8 +5799,363 @@ try {
         'schema_type' => $schema_type_ecd
     ]);
 
+    // --- 14. AUTO-INITIALIZE ONLINE EC VIEW TAMILNADU PAGE ---
+    $slug_ecvt = 'online-ec-view-tamilnadu';
+    $keyword_ecvt = 'online ec view tamilnadu';
+    $title_ecvt = 'online ec view tamilnadu';
+    $h1_ecvt = 'online ec view tamilnadu';
+    $meta_desc_ecvt = 'Access the interactive online ec view tamilnadu toolkit. Toggle search methodologies, calculate registration fees, and check document requirements.';
+    $content_ecvt = '<!-- Custom Interactive Styles for ECVT Dashboard -->
+<style>
+    .ecvt-toolkit { margin: 2rem 0; width: 100%; }
+    .ecvt-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; width: 100%; }
+    @media (min-width: 768px) {
+        .ecvt-grid { flex-direction: row; }
+        .ecvt-card-widget { flex: 1; }
+    }
+    .ecvt-card-widget {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media (max-width: 480px) { .ecvt-card-widget { padding: 1rem; } }
+    .ecvt-card-widget:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+    .ecvt-widget-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+    }
+    .ecvt-widget-header h3 { font-size: 1.15rem; margin-bottom: 0; color: var(--primary); }
+    .ecvt-widget-icon { font-size: 1.5rem; }
+    .ecvt-form-group { margin-bottom: 1rem; width: 100%; }
+    .ecvt-form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-main); }
+    .ecvt-input, .ecvt-select {
+        width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm);
+        font-size: 0.95rem; outline: none; box-sizing: border-box; font-family: var(--font-sans); color: var(--primary);
+    }
+    .ecvt-input:focus, .ecvt-select:focus { border-color: var(--accent); }
+    
+    /* Tabs System */
+    .ecvt-tab-header { display: flex; border-bottom: 2px solid var(--border); gap: 0.5rem; margin-bottom: 1.25rem; }
+    .ecvt-tab-btn {
+        flex: 1; padding: 0.6rem 0.8rem; background: none; border: none; border-bottom: 2px solid transparent;
+        font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; color: var(--text-muted); cursor: pointer;
+        transition: color var(--transition-fast), border-color var(--transition-fast); text-align: center;
+    }
+    .ecvt-tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .ecvt-tab-pane { display: none; animation: ecvtFadeIn 0.3s ease; }
+    .ecvt-tab-pane.active { display: block; }
+    @keyframes ecvtFadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Checklist Progress Bar */
+    .ecvt-progress-wrap { background: var(--border); border-radius: 4px; height: 8px; width: 100%; margin-bottom: 1.25rem; overflow: hidden; }
+    .ecvt-progress-fill { height: 100%; width: 0%; background-color: var(--success); transition: width var(--transition-normal); }
+    .ecvt-chk-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .ecvt-chk-item { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; }
+    .ecvt-chk-item input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+    .ecvt-chk-item span { line-height: 1.4; color: var(--text-main); font-size: 0.95rem; }
+    .ecvt-chk-item.checked span { text-decoration: line-through; color: var(--text-muted); }
+    
+    /* Result Box */
+    .ecvt-result-box { background: #eff6ff; border: 1px solid rgba(37, 99, 211, 0.15); border-radius: var(--radius-sm); padding: 1rem; margin-top: 1rem; }
+    .ecvt-result-title { font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem; }
+    .ecvt-result-val { font-size: 1.5rem; color: var(--accent); font-weight: 800; }
+</style>
+
+<div class="ecvt-toolkit">
+    <div class="ecvt-grid">
+        <!-- Widget 1: Search Method Selector -->
+        <div class="ecvt-card-widget">
+            <div class="ecvt-widget-header">
+                <span class="ecvt-widget-icon">🗺️</span>
+                <h3>TN Search Assistant</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Select search type to view specific data fields requested on the TNREGINET portal.
+            </p>
+            <div class="ecvt-tab-header">
+                <button class="ecvt-tab-btn active" id="ecvt-btn-survey">1. Search by Survey</button>
+                <button class="ecvt-tab-btn" id="ecvt-btn-doc">2. Search by Document</button>
+            </div>
+            
+            <div class="ecvt-tab-pane active" id="ecvt-pane-survey">
+                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem;">
+                    <strong>Survey Parameter Fields Required:</strong>
+                    <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                        <li style="margin-bottom: 0.4rem;">Zone &amp; District of registration.</li>
+                        <li style="margin-bottom: 0.4rem;">Sub-Registrar Office SRO Name.</li>
+                        <li style="margin-bottom: 0.4rem;">Revenue Village Name.</li>
+                        <li>Survey Number &amp; Sub-division Code.</li>
+                    </ol>
+                    <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Apply by Survey</a>
+                </div>
+            </div>
+            
+            <div class="ecvt-tab-pane" id="ecvt-pane-doc">
+                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem;">
+                    <strong>Document Parameter Fields Required:</strong>
+                    <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                        <li style="margin-bottom: 0.4rem;">Sub-Registrar Office SRO Name.</li>
+                        <li style="margin-bottom: 0.4rem;">Document ID Number.</li>
+                        <li style="margin-bottom: 0.4rem;">Registration Year.</li>
+                        <li>Document Type (e.g. Regular, Book 4).</li>
+                    </ol>
+                    <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Apply by Document</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Widget 2: Audit Checklist -->
+        <div class="ecvt-card-widget">
+            <div class="ecvt-widget-header">
+                <span class="ecvt-widget-icon">📋</span>
+                <h3>Search Verification Steps</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Check parameters to execute an error-free online ec view tamilnadu lookup.
+            </p>
+            <div class="ecvt-progress-wrap">
+                <div class="ecvt-progress-fill" id="ecvt-progress"></div>
+            </div>
+            <div class="ecvt-chk-list" id="ecvt-checklist">
+                <label class="ecvt-chk-item">
+                    <input type="checkbox">
+                    <span>Reconciled survey details from current sale deed copies</span>
+                </label>
+                <label class="ecvt-chk-item">
+                    <input type="checkbox">
+                    <span>Selected SRO name of the exact administrative village</span>
+                </label>
+                <label class="ecvt-chk-item">
+                    <input type="checkbox">
+                    <span>Verified spelling of the revenue village in registration logs</span>
+                </label>
+                <label class="ecvt-chk-item">
+                    <input type="checkbox">
+                    <span>Cross-checked boundaries description (North, South, East, West)</span>
+                </label>
+                <label class="ecvt-chk-item">
+                    <input type="checkbox">
+                    <span>Adjusted date parameters to begin from physical transaction year</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Widget 3: TN EC Search Fee Calculator -->
+        <div class="ecvt-card-widget">
+            <div class="ecvt-widget-header">
+                <span class="ecvt-widget-icon">💰</span>
+                <h3>Fee Estimator Tool</h3>
+            </div>
+            <div class="ecvt-form-group">
+                <label for="ecvt-years">Years to Inspect:</label>
+                <input type="number" id="ecvt-years" class="ecvt-input" min="1" max="100" value="30">
+            </div>
+            <div class="ecvt-result-box">
+                <div class="ecvt-result-title">Estimated Government Fee:</div>
+                <div class="ecvt-result-val" id="ecvt-fee-display">₹160</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;" id="ecvt-fee-note">
+                    Calculation: ₹15 (1st Year) + ₹145 (Subsequent Years).
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Tab switching
+        const btnSurvey = document.getElementById("ecvt-btn-survey");
+        const btnDoc = document.getElementById("ecvt-btn-doc");
+        const paneSurvey = document.getElementById("ecvt-pane-survey");
+        const paneDoc = document.getElementById("ecvt-pane-doc");
+
+        btnSurvey.addEventListener("click", function() {
+            btnSurvey.classList.add("active");
+            btnDoc.classList.remove("active");
+            paneSurvey.classList.add("active");
+            paneDoc.classList.remove("active");
+        });
+
+        btnDoc.addEventListener("click", function() {
+            btnDoc.classList.add("active");
+            btnSurvey.classList.remove("active");
+            paneDoc.classList.add("active");
+            paneSurvey.classList.remove("active");
+        });
+
+        // Checklist logic
+        const checkboxes = document.querySelectorAll("#ecvt-checklist input[type=\"checkbox\"]");
+        const progress = document.getElementById("ecvt-progress");
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                const label = chk.closest(".ecvt-chk-item");
+                if (chk.checked) {
+                    checkedCount++;
+                    label.classList.add("checked");
+                } else {
+                    label.classList.remove("checked");
+                }
+            });
+            const pct = Math.round((checkedCount / total) * 100);
+            progress.style.width = pct + "%";
+        }
+
+        checkboxes.forEach(chk => chk.addEventListener("change", updateProgress));
+        updateProgress();
+
+        // Fee Calculator
+        const inputYears = document.getElementById("ecvt-years");
+        const feeDisplay = document.getElementById("ecvt-fee-display");
+        const feeNote = document.getElementById("ecvt-fee-note");
+
+        function calculateFee() {
+            let years = parseInt(inputYears.value) || 1;
+            if (years < 1) years = 1;
+            
+            // Search Fee: First year Rs. 15, subsequent Rs. 5 per year.
+            const searchFee = 15 + (years - 1) * 5;
+            feeDisplay.innerText = "₹" + searchFee;
+            feeNote.innerText = "Calculation: ₹15 (1st Year) + ₹" + ((years - 1) * 5) + " (Subsequent Years).";
+        }
+
+        inputYears.addEventListener("input", calculateFee);
+        calculateFee();
+    });
+</script>
+
+<h2>Understanding online ec view tamilnadu Property Registers</h2>
+<p class="content-text">
+    An <a href="https://econline.in/">ec online</a> lookup has become the foundation of property verification in southern India. For properties registered under the Inspector General of Registration in Tamil Nadu, executing a complete **online ec view tamilnadu** query provides transparency on ownership history. This search helps property buyers confirm if land has pending loans, court attachments, or secondary registry sales before buying.
+</p>
+<p class="content-text">
+    In this educational reference guide, we examine the procedures required to check the <a href="https://econline.in/">ec online</a> registry ledgers. We cover the difference between searching by survey codes versus document indices, how to locate sub-registrar zones in Chennai and Coimbatore, and how to verify patta chitta matching files. Performing these steps prevents registry errors and protects real estate investments.
+</p>
+
+<h2>Search Methods on TNREGINET: Survey vs. Document Number</h2>
+<p class="content-text">
+    When using the <a href="https://econline.in/">ec online</a> portal for Tamil Nadu, users can choose between two search modes. Each method is useful depending on the details you have:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Search by Property (Survey Details)</strong>: This is the most comprehensive search method. It inspects all transactions recorded under a specific survey number and sub-division code. It allows buyers to trace all historical deals on a plot, regardless of who sold it.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Search by Document Number</strong>: This method is used when you want to retrieve a specific sale deed or verify that a particular transaction was registered. You must input the document number, SRO office, and registration year to download signed <a href="https://econline.in/">ec online</a> sheets.</li>
+</ul>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Method</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Pros (Advantages)</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Cons (Limitations)</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Required Inputs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Search by Property</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Shows all historical transactions; catches hidden mortgages.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Requires village names and exact subdivision codes.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Zone, District, SRO, Village, Survey & Subdivision.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Search by Document</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Quick search; perfect for validating a single transaction.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Will miss other transactions on the same land parcel.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">SRO name, Document Number, Registration Year.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Step-by-Step Walkthrough to View EC Online in Tamil Nadu</h2>
+<p class="content-text">
+    To view your property records, follow this step-by-step procedure on the official portal:
+</p>
+<div class="steps-container">
+    <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Access Portal</h3>
+        <p class="content-text" style="margin-bottom:0;">Go to the official registration department portal: <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener">tnreginet.gov.in</a>.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Select EC Search</h3>
+        <p class="content-text" style="margin-bottom:0;">From the main navigation bar, hover over **"E-Services" &rarr; "Encumbrance Certificate" &rarr; "View EC"**.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Input Details</h3>
+        <p class="content-text" style="margin-bottom:0;">Choose your search method (document or survey) and fill in the location filters (Zone, SRO, and dates).</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Download PDF</h3>
+        <p class="content-text" style="margin-bottom:0;">Enter the Captcha code, click the **"Search"** button, and view the transaction history or save the PDF copy.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    For other regional registration procedures, review our <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> guide or verify our neighboring guides like the <a href="/tn-ec-online/">tn ec online</a> checklist. If you are comparing parameters for Karnataka or Telangana, check out the <a href="/ec-online-karnataka/">ec online karnataka</a> handbook or the <a href="/ec-online-telangana/">ec online telangana</a> manual.
+</p>
+
+<h2>Preventing Search Failures on TNREGINET</h2>
+<p class="content-text">
+    If the online search returns "No Record Found," it does not always mean the property is free of encumbrance. It may indicate a formatting issue. To verify that your <a href="https://econline.in/">ec online</a> record corresponds to the property, keep these tips in mind:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>SRO Jurisdictional Changes</strong>: Sub-Registrar Offices are periodically restructured. If the property was registered in 1995, the SRO code might have changed. Try searching under both the historical and current SRO listings.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Spell Check Villages</strong>: Administrative revenue villages can have multiple spellings in the registry database. Try matching spellings with current property tax receipts.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Clear Date Overlaps</strong>: Ensure search dates cover the entire period required (e.g. 1975 to current). Leaving date ranges incomplete can omit vital transaction history.</li>
+</ol>
+<p class="content-text">
+    To print or validate downloaded files, review our <a href="/online-ec-download/">online ec download</a> instructions.
+</p>
+
+<h2>Patta Chitta Integration & Title Verification</h2>
+<p class="content-text">
+    Validating land titles is incomplete without matching registration files with the revenue database. Once you obtain the EC, execute a Patta Chitta verification query:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">Open the revenue services portal page: <strong>eservices.tn.gov.in</strong>.</li>
+    <li style="margin-bottom: 0.5rem;">Choose the Patta &amp; Chitta display link.</li>
+    <li style="margin-bottom: 0.5rem;">Input SRO village, Taluk, and Survey details.</li>
+    <li style="margin-bottom: 0.5rem;">Verify that the seller\'s name is listed as the latest land claimant.</li>
+</ul>
+<p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+    If you are investigating other states, refer to the <a href="/ec-online-tamil/">ec online tamil</a> guide, read about TS registries in the <a href="/ec-telangana-online-search/">ec telangana online search</a> directory, or check out the <a href="/online-ec-ap/">online ec ap</a> guide. To inspect general portal configurations, you can also return to our <a href="/ec-view-online/">ec view online</a> directory.
+</p>';
+    $faq_ecvt = '[{"question":"Why is the SRO office list not displaying my village?","answer":"SRO jurisdictions can overlap or have changed over time. If a village is missing, check if it was moved to a newly formed SRO nearby or search the administrative maps on the TNREGINET home directory."},{"question":"Can I view Tamil Nadu EC records prior to 1975 online?","answer":"No. Currently, online digitalization on TNREGINET only extends back to 1975. For historic searches before 1975, you must visit the respective SRO office and file a manual search application."},{"question":"What does it mean if my search returns a Nil Encumbrance Certificate?","answer":"A Nil EC indicates that no transactions (like sales, mortgages, or court attachments) were registered for that specific survey number during the searched dates. Ensure your survey number input matches the deed exactly to rule out formatting errors."},{"question":"Do I need a citizen login to just view an EC online?","answer":"No, viewing a draft copy of the EC does not require user registration. You can access the search form as a guest user. Citizen registration is only required if you need to apply for a digitally signed certified copy."}]';
+    $schema_type_ecvt = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_ecvt,
+        'keyword' => $keyword_ecvt,
+        'title' => $title_ecvt,
+        'meta_desc' => $meta_desc_ecvt,
+        'h1_title' => $h1_ecvt,
+        'content' => $content_ecvt,
+        'faq_data' => $faq_ecvt,
+        'schema_type' => $schema_type_ecvt
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
+
 
 
