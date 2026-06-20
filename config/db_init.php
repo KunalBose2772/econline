@@ -1577,6 +1577,639 @@ try {
         'schema_type' => $schema_type_view
     ]);
 
+    // --- 5. AUTO-INITIALIZE ONLINE EC DOWNLOAD PAGE ---
+    $slug_dl = 'online-ec-download';
+    $keyword_dl = 'online ec download';
+    $title_dl = 'online ec download';
+    $h1_dl = 'online ec download';
+    $meta_desc_dl = 'Access the interactive national online ec download gateway. Learn how to download digitally signed certificates, compute copy fees, and get verified copies.';
+    $content_dl = '<!-- Custom Interactive Styles for Download Portal -->
+<style>
+    /* Toolkit Wrapper */
+    .toolkit-container {
+        margin: 2rem 0;
+        width: 100%;
+    }
+    
+    /* Responsive Flexbox Grid for Widgets */
+    .utility-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    @media (min-width: 768px) {
+        .utility-grid {
+            flex-direction: row;
+        }
+        .widget-panel {
+            flex: 1;
+        }
+    }
+    
+    /* Widget Panels */
+    .widget-panel {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media (max-width: 480px) {
+        .widget-panel {
+            padding: 1rem;
+        }
+    }
+    .widget-panel:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow-md);
+    }
+    .widget-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+    }
+    .widget-header h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0;
+        color: var(--primary);
+    }
+    .widget-icon {
+        font-size: 1.5rem;
+    }
+    
+    /* Forms */
+    .form-group {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    .form-group label {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--text-main);
+    }
+    .form-select, .form-input {
+        width: 100%;
+        padding: 0.65rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        color: var(--primary);
+        outline: none;
+        box-sizing: border-box;
+    }
+    .form-select:focus, .form-input:focus {
+        border-color: var(--accent);
+    }
+    
+    /* Interactive Verifier Result Box */
+    .verifier-panel {
+        background-color: #eff6ff;
+        border: 1px solid rgba(37, 99, 211, 0.15);
+        border-radius: var(--radius-sm);
+        padding: 1.25rem;
+        margin-top: 1.25rem;
+        display: none;
+    }
+    .verifier-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+    }
+    .verifier-details {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: var(--text-main);
+        margin-bottom: 0.75rem;
+    }
+    .verifier-btn {
+        display: inline-block;
+        background-color: var(--accent);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-sm);
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .verifier-btn:hover {
+        background-color: var(--accent-hover);
+        color: white;
+    }
+    
+    /* Interactive Roadmap/Checklist */
+    .roadmap-progress-container {
+        background-color: var(--border);
+        border-radius: var(--radius-sm);
+        height: 8px;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+    }
+    .roadmap-progress-bar {
+        height: 100%;
+        width: 0%;
+        background-color: var(--success);
+        transition: width var(--transition-normal);
+    }
+    .roadmap-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        cursor: pointer;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+    .roadmap-item input[type="checkbox"] {
+        margin-top: 0.25rem;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+    .roadmap-item span {
+        line-height: 1.4;
+        word-break: break-word;
+    }
+    .roadmap-item.checked span {
+        text-decoration: line-through;
+        color: var(--text-muted);
+    }
+
+    /* Portal Grid Auto-fit layout (no media queries needed) */
+    .portal-quick-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+    .portal-btn {
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 1.25rem 0.75rem;
+        text-align: center;
+        font-weight: 600;
+        color: var(--primary);
+        box-shadow: var(--shadow-sm);
+        transition: all var(--transition-fast);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+    .portal-btn:hover {
+        border-color: var(--accent);
+        background-color: #eff6ff;
+        color: var(--accent);
+        transform: translateY(-2px);
+    }
+    .portal-btn-icon {
+        font-size: 1.5rem;
+    }
+    .portal-btn span:not(.portal-btn-icon) {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    /* Responsive Table Container */
+    .table-scroll-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.5rem 0;
+        width: 100%;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+    }
+    .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+        min-width: 500px;
+    }
+    .comparison-table th, .comparison-table td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid var(--border);
+        font-size: 0.95rem;
+    }
+    .comparison-table th {
+        background-color: var(--primary);
+        color: white;
+        font-weight: 600;
+    }
+    .comparison-table tr:nth-child(even) {
+        background-color: var(--bg-main);
+    }
+</style>
+
+<!-- 1. QUICK PORTAL CONNECTIONS GRID (ABSOLUTE TOP) -->
+<div class="card" style="border-top: 4px solid var(--accent); margin-bottom: 1.5rem; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+    <h3 style="font-size: 1.1rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">National Portal Connections</h3>
+    <div class="portal-quick-grid">
+        <a href="https://tnreginet.gov.in/portal/webEServices/certifiedCopy" target="_blank" rel="nofollow noopener" class="portal-btn">
+            <span class="portal-btn-icon">🏛️</span>
+            <span>TNREGINET Copy</span>
+        </a>
+        <a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener" class="portal-btn">
+            <span class="portal-btn-icon">🌾</span>
+            <span>Kaveri Karnataka</span>
+        </a>
+        <a href="https://registration.telangana.gov.in" target="_blank" rel="nofollow noopener" class="portal-btn">
+            <span class="portal-btn-icon">⚖️</span>
+            <span>IGRS Telangana</span>
+        </a>
+        <a href="https://igrs.ap.gov.in" target="_blank" rel="nofollow noopener" class="portal-btn">
+            <span class="portal-btn-icon">🏛️</span>
+            <span>IGRS Andhra Pradesh</span>
+        </a>
+    </div>
+</div>
+
+<!-- 2. STATE SELECTOR & DYNAMIC DETECTOR WIDGETS -->
+<div class="toolkit-container" style="margin-top: 0; margin-bottom: 1.5rem;">
+    <div class="utility-grid">
+        
+        <!-- Widget 1: State Portal Download Locator -->
+        <div class="widget-panel">
+            <div class="widget-header">
+                <span class="widget-icon">📥</span>
+                <h3>Direct State PDF Downloader</h3>
+            </div>
+            
+            <div class="form-group">
+                <label for="dl-state">Select Property State:</label>
+                <select id="dl-state" class="form-select">
+                    <option value="">-- Choose State --</option>
+                    <option value="TN">Tamil Nadu (Certified Copy)</option>
+                    <option value="KA">Karnataka (Kaveri Online Services)</option>
+                    <option value="TS">Telangana (IGRS TS portal)</option>
+                    <option value="AP">Andhra Pradesh (IGRS AP portal)</option>
+                    <option value="KL">Kerala (Registration Dept)</option>
+                </select>
+            </div>
+            
+            <!-- Dynamic Result Box -->
+            <div class="verifier-panel" id="dl-result-panel">
+                <div class="verifier-title" id="dl-result-title"></div>
+                <div class="verifier-details" id="dl-result-details"></div>
+                <a href="" id="dl-result-link" target="_blank" rel="nofollow noopener" class="verifier-btn">Access Official Download Portal</a>
+            </div>
+        </div>
+        
+        <!-- Widget 2: Interactive Signature Verification Assistant -->
+        <div class="widget-panel">
+            <div class="widget-header">
+                <span class="widget-icon">🔏</span>
+                <h3>Digital Signature Verifier</h3>
+            </div>
+            
+            <div class="form-group">
+                <label for="verify-state">Select Document State:</label>
+                <select id="verify-state" class="form-select">
+                    <option value="">-- Select State --</option>
+                    <option value="TN">Tamil Nadu (TNREGINET)</option>
+                    <option value="KA">Karnataka (Kaveri)</option>
+                    <option value="TS">Telangana (IGRS TS)</option>
+                    <option value="AP">Andhra Pradesh (IGRS AP)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="verify-code">Application Number / Document ID:</label>
+                <input type="text" id="verify-code" class="form-input" placeholder="e.g. TN2026SRO142">
+            </div>
+            
+            <button class="btn-primary" id="btn-verify-action" style="width: 100%; border: none; cursor: pointer; text-align: center; justify-content: center; padding: 0.75rem;">Simulate Cryptographic Audit</button>
+            
+            <div class="verifier-panel" id="audit-result-panel">
+                <div class="verifier-title" id="audit-result-title"></div>
+                <div class="verifier-details" id="audit-result-details"></div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- 3. STEP ROADMAP WITH PROGRESS BAR (ABSOLUTE TOP) -->
+<div class="card" style="border-top: 4px solid var(--success); margin-bottom: 2rem;">
+    <div class="widget-header">
+        <span class="widget-icon">🚀</span>
+        <h3>Interactive EC Download Roadmap</h3>
+    </div>
+    <p class="content-text" style="font-size: 0.9rem; margin-bottom: 1.25rem;">
+        Follow these key steps to apply for, pay, mutate title, and successfully retrieve your signed PDF copy:
+    </p>
+    
+    <div class="roadmap-progress-container">
+        <div class="roadmap-progress-bar" id="road-progress"></div>
+    </div>
+    
+    <div id="road-items-list">
+        <label class="roadmap-item">
+            <input type="checkbox" data-index="1">
+            <span>Register a citizen user account on the official state stamps and registration portal.</span>
+        </label>
+        <label class="roadmap-item">
+            <input type="checkbox" data-index="2">
+            <span>Perform a preliminary **ec view online** check to ensure the registry ledger contains transaction history.</span>
+        </label>
+        <label class="roadmap-item">
+            <input type="checkbox" data-index="3">
+            <span>Select \'Certified Copy EC\' application service and fill out the detailed property boundary coordinates.</span>
+        </label>
+        <label class="roadmap-item">
+            <input type="checkbox" data-index="4">
+            <span>Pay the estimated processing and search fee online using the integrated government payment gateway.</span>
+        </label>
+        <label class="roadmap-item">
+            <input type="checkbox" data-index="5">
+            <span>Monitor the **online ec status** dashboard regularly for Sub-Registrar approval details.</span>
+        </label>
+        <label class="roadmap-item">
+            <input type="checkbox" data-index="6">
+            <span>Download the approved PDF file containing the officer\'s cryptographic digital signature block.</span>
+        </label>
+    </div>
+</div>
+
+<!-- 4. MAIN SEO CONTENT BASE -->
+<div class="card">
+    <h2>Understanding online ec download Procedures</h2>
+    <p class="content-text">
+        In the modern real estate sector, verifying property titles has transitioned from physical registers to digital archives. If you are completing a land purchase or processing a home loan, performing an <strong>online ec download</strong> is essential. This document serves as legal proof that a property has a clean title, and is not loaded with undisclosed bank mortgages, legal disputes, or third-party attachments.
+    </p>
+    <p class="content-text">
+        When you execute a secure <a href="https://econline.in/">ec online</a> download, you retrieve the transaction ledger entries recorded at the local Sub-Registrar Office (SRO) under the Registration Act. Rather than visiting government offices and filing manual applications, buyers can register accounts on state databases, input property survey codes, pay nominal fees, and download verified PDF documents containing cryptographic digital signatures.
+    </p>
+    <p class="content-text">
+        These digital copies are highly recognized. Banks, financial institutions, and courts accept them directly as valid evidence of property title history, provided they carry the verified signature of the registration department authorities.
+    </p>
+</div>
+
+<div class="card">
+    <h2>Draft Copy vs. Certified copy: Which Should You Download?</h2>
+    <p class="content-text">
+        Before initiating your search request on the government portals, it is critical to understand the legal differences between a free preview copy and a paid certified copy. If you only need a quick verification of the seller\'s claim, you can use the free guest search tool to <a href="/ec-view-online/">ec view online</a> and inspect the transaction ledger on screen. However, if the document is needed for a legal contract, bank mortgage registration, or land registry mutation, you must execute a formal paid application to get a certified copy.
+    </p>
+    
+    <!-- RESPONSIVE COMPARISON TABLE -->
+    <div class="table-scroll-container">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Free Draft View</th>
+                    <th>Certified PDF Copy (Paid)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 600;">Purpose</td>
+                    <td>Informational lookup, quick title verification.</td>
+                    <td>Bank loans, legal registration, official audit.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600;">Cost</td>
+                    <td>Free of Cost (₹0)</td>
+                    <td>Nominal search fee + Application fee.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600;">Signature Block</td>
+                    <td>None (Shows "Draft Copy Only").</td>
+                    <td>Officer\'s Cryptographic Digital Signature.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600;">Processing Time</td>
+                    <td>Instant (On-screen download).</td>
+                    <td>2 to 7 working days for SRO verification.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <p class="content-text">
+        For formal requirements, carrying out a certified <strong>ec download online</strong> is mandatory. The document has legal validity and is admissibility in court, ensuring protection against title fraud. For guest users in Karnataka, the Kaveri portal offers the <a href="https://econline.in/">ec online</a> viewer, but the document lacks the necessary signature block for financial audits.
+    </p>
+</div>
+
+<div class="card">
+    <h2>State-Wise Guide to Downloading Encumbrance Certificates</h2>
+    <p class="content-text">
+        Because land registration is handled at the state level in India, each state operates a distinct registration portal. Below is the detailed step-by-step breakdown of the main state portal procedures:
+    </p>
+    
+    <h3>1. Tamil Nadu (TNREGINET Portal)</h3>
+    <p class="content-text">
+        Tamil Nadu provides comprehensive services for property checking. To retrieve your document, you must use the TNREGINET portal. If you only want a quick check, you can perform an <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> search using E-Services > Encumbrance Certificate > View EC to download a free draft.
+    </p>
+    <p class="content-text">
+        If you require an official certified document, follow these instructions for a paid <strong>ec download online tamilnadu</strong> or general <strong>download ec online tamilnadu</strong> search:
+    </p>
+    <ol style="margin-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+        <li>Log in to your citizen account at <code>https://tnreginet.gov.in</code>.</li>
+        <li>Select <strong>E-Services > Encumbrance Certificate > Apply Online</strong>.</li>
+        <li>Enter SRO name, survey/subdivision codes, and boundary parameters.</li>
+        <li>Pay the computed fee online. The portal charges a search fee of ₹15 per year, in addition to an application fee of ₹1.</li>
+        <li>Monitor your dashboard for officer approval. Once approved, click **Download Certificate** to retrieve the digitally signed PDF copy.</li>
+    </ol>
+    <p class="content-text">
+        If you prefer the text in English, make sure to change the language preference toggle on the TNREGINET header before starting, which allows you to perform an <strong>online ec download tamilnadu</strong> check in English.
+    </p>
+
+    <h3>2. Karnataka (Kaveri Online Services)</h3>
+    <p class="content-text">
+        For properties located in Bangalore or other Karnataka districts, you must use the Kaveri portal. While you can view basic details, you must log in to execute a certified <strong>kaveri online ec download</strong> or standard <strong>download ec online karnataka</strong> search.
+    </p>
+    <ol style="margin-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+        <li>Log in to your user profile at <code>https://kaverionline.karnataka.gov.in</code>.</li>
+        <li>Click **Online EC** under Citizen Services.</li>
+        <li>Provide property specifications, SRO office, survey numbers, and boundaries.</li>
+        <li>Submit and pay search fees online. The government charges a base search fee of ₹15 for the first year, and ₹10 for each subsequent year.</li>
+        <li>Once processed by the registrar, you can complete the **how to download signed ec from kaveri online** task by going to your dashboard, clicking "Saved Applications," and downloading the approved PDF document.</li>
+    </ol>
+
+    <h3>3. Telangana & Andhra Pradesh (IGRS Portals)</h3>
+    <p class="content-text">
+        Telangana records are accessed via the IGRS TS portal. Log in to search using SRO, survey code, or document number to trigger a certified <strong>ts ec download online</strong>.
+    </p>
+    <p class="content-text">
+        Similarly, in Andhra Pradesh, users access the IGRS AP website. Citizens can search and download transaction logs by executing an <strong>ap online ec download</strong> query using either property survey coordinates or registered deed document reference keys.
+    </p>
+</div>
+
+<div class="card">
+    <h2>How to Verify Digitally Signed EC Files</h2>
+    <p class="content-text">
+        When you complete a certified <strong>download ec online</strong> transaction, the resulting PDF contains a cryptographic digital signature stamp at the bottom of the page. This signature acts as legal confirmation that the document was generated from the official registration logs.
+    </p>
+    <p class="content-text">
+        However, when you open the downloaded PDF on your computer, the signature block may show a question mark icon saying **"Signature Not Verified"** or **"Signature Unknown"**. To resolve this issue and verify the signature:
+    </p>
+    <ol style="margin-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+        <li>Open the PDF document using Adobe Acrobat Reader (not basic web browsers or local PDF readers).</li>
+        <li>Right-click on the signature stamp block at the bottom of the document and select **Signature Properties**.</li>
+        <li>Click **Show Signer\'s Certificate**.</li>
+        <li>Select the **Trust** tab, then click **Add to Trusted Certificates**.</li>
+        <li>Check the options for **Certified documents** and **Dynamic content**, then click OK.</li>
+        <li>Click **Validate Signature** to update the icon to a green checkmark indicating the signature is valid.</li>
+    </ol>
+    <p class="content-text">
+        To double-check that a certificate provided by a seller is authentic, you can use the official verification portal. Use the **online ec status** lookup tool and verify that the unique certificate key matches the state registration department transaction log database.
+    </p>
+</div>
+
+<!-- JavaScript for Dynamic Download Selector & Verifier -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // --- 1. DYNAMIC DOWNLOAD LOCATOR ---
+        const dlStateSelect = document.getElementById("dl-state");
+        const dlResultPanel = document.getElementById("dl-result-panel");
+        const dlResultTitle = document.getElementById("dl-result-title");
+        const dlResultDetails = document.getElementById("dl-result-details");
+        const dlResultLink = document.getElementById("dl-result-link");
+
+        const stateDlData = {
+            "TN": {
+                title: "🏛️ Tamil Nadu (TNREGINET)",
+                details: "To download a certified copy of your EC, you must log in to your TNREGINET account and navigate to E-Services > Encumbrance Certificate > Apply Online. Government fees: ₹15/search year.",
+                link: "https://tnreginet.gov.in/portal/userRegistration"
+            },
+            "KA": {
+                title: "🌾 Karnataka (Kaveri Portal)",
+                details: "Access Kaveri Online Services, log in to your citizen profile, select \'Online EC\' under Citizen Services, and pay the fee online to request a digitally signed copy.",
+                link: "https://kaverionline.karnataka.gov.in"
+            },
+            "TS": {
+                title: "⚖️ Telangana (IGRS TS)",
+                details: "Log in to the IGRS Telangana Portal, navigate to \'Encumbrance Certificate\' under Online Services, search by SRO and Survey details, and submit to download the PDF.",
+                link: "https://registration.telangana.gov.in"
+            },
+            "AP": {
+                title: "🏛️ Andhra Pradesh (IGRS AP)",
+                details: "Visit IGRS Andhra Pradesh, use the \'Encumbrance Certificate\' download utility under Online Services, and search using SRO name and property coordinates.",
+                link: "https://igrs.ap.gov.in"
+            },
+            "KL": {
+                title: "🏛️ Kerala (Registration Portal)",
+                details: "Log in to the Kerala Registration portal, apply under Citizen Services > Encumbrance Certificate, pay online, and download once signed by SRO officer.",
+                link: "https://keralaregistration.gov.in"
+            }
+        };
+
+        dlStateSelect.addEventListener("change", function() {
+            const val = dlStateSelect.value;
+            if (!val) {
+                dlResultPanel.style.display = "none";
+                return;
+            }
+            const data = stateDlData[val];
+            dlResultTitle.innerText = data.title;
+            dlResultDetails.innerText = data.details;
+            dlResultLink.href = data.link;
+            dlResultPanel.style.display = "block";
+        });
+
+        // --- 2. SIGNATURE AUDIT VERIFIER ---
+        const btnVerify = document.getElementById("btn-verify-action");
+        const verifyStateSelect = document.getElementById("verify-state");
+        const verifyCodeInput = document.getElementById("verify-code");
+        const auditPanel = document.getElementById("audit-result-panel");
+        const auditTitle = document.getElementById("audit-result-title");
+        const auditDetails = document.getElementById("audit-result-details");
+
+        btnVerify.addEventListener("click", function() {
+            const state = verifyStateSelect.value;
+            const code = verifyCodeInput.value.trim();
+
+            if (!state) {
+                alert("Please select the Document State.");
+                return;
+            }
+            if (!code) {
+                alert("Please enter the Application Number or Document ID.");
+                return;
+            }
+
+            // Simulate Audit
+            auditTitle.innerHTML = "🔍 Cryptographic Audit Result: " + state;
+            auditDetails.innerHTML = "Document ID <strong>" + code + "</strong> has been checked against the simulated public key registry.<br><br>👉 **Next Steps for Verification**:<br>1. Open the PDF file using Adobe Acrobat Reader.<br>2. Right-click on the signature block and select \'Validate Signature\'.<br>3. To verify on the government database, log in to the official portal and select E-Services > **Verify Certified Copy**.";
+            auditPanel.style.display = "block";
+        });
+
+        // --- 3. CHECKLIST ROADMAP LOGIC ---
+        const checkboxes = document.querySelectorAll("#road-items-list input[type=\'checkbox\']");
+        const progressBar = document.getElementById("road-progress");
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            let checkedCount = 0;
+
+            checkboxes.forEach(chk => {
+                const label = chk.closest(".roadmap-item");
+                if (chk.checked) {
+                    checkedCount++;
+                    label.classList.add("checked");
+                } else {
+                    label.classList.remove("checked");
+                }
+            });
+
+            const percent = Math.round((checkedCount / total) * 100);
+            progressBar.style.width = percent + "%";
+        }
+
+        checkboxes.forEach(chk => {
+            chk.addEventListener("change", updateProgress);
+        });
+
+        updateProgress(); // Initial check
+    });
+</script>';
+    $faq_dl = '[{"question":"How can I download my Encumbrance Certificate online?","answer":"To complete an <strong>online ec download</strong>, you must register a citizen account on your state\'s official registration department portal. Fill in the property Zone, District, SRO office, and Land Survey Number, pay the nominal government fee online, and download the digitally signed PDF copy from your user dashboard once approved by the officer."},{"question":"What is the fee to download a certified EC online?","answer":"Stamps and registration fees vary by state. For example, in Tamil Nadu, the search fee is ₹15 per year. In Karnataka, the government charges a base search fee of ₹15 for the first year, and ₹10 for each subsequent year. Free draft view downloads are available in most states for informational lookup."},{"question":"How do I resolve \\"Signature Not Verified\\" on my downloaded EC PDF?","answer":"Open the downloaded PDF document in Adobe Acrobat Reader. Right-click the signature signature stamp at the bottom of the page, click **Signature Properties > Show Signer\'s Certificate**, select the **Trust** tab, click **Add to Trusted Certificates**, check all certified trust options, and click **Validate Signature** to convert the question mark to a valid green checkmark."},{"question":"How can I verify the authenticity of a downloaded EC copy?","answer":"Every digitally signed certified EC download contains a unique document number, application reference key, or QR code. You can verify the validity of the copy by entering this key on the official state portal under the \\"Verify Certified Copy\\" citizen services section."}]';
+    $schema_type_dl = 'Article';
+
+    $stmt = $pdo->prepare("
+        INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, schema_type, status)
+        VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :schema_type, 'published')
+        ON DUPLICATE KEY UPDATE 
+            keyword = VALUES(keyword),
+            title = VALUES(title),
+            meta_desc = VALUES(meta_desc),
+            h1_title = VALUES(h1_title),
+            content = VALUES(content),
+            faq_data = VALUES(faq_data),
+            schema_type = VALUES(schema_type),
+            status = 'published'
+    ");
+    $stmt->execute([
+        'slug' => $slug_dl,
+        'keyword' => $keyword_dl,
+        'title' => $title_dl,
+        'meta_desc' => $meta_desc_dl,
+        'h1_title' => $h1_dl,
+        'content' => $content_dl,
+        'faq_data' => $faq_dl,
+        'schema_type' => $schema_type_dl
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
