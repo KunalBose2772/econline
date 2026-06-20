@@ -11032,6 +11032,316 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_tneo
     ]);
 
+    // --- 29. AUTO-INITIALIZE HOW TO CHECK EC ONLINE PAGE ---
+    $slug_htceo = 'how-to-check-ec-online';
+    $keyword_htceo = 'how to check ec online';
+    $title_htceo = 'How to Check EC Online: Step-by-Step State-wise Property Guide';
+    $h1_htceo = 'How to Check EC Online: Step-by-Step State-wise Title Search Manual';
+    $meta_desc_htceo = 'Learn how to check EC online for your property in India. Complete state-wise tutorial to search TNREGINET, Kaveri 2.0, IGRS TS, and Meebhoomi.';
+    $content_htceo = '<p class="content-text">
+    An Encumbrance Certificate (EC) is a fundamental document in real estate transactions. It catalogs the registered legal history of a property, indicating whether there are active mortgages, title transfers, or pending court cases attached to it. Prior to purchasing land or buying an apartment, ensuring that the property has a clear and marketable title is paramount. With stamps and registration departments digitizing their archives, property details can be inspected using the official <strong>how to check ec online</strong> portal systems.
+</p>
+
+<p class="content-text">
+    Because land administration in India is managed at the state level, the steps, SRO jurisdictions, and login parameters vary depending on where the land is located. In this comprehensive guide, we provide a complete walkthrough of how to search, inspect, and retrieve files through the <a href="https://econline.in/">ec online</a> stamps dashboard, ensuring you avoid costly legal mistakes.
+</p>
+
+<!-- Widget 1: State Portal Routing Dashboard -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🌐 State Portal Routing Dashboard
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your state to locate the official Stamps and Registration department portal check link and search mode.
+    </p>
+    
+    <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Target State</label>
+        <select id="chk-state-select" onchange="runStateCheck()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+            <option value="tn">Tamil Nadu (TNREGINET)</option>
+            <option value="ka">Karnataka (Kaveri 2.0)</option>
+            <option value="ts">Telangana (IGRS TS)</option>
+            <option value="ap">Andhra Pradesh (IGRS AP)</option>
+        </select>
+    </div>
+    
+    <div id="chk-state-result" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: #ffffff;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function runStateCheck() {
+    var state = document.getElementById("chk-state-select").value;
+    var resultBox = document.getElementById("chk-state-result");
+    
+    var stateMap = {
+        tn: {
+            name: "TNREGINET (Tamil Nadu Registration Department)",
+            mode: "Guest search supported (No account registration required to view draft certificates).",
+            url: "https://tnreginet.gov.in/portal/webEServices/viewEC",
+            reqs: "Zone, District, SRO Suffix, Taluk, Village, Survey Number, and Subdivision Code."
+        },
+        ka: {
+            name: "Kaveri Online Services (Karnataka)",
+            mode: "Citizen Login Required. You must create an account using Aadhaar or PAN card verification.",
+            url: "https://kaverionline.karnataka.gov.in/",
+            reqs: "District, SRO Office, Hobli, Village name, Survey Number, and boundaries parameters."
+        },
+        ts: {
+            name: "IGRS Telangana Portal",
+            mode: "Citizen account registration or login required to run search queries.",
+            url: "https://registration.telangana.gov.in/",
+            reqs: "Document Number and registration year, or Property coordinates (SRO taluk and survey)."
+        },
+        ap: {
+            name: "IGRS AP Portal (Andhra Pradesh)",
+            mode: "Citizen search and guest lookup features are available.",
+            url: "https://registration.ap.gov.in/",
+            reqs: "SRO Code, Village name, Survey Number, or Document number and registration year."
+        }
+    };
+    
+    var data = stateMap[state];
+    resultBox.style.borderColor = "var(--border)";
+    resultBox.style.backgroundColor = "#f8fafc";
+    resultBox.innerHTML = "<div style=\"font-weight: 700; font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem;\">" + data.name + "</div>" +
+        "<div style=\"font-size: 0.95rem; color: #475569; line-height: 1.6; margin-bottom: 1rem;\">" +
+            "<div><strong>Search Mode:</strong> " + data.mode + "</div>" +
+            "<div><strong>Details Needed:</strong> " + data.reqs + "</div>" +
+        "</div>" +
+        "<a href=\"" + data.url + "\" target=\"_blank\" rel=\"noopener\" style=\"display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; background-color: var(--primary); color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.9rem;\">" +
+            "Go to Portal →" +
+        "</a>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("chk-state-select")) {
+        runStateCheck();
+    }
+});
+</script>
+
+<h2>Core Verification Parameters: How to Avoid Search Failures</h2>
+<p class="content-text">
+    To execute an online encumbrance query without errors, buyers must prepare geographical property identifiers beforehand. Common search parameters include District name, SRO name, Village name, Survey Number, and Subdivision Code. If you are verifying a municipal flat, you must also know the Undivided Share (UDS) allocation size and block numbers.
+</p>
+<p class="content-text">
+    Using these identifiers, you can verify that your digital <a href="https://econline.in/">ec online</a> matches the physical boundaries and deed details recorded at the Sub-Registrar Office. Reconciling survey subdivision codes prevents empty search results or incomplete title reports.
+</p>
+
+<!-- Widget 2: Title Audit Verification Checklist -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Title Audit Verification Checklist
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Perform a simulated self-audit on your retrieved Encumbrance Certificate to confirm title safety.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="chk-audit-sig" onchange="runAuditEval()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="chk-audit-sig" style="font-size: 0.9rem; color: #334155; cursor: pointer;">The EC is digitally signed by the Sub-Registrar (no signature validation warnings in PDF).</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="chk-audit-seq" onchange="runAuditEval()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="chk-audit-seq" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Ownership timeline sequence matches consecutively without any missing partition or sale logs.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="chk-audit-mort" onchange="runAuditEval()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="chk-audit-mort" style="font-size: 0.9rem; color: #334155; cursor: pointer;">No active banks or lenders are listed as claimants (or release deeds are fully registered).</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="chk-audit-court" onchange="runAuditEval()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="chk-audit-court" style="font-size: 0.9rem; color: #334155; cursor: pointer;">There are no court injunction attachment entries cataloged against the survey number.</label>
+        </div>
+    </div>
+    
+    <div id="audit-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Check checklist boxes to evaluate title safety.
+    </div>
+</div>
+
+<script>
+function runAuditEval() {
+    var check1 = document.getElementById("chk-audit-sig").checked;
+    var check2 = document.getElementById("chk-audit-seq").checked;
+    var check3 = document.getElementById("chk-audit-mort").checked;
+    var check4 = document.getElementById("chk-audit-court").checked;
+    var resultBox = document.getElementById("audit-result");
+    
+    var count = 0;
+    if (check1) count++;
+    if (check2) count++;
+    if (check3) count++;
+    if (check4) count++;
+    
+    var percentage = count * 25;
+    
+    if (count === 0) {
+        resultBox.style.backgroundColor = "#f1f5f9";
+        resultBox.style.borderColor = "var(--border)";
+        resultBox.style.color = "#475569";
+        resultBox.innerHTML = "Check audit milestones to display validation score.";
+    } else if (count < 4) {
+        resultBox.style.backgroundColor = "#fffbeb";
+        resultBox.style.borderColor = "#fde68a";
+        resultBox.style.color = "#b45309";
+        resultBox.innerHTML = "⚠️ Audit Warning: Score: " + percentage + "%. Missing checks indicate potential title risks. Ensure you reconcile mortgages and timelines before purchase.";
+    } else {
+        resultBox.style.backgroundColor = "#f0fdf4";
+        resultBox.style.borderColor = "#bbf7d0";
+        resultBox.style.color = "#15803d";
+        resultBox.innerHTML = "✓ Audit Complete! Score: 100%. Property has passed all core title verification checks. Safe transaction status.";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("chk-audit-sig")) {
+        runAuditEval();
+    }
+});
+</script>
+
+<h2>How to Match the EC with Land Revenue Records (Patta / RTC)</h2>
+<p class="content-text">
+    To ensure complete transaction security, checking the EC is only half the work. Property buyers must also verify the land revenue records (Patta in Tamil Nadu, RTC Pahani in Karnataka, or Adangal in AP) to confirm the seller\'s name is updated in the land tax books. Mismatches must be resolved before initiating queries on the <a href="https://econline.in/">ec online</a> website.
+</p>
+
+<!-- Widget 3: Property Type Verification Checklist -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Property Category Checklist
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+        Toggle between property categories to display key documents needed for title searches.
+    </p>
+    
+    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+        <button type="button" onclick="setAuditCategory(\'flat\')" id="btn-audit-flat" style="flex: 1; padding: 0.75rem; font-weight: bold; border-radius: 6px; border: 1px solid var(--primary); background-color: var(--primary); color: white; cursor: pointer; transition: all 0.2s;">Flat / Apartment</button>
+        <button type="button" onclick="setAuditCategory(\'plot\')" id="btn-audit-plot" style="flex: 1; padding: 0.75rem; font-weight: bold; border-radius: 6px; border: 1px solid var(--border); background-color: white; color: var(--primary); cursor: pointer; transition: all 0.2s;">Vacant Plot / Land</button>
+    </div>
+    
+    <div id="audit-checklist-items" style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; color: #475569;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function setAuditCategory(type) {
+    var btnFlat = document.getElementById("btn-audit-flat");
+    var btnPlot = document.getElementById("btn-audit-plot");
+    var container = document.getElementById("audit-checklist-items");
+    
+    if (type === "flat") {
+        btnFlat.style.backgroundColor = "var(--primary)";
+        btnFlat.style.color = "white";
+        btnFlat.style.borderColor = "var(--primary)";
+        
+        btnPlot.style.backgroundColor = "white";
+        btnPlot.style.color = "var(--primary)";
+        btnPlot.style.borderColor = "var(--border)";
+        
+        container.innerHTML = 
+            "<div>✓ Reconcile Flat Number and Undivided Share (UDS) allocation in sale deeds.</div>" +
+            "<div>✓ Check parent sale deed registered for the undivided share of land coordinates.</div>" +
+            "<div>✓ Inspect builder-owner joint venture development allocation schedules.</div>" +
+            "<div>✓ Verify layout approvals and completion certificates from local development corporations.</div>";
+    } else {
+        btnPlot.style.backgroundColor = "var(--primary)";
+        btnPlot.style.color = "white";
+        btnPlot.style.borderColor = "var(--primary)";
+        
+        btnFlat.style.backgroundColor = "white";
+        btnFlat.style.color = "var(--primary)";
+        btnFlat.style.borderColor = "var(--border)";
+        
+        container.innerHTML = 
+            "<div>✓ Reconcile land survey coordinates and subdivision mapping FMB books.</div>" +
+            "<div>✓ Confirm land mutation status and retrieve the latest Patta Chitta extract.</div>" +
+            "<div>✓ Inspect local collector land use conversion clearances (for non-agri uses).</div>" +
+            "<div>✓ Check SRO prohibited registries to ensure the land is not government poramboke.</div>";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("btn-audit-flat")) {
+        setAuditCategory("flat");
+    }
+});
+</script>
+
+<h2>State-Wise Official Registration Services Summary Table</h2>
+<p class="content-text">
+    Different states have different official portals, and processing timelines. You can search these details and calculate standard rates using <a href="https://econline.in/">ec online</a> calculators. The comparison table below outlines the state options:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State Location</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Official Registration Portal</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Type Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Processing Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">TNREGINET</td>
+                <td>Villangam Search (Property Wise / Document Wise)</td>
+                <td>Instant (View Draft) / 3-5 Days (Certified)</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Kaveri Online Services (2.0)</td>
+                <td>Certified EC Search (Citizen Login)</td>
+                <td>2-3 Working Days (Digital Signature Approval)</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Telangana</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS TS</td>
+                <td>Encumbrance Search (Document / Property Wise)</td>
+                <td>1-2 Days (Officer Approval)</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Andhra Pradesh</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS AP</td>
+                <td>Encumbrance Certificate Search Utility</td>
+                <td>Instant to 24 Hours (Online Download)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Bilingual Guide Checklist for Title Search Verification</h2>
+<p class="content-text">
+    To execute a thorough title verification, property buyers should check historical records, match Patta registers, and verify the boundaries:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>SRO Code Reconciliation</strong>: Reconcile SRO codes with the survey taluk ledger.</li>
+    <li><strong>Survey Box Separations</strong>: Split survey numbers and subdivisions into distinct fields.</li>
+    <li><strong>Executant Mapping</strong>: Reconcile Tamil/local terminologies with parent deeds.</li>
+    <li><strong>Patta Ownership Verification</strong>: Verify that the latest buyer listed in the claimant column matches the current Patta.</li>
+</ul>
+
+<h2>Conclusion & Professional Support</h2>
+<p class="content-text">
+    Conducting a thorough title check in Tamil Nadu prevents ownership conflicts. If subdivision mismatches or legacy owner names appear on the Patta register, we recommend initiating a formal Tahsildar mutation application. For other states and general guidelines, consult our primary <a href="https://econline.in/">ec online</a> handbook guidelines.
+</p>';
+    $faq_htceo = '[{"question":"Is there any fee to check EC online?","answer":"Basic property searches and viewing the on-screen ledger results are free on portals like TNREGINET. However, obtaining a digitally certified copy of the EC requires paying the designated government fees online."},{"question":"How can I download a digitally signed EC online?","answer":"After the Sub-Registrar approves your search request, you will receive a notification. Log in to the state portal, open your transaction history, and click the download button to download the PDF copy."},{"question":"What should I do if my EC search returns No Record Found?","answer":"Ensure you entered the survey numbers and subdivision codes correctly. If it still returns empty, check adjacent SRO joint codes. If the property was registered before the portal digitization year, submit a manual search request."},{"question":"What is the difference between Form 15 and Form 16?","answer":"Form 15 lists all registered transaction records and liabilities for the property. Form 16 is a Nil Encumbrance Certificate, confirming that no transaction activities were registered during the search period."}]';
+    $schema_type_htceo = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_htceo,
+        'keyword' => $keyword_htceo,
+        'title' => $title_htceo,
+        'meta_desc' => $meta_desc_htceo,
+        'h1_title' => $h1_htceo,
+        'content' => $content_htceo,
+        'faq_data' => $faq_htceo,
+        'schema_type' => $schema_type_htceo
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
