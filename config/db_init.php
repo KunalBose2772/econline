@@ -10182,6 +10182,308 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_evtoe
     ]);
 
+    // --- 26. AUTO-INITIALIZE EC PATTA ONLINE PAGE ---
+    $slug_epo = 'ec-patta-online';
+    $keyword_epo = 'ec patta online';
+    $title_epo = 'EC Patta Online: Check & Verify Land Title Records';
+    $h1_epo = 'EC Patta Online: How to Check, Verify, and Mutate Land Title Records';
+    $meta_desc_epo = 'Verify your land ownership records using our ec patta online guide. Learn how to crosscheck Encumbrance Certificates with Patta Chitta, FMB, and land registry records.';
+    $content_epo = '<p class="content-text">
+    In India, property transactions require a comprehensive review of records from two separate government entities: the Registration Department (which records deeds) and the Revenue Department (which tracks actual ownership). When validating a property title in Tamil Nadu or other states, buyers must verify the Encumbrance Certificate alongside the Patta document. Accessing the official <strong>ec patta online</strong> verification utilities ensures that the person selling the land is listed as the legal owner in the revenue registers and that the land is clean of mortgage liabilities.
+</p>
+
+<p class="content-text">
+    Because a sale deed only records the transfer transaction, ownership transfer is not legally complete until the revenue records are updated through a process called mutation. When acquiring real estate, it is important to review all transactions through the <a href="https://econline.in/">ec online</a> portal to confirm there are no outstanding bank liens or third-party attachments.
+</p>
+
+<!-- Widget 1: TN Patta Chitta Status Tracker (Mock Check) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🔍 TN Patta Chitta Status Tracker (Mock Check)
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Simulate a lookup on the e-Services Patta Chitta portal to verify land record holdings.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Target District</label>
+            <select id="patta-district" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+                <option value="chennai">Chennai</option>
+                <option value="kanchipuram">Kanchipuram</option>
+                <option value="coimbatore">Coimbatore</option>
+                <option value="madurai">Madurai</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Patta or Survey Number</label>
+            <input type="text" id="patta-number-input" placeholder="e.g. Patta 4820 or Survey 142/3A" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+    </div>
+    
+    <button type="button" onclick="checkMockPatta()" class="btn-primary" style="width: 100%; border: none; cursor: pointer; text-align: center; justify-content: center; padding: 0.75rem; font-size: 1rem; font-weight: 600; border-radius: 6px; margin-bottom: 1.25rem;">Check Status</button>
+    
+    <div id="patta-tracker-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function checkMockPatta() {
+    var pattaNum = document.getElementById("patta-number-input").value.trim();
+    var district = document.getElementById("patta-district").value;
+    var resultBox = document.getElementById("patta-tracker-result");
+    
+    if (!pattaNum) {
+        alert("Please enter a Patta or Survey number.");
+        return;
+    }
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "#f8fafc";
+    resultBox.style.borderColor = "var(--border)";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; font-size: 1.05rem;\">Mock Query Result:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>District:</strong> " + district.toUpperCase() + "</div>" +
+            "<div><strong>Query Identifier:</strong> " + pattaNum + "</div>" +
+            "<div><strong>Verification Status:</strong> <span style=\"color: #16a34a; font-weight: bold;\">Active & Mutated</span></div>" +
+            "<div><strong>Record Owner Name:</strong> S. Ramakrishnan (latest claimant in EC)</div>" +
+            "<div><strong>Land Category:</strong> Punja (Dry Agricultural Land)</div>" +
+            "<div style=\"margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic;\">" +
+                "Note: This is a simulation model. To download the legally certified Patta copy, visit the official portal: eservices.tn.gov.in." +
+            "</div>" +
+        "</div>";
+}
+</script>
+
+<h2>What is the Difference Between an EC and a Patta?</h2>
+<p class="content-text">
+    Many first-time property buyers mistakenly assume that obtaining a clean Encumbrance Certificate means the property title is flawless. While the EC details all registered legal transactions (such as sale deeds, mortgages, and release deeds), it does not serve as definitive proof of current ownership. A Patta document is the legal title record issued by the Revenue Department (Tahsildar office) indicating the name of the individual who is liable for paying land tax.
+</p>
+<p class="content-text">
+    For a secure property transaction, checking both documents is essential. Mismatches can happen if a sale deed is registered, but the buyer fails to mutate the revenue records. Once you have verified the details using the <a href="https://econline.in/">ec online</a> database, you must crosscheck the records with the official e-Services portal to verify the Patta register.
+</p>
+
+<!-- Widget 2: EC and Patta Integration Validator Checklist -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Title Reconciliation Readiness Check
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Evaluate the consistency between your Encumbrance Certificate and Patta document to detect ownership discrepancies.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="reconcile-owner" onchange="runReconcileEval()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="reconcile-owner" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Owner\'s name on the Patta matches the latest Claimant in the EC transaction ledger.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="reconcile-survey" onchange="runReconcileEval()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="reconcile-survey" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Survey and Subdivision numbers are written identically on both EC and Patta.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="reconcile-area" onchange="runReconcileEval()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="reconcile-area" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Total land area size matches in hectares/acres/sq ft between the sale deed, EC, and Patta.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="reconcile-mortgage" onchange="runReconcileEval()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="reconcile-mortgage" style="font-size: 0.9rem; color: #334155; cursor: pointer;">There are no active mortgage entries listed in the EC that are absent in revenue registers.</label>
+        </div>
+    </div>
+    
+    <div id="reconcile-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Select checking items to calculate verification score.
+    </div>
+</div>
+
+<script>
+function runReconcileEval() {
+    var check1 = document.getElementById("reconcile-owner").checked;
+    var check2 = document.getElementById("reconcile-survey").checked;
+    var check3 = document.getElementById("reconcile-area").checked;
+    var check4 = document.getElementById("reconcile-mortgage").checked;
+    var resultBox = document.getElementById("reconcile-result");
+    
+    var count = 0;
+    if (check1) count++;
+    if (check2) count++;
+    if (check3) count++;
+    if (check4) count++;
+    
+    var percentage = count * 25;
+    
+    if (count === 0) {
+        resultBox.style.backgroundColor = "#f1f5f9";
+        resultBox.style.borderColor = "var(--border)";
+        resultBox.style.color = "#475569";
+        resultBox.innerHTML = "Select reconciliation checks to see title verification status.";
+    } else if (count < 4) {
+        resultBox.style.backgroundColor = "#fffbeb";
+        resultBox.style.borderColor = "#fde68a";
+        resultBox.style.color = "#b45309";
+        resultBox.innerHTML = "⚠️ Incomplete verification: Score: " + percentage + "%. Mismatches between registry (EC) and revenue records (Patta) may delay title transfers or bank loans.";
+    } else {
+        resultBox.style.backgroundColor = "#f0fdf4";
+        resultBox.style.borderColor = "#bbf7d0";
+        resultBox.style.color = "#15803d";
+        resultBox.innerHTML = "✓ Perfect alignment! Score: 100%. Registry and Revenue records are fully synchronized. Your property has a clean verified title.";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("reconcile-owner")) {
+        runReconcileEval();
+    }
+});
+</script>
+
+<h2>How to Reconcile Mismatches Between EC and Patta</h2>
+<p class="content-text">
+    A mismatch between these documents is a common cause of home loan rejection by banks. If you locate a variance where the Patta remains in the name of a previous seller or shows an incorrect survey subdivision, you must apply for a Patta mutation. Checking revenue classifications and verifying that there are no pending court disputes is standard when applying for certificates on the <a href="https://econline.in/">ec online</a> system.
+</p>
+
+<!-- Widget 3: Bilingual Land Glossary -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📚 Patta & Land Classification Glossary
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Understand Tamil classification terminology used in Patta, Chitta, and FMB records.
+    </p>
+    
+    <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Select Term</label>
+        <select id="glossary-select" onchange="runGlossary()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+            <option value="nanja">Nanja ( Wetland )</option>
+            <option value="punja">Punja ( Dry Land )</option>
+            <option value="chitta">Chitta ( Ledger Register )</option>
+            <option value="fmb">FMB ( Field Measurement Book )</option>
+            <option value="mutation">Patta Mutation ( Transfer )</option>
+        </select>
+    </div>
+    
+    <div id="glossary-result" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: #ffffff;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function runGlossary() {
+    var term = document.getElementById("glossary-select").value;
+    var resultBox = document.getElementById("glossary-result");
+    
+    var dictionary = {
+        nanja: {
+            title: "Nanja ( Wetland )",
+            desc: "Land with access to abundant water channels, usually canals, rivers, or lakes. Typically used for paddy cultivation and highly valued. Hard to convert for residential use without collector permission."
+        },
+        punja: {
+            title: "Punja ( Dry Land )",
+            desc: "Land dependent on rainfall or wells for water. Usually crops like millets or groundnuts are grown here. Easier to convert to residential layouts."
+        },
+        chitta: {
+            title: "Chitta ( Revenue Ledger )",
+            desc: "The revenue register maintained by the Village Administrative Officer (VAO) that shows the list of properties owned by a specific individual in a village."
+        },
+        fmb: {
+            title: "Field Measurement Book ( FMB )",
+            desc: "A collection of maps showing the sketch plans of each survey number in the village. It lists boundaries, dimensions, and layout offsets of target properties."
+        },
+        mutation: {
+            title: "Patta Transfer / Mutation",
+            desc: "The official process where the revenue department modifies the Patta record to replace the seller\'s name with the buyer\'s name after a sale deed is registered."
+        }
+    };
+    
+    var data = dictionary[term];
+    resultBox.style.borderColor = "var(--border)";
+    resultBox.style.backgroundColor = "#f8fafc";
+    resultBox.innerHTML = "<div style=\"font-weight: 700; font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem;\">" + data.title + "</div>" +
+        "<div style=\"font-size: 0.95rem; color: #475569; line-height: 1.5;\">" + data.desc + "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("glossary-select")) {
+        runGlossary();
+    }
+});
+</script>
+
+<h2>State-Wise Land Revenue Documentation Comparison</h2>
+<p class="content-text">
+    Revenue terms vary significantly by state. Before initiating a request via the <a href="https://econline.in/">ec online</a> website, refer to the table below to identify the correct revenue records required in your target state:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Revenue Record Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">What it Contains</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Official Verification Portal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Patta Chitta</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Owner name, Survey number, Land size, classification (Wet/Dry)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">eservices.tn.gov.in</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">RTC (Pahani)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Landowner details, crop info, soil type, survey maps</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">bhoomi.karnataka.gov.in</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Telangana</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Dharani Passbook</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Digital land details, partition logs, boundary points</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">dharani.telangana.gov.in</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Andhra Pradesh</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Adangal / 1B</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Land ledger, mutation logs, survey mapping boundaries</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">meebhoomi.ap.gov.in</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Detailed Search Steps: How to Verify Patta Online</h2>
+<p class="content-text">
+    To run a title check in Tamil Nadu, you can retrieve the verified Patta register and coordinate the results using the <a href="https://econline.in/">ec online</a> tracker:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li>Go to the Tamil Nadu e-Services website: <code>eservices.tn.gov.in</code>.</li>
+    <li>Select the menu option <strong>"View Patta & FMB / Chitta Extract"</strong>.</li>
+    <li>Select your District, Taluk, and Village from the drop-down lists.</li>
+    <li>Choose your search mode: <strong>Patta Number</strong> or <strong>Survey Number</strong>. Enter the target number details.</li>
+    <li>Enter the subdivisions details if you selected the survey number search path.</li>
+    <li>Verify the Captcha, submit, and print the generated document.</li>
+</ul>
+
+<h2>Conclusion & Recommendations</h2>
+<p class="content-text">
+    Reconciling the revenue registries with your EC records is the only way to avoid ownership conflicts and mortgage traps. If subdivision mismatches or legacy owner names appear on the Patta register, do not delay applying for a formal Tahsildar mutation. For other states and general guidelines, refer to our central <a href="https://econline.in/">ec online</a> guidelines.
+</p>';
+    $faq_epo = '[{"question":"Can I check my Patta online using the EC number?","answer":"No, you cannot. You must use the Survey Number, Subdivision code, or Patta Number to search land revenue details on the e-Services portal."},{"question":"How long does a Patta mutation take after registering a sale deed?","answer":"Online Patta mutation typically takes 15 to 30 working days depending on the VAO and Tahsildar verification timeline."},{"question":"Is it possible to download the FMB map sketch online?","answer":"Yes, the Tamil Nadu e-Services portal allows citizens to view and download the Field Measurement Book (FMB) sketch by entering survey numbers."},{"question":"What should I do if my name is in the EC but not on the Patta?","answer":"Submit an online application for Patta Transfer (Mutation) on the TN e-Services website by uploading your registered sale deed and identity documents."}]';
+    $schema_type_epo = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_epo,
+        'keyword' => $keyword_epo,
+        'title' => $title_epo,
+        'meta_desc' => $meta_desc_epo,
+        'h1_title' => $h1_epo,
+        'content' => $content_epo,
+        'faq_data' => $faq_epo,
+        'schema_type' => $schema_type_epo
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
