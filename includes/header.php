@@ -35,7 +35,7 @@
         <nav>
             <ul class="nav-menu">
                 <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Tamil Nadu</a></li>
+                <li><a href="/online-ec-tamilnadu/" class="nav-link">Tamil Nadu</a></li>
                 <li><a href="#" class="nav-link">Karnataka</a></li>
                 <li><a href="#" class="nav-link">Telangana</a></li>
                 <li><a href="#" class="nav-link">Andhra Pradesh</a></li>

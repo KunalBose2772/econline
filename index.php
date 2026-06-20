@@ -219,6 +219,7 @@ if ($slug === 'home') {
                     <h4 class="widget-title">Important Guides</h4>
                     <ul class="widget-list">
                         <li><a href="/online-ec-tamilnadu/">Tamil Nadu EC Online</a></li>
+                        <li><a href="/ec-view-online/">EC View Online Search</a></li>
                         <li><a href="#">Kaveri Karnataka EC</a></li>
                         <li><a href="#">TS IGRS Telangana EC</a></li>
                         <li><a href="#">AP IGRS Andhra Pradesh EC</a></li>
