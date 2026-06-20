@@ -11342,6 +11342,319 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_htceo
     ]);
 
+    // --- 30. AUTO-INITIALIZE EC CERTIFICATE ONLINE PAGE ---
+    $slug_eco2 = 'ec-certificate-online';
+    $keyword_eco2 = 'ec certificate online';
+    $title_eco2 = 'EC Certificate Online: Apply, Download & Verify Property Records';
+    $h1_eco2 = 'EC Certificate Online: How to Apply, Download, and Verify Encumbrance Records';
+    $meta_desc_eco2 = 'Complete guide to obtain an ec certificate online for your property in India. Learn how to search registry databases, pay government fees, and verify signatures.';
+    $content_eco2 = '<p class="content-text">
+    An Encumbrance Certificate (EC) is a critical document in real estate transactions. It catalogs the registered legal history of a property, indicating whether there are active mortgages, title transfers, or pending court cases attached to it. Prior to purchasing land or buying an apartment, ensuring that the property has a clear and marketable title is paramount. With stamps and registration departments digitizing their archives, property details can be inspected using the official <strong>ec certificate online</strong> stamps registration portal.
+</p>
+
+<p class="content-text">
+    Because land administration in India is managed at the state level, the steps, SRO jurisdictions, and login parameters vary depending on where the land is located. In this comprehensive guide, we provide a complete walkthrough of how to search, inspect, and retrieve files through the <a href="https://econline.in/">ec online</a> stamps dashboard, ensuring you avoid costly legal mistakes.
+</p>
+
+<!-- Widget 1: Official EC Form Selector & Format Guide (Interactive) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📄 EC Form Format Visualizer
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+        Toggle between official forms to understand the structural layout of downloaded property certificates.
+    </p>
+    
+    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+        <button type="button" onclick="setFormVisualizer(\'f15\')" id="btn-form-15" style="flex: 1; padding: 0.75rem; font-weight: bold; border-radius: 6px; border: 1px solid var(--primary); background-color: var(--primary); color: white; cursor: pointer; transition: all 0.2s;">Form 15 (Encumbered)</button>
+        <button type="button" onclick="setFormVisualizer(\'f16\')" id="btn-form-16" style="flex: 1; padding: 0.75rem; font-weight: bold; border-radius: 6px; border: 1px solid var(--border); background-color: white; color: var(--primary); cursor: pointer; transition: all 0.2s;">Form 16 (Nil Encumbrance)</button>
+    </div>
+    
+    <div id="form-visual-items" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: #ffffff; font-size: 0.95rem; color: #475569; line-height: 1.6;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function setFormVisualizer(type) {
+    var btn15 = document.getElementById("btn-form-15");
+    var btn16 = document.getElementById("btn-form-16");
+    var container = document.getElementById("form-visual-items");
+    
+    if (type === "f15") {
+        btn15.style.backgroundColor = "var(--primary)";
+        btn15.style.color = "white";
+        btn15.style.borderColor = "var(--primary)";
+        
+        btn16.style.backgroundColor = "white";
+        btn16.style.color = "var(--primary)";
+        btn16.style.borderColor = "var(--border)";
+        
+        container.innerHTML = 
+            "<div style=\"font-weight: 700; color: #991b1b; margin-bottom: 0.5rem;\">Form 15: Encumbrance Certificate Copy</div>" +
+            "<div><strong>Status:</strong> Property has recorded transactions or mortgage liabilities.</div>" +
+            "<div><strong>Deed Listings:</strong> Columns show Date of Registration, Document Number, Executant (Seller), Claimant (Buyer), and land boundaries layout details.</div>" +
+            "<div style=\"margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic;\">Note: Verify if mortgage release deeds are registered to confirm loan discharge.</div>";
+    } else {
+        btn16.style.backgroundColor = "var(--primary)";
+        btn16.style.color = "white";
+        btn16.style.borderColor = "var(--primary)";
+        
+        btn15.style.backgroundColor = "white";
+        btn15.style.color = "var(--primary)";
+        btn15.style.borderColor = "var(--border)";
+        
+        container.innerHTML = 
+            "<div style=\"font-weight: 700; color: #166534; margin-bottom: 0.5rem;\">Form 16: Nil Encumbrance Certificate Copy</div>" +
+            "<div><strong>Status:</strong> Clear title (No registered transactions found during the search window).</div>" +
+            "<div><strong>Deed Listings:</strong> The certificate is blank or contains a statement confirming that no sales or mortgage deeds were registered.</div>" +
+            "<div style=\"margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic;\">Note: Double-check if parent deeds were registered before the online digitization starting year.</div>";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("btn-form-15")) {
+        setFormVisualizer("f15");
+    }
+});
+</script>
+
+<h2>Core Verification Parameters: How to Avoid Search Failures</h2>
+<p class="content-text">
+    To execute an online encumbrance query without errors, buyers must prepare geographical property identifiers beforehand. Common search parameters include District name, SRO name, Village name, Survey Number, and Subdivision Code. If you are verifying a municipal flat, you must also know the Undivided Share (UDS) allocation size and block numbers.
+</p>
+<p class="content-text">
+    Using these identifiers, you can verify that your digital <a href="https://econline.in/">ec online</a> matches the physical boundary constraints described in the sale deed. Reconciling survey subdivision codes prevents empty search results or incomplete title reports.
+</p>
+
+<!-- Widget 2: Certified EC Online Application Fee Estimator -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 Digital Certified Copy Fee Calculator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Compute the official registry search and digital signature fees based on state rules.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Search Years</label>
+            <input type="number" id="cert-calc-years" value="30" min="1" max="100" oninput="calculateCertFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Filing Zone</label>
+            <select id="cert-calc-zone" onchange="calculateCertFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+                <option value="tn">Tamil Nadu (₹15 base + ₹5/yr)</option>
+                <option value="ka">Karnataka (₹15 base + ₹10/yr)</option>
+                <option value="ts">Telangana (₹200 flat base + ₹10/yr)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="cert-fee-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateCertFee() {
+    var years = parseInt(document.getElementById("cert-calc-years").value);
+    var zone = document.getElementById("cert-calc-zone").value;
+    var resultBox = document.getElementById("cert-fee-result");
+    
+    if (isNaN(years) || years < 1) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var baseFee = 0;
+    var subFee = 0;
+    var portalFee = 0;
+    
+    if (zone === "tn") {
+        baseFee = 15;
+        subFee = (years > 1) ? (years - 1) * 5 : 0;
+        portalFee = 1;
+    } else if (zone === "ka") {
+        baseFee = 15;
+        subFee = (years > 1) ? (years - 1) * 10 : 0;
+        portalFee = 100;
+    } else if (zone === "ts") {
+        baseFee = 200;
+        subFee = (years > 1) ? (years - 1) * 10 : 0;
+        portalFee = 0;
+    }
+    
+    var total = baseFee + subFee + portalFee;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "#f0fdf4";
+    resultBox.style.borderColor = "#bbf7d0";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: #15803d; margin-bottom: 0.75rem; font-size: 1.05rem;\">Government Fee Estimation:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Timeline:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>Base Application Fee:</strong> ₹" + baseFee + "</div>" +
+            "<div><strong>Search Surcharge:</strong> ₹" + subFee + "</div>" +
+            "<div><strong>Portal Filing Fee:</strong> ₹" + portalFee + "</div>" +
+            "<div style=\"border-top: 1px solid #bbf7d0; margin-top: 0.75rem; padding-top: 0.75rem; font-size: 1.1rem; font-weight: 700; color: #166534;\">" +
+                "Estimated Total Fee: ₹" + total + 
+            "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("cert-calc-years")) {
+        calculateCertFee();
+    }
+});
+</script>
+
+<h2>How to Match the EC with Land Revenue Records (Patta / RTC)</h2>
+<p class="content-text">
+    To ensure complete transaction security, checking the EC is only half the work. Property buyers must also verify the land revenue records (Patta in Tamil Nadu, RTC Pahani in Karnataka, or Adangal in AP) to confirm the seller\'s name is updated in the land tax books. Mismatches must be resolved before initiating queries on the <a href="https://econline.in/">ec online</a> website.
+</p>
+
+<!-- Widget 3: State Registry SRO Locator (Bilingual) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🗺️ State Registry SRO Locator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Locate the Sub-Registrar Office (SRO) name and code under key Zones to submit online EC certificate requests.
+    </p>
+    
+    <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Select Zone</label>
+        <select id="cert-zone-select" onchange="runCertSroFinder()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+            <option value="tn">Tamil Nadu SROs</option>
+            <option value="ka">Karnataka SROs</option>
+            <option value="ts">Telangana SROs</option>
+        </select>
+    </div>
+    
+    <div id="cert-sro-result" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: #ffffff;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function runCertSroFinder() {
+    var zone = document.getElementById("cert-zone-select").value;
+    var resultBox = document.getElementById("cert-sro-result");
+    
+    var zoneMap = {
+        tn: {
+            offices: [
+                { name: "SRO Tambaram", code: "SRO-TAM", district: "Chennai South" },
+                { name: "SRO Mylapore", code: "SRO-MYL", district: "Chennai South" }
+            ],
+            tip: "TNREGINET guest users can view free drafts before paying for certificates."
+        },
+        ka: {
+            offices: [
+                { name: "SRO Jayanagar", code: "SRO-JAY", district: "Bangalore Urban" },
+                { name: "SRO Indiranagar", code: "SRO-IND", district: "Bangalore Urban" }
+            ],
+            tip: "Kaveri 2.0 requires citizen login to request certified signed copies."
+        },
+        ts: {
+            offices: [
+                { name: "SRO Serilingampally", code: "SRO-SER", district: "Rangareddy" },
+                { name: "SRO Uppal", code: "SRO-UPP", district: "Medchal-Malkajgiri" }
+            ],
+            tip: "Dharani portal registration coordinates must match SRO boundaries."
+        }
+    };
+    
+    var data = zoneMap[zone];
+    var html = "<div style=\"font-weight: 700; margin-bottom: 0.5rem; color: var(--primary);\">Key SRO Offices:</div>";
+    html += "<div style=\"display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin-bottom: 0.75rem;\">";
+    for (var i = 0; i < data.offices.length; i++) {
+        var off = data.offices[i];
+        html += "<div style=\"padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; display: flex; justify-content: space-between; font-size: 0.9rem;\">" +
+                    "<strong>" + off.name + " (" + off.code + ")</strong>" +
+                    "<span style=\"color: var(--text-muted);\">" + off.district + "</span>" +
+                "</div>";
+    }
+    html += "</div>";
+    html += "<div style=\"font-size: 0.8rem; font-style: italic; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 0.5rem;\">" +
+                "Search Tip: " + data.tip +
+            "</div>";
+    resultBox.innerHTML = html;
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("cert-zone-select")) {
+        runCertSroFinder();
+    }
+});
+</script>
+
+<h2>State-Wise Official Registration Services Summary Table</h2>
+<p class="content-text">
+    Different states have different official portals, and processing timelines. You can search these details and calculate standard rates using <a href="https://econline.in/">ec online</a> calculators:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State Location</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Official Registration Portal</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Type Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Processing Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">TNREGINET</td>
+                <td>Villangam Search (Property Wise / Document Wise)</td>
+                <td>Instant (View Draft) / 3-5 Days (Certified)</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Kaveri Online Services (2.0)</td>
+                <td>Certified EC Search (Citizen Login)</td>
+                <td>2-3 Working Days (Digital Signature Approval)</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Telangana</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS TS</td>
+                <td>Encumbrance Search (Document / Property Wise)</td>
+                <td>1-2 Days (Officer Approval)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Bilingual Guide Checklist for Title Search Verification</h2>
+<p class="content-text">
+    To execute a thorough title verification, property buyers should check historical records, match Patta registers, and verify boundaries details:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>SRO Code Reconciliation</strong>: Reconcile SRO codes with the survey taluk ledger.</li>
+    <li><strong>Survey Box Separations</strong>: Split survey numbers and subdivisions into distinct fields.</li>
+    <li><strong>Executant Mapping</strong>: Reconcile Tamil/local terminologies with parent deeds.</li>
+    <li><strong>Patta Ownership Verification</strong>: Verify that the latest buyer listed in the claimant column matches the current Patta.</li>
+</ul>
+
+<h2>Conclusion & Professional Support</h2>
+<p class="content-text">
+    Conducting a thorough title check in Tamil Nadu prevents ownership conflicts. If subdivision mismatches or legacy owner names appear on the Patta register, we recommend initiating a formal Tahsildar mutation application. For other states and general guidelines, consult our primary <a href="https://econline.in/">ec online</a> handbook guidelines.
+</p>';
+    $faq_eco2 = '[{"question":"Is there any fee to check EC online?","answer":"Basic property searches and viewing the on-screen ledger results are free on portals like TNREGINET. However, obtaining a digitally certified copy of the EC requires paying the designated government fees online."},{"question":"How can I download a digitally signed EC online?","answer":"After the Sub-Registrar approves your search request, you will receive a notification. Log in to the state portal, open your transaction history, and click the download button to download the PDF copy."},{"question":"What should I do if my EC search returns No Record Found?","answer":"Ensure you entered the survey numbers and subdivision codes correctly. If it still returns empty, check adjacent SRO joint codes. If the property was registered before the portal digitization year, submit a manual search request."},{"question":"What is the difference between Form 15 and Form 16?","answer":"Form 15 lists all registered transaction records and liabilities for the property. Form 16 is a Nil Encumbrance Certificate, confirming that no transaction activities were registered during the search period."}]';
+    $schema_type_eco2 = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_eco2,
+        'keyword' => $keyword_eco2,
+        'title' => $title_eco2,
+        'meta_desc' => $meta_desc_eco2,
+        'h1_title' => $h1_eco2,
+        'content' => $content_eco2,
+        'faq_data' => $faq_eco2,
+        'schema_type' => $schema_type_eco2
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
