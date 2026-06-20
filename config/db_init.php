@@ -7250,9 +7250,399 @@ try {
         'schema_type' => $schema_type_oes
     ]);
 
+    // --- 18. AUTO-INITIALIZE ONLINE EC APPLY PAGE ---
+    $slug_oea = 'online-ec-apply';
+    $keyword_oea = 'online ec apply';
+    $title_oea = 'online ec apply';
+    $h1_oea = 'online ec apply';
+    $meta_desc_oea = 'Access the interactive online ec apply guide. Select your state registry, check parameters checklist, and calculate registration fees dynamically.';
+    $content_oea = '<!-- Custom Interactive Styles for OEA Dashboard -->
+<style>
+    .oea-toolkit { margin: 2rem 0; width: 100%; }
+    .oea-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; width: 100%; }
+    @media (min-width: 768px) {
+        .oea-grid { flex-direction: row; }
+        .oea-card-widget { flex: 1; }
+    }
+    .oea-card-widget {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media (max-width: 480px) { .oea-card-widget { padding: 1rem; } }
+    .oea-card-widget:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+    .oea-widget-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+    }
+    .oea-widget-header h3 { font-size: 1.15rem; margin-bottom: 0; color: var(--primary); }
+    .oea-widget-icon { font-size: 1.5rem; }
+    .oea-form-group { margin-bottom: 1rem; width: 100%; }
+    .oea-form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-main); }
+    .oea-input, .oea-select {
+        width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm);
+        font-size: 0.95rem; outline: none; box-sizing: border-box; font-family: var(--font-sans); color: var(--primary);
+    }
+    .oea-input:focus, .oea-select:focus { border-color: var(--accent); }
+    
+    /* Checklist Progress Bar */
+    .oea-progress-wrap { background: var(--border); border-radius: 4px; height: 8px; width: 100%; margin-bottom: 1.25rem; overflow: hidden; }
+    .oea-progress-fill { height: 100%; width: 0%; background-color: var(--success); transition: width var(--transition-normal); }
+    .oea-chk-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .oea-chk-item { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; }
+    .oea-chk-item input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+    .oea-chk-item span { line-height: 1.4; color: var(--text-main); font-size: 0.95rem; }
+    .oea-chk-item.checked span { text-decoration: line-through; color: var(--text-muted); }
+    
+    /* Result Box */
+    .oea-result-box { background: #eff6ff; border: 1px solid rgba(37, 99, 211, 0.15); border-radius: var(--radius-sm); padding: 1rem; margin-top: 1rem; }
+    .oea-result-title { font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem; }
+    .oea-result-val { font-size: 1.5rem; color: var(--accent); font-weight: 800; }
+
+    /* Portal Router system */
+    .oea-state-desc-box { background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem; }
+</style>
+
+<div class="oea-toolkit">
+    <div class="oea-grid">
+        <!-- Widget 1: State Portal Router -->
+        <div class="oea-card-widget">
+            <div class="oea-widget-header">
+                <span class="oea-widget-icon">🗺️</span>
+                <h3>National Apply Gateway</h3>
+            </div>
+            <div class="oea-form-group">
+                <label for="oea-state-select">Select Target State:</label>
+                <select id="oea-state-select" class="oea-select">
+                    <option value="TN" selected>Tamil Nadu (TNREGINET)</option>
+                    <option value="KA">Karnataka (Kaveri Portal)</option>
+                    <option value="TS">Telangana (IGRS TS / Dharani)</option>
+                    <option value="AP">Andhra Pradesh (IGRS AP)</option>
+                </select>
+            </div>
+            <div class="oea-state-desc-box" id="oea-state-details">
+                <strong>TNREGINET Application Process:</strong>
+                <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                    <li style="margin-bottom: 0.4rem;">Select E-Services &rarr; Encumbrance Certificate &rarr; View EC.</li>
+                    <li style="margin-bottom: 0.4rem;">Provide SRO, Village, Survey, and date filters.</li>
+                    <li>Click search, enter Captcha, and request signed copy by paying fee.</li>
+                </ol>
+                <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Launch TN Portal</a>
+            </div>
+        </div>
+
+        <!-- Widget 2: Download Parameters Checklist -->
+        <div class="oea-card-widget">
+            <div class="oea-widget-header">
+                <span class="oea-widget-icon">📋</span>
+                <h3>Apply Requirements Checklist</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Check details required to successfully execute your property title search certificate application.
+            </p>
+            <div class="oea-progress-wrap">
+                <div class="oea-progress-fill" id="oea-progress"></div>
+            </div>
+            <div class="oea-chk-list" id="oea-checklist">
+                <label class="oea-chk-item">
+                    <input type="checkbox">
+                    <span>Sub-Registrar Office (SRO) name of the region</span>
+                </label>
+                <label class="oea-chk-item">
+                    <input type="checkbox">
+                    <span>Registered Document Number & Year of transaction</span>
+                </label>
+                <label class="oea-chk-item">
+                    <input type="checkbox">
+                    <span>Survey & Subdivision codes (or Flat/Plot number)</span>
+                </label>
+                <label class="oea-chk-item">
+                    <input type="checkbox">
+                    <span>Registered owner details & boundaries description</span>
+                </label>
+                <label class="oea-chk-item">
+                    <input type="checkbox">
+                    <span>Valid Citizen login or Guest User access setup</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Widget 3: Download Fee Calculator -->
+        <div class="oea-card-widget">
+            <div class="oea-widget-header">
+                <span class="oea-widget-icon">💰</span>
+                <h3>Apply Fee Calculator</h3>
+            </div>
+            <div class="oea-form-group">
+                <label for="oea-calc-state">Select State:</label>
+                <select id="oea-calc-state" class="oea-select">
+                    <option value="TN" selected>Tamil Nadu</option>
+                    <option value="KA">Karnataka</option>
+                    <option value="TS">Telangana</option>
+                    <option value="AP">Andhra Pradesh</option>
+                </select>
+            </div>
+            <div class="oea-form-group">
+                <label for="oea-calc-years">Number of Years:</label>
+                <input type="number" id="oea-calc-years" class="oea-input" min="1" max="100" value="30">
+            </div>
+            <div class="oea-result-box">
+                <div class="oea-result-title">Estimated Government Fee:</div>
+                <div class="oea-result-val" id="oea-fee-display">₹160</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;" id="oea-fee-note">
+                    Calculation: ₹15 (1st Year) + ₹145 (Subsequent Years).
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // State Portal Router Logic
+        const stateSelect = document.getElementById("oea-state-select");
+        const detailsContainer = document.getElementById("oea-state-details");
+
+        const stateInfo = {
+            TN: {
+                title: "TNREGINET Application Process:",
+                steps: [
+                    "Select E-Services &rarr; Encumbrance Certificate &rarr; View EC.",
+                    "Provide SRO, Village, Survey, and date filters.",
+                    "Click search, enter Captcha, and request signed copy by paying fee."
+                ],
+                url: "https://tnreginet.gov.in"
+            },
+            KA: {
+                title: "Kaveri Portal Online EC Process:",
+                steps: [
+                    "Register or login to the Kaveri Online Services Portal.",
+                    "Under citizen services, choose \"Online EC\".",
+                    "Input SRO, survey numbers, coordinates, and pay calculated fees online."
+                ],
+                url: "https://kaverionline.karnataka.gov.in"
+            },
+            TS: {
+                title: "Telangana IGRS / Dharani Process:",
+                steps: [
+                    "For urban units, visit the IGRS Telangana portal and choose \"EC\".",
+                    "Input property document index or SRO coordinates.",
+                    "For rural agricultural fields, query survey numbers on Dharani portal."
+                ],
+                url: "https://registration.telangana.gov.in"
+            },
+            AP: {
+                title: "Andhra Pradesh IGRS Process:",
+                steps: [
+                    "Access the official IGRS AP website and choose \"Encumbrance Certificate\".",
+                    "Enter zone details, district name, and survey numbers.",
+                    "Validate online ledger on screen and save the transaction log."
+                ],
+                url: "https://igrs.ap.gov.in"
+            }
+        };
+
+        stateSelect.addEventListener("change", function() {
+            const data = stateInfo[stateSelect.value];
+            let listHtml = "";
+            data.steps.forEach(step => {
+                listHtml += "<li style=\"margin-bottom: 0.4rem;\">" + step + "</li>";
+            });
+            detailsContainer.innerHTML = "<strong>" + data.title + "</strong><ol style=\"margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;\">" + listHtml + "</ol><a href=\"" + data.url + "\" target=\"_blank\" rel=\"nofollow noopener\" class=\"btn-primary\" style=\"display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;\">Launch Portal</a>";
+        });
+
+        // Checklist logic
+        const checkboxes = document.querySelectorAll("#oea-checklist input[type=\"checkbox\"]");
+        const progress = document.getElementById("oea-progress");
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                const label = chk.closest(".oea-chk-item");
+                if (chk.checked) {
+                    checkedCount++;
+                    label.classList.add("checked");
+                } else {
+                    label.classList.remove("checked");
+                }
+            });
+            const pct = Math.round((checkedCount / total) * 100);
+            progress.style.width = pct + "%";
+        }
+
+        checkboxes.forEach(chk => chk.addEventListener("change", updateProgress));
+        updateProgress();
+
+        // Fee Calculator
+        const calcState = document.getElementById("oea-calc-state");
+        const calcYears = document.getElementById("oea-calc-years");
+        const feeDisplay = document.getElementById("oea-fee-display");
+        const feeNote = document.getElementById("oea-fee-note");
+
+        function calculateFee() {
+            let years = parseInt(calcYears.value) || 1;
+            if (years < 1) years = 1;
+            const state = calcState.value;
+            let totalFee = 0;
+            let note = "";
+
+            if (state === "TN") {
+                totalFee = 15 + (years - 1) * 5;
+                note = "Tamil Nadu Rate: ₹15 (1st Year) + ₹" + ((years - 1) * 5) + " (Subsequent Years).";
+            } else if (state === "KA") {
+                totalFee = 15 + (years - 1) * 10;
+                note = "Karnataka Rate: ₹15 (1st Year) + ₹" + ((years - 1) * 10) + " (Subsequent Years).";
+            } else if (state === "TS") {
+                totalFee = 200 + (years - 1) * 10;
+                note = "Telangana Rate: ₹200 (Base Search Fee) + ₹" + ((years - 1) * 10) + " (Subsequent Years).";
+            } else if (state === "AP") {
+                totalFee = 200 + (years - 1) * 10;
+                note = "Andhra Pradesh Rate: ₹200 (Base Search Fee) + ₹" + ((years - 1) * 10) + " (Subsequent Years).";
+            }
+
+            feeDisplay.innerText = "₹" + totalFee;
+            feeNote.innerText = note;
+        }
+
+        calcState.addEventListener("change", calculateFee);
+        calcYears.addEventListener("input", calculateFee);
+        calculateFee();
+    });
+</script>
+
+<h2>Understanding the online ec apply Process for Property Records</h2>
+<p class="content-text">
+    An <a href="https://econline.in/">ec online</a> service is an essential tool used by property buyers in India to verify the legal history and registration records of real estate. Whether you are dealing with land plots, residential apartments, or commercial complexes, submitting an **online ec apply** request is a critical requirement for obtaining a digitally signed certified copy. This certificate outlines sales deeds, partition logs, court attachments, and outstanding mortgages.
+</p>
+<p class="content-text">
+    In this comprehensive manual, we outline the exact procedures to verify <a href="https://econline.in/">ec online</a> registries using official state registration portals. We cover citizen registration steps, SRO selection coordinates, boundaries descriptors, and government processing charges. By learning how to submit an <a href="https://econline.in/">ec online</a> application correctly, buyers can confirm that the property title is clean.
+</p>
+
+<h2>Guest View vs. Certified Copy: Which Flow to Select?</h2>
+<p class="content-text">
+    Most state departments manage two distinct flows for retrieving property certificates. Depending on whether you need the records for internal verification or bank loans, choose the correct process:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Informational View (Guest Search)</strong>: Typically free and generated instantly using the official <a href="https://econline.in/">ec online</a> portal (TNREGINET / Kaveri). It does not carry official seals or signatures and is meant for informational lookup only. This is perfect for initial title verification or review.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Certified Copy of EC</strong>: Requires citizen account registration, SRO validation, and online fee payment. SRO officers verify the query and attach a digital signature. This certified copy is legally admissible in court hearings and home loan applications. You must login to search and request <a href="https://econline.in/">ec online</a> certified copies.</li>
+</ul>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State / Portal</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Free Search Availability</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Certified Search Charges</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Average Processing Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu (TNREGINET)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (Instant PDF draft copy)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹15 base + ₹5/yr subsequent</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Instant for draft; 3 days for certified.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka (Kaveri Portal)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (On-screen search results)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹15 base + ₹10/yr subsequent</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">2 to 3 working days.</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Telangana (IGRS TS)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (Instant ledger review)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹200 base + ₹10/yr subsequent</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">1 to 2 working days.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Step-by-Step Walkthrough: How to Apply for EC Online</h2>
+<p class="content-text">
+    To apply for an Encumbrance Certificate online, follow these standard steps:
+</p>
+<div class="steps-container">
+    <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Choose Portal</h3>
+        <p class="content-text" style="margin-bottom:0;">Go to your state registration portal (e.g. TNREGINET, Kaveri Online, IGRS TS, IGRS AP).</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Login or Guest</h3>
+        <p class="content-text" style="margin-bottom:0;">Log in to your citizen profile if you want a certified copy. Otherwise, choose the guest search option.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Enter Survey Codes</h3>
+        <p class="content-text" style="margin-bottom:0;">Provide registration parameters (SRO location, village name, survey numbers, and target dates).</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Pay & Download</h3>
+        <p class="content-text" style="margin-bottom:0;">Verify the captcha, submit the query, pay the government fee if required, and check the current <a href="https://econline.in/">ec online</a> approval status.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    For localized state-specific search manuals, review our <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> guide, the <a href="/ec-online-karnataka/">ec online karnataka</a> handbook, the <a href="/ec-online-telangana/">ec online telangana</a> manual, or the <a href="/online-ec-ap/">online ec ap</a> dashboard. For general search principles, read our <a href="/ec-view-online/">ec view online</a> directory.
+</p>
+
+<h2>Best Practices to Avoid Search Failures</h2>
+<p class="content-text">
+    If the online search returns "No Record Found," it does not always mean the property is free of encumbrance. It may indicate a formatting issue. To verify the <a href="https://econline.in/">ec online</a> transaction copy accurately, consider these rules:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Reconcile Survey Formats</strong>: In most states, survey numbers are written as <code>142/3A</code>. When entering them, input <code>142</code> in the survey number box and <code>3A</code> in the sub-division field.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Verify SRO Jurisdictions</strong>: Sub-Registrar Offices are periodically restructured. If the property was registered ten years ago, the SRO code might have changed. Try searching under both the historical and current SRO listings.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Confirm Boundaries</strong>: Ensure boundaries details match the physical deed parameters. Leaving boundaries blank can result in search failures.</li>
+</ol>
+<p class="content-text">
+    Once you have verified the transaction history online, you can proceed to download the signed version. For guidelines on verifying digital signatures in Acrobat, read our <a href="/online-ec-download/">online ec download</a> reference.
+</p>
+
+<h2>Revenue Records Integration: Patta Chitta and RTC</h2>
+<p class="content-text">
+    Title verification is only half complete with an EC search. You must also check the revenue records to confirm mutation is updated. For land parcels in Tamil Nadu, you must retrieve the Patta Chitta, while in Karnataka you must retrieve the RTC (Pahani). Let\'s verify this on the respective portals:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Tamil Nadu (eservices.tn.gov.in)</strong>: Select view Patta copy, input SRO village, Taluk, and Survey details. Verify seller\'s name.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Karnataka (landrecords.karnataka.gov.in)</strong>: Choose Bhoomi Land Services, input Hobli, Taluk, and Survey details. Verify latest mutation logs.</li>
+</ul>
+<p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+    If you are investigating other states, refer to the <a href="/ec-online-tamil/">ec online tamil</a> guide, read about TS registries in the <a href="/ec-telangana-online-search/">ec telangana online search</a> directory, or check out the <a href="/online-ec-ap/">online ec ap</a> guide. To retrieve the verified <a href="https://econline.in/">ec online</a> ledger logs, you can always check our main database references.
+</p>';
+    $faq_oea = '[{"question":"Why does the online search return \"No Record Found\"?","answer":"This can happen if the survey number was typed incorrectly, the sub-division field was left blank, or the village SRO selected is incorrect. Double-check your details and try searching with parent survey numbers."},{"question":"Is it possible to view historic EC records online?","answer":"Yes, online records are generally available from 1975 to the present. For records prior to 1975, you must visit the respective SRO office to submit a physical search application."},{"question":"How can I download the English version of my EC?","answer":"Before you click the EC Search option on the portal homepage, select the \"English\" language toggle link in the top-right header menu. The portal will then render and generate documents in English."},{"question":"What is the fee to view an EC online?","answer":"Viewing the draft copy of your encumbrance history is completely free in most states. Fees are only charged if you request a digitally signed certified copy."}]';
+    $schema_type_oea = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_oea,
+        'keyword' => $keyword_oea,
+        'title' => $title_oea,
+        'meta_desc' => $meta_desc_oea,
+        'h1_title' => $h1_oea,
+        'content' => $content_oea,
+        'faq_data' => $faq_oea,
+        'schema_type' => $schema_type_oea
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
+
 
 
 
