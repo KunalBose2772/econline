@@ -8447,6 +8447,364 @@ function formatSurveyCode() {
         'schema_type' => $schema_type_evot
     ]);
 
+    // --- 21. AUTO-INITIALIZE KAVERI ONLINE EC PAGE ---
+    $slug_koec = 'kaveri-online-ec';
+    $keyword_koec = 'kaveri online ec';
+    $title_koec = 'Kaveri Online EC: Search Karnataka Land Registry Records';
+    $h1_koec = 'Kaveri Online EC: Comprehensive Karnataka Verification Guide';
+    $meta_desc_koec = 'Complete handbook to use the Kaveri online EC portal for searching, checking, and downloading Encumbrance Certificates in Karnataka. Step-by-step registration & SRO guide.';
+    $content_koec = '<p class="content-text">
+    An Encumbrance Certificate (EC) is a mandatory legal instrument required for any real estate transaction, loan processing, or title verification in Karnataka. The Department of Stamps and Registration, Government of Karnataka, hosts the <strong>kaveri online ec</strong> services portal to digitize these records. By accessing the platform, buyers can perform a quick <a href="https://econline.in/">ec online</a> search to inspect land search registers, verify deed indexes, and download digitally signed documents without visiting physical registration offices.
+</p>
+
+<!-- Widget 1: Kaveri 2.0 Registration Form Validator -->
+<div class="custom-card" style="margin:2rem 0; padding:2rem; border-radius:12px; background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border:1px solid var(--border);">
+    <h3 style="margin-top:0; color:var(--primary); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--primary);"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Kaveri 2.0 Registration Validator
+    </h3>
+    <p class="content-text" style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.5rem;">
+        Kaveri 2.0 requires a valid citizen account. Test this interactive validator to check if your registration details match the portal requirements.
+    </p>
+    
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem; margin-bottom:1.25rem;">
+        <div>
+            <label style="display:block; font-weight:600; margin-bottom:0.5rem; font-size:0.85rem; color:#475569;">Username (Minimum 6 characters)</label>
+            <input type="text" id="reg-username" value="karan_karnataka" oninput="validateKaveriReg()" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem;">
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div>
+                <label style="display:block; font-weight:600; margin-bottom:0.5rem; font-size:0.85rem; color:#475569;">Mobile Number (10 digits)</label>
+                <input type="text" id="reg-mobile" value="9876543210" oninput="validateKaveriReg()" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem;">
+            </div>
+            <div>
+                <label style="display:block; font-weight:600; margin-bottom:0.5rem; font-size:0.85rem; color:#475569;">Identity Document Type</label>
+                <select id="reg-id-type" onchange="validateKaveriReg()" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem; background-color:#fff;">
+                    <option value="pan">PAN Card</option>
+                    <option value="aadhaar">Aadhaar Card</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label style="display:block; font-weight:600; margin-bottom:0.5rem; font-size:0.85rem; color:#475569;">ID Card Number</label>
+            <input type="text" id="reg-id-number" value="ABCDE1234F" oninput="validateKaveriReg()" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem;">
+        </div>
+    </div>
+    
+    <div id="validation-errors" style="margin-bottom:1.25rem; padding:1rem; border-radius:6px; background-color:#fff; border:1px solid var(--border); font-size:0.85rem;">
+        <!-- Filled dynamically -->
+    </div>
+    
+    <button type="button" onclick="submitKaveriSim()" id="reg-submit-btn" style="width:100%; padding:0.75rem; font-size:1rem; border-radius:6px; background-color:var(--primary); color:#ffffff; font-weight:600; border:none; cursor:pointer;">
+        Simulate Account Creation
+    </button>
+</div>
+
+<script>
+function validateKaveriReg() {
+    var username = document.getElementById("reg-username").value.trim();
+    var mobile = document.getElementById("reg-mobile").value.trim();
+    var idType = document.getElementById("reg-id-type").value;
+    var idNum = document.getElementById("reg-id-number").value.trim();
+    var errorBox = document.getElementById("validation-errors");
+    var btn = document.getElementById("reg-submit-btn");
+    
+    var errors = [];
+    
+    if (username.length < 6) {
+        errors.push("Username must be at least 6 characters long.");
+    }
+    
+    var mobileReg = /^[6-9]\d{9}$/;
+    if (!mobileReg.test(mobile)) {
+        errors.push("Mobile number must be a valid 10-digit Indian number starting with 6-9.");
+    }
+    
+    if (idType === "pan") {
+        var panReg = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
+        if (!panReg.test(idNum)) {
+            errors.push("PAN number must match standard format (5 uppercase letters, 4 digits, 1 uppercase letter).");
+        }
+    } else if (idType === "aadhaar") {
+        var aadhaarReg = /^\d{12}$/;
+        if (!aadhaarReg.test(idNum)) {
+            errors.push("Aadhaar number must consist of exactly 12 digits.");
+        }
+    }
+    
+    if (errors.length > 0) {
+        errorBox.style.borderColor = "#fecaca";
+        errorBox.style.backgroundColor = "#fef2f2";
+        errorBox.innerHTML = "<strong style=\\"color:#991b1b; display:block; margin-bottom:0.25rem;\\">Validation Issues:</strong>" +
+            "<ul style=\\"margin:0; padding-left:1.25rem; color:#b91c1c;\\">" +
+                errors.map(function(e) { return "<li>" + e + "</li>"; }).join("") +
+            "</ul>";
+        btn.disabled = true;
+        btn.style.opacity = "0.5";
+        btn.style.cursor = "not-allowed";
+    } else {
+        errorBox.style.borderColor = "#bbf7d0";
+        errorBox.style.backgroundColor = "#f0fdf4";
+        errorBox.innerHTML = "<strong style=\\"color:#166534;\\">✓ All fields valid. Ready for simulation.</strong>";
+        btn.disabled = false;
+        btn.style.opacity = "1";
+        btn.style.cursor = "pointer";
+    }
+}
+
+function submitKaveriSim() {
+    alert("Simulated Account Created! On the actual Kaveri 2.0 portal, you would receive an OTP verification SMS code on your registered mobile number.");
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    validateKaveriReg();
+});
+</script>
+
+<p class="content-text">
+    To carry out a successful search on the <strong>kaveri online ec</strong> portal, it is helpful to note that the registration databases in Karnataka are indexed year-wise. For old registries (prior to 2004), records are mostly scanned manual indexes (called Index-II booklets). For newer entries (post-2004), the records are fully digitized and can be verified using the automated search system within a short timeframe.
+</p>
+
+<h2>Why Use Kaveri Online EC for Title Searches?</h2>
+<p class="content-text">
+    Checking property records via the Kaveri portal is highly recommended for property transactions in Bangalore Urban, Mysore, Belgaum, and other regions. By conducting an <a href="https://econline.in/">ec online</a> check, buyers can protect themselves from:
+</p>
+<div class="info-grid">
+    <div class="info-card">
+        <h4 style="margin-top:0; color:var(--primary); font-size:1.1rem; margin-bottom:0.5rem;">Unrecorded Mortgages</h4>
+        <p class="content-text" style="font-size:0.9rem; margin-bottom:0;">Reveals if the current owner has mortgaged the land or flat to a banking cooperative or financial firm to secure capital loans.</p>
+    </div>
+    <div class="info-card">
+        <h4 style="margin-top:0; color:var(--primary); font-size:1.1rem; margin-bottom:0.5rem;">Prior Sale Deeds</h4>
+        <p class="content-text" style="font-size:0.9rem; margin-bottom:0;">Verifies if the seller has already registered a sale agreement or GPA with another claimant, preventing double-sale fraud cases.</p>
+    </div>
+    <div class="info-card">
+        <h4 style="margin-top:0; color:var(--primary); font-size:1.1rem; margin-bottom:0.5rem;">Government Restrictions</h4>
+        <p class="content-text" style="font-size:0.9rem; margin-bottom:0;">Displays if the land falls under acquisition notices from agencies like BDA, KHB, or KIADB, or if it is classified as prohibited public utility land.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    Conducting an <a href="https://econline.in/">ec online</a> lookup is also a standard requirement for bank loans. To run land checks in other states, refer to the <a href="/online-ec-check/">online ec check</a> guide, or review the <a href="/online-ec-search/">online ec search</a> handbook. For downloading certified copies, read the <a href="/kaveri-online-ec-download/">kaveri online ec download</a> tutorial dashboard.
+</p>
+
+<!-- Widget 2: Kaveri 2.0 Fee Estimator -->
+<div class="custom-card" style="margin:2.5rem 0; padding:2rem; border-radius:12px; border:1px solid var(--border); background-color:#ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top:0; color:#0f172a; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--secondary);"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Kaveri EC Search Fee Estimator
+    </h3>
+    <p class="content-text" style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.5rem;">
+        Calculate the estimated search fee based on the selected search timeline in Karnataka.
+    </p>
+    
+    <div style="display:grid; grid-template-columns:1fr; gap:1rem; margin-bottom:1.25rem;">
+        <div>
+            <label style="display:block; font-weight:600; margin-bottom:0.5rem; font-size:0.85rem; color:#475569;">Search Timeline Duration (Years)</label>
+            <input type="number" id="karnataka-search-years" value="15" min="1" max="50" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem;">
+        </div>
+    </div>
+    
+    <button type="button" onclick="calculateKaveriFees()" style="width:100%; padding:0.75rem; font-size:1rem; border-radius:6px; background-color:var(--primary); color:#ffffff; font-weight:600; border:none; cursor:pointer; margin-bottom:1.5rem;">
+        Calculate Karnataka Search Fee
+    </button>
+    
+    <div id="kaveri-fee-result" style="display:none; padding:1.25rem; border-radius:8px; border:1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateKaveriFees() {
+    var years = parseInt(document.getElementById("karnataka-search-years").value);
+    var resultBox = document.getElementById("kaveri-fee-result");
+    
+    if (isNaN(years) || years < 1 || years > 50) {
+        alert("Please enter a search timeline between 1 and 50 years.");
+        return;
+    }
+    
+    var baseFee = 15; // 1st year
+    var subsequentFee = 0;
+    if (years > 1) {
+        subsequentFee = (years - 1) * 10; // 10 per subsequent year
+    }
+    
+    var userCharges = 100; // standard portal service charge
+    var total = baseFee + subsequentFee + userCharges;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "#f8fafc";
+    resultBox.style.borderColor = "var(--border)";
+    
+    resultBox.innerHTML = "<div style=\\"font-weight:700; color:var(--primary); margin-bottom:0.75rem; font-size:1.1rem;\\">Kaveri EC Search Fee Breakup:</div>" +
+        "<div style=\\"font-size:0.95rem; color:#334155; line-height:1.6;\\">" +
+            "<div><strong>Search History Duration:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>Base Search Fee (First Year):</strong> ₹" + baseFee + "</div>" +
+            "<div><strong>Subsequent Year Search Charges (₹10/yr):</strong> ₹" + subsequentFee + "</div>" +
+            "<div><strong>Portal System User Charges:</strong> ₹" + userCharges + "</div>" +
+            "<div style=\\"border-top:1px solid var(--border); margin-top:0.75rem; padding-top:0.75rem; font-size:1.1rem; font-weight:700; color:#0f172a;\\">" +
+                "Estimated Total Fee: ₹" + total + 
+            "</div>" +
+        "</div>";
+}
+</script>
+
+<h2>How to Perform a Search on Kaveri Online EC Portal</h2>
+<p class="content-text">
+    To execute an <a href="https://econline.in/">ec online</a> search successfully in Karnataka, users must log in to the new Kaveri 2.0 system. Follow this step-by-step procedure:
+</p>
+
+<h3>Step 1: Account Login and Selection</h3>
+<p class="content-text">
+    Navigate to the official portal at <strong>kaverionline.karnataka.gov.in</strong>. Enter your username and password. Complete the Captcha security code and click login. Once inside the user dashboard, click on <strong>"Services"</strong> and select <strong>"Online EC Search"</strong>.
+</p>
+
+<h3>Step 2: Input SRO and Property Boundaries</h3>
+<p class="content-text">
+    Before purchasing any property in Karnataka, executing an <a href="https://econline.in/">ec online</a> check is highly recommended to confirm boundaries coordinates:
+</p>
+<ul class="guide-list">
+    <li><strong>SRO Office</strong>: Select the Sub-Registrar Office where the deed was historically registered. If you are searching for records in Bangalore Urban, ensure you select the correct joint SRO codes.</li>
+    <li><strong>Hobli / Village</strong>: Choose the Hobli region first; the portal will then populate the dropdown menu listing the village index names. Select your village.</li>
+    <li><strong>Property Boundaries</strong>: Input boundaries descriptions (North, South, East, West) exactly as written in the parent deed.</li>
+</ul>
+
+<h3>Step 3: Enter Survey and subdivision Numbers</h3>
+<p class="content-text">
+    For agricultural land, input the survey code. For urban plots or apartments, enter the property identification number (PIN) or PID code. Select the timeline window for search records and click <strong>"Search"</strong>.
+</p>
+
+<!-- Widget 3: SRO Office Locator / Coordinator -->
+<div class="custom-card" style="margin:2.5rem 0; padding:2rem; border-radius:12px; border:1px solid var(--border); background: linear-gradient(135deg, #fefefe 0%, #f8fafc 100%);">
+    <h3 style="margin-top:0; color:#1e293b; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--accent);"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Karnataka SRO Office locator
+    </h3>
+    <p class="content-text" style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.5rem;">
+        Select your target district in Karnataka to find standard SRO jurisdictions and office lookup information.
+    </p>
+    
+    <div style="margin-bottom:1.25rem;">
+        <label style="display:block; font-weight:600; margin-bottom:0.5rem; font-size:0.85rem; color:#475569;">Select District</label>
+        <select id="karnataka-district" onchange="updateKarnatakaSRO()" style="width:100%; padding:0.75rem; border-radius:6px; border:1px solid var(--border); font-size:0.95rem; background-color:#fff;">
+            <option value="blr_urban">Bangalore Urban (SRO Joint Zones)</option>
+            <option value="mys">Mysuru Region</option>
+            <option value="bel">Belagavi Region</option>
+        </select>
+    </div>
+    
+    <div id="karnataka-sro-result" style="background-color:#ffffff; padding:1.25rem; border-radius:8px; border:1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function updateKarnatakaSRO() {
+    var dist = document.getElementById("karnataka-district").value;
+    var resultBox = document.getElementById("karnataka-sro-result");
+    
+    var sroData = {
+        blr_urban: {
+            desc: "Bangalore Urban is divided into several joint sub-registrar offices covering central and suburban properties.",
+            offices: [
+                { name: "SRO Jayanagar", address: "Shopping Complex, Jayanagar 4th Block, Bengaluru - 560011" },
+                { name: "SRO Indiranagar", address: "1st Stage, Indiranagar, Bengaluru - 560038" },
+                { name: "SRO Shivaji Nagar", address: "Cantonment Area, Shivaji Nagar, Bengaluru - 560001" }
+            ]
+        },
+        mys: {
+            desc: "Mysuru region manages property registrations for the historical heritage city.",
+            offices: [
+                { name: "SRO Mysuru East", address: "Nazarbad, Mysuru - 570010" },
+                { name: "SRO Mysuru West", address: "Saraswathipuram, Mysuru - 570009" }
+            ]
+        },
+        bel: {
+            desc: "Belagavi region indexes registration files for northern border districts.",
+            offices: [
+                { name: "SRO Belagavi Joint 1", address: "District Court Premises, Belagavi - 590001" },
+                { name: "SRO Khanapur", address: "SRO Office Road, Khanapur, Belagavi - 591302" }
+            ]
+        }
+    };
+    
+    var data = sroData[dist];
+    var html = "<div style=\\"font-weight:700; color:var(--primary); margin-bottom:0.5rem;\\">" + data.desc + "</div>" +
+        "<div style=\\"display:flex; flex-direction:column; gap:0.75rem; margin-top:0.75rem;\\">";
+        
+    for (var i = 0; i < data.offices.length; i++) {
+        html += "<div style=\\"padding:0.75rem; border-left:4px solid var(--primary); background-color:#f8fafc; font-size:0.9rem;\\">" +
+            "<div style=\\"font-weight:600; color:#1e293b;\\">" + data.offices[i].name + "</div>" +
+            "<div style=\\"color:#64748b; font-size:0.85rem;\\">" + data.offices[i].address + "</div>" +
+        "</div>";
+    }
+    html += "</div>";
+    resultBox.innerHTML = html;
+}
+document.addEventListener("DOMContentLoaded", function() {
+    updateKarnatakaSRO();
+});
+</script>
+
+<h2>Understanding Nil EC vs. Encumbered EC on Kaveri Portal</h2>
+<p class="content-text">
+    When you verify the document output after a <strong>kaveri online ec</strong> search, the certificate will show one of two status listings. Understanding this table is vital to ensure you carry out transaction verification accurately:
+</p>
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">EC Status type</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">What it Means</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Action Required</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Nil Encumbrance (Form 16)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Indicates no transactions have been registered in the database for the search period.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Confirm that the survey details were entered correctly. If correct, the title is clear of registered bank mortgages.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Encumbered (Form 15)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Lists all registered transaction deeds, partitions, and mortgage logs.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Verify each document listed in the ledger against the title deeds provided by the seller.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p class="content-text">
+    To retrieve additional details on search methods, read about the <a href="/online-ec-karnataka/">online ec karnataka</a> tools or check out the <a href="/ec-online-karnataka/">ec online karnataka</a> handbook.
+</p>
+
+<h2>Best Practices to Avoid Search Errors on Kaveri 2.0</h2>
+<p class="content-text">
+    Kaveri online search requests can sometimes return empty index results. To perform an <a href="https://econline.in/">ec online</a> verification search without errors, apply these rules:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Reconcile Survey division</strong>: SRO index servers catalog land by subdivision. If your land survey is <code>102/4B</code>, enter <code>102</code> in the main box and <code>4B</code> in the subdivision.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Verify Hobli spelling</strong>: SRO villages in Karnataka are structured under Hobli revenue sections. If you cannot find the village name, check spelling list of adjacent Hoblis.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Run Search for 30 Years</strong>: A 30-year search history is recommended to check older partition agreements, ensuring you do not encounter ownership disputes.</li>
+</ol>
+<p class="content-text">
+    For downloading digitally signed documents, consult the <a href="/kaveri-online-ec-download/">kaveri online ec download</a> page. For general state-wide search guides, read the <a href="/online-ec-check/">online ec check</a> guidelines, check out the <a href="/online-ec-search/">online ec search</a> handbook, or view the homepage for global database reference tools.
+</p>';
+    $faq_koec = '[{"question":"Is Kaveri Online EC free to search?","answer":"Yes, you can search and inspect your property transaction indexes on the Kaveri portal for free. However, if you require a digitally signed certified copy of the EC (Form 15 or 16), you must pay the government fees online."},{"question":"How many days does it take to get a certified EC on Kaveri?","answer":"Once you submit the search application and pay the fee online, the request is routed to the respective Sub-Registrar. It usually takes 2 to 3 working days for the SRO to digitally sign and release the document."},{"question":"What should I do if the Hobli name is missing on the portal?","answer":"Check your land tax receipt or mutation document (Pahani) to confirm the exact Hobli name. If it is still missing, try searching under adjacent SRO jurisdictions on the portal dropdown menu."},{"question":"Is it possible to download ECs registered before 2004?","answer":"Kaveri has records from 2004 onwards completely digitized. For records registered prior to 2004, you may need to submit a manual search request at the physical SRO, though some districts have started adding legacy indexes."}]';
+    $schema_type_koec = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_koec,
+        'keyword' => $keyword_koec,
+        'title' => $title_koec,
+        'meta_desc' => $meta_desc_koec,
+        'h1_title' => $h1_koec,
+        'content' => $content_koec,
+        'faq_data' => $faq_koec,
+        'schema_type' => $schema_type_koec
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
