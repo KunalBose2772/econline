@@ -5412,7 +5412,395 @@ try {
         'schema_type' => $schema_type_ect
     ]);
 
+    // --- 13. AUTO-INITIALIZE EC DOWNLOAD ONLINE PAGE ---
+    $slug_ecd = 'ec-download-online';
+    $keyword_ecd = 'ec download online';
+    $title_ecd = 'ec download online';
+    $h1_ecd = 'ec download online';
+    $meta_desc_ecd = 'Access the interactive ec download online toolkit. Learn how to verify digital signatures, compute processing fees, and download encumbrance certificates.';
+    $content_ecd = '<!-- Custom Interactive Styles for ECD Dashboard -->
+<style>
+    .ecd-toolkit { margin: 2rem 0; width: 100%; }
+    .ecd-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; width: 100%; }
+    @media (min-width: 768px) {
+        .ecd-grid { flex-direction: row; }
+        .ecd-card-widget { flex: 1; }
+    }
+    .ecd-card-widget {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media (max-width: 480px) { .ecd-card-widget { padding: 1rem; } }
+    .ecd-card-widget:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+    .ecd-widget-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+    }
+    .ecd-widget-header h3 { font-size: 1.15rem; margin-bottom: 0; color: var(--primary); }
+    .ecd-widget-icon { font-size: 1.5rem; }
+    .ecd-form-group { margin-bottom: 1rem; width: 100%; }
+    .ecd-form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-main); }
+    .ecd-input, .ecd-select {
+        width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm);
+        font-size: 0.95rem; outline: none; box-sizing: border-box; font-family: var(--font-sans); color: var(--primary);
+    }
+    .ecd-input:focus, .ecd-select:focus { border-color: var(--accent); }
+    
+    /* Checklist Progress Bar */
+    .ecd-progress-wrap { background: var(--border); border-radius: 4px; height: 8px; width: 100%; margin-bottom: 1.25rem; overflow: hidden; }
+    .ecd-progress-fill { height: 100%; width: 0%; background-color: var(--success); transition: width var(--transition-normal); }
+    .ecd-chk-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .ecd-chk-item { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; }
+    .ecd-chk-item input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+    .ecd-chk-item span { line-height: 1.4; color: var(--text-main); font-size: 0.95rem; }
+    .ecd-chk-item.checked span { text-decoration: line-through; color: var(--text-muted); }
+    
+    /* Result Box */
+    .ecd-result-box { background: #eff6ff; border: 1px solid rgba(37, 99, 211, 0.15); border-radius: var(--radius-sm); padding: 1rem; margin-top: 1rem; }
+    .ecd-result-title { font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem; }
+    .ecd-result-val { font-size: 1.5rem; color: var(--accent); font-weight: 800; }
+
+    /* Portal Router system */
+    .ecd-state-desc-box { background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem; }
+</style>
+
+<div class="ecd-toolkit">
+    <div class="ecd-grid">
+        <!-- Widget 1: State Portal Router -->
+        <div class="ecd-card-widget">
+            <div class="ecd-widget-header">
+                <span class="ecd-widget-icon">🗺️</span>
+                <h3>National Download Gateway</h3>
+            </div>
+            <div class="ecd-form-group">
+                <label for="ecd-state-select">Select Target State:</label>
+                <select id="ecd-state-select" class="ecd-select">
+                    <option value="TN" selected>Tamil Nadu (TNREGINET)</option>
+                    <option value="KA">Karnataka (Kaveri Portal)</option>
+                    <option value="TS">Telangana (IGRS TS / Dharani)</option>
+                    <option value="AP">Andhra Pradesh (IGRS AP)</option>
+                </select>
+            </div>
+            <div class="ecd-state-desc-box" id="ecd-state-details">
+                <strong>TNREGINET Download Process:</strong>
+                <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                    <li style="margin-bottom: 0.4rem;">Select E-Services &rarr; Encumbrance Certificate &rarr; View EC.</li>
+                    <li style="margin-bottom: 0.4rem;">Provide SRO, Village, Survey, and date filters.</li>
+                    <li>Click search, enter Captcha, and download the free draft PDF.</li>
+                </ol>
+                <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Launch TN Portal</a>
+            </div>
+        </div>
+
+        <!-- Widget 2: Download Parameters Checklist -->
+        <div class="ecd-card-widget">
+            <div class="ecd-widget-header">
+                <span class="ecd-widget-icon">📋</span>
+                <h3>Download Requirements Checklist</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Check details required to successfully execute and download your property title search certificate.
+            </p>
+            <div class="ecd-progress-wrap">
+                <div class="ecd-progress-fill" id="ecd-progress"></div>
+            </div>
+            <div class="ecd-chk-list" id="ecd-checklist">
+                <label class="ecd-chk-item">
+                    <input type="checkbox">
+                    <span>Sub-Registrar Office (SRO) name of the region</span>
+                </label>
+                <label class="ecd-chk-item">
+                    <input type="checkbox">
+                    <span>Registered Document Number & Year of transaction</span>
+                </label>
+                <label class="ecd-chk-item">
+                    <input type="checkbox">
+                    <span>Survey & Subdivision codes (or Flat/Plot number)</span>
+                </label>
+                <label class="ecd-chk-item">
+                    <input type="checkbox">
+                    <span>Registered owner details & boundaries description</span>
+                </label>
+                <label class="ecd-chk-item">
+                    <input type="checkbox">
+                    <span>Valid Citizen login or Guest User access setup</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Widget 3: Download Fee Calculator -->
+        <div class="ecd-card-widget">
+            <div class="ecd-widget-header">
+                <span class="ecd-widget-icon">💰</span>
+                <h3>Download Fee Calculator</h3>
+            </div>
+            <div class="ecd-form-group">
+                <label for="ecd-calc-state">Select State:</label>
+                <select id="ecd-calc-state" class="ecd-select">
+                    <option value="TN" selected>Tamil Nadu</option>
+                    <option value="KA">Karnataka</option>
+                    <option value="TS">Telangana</option>
+                    <option value="AP">Andhra Pradesh</option>
+                </select>
+            </div>
+            <div class="ecd-form-group">
+                <label for="ecd-calc-years">Number of Years:</label>
+                <input type="number" id="ecd-calc-years" class="ecd-input" min="1" max="100" value="30">
+            </div>
+            <div class="ecd-result-box">
+                <div class="ecd-result-title">Estimated Government Fee:</div>
+                <div class="ecd-result-val" id="ecd-fee-display">₹160</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;" id="ecd-fee-note">
+                    Calculation: ₹15 (1st Year) + ₹145 (Subsequent Years) + ₹0 application.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // State Portal Router Logic
+        const stateSelect = document.getElementById("ecd-state-select");
+        const detailsContainer = document.getElementById("ecd-state-details");
+
+        const stateInfo = {
+            TN: {
+                title: "TNREGINET Download Process:",
+                steps: [
+                    "Select E-Services &rarr; Encumbrance Certificate &rarr; View EC.",
+                    "Provide SRO, Village, Survey, and date filters.",
+                    "Click search, enter Captcha, and download the free draft PDF."
+                ],
+                url: "https://tnreginet.gov.in"
+            },
+            KA: {
+                title: "Kaveri Portal Online EC Process:",
+                steps: [
+                    "Register or login to the Kaveri Online Services Portal.",
+                    "Under citizen services, choose \"Online EC\".",
+                    "Input SRO, survey numbers, coordinates, and pay calculated fees online."
+                ],
+                url: "https://kaverionline.karnataka.gov.in"
+            },
+            TS: {
+                title: "Telangana IGRS / Dharani Process:",
+                steps: [
+                    "For urban units, visit the IGRS Telangana portal and choose \"EC\".",
+                    "Input property document index or SRO coordinates.",
+                    "For rural agricultural fields, query survey numbers on Dharani portal."
+                ],
+                url: "https://registration.telangana.gov.in"
+            },
+            AP: {
+                title: "Andhra Pradesh IGRS Process:",
+                steps: [
+                    "Access the official IGRS AP website and choose \"Encumbrance Certificate\".",
+                    "Enter zone details, district name, and survey numbers.",
+                    "Validate online ledger on screen and save the transaction log."
+                ],
+                url: "https://igrs.ap.gov.in"
+            }
+        };
+
+        stateSelect.addEventListener("change", function() {
+            const data = stateInfo[stateSelect.value];
+            let listHtml = "";
+            data.steps.forEach(step => {
+                listHtml += "<li style=\"margin-bottom: 0.4rem;\">" + step + "</li>";
+            });
+            detailsContainer.innerHTML = "<strong>" + data.title + "</strong><ol style=\"margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;\">" + listHtml + "</ol><a href=\"" + data.url + "\" target=\"_blank\" rel=\"nofollow noopener\" class=\"btn-primary\" style=\"display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;\">Launch Portal</a>";
+        });
+
+        // Checklist logic
+        const checkboxes = document.querySelectorAll("#ecd-checklist input[type=\"checkbox\"]");
+        const progress = document.getElementById("ecd-progress");
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                const label = chk.closest(".ecd-chk-item");
+                if (chk.checked) {
+                    checkedCount++;
+                    label.classList.add("checked");
+                } else {
+                    label.classList.remove("checked");
+                }
+            });
+            const pct = Math.round((checkedCount / total) * 100);
+            progress.style.width = pct + "%";
+        }
+
+        checkboxes.forEach(chk => chk.addEventListener("change", updateProgress));
+        updateProgress();
+
+        // Fee Calculator
+        const calcState = document.getElementById("ecd-calc-state");
+        const calcYears = document.getElementById("ecd-calc-years");
+        const feeDisplay = document.getElementById("ecd-fee-display");
+        const feeNote = document.getElementById("ecd-fee-note");
+
+        function calculateFee() {
+            let years = parseInt(calcYears.value) || 1;
+            if (years < 1) years = 1;
+            const state = calcState.value;
+            let totalFee = 0;
+            let note = "";
+
+            if (state === "TN") {
+                totalFee = 15 + (years - 1) * 5;
+                note = "Tamil Nadu Rate: ₹15 (1st Year) + ₹" + ((years - 1) * 5) + " (Subsequent Years).";
+            } else if (state === "KA") {
+                totalFee = 15 + (years - 1) * 10;
+                note = "Karnataka Rate: ₹15 (1st Year) + ₹" + ((years - 1) * 10) + " (Subsequent Years).";
+            } else if (state === "TS") {
+                totalFee = 200 + (years - 1) * 10;
+                note = "Telangana Rate: ₹200 (Base Search Fee) + ₹" + ((years - 1) * 10) + " (Subsequent Years).";
+            } else if (state === "AP") {
+                totalFee = 200 + (years - 1) * 10;
+                note = "Andhra Pradesh Rate: ₹200 (Base Search Fee) + ₹" + ((years - 1) * 10) + " (Subsequent Years).";
+            }
+
+            feeDisplay.innerText = "₹" + totalFee;
+            feeNote.innerText = note;
+        }
+
+        calcState.addEventListener("change", calculateFee);
+        calcYears.addEventListener("input", calculateFee);
+        calculateFee();
+    });
+</script>
+
+<h2>Understanding the ec download online Process for Property Records</h2>
+<p class="content-text">
+    An <a href="https://econline.in/">ec online</a> certificate is an essential document required for verifying the title structure and transaction ledger of properties in India. Whether you are executing a transaction in Chennai, Bangalore, Hyderabad, or Visakhapatnam, knowing how to run a search and execute an **ec download online** action on state-managed land registries is a crucial skill for buyers. This digitally signed document lists historical sales, partitions, court orders, and unpaid bank mortgages.
+</p>
+<p class="content-text">
+    In this guide, we provide a complete educational walkthrough of the download methods across major states. We cover the difference between guest checking and certified download copies, how to resolve invalid digital signature errors in Acrobat, and what registration details you need to keep ready. Preparing this information beforehand ensures you can verify your <a href="https://econline.in/">ec online</a> application records efficiently.
+</p>
+
+<h2>Guest Draft vs. Certified Copy: Which Download to Choose?</h2>
+<p class="content-text">
+    Most state departments manage two distinct flows for retrieving property certificates. Depending on whether you need the records for internal verification or bank loans, choose the correct process:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Draft Copy Download (Guest Search)</strong>: Typically free and generated instantly using the official <a href="https://econline.in/">ec online</a> portal system. It does not carry official seals or signatures and is meant for informational lookup only. This is perfect for initial title verification or review.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Certified Copy Download (Citizen Login)</strong>: Requires citizen account registration, SRO validation, and online fee payment. SRO officers verify the query and attach a digital signature. This certified copy is legally admissible in court hearings and home loan applications.</li>
+</ul>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State / Portal</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Free Draft Download</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Certified Copy Download</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Average Processing Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu (TNREGINET)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (Instant PDF draft copy)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (SRO approved & signed copy)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Instant for draft; 3 days for certified.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka (Kaveri Portal)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (On-screen search results)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (Digitally signed PDF)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">2 to 3 working days.</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Telangana (IGRS TS)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (Instant ledger review)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (Signed copies available)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">1 to 2 working days.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>How to Download Encumbrance Certificates Online</h2>
+<p class="content-text">
+    To run a download query for your property registers, follow these standard steps:
+</p>
+<div class="steps-container">
+    <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Choose Portal</h3>
+        <p class="content-text" style="margin-bottom:0;">Go to your state registration portal (e.g. TNREGINET, Kaveri Online, IGRS TS, IGRS AP).</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Login or Guest</h3>
+        <p class="content-text" style="margin-bottom:0;">Log in to your citizen profile if you want a certified copy. Otherwise, choose the guest search option.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Enter Survey Codes</h3>
+        <p class="content-text" style="margin-bottom:0;">Provide registration parameters (SRO location, village name, survey numbers, and target dates).</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Pay & Download</h3>
+        <p class="content-text" style="margin-bottom:0;">Verify the captcha, submit the query, pay the government fee if required, and click the final download link.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    For localized state-specific search manuals, review our <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> guide, the <a href="/ec-online-karnataka/">ec online karnataka</a> handbook, the <a href="/ec-online-telangana/">ec online telangana</a> manual, or the <a href="/online-ec-ap/">online ec ap</a> dashboard. For general search principles, read our <a href="/ec-view-online/">ec view online</a> directory.
+</p>
+
+<h2>Resolving Digital Signature Validation Issues</h2>
+<p class="content-text">
+    When you download certified <a href="https://econline.in/">ec online</a> documents, you may notice a warning icon stating "Signature Not Verified" or a question mark on the signature panel. To validate the signature using Adobe Acrobat Reader, follow this protocol to check the current <a href="https://econline.in/">ec online</a> signature rules:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">Open the downloaded EC PDF in Adobe Acrobat Reader on a computer (signature validation is not supported on mobile browser viewers).</li>
+    <li style="margin-bottom: 0.5rem;">Right-click on the signature panel or question mark icon and select **"Signature Properties"**.</li>
+    <li style="margin-bottom: 0.5rem;">Click on **"Show Signer\'s Certificate"** to load the security parameters.</li>
+    <li style="margin-bottom: 0.5rem;">Navigate to the **"Trust"** tab and click on **"Add to Trusted Certificates"**.</li>
+    <li style="margin-bottom: 0.5rem;">Check all permissions (Certified documents, Dynamic content, Javascript) and click OK. Close the properties panel, and the signature will update to a green checkmark indicating a verified title history.</li>
+</ol>
+<p class="content-text">
+    Once validated, print the document to retrieve the verified <a href="https://econline.in/">ec online</a> ledger copy for your bank loan application.
+</p>
+
+<h2>Comparing States: Processing Times & Fees</h2>
+<p class="content-text">
+    Different states run different database infrastructure, which affects the time required to complete the download. In Tamil Nadu, draft copies are instant, while certified versions take about three days. Karnataka Kaveri online downloads require two working days for SRO verification. Telangana and Andhra Pradesh process online copies within 24 to 48 hours. Always run your search early to prevent delays during property transactions.
+</p>
+<p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+    For other regional reference material, you can explore the <a href="/ec-online-tamil/">ec online tamil</a> guide, check our checklist on <a href="/tn-ec-online/">tn ec online</a>, or read about TS land registers in the <a href="/ec-telangana-online-search/">ec telangana online search</a> directory.
+</p>';
+    $faq_ecd = '[{"question":"Why does my downloaded EC PDF show a question mark on the signature?","answer":"The question mark indicates that Adobe Acrobat Reader has not yet trusted the digital certificate used by the Sub-Registrar Office to sign the PDF. You can trust it by adding the certificate to your Trusted Certificates list under Signature Properties."},{"question":"How can I download my EC for free?","answer":"In states like Tamil Nadu and Telangana, you can download a draft search copy for free by using the guest search option and inputting the property details. This copy is for informational review only."},{"question":"Can I download my property EC on a mobile phone?","answer":"Yes, you can access state registration portals and download the EC PDF on a mobile browser. However, validating the digital signature must be done on a desktop computer using Adobe Acrobat."},{"question":"What should I do if my survey number is not found during the download process?","answer":"If the survey number is not found, double-check that the spelling of the revenue village is correct and that the SRO selected is the one currently holding records. You may also need to check the format of survey subdivision inputs."}]';
+    $schema_type_ecd = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_ecd,
+        'keyword' => $keyword_ecd,
+        'title' => $title_ecd,
+        'meta_desc' => $meta_desc_ecd,
+        'h1_title' => $h1_ecd,
+        'content' => $content_ecd,
+        'faq_data' => $faq_ecd,
+        'schema_type' => $schema_type_ecd
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
+
 
