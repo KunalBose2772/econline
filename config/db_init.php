@@ -11655,6 +11655,363 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_eco2
     ]);
 
+    // --- 31. AUTO-INITIALIZE HOW TO APPLY EC ONLINE PAGE ---
+    $slug_htaeo = 'how-to-apply-ec-online';
+    $keyword_htaeo = 'how to apply ec online';
+    $title_htaeo = 'How to Apply EC Online: Step-by-Step State-wise Property Guide';
+    $h1_htaeo = 'How to Apply EC Online: Step-by-Step Certified Title Search Manual';
+    $meta_desc_htaeo = 'Learn how to apply EC online for your property in India. Complete state-wise tutorial to search TNREGINET, Kaveri 2.0, IGRS TS, and Meebhoomi.';
+    $content_htaeo = '<p class="content-text">
+    Obtaining a digitally signed, legally certified Encumbrance Certificate (EC) is a critical milestone during property transactions in India. Banks require certified ECs for home loans, and civil courts demand them to resolve partition disputes. If you want to check your property records or verify ownership history, learning <strong>how to apply ec online</strong> allows you to obtain digitally signed registry logs without visiting government offices.
+</p>
+
+<p class="content-text">
+    Because land registry systems are managed by state-level Stamps and Registration departments, the login rules and SRO jurisdictions differ. To submit requests successfully, citizens must prepare boundary coordinates and survey numbers. Property buyers can manage their application pipelines on the official <a href="https://econline.in/">ec online</a> portal systems.
+</p>
+
+<!-- Widget 1: State Application Mode Selector -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🌐 State Application Mode Selector
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your state to identify the exact application portal check link, registration rules, and processing SLA.
+    </p>
+    
+    <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Target State</label>
+        <select id="app-state-select" onchange="runAppStateCheck()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+            <option value="tn">Tamil Nadu (TNREGINET)</option>
+            <option value="ka">Karnataka (Kaveri 2.0)</option>
+            <option value="ts">Telangana (IGRS TS)</option>
+            <option value="ap">Andhra Pradesh (IGRS AP)</option>
+        </select>
+    </div>
+    
+    <div id="app-state-result" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: #ffffff;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function runAppStateCheck() {
+    var state = document.getElementById("app-state-select").value;
+    var resultBox = document.getElementById("app-state-result");
+    
+    var stateMap = {
+        tn: {
+            name: "TNREGINET (Tamil Nadu Registration Department)",
+            mode: "Guest search supported for free view. Account registration mandatory for certified signed copies.",
+            url: "https://tnreginet.gov.in/",
+            sla: "2 to 5 Working Days for Sub-Registrar approval and digital signature."
+        },
+        ka: {
+            name: "Kaveri Online Services (Karnataka)",
+            mode: "Citizen Login Mandatory. You must create an account using Aadhaar/PAN details before applying.",
+            url: "https://kaverionline.karnataka.gov.in/",
+            sla: "3 to 5 Working Days after online payment confirmation."
+        },
+        ts: {
+            name: "IGRS Telangana Portal",
+            mode: "Citizen account registration or login required to run certified copy searches.",
+            url: "https://registration.telangana.gov.in/",
+            sla: "2 to 3 Working Days."
+        },
+        ap: {
+            name: "IGRS AP Portal (Andhra Pradesh)",
+            mode: "Citizen search and guest lookup features are available. Portal payment is linked to CFMS.",
+            url: "https://registration.ap.gov.in/",
+            sla: "Instant download to 24 Hours."
+        }
+    };
+    
+    var data = stateMap[state];
+    resultBox.style.borderColor = "var(--border)";
+    resultBox.style.backgroundColor = "#f8fafc";
+    resultBox.innerHTML = "<div style=\"font-weight: 700; font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem;\">" + data.name + "</div>" +
+        "<div style=\"font-size: 0.95rem; color: #475569; line-height: 1.6; margin-bottom: 1rem;\">" +
+            "<div><strong>Access Rules:</strong> " + data.mode + "</div>" +
+            "<div><strong>Processing SLA:</strong> " + data.sla + "</div>" +
+        "</div>" +
+        "<a href=\"" + data.url + "\" target=\"_blank\" rel=\"noopener\" style=\"display: inline-block; padding: 0.6rem 1.2rem; border-radius: 6px; background-color: var(--primary); color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.9rem;\">" +
+            "Apply via State Portal →" +
+        "</a>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("app-state-select")) {
+        runAppStateCheck();
+    }
+});
+</script>
+
+<h2>Why You Need to Apply for an Encumbrance Certificate</h2>
+<p class="content-text">
+    An Encumbrance Certificate provides a snapshot of all transactions registered against a property. Whenever land is sold, gifted, partitioned, or mortgaged to a bank, the deed must be registered at the local Sub-Registrar Office (SRO). These registrations are logged chronologically. When you execute an <a href="https://econline.in/">ec online</a> search, the resulting Form 15 or Form 16 summarizes this ledger. 
+</p>
+<p class="content-text">
+    If there is an active home loan, the property is mortgaged as security, and this mortgage is recorded as a charge. Applying for a certified copy helps you check if the seller has registered a mortgage release deed. Without this verification, buyers risk inheriting outstanding debts or title disputes.
+</p>
+
+<h2>Understanding Geographical and Document Search Options</h2>
+<p class="content-text">
+    When preparing your online application, most state databases give you two options: search by Document details or search by Property details. Document-wise searches are faster and require you to enter the document number, SRO code, and year of registration. Property-wise searches are broader and require entering the survey number, subdivisions, and village boundaries.
+</p>
+<p class="content-text">
+    Select SRO coordinates carefully. Reconciling taluk boundaries prevents search failure results when retrieving files through the <a href="https://econline.in/">ec online</a> stamps dashboard.
+</p>
+
+<!-- Widget 2: Certified copy vs. Free Draft Copy Fee Estimator -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 Application Fee & Search Charges Calculator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Compute the official registration search charges and filing fees based on state rules.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Search Years</label>
+            <input type="number" id="app-calc-years" value="30" min="1" max="100" oninput="calculateAppFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Application State</label>
+            <select id="app-calc-state" onchange="calculateAppFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+                <option value="tn">Tamil Nadu (₹15 base + ₹5/yr)</option>
+                <option value="ka">Karnataka (₹15 base + ₹10/yr)</option>
+                <option value="ts">Telangana (₹200 flat base + ₹10/yr)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="app-fee-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateAppFee() {
+    var years = parseInt(document.getElementById("app-calc-years").value);
+    var state = document.getElementById("app-calc-state").value;
+    var resultBox = document.getElementById("app-fee-result");
+    
+    if (isNaN(years) || years < 1) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var baseFee = 0;
+    var subFee = 0;
+    var portalFee = 0;
+    
+    if (state === "tn") {
+        baseFee = 15;
+        subFee = (years > 1) ? (years - 1) * 5 : 0;
+        portalFee = 1;
+    } else if (state === "ka") {
+        baseFee = 15;
+        subFee = (years > 1) ? (years - 1) * 10 : 0;
+        portalFee = 100;
+    } else if (state === "ts") {
+        baseFee = 200;
+        subFee = (years > 1) ? (years - 1) * 10 : 0;
+        portalFee = 0;
+    }
+    
+    var total = baseFee + subFee + portalFee;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "#f0fdf4";
+    resultBox.style.borderColor = "#bbf7d0";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: #15803d; margin-bottom: 0.75rem; font-size: 1.05rem;\">Government Fee Estimation:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Timeline:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>Base Application Fee:</strong> ₹" + baseFee + "</div>" +
+            "<div><strong>Search Surcharge:</strong> ₹" + subFee + "</div>" +
+            "<div><strong>Portal Filing Fee:</strong> ₹" + portalFee + "</div>" +
+            "<div style=\"border-top: 1px solid #bbf7d0; margin-top: 0.75rem; padding-top: 0.75rem; font-size: 1.1rem; font-weight: 700; color: #166534;\">" +
+                "Estimated Total Fee: ₹" + total + 
+            "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("app-calc-years")) {
+        calculateAppFee();
+    }
+});
+</script>
+
+<h2>Detailed Step-by-Step State-wise Guides</h2>
+<p class="content-text">
+    To apply for a certified encumbrance certificate, follow these tailored steps for major Indian states:
+</p>
+<h3 style="color: var(--primary);">1. Tamil Nadu (TNREGINET)</h3>
+<p class="content-text">
+    Tamil Nadu has a fully digital system. Citizens can search free draft copies or apply for certified PDFs. First, create a user login on TNREGINET. Once logged in, go to the <strong>Encumbrance Certificate</strong> tab and click <strong>Apply Online</strong>. Fill in the location details, including Zone, District, SRO, and Village. Next, enter the survey number and subdivision numbers. Select the date range for your search, enter the boundary details, and verify with a captcha. Pay the application fee online using net banking or credit cards, and submit. The Sub-Registrar will verify the entry and issue a digitally signed copy in 2 to 5 working days.
+</p>
+<h3 style="color: var(--primary);">2. Karnataka (Kaveri 2.0)</h3>
+<p class="content-text">
+    For Karnataka properties, log in to the Kaveri 2.0 portal using your credential details. Click on the <strong>Online EC</strong> service. Select the search parameters: you can search by property description or by document number. Enter the SRO name, district, taluk, hobli, village, and survey details. Add the boundaries details (North, South, East, West neighbors). Review the calculated fee, pay the charges online, and submit the request. Once processed by the department officer, you can download the certified EC PDF from the user dashboard.
+</p>
+<h3 style="color: var(--primary);">3. Telangana (IGRS TS)</h3>
+<p class="content-text">
+    Log in to the registration.telangana.gov.in portal. Click on the <strong>Encumbrance Search</strong> option. You will be prompted to read the disclaimer and proceed. Enter the document number and year of registration, or enter property identifiers (house number, survey number, SRO code). Confirm the details, pay the portal fee, and print the resulting statement.
+</p>
+
+<h2>Reconciling Registry records with Revenue Books</h2>
+<p class="content-text">
+    To ensure complete transaction security, checking the EC is only half the work. Property buyers must also verify the land revenue records (Patta in Tamil Nadu, RTC Pahani in Karnataka, or Adangal in AP) to confirm the seller\'s name is updated in the land tax books. Mismatches must be resolved before initiating queries on the <a href="https://econline.in/">ec online</a> website.
+</p>
+
+<!-- Widget 3: Application Readiness Document Audit Checklist -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Application Readiness Tracker
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Evaluate if you have all the required parameters to submit your digital EC application without rejection risk.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="app-readiness-deed" onchange="runAppReadiness()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="app-readiness-deed" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have a digital copy of the registered parent sale deed (size limit &lt; 2MB).</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="app-readiness-survey" onchange="runAppReadiness()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="app-readiness-survey" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I know the exact Survey Number and Subdivision code of the property.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="app-readiness-bounds" onchange="runAppReadiness()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="app-readiness-bounds" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have property boundary boundaries (North, South, East, West neighbor details).</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="app-readiness-sro" onchange="runAppReadiness()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="app-readiness-sro" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have identified the target SRO Office jurisdiction and code.</label>
+        </div>
+    </div>
+    
+    <div id="app-readiness-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Check readiness boxes to evaluate application submission status.
+    </div>
+</div>
+
+<script>
+function runAppReadiness() {
+    var check1 = document.getElementById("app-readiness-deed").checked;
+    var check2 = document.getElementById("app-readiness-survey").checked;
+    var check3 = document.getElementById("app-readiness-bounds").checked;
+    var check4 = document.getElementById("app-readiness-sro").checked;
+    var resultBox = document.getElementById("app-readiness-result");
+    
+    var count = 0;
+    if (check1) count++;
+    if (check2) count++;
+    if (check3) count++;
+    if (check4) count++;
+    
+    var percentage = count * 25;
+    
+    if (count === 0) {
+        resultBox.style.backgroundColor = "#f1f5f9";
+        resultBox.style.borderColor = "var(--border)";
+        resultBox.style.color = "#475569";
+        resultBox.innerHTML = "Check readiness parameters to display status feedback.";
+    } else if (count < 4) {
+        resultBox.style.backgroundColor = "#fffbeb";
+        resultBox.style.borderColor = "#fde68a";
+        resultBox.style.color = "#b45309";
+        resultBox.innerHTML = "⚠️ Partially Ready: Score: " + percentage + "%. Ensure you locate missing documents. Applying with incomplete details leads to portal rejection.";
+    } else {
+        resultBox.style.backgroundColor = "#f0fdf4";
+        resultBox.style.borderColor = "#bbf7d0";
+        resultBox.style.color = "#15803d";
+        resultBox.innerHTML = "✓ Fully Ready! Score: 100%. You have all required documents. Proceed to submit your digital EC application on the state portal.";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("app-readiness-deed")) {
+        runAppReadiness();
+    }
+});
+</script>
+
+<h2>Troubleshooting Common Application Errors</h2>
+<p class="content-text">
+    When applying for an Encumbrance Certificate, users often face common bottlenecks. The most frequent issue is "No Record Found" or mismatch errors. This happens if the user inputs incorrect survey numbers, taluk sub-divisions, or village names. To fix this, verify the details from the parent deed.
+</p>
+<p class="content-text">
+    Another issue is payment failure. Portal services are integrated with state treasury systems like CFMS in AP or K2 in Karnataka, which can fail. If your account is debited but the application is not generated, do not submit a new request immediately. Wait 24 hours for the transaction status to reconcile. You can check the transaction status on the ec online portal for help.
+</p>
+
+<h2>State-Wise Official Registration Services Summary Table</h2>
+<p class="content-text">
+    Different states have different official portals, and processing timelines. You can search these details and calculate standard rates using <a href="https://econline.in/">ec online</a> calculators:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State Location</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Official Registration Portal</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Type Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Processing Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">TNREGINET</td>
+                <td>Villangam Search (Property Wise / Document Wise)</td>
+                <td>Instant (View Draft) / 3-5 Days (Certified)</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Kaveri Online Services (2.0)</td>
+                <td>Certified EC Search (Citizen Login)</td>
+                <td>2-3 Working Days (Digital Signature Approval)</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Telangana</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS TS</td>
+                <td>Encumbrance Search (Document / Property Wise)</td>
+                <td>1-2 Days (Officer Approval)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Bilingual Guide Checklist for Title Search Verification</h2>
+<p class="content-text">
+    To execute a thorough title verification, property buyers should check historical records, match Patta registers, and verify boundaries details:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>SRO Code Reconciliation</strong>: Reconcile SRO codes with the survey taluk ledger.</li>
+    <li><strong>Survey Box Separations</strong>: Split survey numbers and subdivisions into distinct fields.</li>
+    <li><strong>Executant Mapping</strong>: Reconcile Tamil/local terminologies with parent deeds.</li>
+    <li><strong>Patta Ownership Verification</strong>: Verify that the latest buyer listed in the claimant column matches the current Patta.</li>
+</ul>
+
+<h2>Conclusion & Professional Support</h2>
+<p class="content-text">
+    Conducting a thorough title check in Tamil Nadu prevents ownership conflicts. If subdivision mismatches or legacy owner names appear on the Patta register, we recommend initiating a formal Tahsildar mutation application. For other states and general guidelines, consult our primary <a href="https://econline.in/">ec online</a> handbook guidelines.
+</p>';
+    $faq_htaeo = '[{"question":"Is there any fee to apply EC online?","answer":"Basic property searches and viewing the on-screen ledger results are free on portals like TNREGINET. However, obtaining a digitally certified copy of the EC requires paying the designated government fees online."},{"question":"How can I download a digitally signed EC online?","answer":"After the Sub-Registrar approves your search request, you will receive a notification. Log in to the state portal, open your transaction history, and click the download button to download the PDF copy."},{"question":"What should I do if my EC search returns No Record Found?","answer":"Ensure you entered the survey numbers and subdivision codes correctly. If it still returns empty, check adjacent SRO joint codes. If the property was registered before the portal digitization year, submit a manual search request."},{"question":"What is the difference between Form 15 and Form 16?","answer":"Form 15 lists all registered transaction records and liabilities for the property. Form 16 is a Nil Encumbrance Certificate, confirming that no transaction activities were registered during the search period."}]';
+    $schema_type_htaeo = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_htaeo,
+        'keyword' => $keyword_htaeo,
+        'title' => $title_htaeo,
+        'meta_desc' => $meta_desc_htaeo,
+        'h1_title' => $h1_htaeo,
+        'content' => $content_htaeo,
+        'faq_data' => $faq_htaeo,
+        'schema_type' => $schema_type_htaeo
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
