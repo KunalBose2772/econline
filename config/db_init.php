@@ -348,33 +348,45 @@ try {
     $title_tn = 'online ec tamilnadu';
     $h1_tn = 'online ec tamilnadu';
     $meta_desc_tn = 'Access the interactive online ec tamilnadu toolkit. Compute TNREGINET registration fees, search Sub-Registrar offices, and download verified certificates.';
-    $content_tn = '<!-- Custom Interactive Styles -->
+    $content_tn = '<!-- Custom Rebuilt Interactive Styles -->
 <style>
+    /* Toolkit Wrapper */
     .toolkit-container {
         margin: 2rem 0;
+        width: 100%;
     }
+    
+    /* Responsive Flexbox Grid for Widgets */
     .utility-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: 1.5rem;
         margin-bottom: 2rem;
+        width: 100%;
     }
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
         .utility-grid {
-            grid-template-columns: minmax(0, 1fr);
+            flex-direction: row;
+        }
+        .widget-panel {
+            flex: 1;
         }
     }
+    
+    /* Widget Panels */
     .widget-panel {
         background: #ffffff;
         border: 1px solid var(--border);
         border-radius: var(--radius-md);
-        padding: 1.75rem;
+        padding: 1.5rem;
         box-shadow: var(--shadow-sm);
         transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
         .widget-panel {
-            padding: 1.25rem;
+            padding: 1rem;
         }
     }
     .widget-panel:hover {
@@ -390,15 +402,18 @@ try {
         padding-bottom: 0.75rem;
     }
     .widget-header h3 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         margin-bottom: 0;
         color: var(--primary);
     }
     .widget-icon {
         font-size: 1.5rem;
     }
+    
+    /* Forms */
     .form-group {
         margin-bottom: 1rem;
+        width: 100%;
     }
     .form-group label {
         display: block;
@@ -416,10 +431,41 @@ try {
         font-size: 0.95rem;
         color: var(--primary);
         outline: none;
+        box-sizing: border-box;
     }
     .form-select:focus, .form-input:focus {
         border-color: var(--accent);
     }
+    
+    /* Calculator Options - Stacked on Mobile, Flex on Desktop */
+    .calc-options {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+    }
+    @media (min-width: 480px) {
+        .calc-options {
+            flex-direction: row;
+            gap: 1.5rem;
+        }
+    }
+    .calc-radio-label {
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+    }
+    .calc-radio-label input[type="radio"] {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        cursor: pointer;
+    }
+    
+    /* Calculator Result */
     .calc-result {
         background-color: #eff6ff;
         border: 1px solid rgba(37, 99, 211, 0.15);
@@ -456,40 +502,37 @@ try {
         margin-bottom: 0.75rem;
         cursor: pointer;
         font-size: 0.95rem;
+        width: 100%;
     }
     .checklist-item input[type="checkbox"] {
         margin-top: 0.25rem;
         width: 16px;
         height: 16px;
         cursor: pointer;
+        flex-shrink: 0;
+    }
+    .checklist-item span {
+        line-height: 1.4;
+        word-break: break-word;
     }
     .checklist-item.checked span {
         text-decoration: line-through;
         color: var(--text-muted);
     }
 
-    /* Portal Grid */
+    /* Portal Grid Auto-fit layout (no media queries needed) */
     .portal-quick-grid {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         gap: 1rem;
-        margin-bottom: 2rem;
-    }
-    @media (max-width: 900px) {
-        .portal-quick-grid {
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        }
-    }
-    @media (max-width: 480px) {
-        .portal-quick-grid {
-            grid-template-columns: minmax(0, 1fr);
-        }
+        margin-bottom: 1.5rem;
+        width: 100%;
     }
     .portal-btn {
         background-color: var(--surface);
         border: 1px solid var(--border);
         border-radius: var(--radius-sm);
-        padding: 1.25rem 1rem;
+        padding: 1.25rem 0.75rem;
         text-align: center;
         font-weight: 600;
         color: var(--primary);
@@ -499,6 +542,8 @@ try {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+        text-decoration: none;
+        box-sizing: border-box;
     }
     .portal-btn:hover {
         border-color: var(--accent);
@@ -508,6 +553,40 @@ try {
     }
     .portal-btn-icon {
         font-size: 1.5rem;
+    }
+    .portal-btn span:not(.portal-btn-icon) {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    /* Responsive Table Container */
+    .table-scroll-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.5rem 0;
+        width: 100%;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+    }
+    .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+        min-width: 500px;
+    }
+    .comparison-table th, .comparison-table td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid var(--border);
+        font-size: 0.95rem;
+    }
+    .comparison-table th {
+        background-color: var(--primary);
+        color: white;
+        font-weight: 600;
+    }
+    .comparison-table tr:nth-child(even) {
+        background-color: var(--bg-main);
     }
 </style>
 
@@ -552,11 +631,11 @@ try {
             
             <div class="form-group">
                 <label>Application Type:</label>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
-                    <label style="font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.25rem;">
+                <div class="calc-options">
+                    <label class="calc-radio-label">
                         <input type="radio" name="calc-type" value="view" checked> View EC (Free Check)
                     </label>
-                    <label style="font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.25rem;">
+                    <label class="calc-radio-label">
                         <input type="radio" name="calc-type" value="certified"> Certified Copy (Official)
                     </label>
                 </div>
@@ -668,35 +747,35 @@ try {
     </p>
     
     <!-- RESPONSIVE COMPARISON TABLE WRAPPER -->
-    <div style="overflow-x: auto; margin: 1.5rem 0; width: 100%;">
-        <table class="comparison-table" style="width:100%; border-collapse: collapse; margin: 0; min-width: 500px;">
+    <div class="table-scroll-container">
+        <table class="comparison-table">
             <thead>
-                <tr style="background-color: var(--primary); color: white; border-bottom: 2px solid var(--border);">
-                    <th style="padding: 12px; text-align: left; font-weight: 600;">Feature</th>
-                    <th style="padding: 12px; text-align: left; font-weight: 600;">Free View EC</th>
-                    <th style="padding: 12px; text-align: left; font-weight: 600;">Certified Copy (Paid)</th>
+                <tr>
+                    <th>Feature</th>
+                    <th>Free View EC</th>
+                    <th>Certified Copy (Paid)</th>
                 </tr>
             </thead>
             <tbody>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 12px; font-weight: 600; border: 1px solid var(--border);">Purpose</td>
-                    <td style="padding: 12px; border: 1px solid var(--border);">Quick checking, title inspection, verification.</td>
-                    <td style="padding: 12px; border: 1px solid var(--border);">Bank loans, court submissions, registration.</td>
+                <tr>
+                    <td style="font-weight: 600;">Purpose</td>
+                    <td>Quick checking, title inspection, verification.</td>
+                    <td>Bank loans, court submissions, registration.</td>
                 </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 12px; font-weight: 600; border: 1px solid var(--border);">Fee</td>
-                    <td style="padding: 12px; border: 1px solid var(--border);">Free of Cost (₹0)</td>
-                    <td style="padding: 12px; border: 1px solid var(--border);">₹15 per search year + Application Fees</td>
+                <tr>
+                    <td style="font-weight: 600;">Fee</td>
+                    <td>Free of Cost (₹0)</td>
+                    <td>₹15 per search year + Application Fees</td>
                 </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 12px; font-weight: 600; border: 1px solid var(--border);">Legality</td>
-                    <td style="padding: 12px; border: 1px solid var(--border);">Informational only, not legally binding.</td>
-                    <td style="padding: 12px; border: 1px solid var(--border);">Contains Digital Signature, legally admissible.</td>
+                <tr>
+                    <td style="font-weight: 600;">Legality</td>
+                    <td>Informational only, not legally binding.</td>
+                    <td>Contains Digital Signature, legally admissible.</td>
                 </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 12px; font-weight: 600; border: 1px solid var(--border);">Time taken</td>
-                    <td style="padding: 12px; border: 1px solid var(--border);">Instant (Few seconds)</td>
-                    <td style="padding: 12px; border: 1px solid var(--border);">2 to 7 working days for officer approval.</td>
+                <tr>
+                    <td style="font-weight: 600;">Time taken</td>
+                    <td>Instant (Few seconds)</td>
+                    <td>2 to 7 working days for officer approval.</td>
                 </tr>
             </tbody>
         </table>
