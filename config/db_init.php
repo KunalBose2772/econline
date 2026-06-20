@@ -5068,6 +5068,351 @@ try {
         'schema_type' => $schema_type_kac
     ]);
 
+    // --- 12. AUTO-INITIALIZE EC ONLINE TAMIL PAGE ---
+    $slug_ect = 'ec-online-tamil';
+    $keyword_ect = 'ec online tamil';
+    $title_ect = 'ec online tamil';
+    $h1_ect = 'ec online tamil';
+    $meta_desc_ect = 'Access the interactive ec online tamil search manual. Translate property registry terms from Tamil to English, calculate search fees, and check requirements.';
+    $content_ect = '<!-- Custom Interactive Styles for ECT Dashboard -->
+<style>
+    .ect-toolkit { margin: 2rem 0; width: 100%; }
+    .ect-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; width: 100%; }
+    @media (min-width: 768px) {
+        .ect-grid { flex-direction: row; }
+        .ect-card-widget { flex: 1; }
+    }
+    .ect-card-widget {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media (max-width: 480px) { .ect-card-widget { padding: 1rem; } }
+    .ect-card-widget:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+    .ect-widget-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+    }
+    .ect-widget-header h3 { font-size: 1.15rem; margin-bottom: 0; color: var(--primary); }
+    .ect-widget-icon { font-size: 1.5rem; }
+    .ect-form-group { margin-bottom: 1rem; width: 100%; }
+    .ect-form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-main); }
+    .ect-input, .ect-select {
+        width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm);
+        font-size: 0.95rem; outline: none; box-sizing: border-box; font-family: var(--font-sans); color: var(--primary);
+    }
+    .ect-input:focus, .ect-select:focus { border-color: var(--accent); }
+    
+    /* Checklist Progress Bar */
+    .ect-progress-wrap { background: var(--border); border-radius: 4px; height: 8px; width: 100%; margin-bottom: 1.25rem; overflow: hidden; }
+    .ect-progress-fill { height: 100%; width: 0%; background-color: var(--success); transition: width var(--transition-normal); }
+    .ect-chk-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .ect-chk-item { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; }
+    .ect-chk-item input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+    .ect-chk-item span { line-height: 1.4; color: var(--text-main); font-size: 0.95rem; }
+    .ect-chk-item.checked span { text-decoration: line-through; color: var(--text-muted); }
+    
+    /* Result Box */
+    .ect-result-box { background: #eff6ff; border: 1px solid rgba(37, 99, 211, 0.15); border-radius: var(--radius-sm); padding: 1rem; margin-top: 1rem; }
+    .ect-result-title { font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem; }
+    .ect-result-val { font-size: 1.5rem; color: var(--accent); font-weight: 800; }
+    
+    /* Translator Live Filter Style */
+    .ect-trans-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .ect-trans-row:last-child { border-bottom: none; }
+    .ect-trans-label { font-weight: 600; color: var(--primary); }
+    .ect-trans-val { color: var(--accent); font-weight: 700; }
+</style>
+
+<div class="ect-toolkit">
+    <div class="ect-grid">
+        <!-- Widget 1: Tamil Terminology Translator -->
+        <div class="ect-card-widget">
+            <div class="ect-widget-header">
+                <span class="ect-widget-icon">🗣️</span>
+                <h3>Tamil Registry Translator</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Translate common English property records vocabulary to Tamil terminology for easier TNREGINET navigation.
+            </p>
+            <div class="ect-form-group">
+                <label for="ect-search-term">Search Term (English):</label>
+                <input type="text" id="ect-search-term" class="ect-input" placeholder="Type term (e.g. survey, registrar, deed)...">
+            </div>
+            <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem;" id="ect-trans-container">
+                <div class="ect-trans-row" data-eng="encumbrance certificate ec">
+                    <span class="ect-trans-label">Encumbrance Certificate (EC)</span>
+                    <span class="ect-trans-val">வில்லங்கச் சான்றிதழ் (Villangam)</span>
+                </div>
+                <div class="ect-trans-row" data-eng="survey number">
+                    <span class="ect-trans-label">Survey Number</span>
+                    <span class="ect-trans-val">சர்வே எண் (Survey En)</span>
+                </div>
+                <div class="ect-trans-row" data-eng="sub registrar office sro">
+                    <span class="ect-trans-label">Sub-Registrar Office (SRO)</span>
+                    <span class="ect-trans-val">சார்பதிவாளர் அலுவலகம்</span>
+                </div>
+                <div class="ect-trans-row" data-eng="sale deed">
+                    <span class="ect-trans-label">Sale Deed</span>
+                    <span class="ect-trans-val">கிரயப் பத்திரம்</span>
+                </div>
+                <div class="ect-trans-row" data-eng="guideline value">
+                    <span class="ect-trans-label">Guideline Value</span>
+                    <span class="ect-trans-val">வழிகாட்டி மதிப்பு</span>
+                </div>
+                <div class="ect-trans-row" data-eng="patta chitta">
+                    <span class="ect-trans-label">Patta Chitta</span>
+                    <span class="ect-trans-val">பட்டா சிட்டா</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Widget 2: Tamil Nadu Search Checklist -->
+        <div class="ect-card-widget">
+            <div class="ect-widget-header">
+                <span class="ect-widget-icon">📋</span>
+                <h3>TNREGINET Search Parameters</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Check parameters required to retrieve your Tamil Nadu property transaction history correctly.
+            </p>
+            <div class="ect-progress-wrap">
+                <div class="ect-progress-fill" id="ect-progress"></div>
+            </div>
+            <div class="ect-chk-list" id="ect-checklist">
+                <label class="ect-chk-item">
+                    <input type="checkbox">
+                    <span>Zone name (e.g. Chennai, Coimbatore, Madurai)</span>
+                </label>
+                <label class="ect-chk-item">
+                    <input type="checkbox">
+                    <span>District name (e.g. Kanchipuram, Tiruvallur)</span>
+                </label>
+                <label class="ect-chk-item">
+                    <input type="checkbox">
+                    <span>Sub-Registrar Office SRO Name</span>
+                </label>
+                <label class="ect-chk-item">
+                    <input type="checkbox">
+                    <span>Village Name & Revenue details</span>
+                </label>
+                <label class="ect-chk-item">
+                    <input type="checkbox">
+                    <span>Survey & Subdivision codes of property</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Widget 3: TN Search Fee Calculator -->
+        <div class="ect-card-widget">
+            <div class="ect-widget-header">
+                <span class="ect-widget-icon">💰</span>
+                <h3>TN Search Fee Calculator</h3>
+            </div>
+            <div class="ect-form-group">
+                <label for="ect-years">Search Duration (Years):</label>
+                <input type="number" id="ect-years" class="ect-input" min="1" max="100" value="30">
+            </div>
+            <div class="ect-result-box">
+                <div class="ect-result-title">Estimated Government Fee:</div>
+                <div class="ect-result-val" id="ect-fee-display">₹160</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;" id="ect-fee-note">
+                    Calculation: ₹15 (1st Year) + ₹145 (Subsequent Years) + ₹0 application.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Live Filter for Translator
+        const searchInput = document.getElementById("ect-search-term");
+        const rows = document.querySelectorAll("#ect-trans-container .ect-trans-row");
+        
+        searchInput.addEventListener("input", function() {
+            const query = searchInput.value.toLowerCase().trim();
+            rows.forEach(row => {
+                const text = row.getAttribute("data-eng") || "";
+                if (text.includes(query)) {
+                    row.style.display = "flex";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+
+        // Checklist logic
+        const checkboxes = document.querySelectorAll("#ect-checklist input[type=\"checkbox\"]");
+        const progress = document.getElementById("ect-progress");
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                const label = chk.closest(".ect-chk-item");
+                if (chk.checked) {
+                    checkedCount++;
+                    label.classList.add("checked");
+                } else {
+                    label.classList.remove("checked");
+                }
+            });
+            const pct = Math.round((checkedCount / total) * 100);
+            progress.style.width = pct + "%";
+        }
+
+        checkboxes.forEach(chk => chk.addEventListener("change", updateProgress));
+        updateProgress();
+
+        // Fee Calculator
+        const inputYears = document.getElementById("ect-years");
+        const feeDisplay = document.getElementById("ect-fee-display");
+        const feeNote = document.getElementById("ect-fee-note");
+
+        function calculateFee() {
+            let years = parseInt(inputYears.value) || 1;
+            if (years < 1) years = 1;
+            
+            // Search Fee: First year Rs. 15, subsequent Rs. 5 per year.
+            const searchFee = 15 + (years - 1) * 5;
+            feeDisplay.innerText = "₹" + searchFee;
+            feeNote.innerText = "Calculation: ₹15 (1st Year) + ₹" + ((years - 1) * 5) + " (Subsequent Years).";
+        }
+
+        inputYears.addEventListener("input", calculateFee);
+        calculateFee();
+    });
+</script>
+
+<h2>Understanding ec online tamil Registry Search Services</h2>
+<p class="content-text">
+    An <a href="https://econline.in/">ec online</a> service in Tamil Nadu has revolutionized how citizens verify real estate and property land records. If you are researching land titles or property sales history in the state, understanding how to search for an **ec online tamil** language document or its English translation is vital. The Inspector General of Registration (TNREGINET) provides direct channels for inspecting transactions, allowing buyers to verify that a property is free of liabilities before completing the sale.
+</p>
+<p class="content-text">
+    In this educational manual, we explore the procedures to verify <a href="https://econline.in/">ec online</a> registers using the TNREGINET portal in both Tamil and English. We cover the document requirements, translation strategies, sub-registrar coordinates, and guideline rates. Whether you are dealing with housing plots in Madurai, agricultural lands in Trichy, or apartments in Chennai, this step-by-step walkthrough will guide you to execute a safe real estate check.
+</p>
+
+<h2>Tamil vs. English EC Formats on TNREGINET</h2>
+<p class="content-text">
+    When requesting records using the <a href="https://econline.in/">ec online</a> portal system, the final document can be generated in either Tamil or English. It is important to know which format is required for your specific legal or financial purpose:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Tamil EC Copy</strong>: Generated when the query is executed in Tamil or when the local registrar ledger uses vernacular inputs. It is generally preferred by local courts, village administrative officers (VAO), and municipal mutation offices.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>English EC Copy</strong>: Highly requested by nationalized banks, private loan companies, and buyers from other states. To download your <a href="https://econline.in/">ec online</a> copies in English, you must select the English language toggle on the home navigation bar of the portal before submitting the search parameters.</li>
+</ul>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">Feature Parameter</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Tamil Copy (தமிழ்)</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">English Copy (English)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Primary Use Case</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">VAO verification, local court partition cases, panchayat approvals.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Home loans verification, out-of-state buyers, multi-national agreements.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Office Terminology</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">சார்பதிவாளர் அலுவலகம் (SRO)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Sub-Registrar Office (SRO)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">SRO Name & Coordinates</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Survey Code Formats</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">புல எண் மற்றும் உட்பிரிவு</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Survey Number and Subdivision Code</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Step-by-Step Guide to Search EC Online in Tamil Nadu</h2>
+<p class="content-text">
+    To perform an **online ec tamil** query on the registration department portal, follow these precise step-by-step instructions:
+</p>
+<div class="steps-container">
+    <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Access the Portal</h3>
+        <p class="content-text" style="margin-bottom:0;">Go to the official registration site: <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener">tnreginet.gov.in</a>.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Toggle Language</h3>
+        <p class="content-text" style="margin-bottom:0;">If you want instructions in Tamil, verify that the language toggle in the upper right header is set to "தமிழ்".</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 class="step-title">EC Search Menu</h3>
+        <p class="content-text" style="margin-bottom:0;">Select <strong>"More" &rarr; "Search EC"</strong> from the top services tab to load the parameters query template.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Input Boundaries</h3>
+        <p class="content-text" style="margin-bottom:0;">Input property descriptors, including survey and sub-division codes, zone names, and date ranges. Click submit to download the PDF draft.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    For other regions, you can check our neighboring guides, such as the <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> portal directory or the <a href="/tn-ec-online/">tn ec online</a> checklist. If you are verifying agricultural properties in Karnataka or Telangana, check out the <a href="/ec-online-karnataka/">ec online karnataka</a> guide and the <a href="/ec-online-telangana/">ec online telangana</a> manual.
+</p>
+
+<h2>Important Search Parameters to Prevent Missing Records</h2>
+<p class="content-text">
+    When searching the database, errors in inputting survey numbers can result in a "Nil Encumbrance Certificate," even if transactions have occurred. To make sure you check the <a href="https://econline.in/">ec online</a> status ledger accurately, consider these critical rules:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Reconcile Survey Formats</strong>: In Tamil Nadu, survey numbers are written as <code>142/3A</code>. When entering them, input <code>142</code> in the survey number box and <code>3A</code> in the sub-division field.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Verify Revenue Villages</strong>: SRO jurisdictions can encompass multiple revenue villages. Ensure you select the exact revenue village listed on the physical deed, not just the municipal ward.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Review Date Limits</strong>: Keep in mind that digital records for some rural sub-registry zones are only available from 1975 onwards. For historic records prior to 1975, you must submit a manual request at the local SRO office.</li>
+</ol>
+<p class="content-text">
+    Once you have verified the transaction history online, you can proceed to download the signed version. For guidelines on verifying digital signatures in Acrobat, read our <a href="/online-ec-download/">online ec download</a> reference.
+</p>
+
+<h2>Patta Chitta Verification for Land Mutation</h2>
+<p class="content-text">
+    To ensure a transaction is complete, retrieving the EC copy is only the first step. You must also check that the seller\'s name matches the current revenue department files. In Tamil Nadu, this is done by running a Patta Chitta query:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">Access the official Revenue Department portal: <strong>eservices.tn.gov.in</strong>.</li>
+    <li style="margin-bottom: 0.5rem;">Select the option to view Patta copy or Chitta land records ledger.</li>
+    <li style="margin-bottom: 0.5rem;">Provide Taluk, District, Village, and Survey details.</li>
+    <li style="margin-bottom: 0.5rem;">Verify that the seller\'s name is listed as the registered Pattadar (owner).</li>
+</ul>
+<p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+    If you are investigating other states, you can refer to our <a href="/ec-telangana-online-search/">ec telangana online search</a> guide or read about Andhra registry checks in the <a href="/online-ec-ap/">online ec ap</a> index. To inspect the general portal features, you can go back to our <a href="/ec-view-online/">ec view online</a> directory.
+</p>';
+    $faq_ect = '[{"question":"How can I download my EC in English on TNREGINET?","answer":"To download your EC in English, select the \"English\" language link in the upper-right header of the TNREGINET homepage before you navigate to the search page. The generated document will then be formatted in English."},{"question":"Is it possible to view historic records online in Tamil Nadu?","answer":"Yes, digital records from 1975 to the present are available online. For encumbrances prior to 1975, you must apply manually at the respective Sub-Registrar Office (SRO)."},{"question":"What is a Revenue Village in an EC search?","answer":"A Revenue Village is the official village division defined by the revenue department. It may cover several hamlets or local residential layouts. You must select the exact revenue village name mentioned in your sale deed."},{"question":"How much does a certified Tamil Nadu EC copy cost?","answer":"The official fee for a certified copy is ₹15 for the first year of search, plus ₹5 for each subsequent year, along with a nominal application and portal charge."}]';
+    $schema_type_ect = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_ect,
+        'keyword' => $keyword_ect,
+        'title' => $title_ect,
+        'meta_desc' => $meta_desc_ect,
+        'h1_title' => $h1_ect,
+        'content' => $content_ect,
+        'faq_data' => $faq_ect,
+        'schema_type' => $schema_type_ect
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
+
