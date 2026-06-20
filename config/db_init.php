@@ -3196,6 +3196,477 @@ try {
         'schema_type' => $schema_type_ap
     ]);
 
+    // --- 8. AUTO-INITIALIZE TN EC ONLINE PAGE ---
+    $slug_tn = 'tn-ec-online';
+    $keyword_tn = 'tn ec online';
+    $title_tn = 'tn ec online';
+    $h1_tn = 'tn ec online';
+    $meta_desc_tn = 'Access the official TNREGINET portal. Learn how to verify property registrations, view Villangam certificates, and perform a tn ec online search.';
+    $content_tn = '<!-- Custom Interactive Styles for TN EC Dashboard -->
+<style>
+    .tn-toolkit-container {
+        margin: 2rem 0;
+        width: 100%;
+    }
+    .tn-utility-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    @media (min-width: 768px) {
+        .tn-utility-grid {
+            flex-direction: row;
+        }
+        .tn-widget-panel {
+            flex: 1;
+        }
+    }
+    .tn-widget-panel {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media (max-width: 480px) {
+        .tn-widget-panel {
+            padding: 1rem;
+        }
+    }
+    .tn-widget-panel:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow-md);
+    }
+    .tn-widget-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+    }
+    .tn-widget-header h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0;
+        color: var(--primary);
+    }
+    .tn-widget-icon {
+        font-size: 1.5rem;
+    }
+    
+    /* Tab Routing System */
+    .tn-tab-header {
+        display: flex;
+        border-bottom: 2px solid var(--border);
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+    }
+    .tn-tab-btn {
+        flex: 1;
+        padding: 0.6rem 0.8rem;
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: color var(--transition-fast), border-color var(--transition-fast);
+        text-align: center;
+    }
+    .tn-tab-btn.active {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
+    .tn-tab-pane {
+        display: none;
+        animation: tnFadeIn 0.3s ease;
+    }
+    .tn-tab-pane.active {
+        display: block;
+    }
+    @keyframes tnFadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Checklist progress */
+    .tn-progress-bar-wrap {
+        background: var(--border);
+        border-radius: 4px;
+        height: 8px;
+        width: 100%;
+        margin-bottom: 1.25rem;
+        overflow: hidden;
+    }
+    .tn-progress-bar-fill {
+        height: 100%;
+        width: 0%;
+        background-color: var(--success);
+        transition: width var(--transition-normal);
+    }
+    .tn-checklist-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .tn-checklist-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        cursor: pointer;
+    }
+    .tn-checklist-item input[type="checkbox"] {
+        margin-top: 0.25rem;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        cursor: pointer;
+    }
+    .tn-checklist-item span {
+        line-height: 1.4;
+        color: var(--text-main);
+        font-size: 0.95rem;
+    }
+    .tn-checklist-item.checked span {
+        text-decoration: line-through;
+        color: var(--text-muted);
+    }
+
+    /* Calculator */
+    .tn-calc-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .tn-calc-group label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-main);
+    }
+    .tn-calc-input {
+        width: 100%;
+        padding: 0.65rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        font-size: 0.95rem;
+        outline: none;
+        box-sizing: border-box;
+        font-family: var(--font-sans);
+        color: var(--primary);
+    }
+    .tn-calc-input:focus {
+        border-color: var(--accent);
+    }
+    .tn-calc-result {
+        background: #eff6ff;
+        border: 1px solid rgba(37, 99, 211, 0.15);
+        border-radius: var(--radius-sm);
+        padding: 1rem;
+        margin-top: 1rem;
+        color: var(--primary);
+    }
+    .tn-calc-result-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-main);
+        margin-bottom: 0.25rem;
+    }
+    .tn-calc-amount {
+        font-size: 1.5rem;
+        color: var(--accent);
+        font-weight: 800;
+    }
+</style>
+
+<div class="tn-toolkit-container">
+    <div class="tn-utility-grid">
+        <!-- Widget 1: TN Portal Switcher -->
+        <div class="tn-widget-panel">
+            <div class="tn-widget-header">
+                <span class="tn-widget-icon">🗺️</span>
+                <h3>TN Search Type Selector</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Select your lookup method on the official TNREGINET registration portal.
+            </p>
+            <div class="tn-tab-header">
+                <button class="tn-tab-btn active" id="tn-btn-prop">Search by Property</button>
+                <button class="tn-tab-btn" id="tn-btn-doc">Search by Document</button>
+            </div>
+            
+            <div class="tn-tab-pane active" id="tn-pane-prop">
+                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem;">
+                    <strong>Survey Number Lookup:</strong>
+                    <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                        <li style="margin-bottom: 0.4rem;">Visit the TNREGINET portal.</li>
+                        <li style="margin-bottom: 0.4rem;">Go to E-Services > EC > View EC.</li>
+                        <li style="margin-bottom: 0.4rem;">Select Zone, District, SRO, and Village.</li>
+                        <li>Enter Survey Number & Sub-Division Number.</li>
+                    </ol>
+                    <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Go to TNREGINET</a>
+                </div>
+            </div>
+            
+            <div class="tn-tab-pane" id="tn-pane-doc">
+                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem;">
+                    <strong>Document Number Lookup:</strong>
+                    <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                        <li style="margin-bottom: 0.4rem;">Visit the TNREGINET portal.</li>
+                        <li style="margin-bottom: 0.4rem;">Go to E-Services > EC > View EC.</li>
+                        <li style="margin-bottom: 0.4rem;">Select search type "Documentwise".</li>
+                        <li>Input SRO, Document Number, and Year.</li>
+                    </ol>
+                    <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Go to TNREGINET</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Widget 2: TN Document Checklist -->
+        <div class="tn-widget-panel">
+            <div class="tn-widget-header">
+                <span class="tn-widget-icon">📋</span>
+                <h3>TN EC Search Parameters</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Check the parameters needed before querying the Tamil Nadu registry database.
+            </p>
+            <div class="tn-progress-bar-wrap">
+                <div class="tn-progress-bar-fill" id="tn-progress"></div>
+            </div>
+            <div class="tn-checklist-list" id="tn-checklist">
+                <label class="tn-checklist-item">
+                    <input type="checkbox">
+                    <span>District & Registration Zone Name</span>
+                </label>
+                <label class="tn-checklist-item">
+                    <input type="checkbox">
+                    <span>Sub-Registrar Office (SRO) Name</span>
+                </label>
+                <label class="tn-checklist-item">
+                    <input type="checkbox">
+                    <span>Village Name & Patta/Survey Number</span>
+                </label>
+                <label class="tn-checklist-item">
+                    <input type="checkbox">
+                    <span>Property Registered Document Number & Year</span>
+                </label>
+                <label class="tn-checklist-item">
+                    <input type="checkbox">
+                    <span>Valid Citizen Portal Account Credentials</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Widget 3: TN Fee Calculator -->
+        <div class="tn-widget-panel">
+            <div class="tn-widget-header">
+                <span class="tn-widget-icon">💰</span>
+                <h3>TN Search Fee Calculator</h3>
+            </div>
+            <div class="tn-calc-group">
+                <label for="tn-years">Search Duration (Years):</label>
+                <input type="number" id="tn-years" class="tn-calc-input" min="1" max="100" value="13">
+            </div>
+            <div class="tn-calc-result">
+                <div class="tn-calc-result-title">Estimated Certified Fee:</div>
+                <div class="tn-calc-amount" id="tn-fee-display">₹195</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;" id="tn-fee-note">
+                    Calculation: ₹15 (1st Year) + ₹60 (Subsequent Years) + ₹100 (Copy Charge) + ₹20 (Portal fee).
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Tab switching
+        const btnProp = document.getElementById("tn-btn-prop");
+        const btnDoc = document.getElementById("tn-btn-doc");
+        const paneProp = document.getElementById("tn-pane-prop");
+        const paneDoc = document.getElementById("tn-pane-doc");
+
+        btnProp.addEventListener("click", function() {
+            btnProp.classList.add("active");
+            btnDoc.classList.remove("active");
+            paneProp.classList.add("active");
+            paneDoc.classList.remove("active");
+        });
+
+        btnDoc.addEventListener("click", function() {
+            btnDoc.classList.add("active");
+            btnProp.classList.remove("active");
+            paneDoc.classList.add("active");
+            paneProp.classList.remove("active");
+        });
+
+        // Checklist logic
+        const checkboxes = document.querySelectorAll("#tn-checklist input[type=\"checkbox\"]");
+        const progress = document.getElementById("tn-progress");
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                const label = chk.closest(".tn-checklist-item");
+                if (chk.checked) {
+                    checkedCount++;
+                    label.classList.add("checked");
+                } else {
+                    label.classList.remove("checked");
+                }
+            });
+            const pct = Math.round((checkedCount / total) * 100);
+            progress.style.width = pct + "%";
+        }
+
+        checkboxes.forEach(chk => chk.addEventListener("change", updateProgress));
+        updateProgress();
+
+        // Fee Calculator logic
+        const inputYears = document.getElementById("tn-years");
+        const feeDisplay = document.getElementById("tn-fee-display");
+        const feeNote = document.getElementById("tn-fee-note");
+
+        function calculateFee() {
+            let years = parseInt(inputYears.value) || 1;
+            if (years < 1) years = 1;
+            
+            // Search Fee: First year Rs. 15, subsequent Rs. 5 per year.
+            const searchFee = 15 + (years - 1) * 5;
+            const copyFee = 100;
+            const portalFee = 20;
+            const totalFee = searchFee + copyFee + portalFee;
+            
+            feeDisplay.innerText = "₹" + totalFee;
+            feeNote.innerText = "Calculation: ₹15 (1st Year) + ₹" + ((years - 1) * 5) + " (Subsequent Years) + ₹100 (Copy Charge) + ₹20 (Portal fee).";
+        }
+
+        inputYears.addEventListener("input", calculateFee);
+        calculateFee();
+    });
+</script>
+
+<h2>Understanding tn ec online Land Records</h2>
+<p class="content-text">
+    The Inspector General of Registration (IGR) of Tamil Nadu manages property deeds, mortgages, and land records online via the official **TNREGINET** portal. Acquiring a **tn ec online** statement enables property buyers and owners to trace legal liabilities, verify boundaries, and review historic transactions.
+</p>
+<p class="content-text">
+    Before finalising any real estate transaction, obtaining a property <a href="https://econline.in/">ec online</a> in Tamil Nadu is vital. It acts as legal assurance that the land or building is free from outstanding encumbrances, bank loans, or family court proceedings.
+</p>
+
+<h2>Guest View vs. Certified Copy on TNREGINET</h2>
+<p class="content-text">
+    The state registration portal offers two levels of lookups. First, the basic View EC service allows guest users to search and download the registry records via the <a href="https://econline.in/">ec online</a> service portal for free. This draft is sufficient for immediate search validation. However, for property sales or bank loan evaluations, users must login, submit an application, pay the fees, and download a digitally signed certified copy.
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Type</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Fee Scale</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Digital Signature</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Legality</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Draft View (Search EC)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹0 (Free)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">No</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">For informational lookup only</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Certified Copy (Apply Online)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹15 base + ₹5/yr + ₹100 copy fee</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (Digitally Signed by SRO)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Legally binding in banks & courts</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Step-by-Step Guide: TNREGINET EC Search Process</h2>
+<p class="content-text">
+    To execute a **tnreginet online ec** search using the official TN registration portal, follow these instructions:
+</p>
+<div class="steps-container">
+    <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Visit TNREGINET Site</h3>
+        <p class="content-text" style="margin-bottom:0;">Navigate to the official portal page: <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener">tnreginet.gov.in</a>.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Navigate to EC Search</h3>
+        <p class="content-text" style="margin-bottom:0;">Go to the header menu and select **"More" &rarr; "Search EC" &rarr; "View EC"**.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Enter Search Parameters</h3>
+        <p class="content-text" style="margin-bottom:0;">A legal title check requires an <a href="https://econline.in/">ec online</a> lookup to identify details. Select Zone, SRO, and enter the Survey/Sub-division number.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">4</div>
+        <h3 class="step-title">View or Print PDF</h3>
+        <p class="content-text" style="margin-bottom:0;">Verify the captcha, click search, and instantly review the property transaction history on your screen.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    For other states, you can inspect the <a href="/ec-view-online/">ec view online</a> directory. Additionally, you may learn how to check guidelines for neighboring states by reading the <a href="/ec-online-telangana/">ec online telangana</a> manual or our detailed <a href="/online-ec-ap/">online ec ap</a> guide.
+</p>
+
+<h2>How to Apply for Certified TN EC Online</h2>
+<p class="content-text">
+    If you need an official, legally valid document, you must learn how to apply for an official <a href="https://econline.in/">ec online</a> certificate:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">Create a user account on the official portal at **tnreginet.gov.in**.</li>
+    <li style="margin-bottom: 0.5rem;">Log in using your credentials and select **"Apply Online"** under the EC menu section.</li>
+    <li style="margin-bottom: 0.5rem;">Provide SRO registration details and specify the year duration boundaries.</li>
+    <li style="margin-bottom: 0.5rem;">Pay the calculated search charges online using net banking or credit cards.</li>
+    <li style="margin-bottom: 0.5rem;">Once the sub-registrar signs the deed, checking the <a href="https://econline.in/">ec online</a> history confirms the certificate is ready for download in your dashboard.</li>
+</ol>
+<p class="content-text">
+    Once approved by SRO officers, download the cryptographically certified <a href="https://econline.in/">ec online</a> copy from your panel. If you need help verifying digital signatures on these PDFs, you can consult our <a href="/online-ec-download/">online ec download</a> signature validator instructions.
+</p>
+
+<h2>TN EC Verification Parameters</h2>
+<p class="content-text">
+    When running a **tn ec online download** or performing a **tn ec check online**, citizens must double check these key parameters:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">**SRO Jurisdiction**: Property transactions are recorded only in the specific Sub-Registrar Office (SRO) where the deed was executed. Selecting the wrong SRO will yield no results.</li>
+    <li style="margin-bottom: 0.5rem;">**Sub-Division Numbers**: Land parcels are frequently divided. Be sure to check the exact sub-division suffix to get the correct transaction ledger.</li>
+    <li style="margin-bottom: 0.5rem;">**Certified Validation Key**: Certified PDFs include an authentication code. You can check its validity under the portal\'s "Verify Certificate" section.</li>
+</ul>
+<p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+    If you need to check neighboring states, see the detailed <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> portal guide.
+</p>';
+    $faq_tn = '[{"question":"What is the fee for tn ec online certified copy?","answer":"The certified copy fee consists of an application fee of ₹1, a search fee of ₹15 for the first year, ₹5 for each subsequent year, a copy fee of ₹100, and a nominal portal processing service fee of ₹20."},{"question":"Can I check my Tamil Nadu EC online for free?","answer":"Yes, you can search and check your EC for free using the Guest Search service under the E-Services section on the official TNREGINET portal. This allows you to view the transaction logs on screen."},{"question":"What is the difference between TNREGINET guest search and certified copy?","answer":"Guest search allows you to view the EC draft on screen for informational use. Certified copies are reviewed and digitally signed by the Sub-Registrar Officer, making them legally valid for home loans and court verification."},{"question":"How long does it take for a certified TN EC to be approved?","answer":"Once you pay the fee online, the request goes to the SRO office. Under standard circumstances, the SRO verifies the details and signs the certificate digitally within 2 to 3 working days."}]';
+    $schema_type_tn = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_tn,
+        'keyword' => $keyword_tn,
+        'title' => $title_tn,
+        'meta_desc' => $meta_desc_tn,
+        'h1_title' => $h1_tn,
+        'content' => $content_tn,
+        'faq_data' => $faq_tn,
+        'schema_type' => $schema_type_tn
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
