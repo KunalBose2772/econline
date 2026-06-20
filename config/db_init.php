@@ -12012,6 +12012,366 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_htaeo
     ]);
 
+    // --- 32. AUTO-INITIALIZE ONLINE EC ANDHRA PRADESH PAGE ---
+    $slug_ap = 'online-ec-andhra-pradesh';
+    $keyword_ap = 'online ec andhra pradesh';
+    $title_ap = 'Online EC Andhra Pradesh: IGRS AP Search, Status & Verification';
+    $h1_ap = 'Online EC Andhra Pradesh: Step-by-Step IGRS AP Land Search Manual';
+    $meta_desc_ap = 'Complete guide to check online ec andhra pradesh for land and property registration. Step-by-step tutorial for IGRS AP, Meebhoomi Adangal cross-verification.';
+    $content_ap = '<p class="content-text">
+    In the state of Andhra Pradesh, checking property title history and verifying registered transactions has become highly simplified through digital platforms. The Registration and Stamps Department of Andhra Pradesh (IGRS AP) maintains computerized records of all sale deeds, gift deeds, partitions, and mortgage details. To facilitate property verification, citizens can access the <strong><a href="https://econline.in/">ec online</a></strong> search utility to query the database.
+</p>
+
+<p class="content-text">
+    Whether you are purchasing agricultural land in Guntur, a residential apartment in Visakhapatnam, or a commercial plot in Vijayawada, verifying the encumbrance history is a mandatory legal precaution. Understanding how to retrieve your <strong><a href="https://econline.in/">ec online</a></strong> record prevents unexpected title claims and protects your hard-earned investment from fraudulent sellers.
+</p>
+
+<!-- Widget 1: AP District & SRO Office Lookup Tool -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🔍 AP SRO Office Locator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your District in Andhra Pradesh to identify the corresponding Sub-Registrar Office (SRO) names, office codes, and lookup tips.
+    </p>
+    
+    <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Select District</label>
+        <select id="ap-district-select" onchange="runApSroFinder()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+            <option value="vsp">Visakhapatnam</option>
+            <option value="krs">Krishna (Vijayawada)</option>
+            <option value="gnt">Guntur</option>
+            <option value="ctr">Chittoor (Tirupati)</option>
+        </select>
+    </div>
+    
+    <div id="ap-sro-result" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: #ffffff;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function runApSroFinder() {
+    var district = document.getElementById("ap-district-select").value;
+    var resultBox = document.getElementById("ap-sro-result");
+    
+    var sroMap = {
+        vsp: {
+            offices: [
+                { name: "SRO Madhurawada", code: "SRO-MDW", zone: "Visakhapatnam" },
+                { name: "SRO Pendurthi", code: "SRO-PEN", zone: "Visakhapatnam" },
+                { name: "SRO Gajuwaka", code: "SRO-GAJ", zone: "Visakhapatnam" }
+            ],
+            tip: "For urban Vizag plots, check both SRO register and GVMC urban layout plans."
+        },
+        krs: {
+            offices: [
+                { name: "SRO Gunadala", code: "SRO-GUN", zone: "Vijayawada" },
+                { name: "SRO Patamata", code: "SRO-PAT", zone: "Vijayawada" },
+                { name: "SRO Kankipadu", code: "SRO-KAN", zone: "Krishna Rural" }
+            ],
+            tip: "Properties near Vijayawada capital zone require CRDA approval verification."
+        },
+        gnt: {
+            offices: [
+                { name: "SRO Mangalagiri", code: "SRO-MAN", zone: "Guntur East" },
+                { name: "SRO Tenali", code: "SRO-TEN", zone: "Guntur West" },
+                { name: "SRO Amaravati", code: "SRO-AMA", zone: "Guntur Capital" }
+            ],
+            tip: "Amaravati region land searches should trace the land pooling agreement records."
+        },
+        ctr: {
+            offices: [
+                { name: "SRO Tirupati Urban", code: "SRO-TPU", zone: "Chittoor" },
+                { name: "SRO Madanapalle", code: "SRO-MAD", zone: "Chittoor Rural" }
+            ],
+            tip: "Cross-check Chittoor agricultural boundaries with forest land registry maps."
+        }
+    };
+    
+    var data = sroMap[district];
+    var html = "<div style=\"font-weight: 700; margin-bottom: 0.5rem; color: var(--primary);\">Available SRO Offices:</div>";
+    html += "<div style=\"display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin-bottom: 0.75rem;\">";
+    for (var i = 0; i < data.offices.length; i++) {
+        var off = data.offices[i];
+        html += "<div style=\"padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; display: flex; justify-content: space-between; font-size: 0.9rem;\">" +
+                    "<strong>" + off.name + " (" + off.code + ")</strong>" +
+                    "<span style=\"color: var(--text-muted);\">" + off.zone + "</span>" +
+                "</div>";
+    }
+    html += "</div>";
+    html += "<div style=\"font-size: 0.8rem; font-style: italic; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 0.5rem;\">" +
+                "Tip: " + data.tip +
+            "</div>";
+    resultBox.innerHTML = html;
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("ap-district-select")) {
+        runApSroFinder();
+    }
+});
+</script>
+
+<h2>Why Check Online EC in Andhra Pradesh?</h2>
+<p class="content-text">
+    The Encumbrance Certificate (EC) is a legal document outlining the transaction history of a property over a specified timeline. The certificate lists details such as the date of registration, executant name (seller), claimant name (buyer), nature of the deed (sale, mortgage, gift), document number, and property boundaries. In Andhra Pradesh, the EC is categorized into two forms: Form 15 and Form 16.
+</p>
+<p class="content-text">
+    Form 15 is issued when the property has transaction records registered during the requested search period. Form 16 (Nil Encumbrance Certificate) is issued when no transaction activities are registered, indicating a clear title status for that period. Using these credentials, users can request their <strong><a href="https://econline.in/">ec online</a></strong> certificate copy to verify that no double-registrations or hidden attachments exist.
+</p>
+
+<h2>Step-by-Step Guide to Apply for EC on IGRS AP Portal</h2>
+<p class="content-text">
+    The Stamps and Registration Department of Andhra Pradesh provides a user-friendly citizen portal to query property encumbrances. Follow these steps to submit your search:
+</p>
+<h3 style="color: var(--primary);">Step 1: Access the Official IGRS AP Website</h3>
+<p class="content-text">
+    Open your web browser and navigate to the official portal: <strong>registration.ap.gov.in</strong>. On the homepage, locate the "Services" panel. Here, you will find a dedicated link labeled "Encumbrance Certificate (EC)".
+</p>
+<h3 style="color: var(--primary);">Step 2: User Login and Registration</h3>
+<p class="content-text">
+    To access the application utility, you need to register on the site. If you are a new user, click "Register" and input your name, mobile number, email address, Aadhaar details, and password. Confirm the registration using the OTP sent to your phone. Existing users can directly log in with their credentials.
+</p>
+<h3 style="color: var(--primary);">Step 3: Enter Property Search Parameters</h3>
+<p class="content-text">
+    Once logged in, click on "Encumbrance Search". The system will display a disclaimer regarding search scope. Click "Submit" to continue. You can search by entering the Document Number and Year, or by entering geographical Property details. If choosing property details, input the District, Sub-Registrar Office (SRO) name, Village name, Survey Number, and Subdivision Code.
+</p>
+<h3 style="color: var(--primary);">Step 4: Check Draft and Pay Fees</h3>
+<p class="content-text">
+    The system will search the database and display matching transaction lines. Review the draft layout screen to verify that the property details are correct. To download a certified copy, proceed to the online payment gateway. Pay the required state fee through Net Banking, Debit/Credit Card, or UPI via the CFMS integration, and submit the request.
+</p>
+<h3 style="color: var(--primary);">Step 5: Download the Certified Copy</h3>
+<p class="content-text">
+    After the Sub-Registrar digitally signs the certificate, you will receive a notification. Log back into the portal, access your dashboard, and click the download button to save the PDF.
+</p>
+
+<!-- Widget 2: AP Registration Fee and Search Period Calculator -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 AP EC Search Fee Calculator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Calculate the approximate government fees for obtaining a certified EC copy in Andhra Pradesh.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Search Duration (Years)</label>
+            <input type="number" id="ap-calc-years" value="30" min="1" max="100" oninput="calculateApFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Delivery Type</label>
+            <select id="ap-calc-mode" onchange="calculateApFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+                <option value="digital">Digital PDF (Portal Download)</option>
+                <option value="manual">Physical Copy (SRO Collection)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="ap-fee-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateApFee() {
+    var years = parseInt(document.getElementById("ap-calc-years").value);
+    var mode = document.getElementById("ap-calc-mode").value;
+    var resultBox = document.getElementById("ap-fee-result");
+    
+    if (isNaN(years) || years < 1) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var baseFee = 200; // Flat base fee for first year search in AP
+    var searchSurcharge = 0;
+    
+    if (years > 1) {
+        searchSurcharge = (years - 1) * 10; // Nominal Rs. 10 per additional year
+    }
+    
+    var serviceCharges = (mode === "manual") ? 50 : 20; // Extra charges for SRO manual filing
+    var total = baseFee + searchSurcharge + serviceCharges;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "hsl(142, 70%, 97%)";
+    resultBox.style.borderColor = "hsl(142, 70%, 85%)";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: hsl(142, 70%, 25%); margin-bottom: 0.75rem; font-size: 1.05rem;\">Andhra Pradesh Fee Summary:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Search Period:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>Base Application Fee:</strong> ₹" + baseFee + "</div>" +
+            "<div><strong>Additional Year Surcharge:</strong> ₹" + searchSurcharge + "</div>" +
+            "<div><strong>Service & Processing Fee:</strong> ₹" + serviceCharges + "</div>" +
+            "<div style=\"border-top: 1px solid hsl(142, 70%, 85%); margin-top: 0.75rem; padding-top: 0.75rem; font-size: 1.1rem; font-weight: 700; color: hsl(142, 70%, 20%);\">" +
+                "Estimated Total Fee: ₹" + total + 
+            "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("ap-calc-years")) {
+        calculateApFee();
+    }
+});
+</script>
+
+<h2>Cross-Checking Title Records with Meebhoomi</h2>
+<p class="content-text">
+    To ensure absolute title safety when purchasing land in Andhra Pradesh, checking the EC is only half the work. Property buyers must also verify the land revenue records (Adangal and 1-B Record of Rights) on the official <strong>Meebhoomi</strong> portal. Mismatches in owner names or survey areas must be resolved before proceeding. Before applying for a land mortgage, check the <strong><a href="https://econline.in/">ec online</a></strong> registration ledger to verify outstanding charges.
+</p>
+<p class="content-text">
+    The Meebhoomi portal lets you check who is listed as the current Pattadar (holder of the Patta) and verify mutation logs. If the seller\'s name is not updated in the Pattadar Passbook, the registration department cannot approve the mutation, even if an EC is generated. Reconciling the land type (e.g., private land vs. government Gramakantam land) ensures the property is eligible for registered transactions.
+</p>
+
+<!-- Widget 3: AP Title Audit & Document Verification Checklist -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 AP Land Audit Readiness Check
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Check off the parameters you have prepared to check if your property is ready for a clean AP title search.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="ap-readiness-deed" onchange="runApAuditCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="ap-readiness-deed" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have the document number and SRO registration year of the parent sale deed.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="ap-readiness-survey" onchange="runApAuditCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="ap-readiness-survey" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have verified the Survey Number and Subdivision code on the Meebhoomi portal.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="ap-readiness-adangal" onchange="runApAuditCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="ap-readiness-adangal" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have a copy of the latest Adangal / 1-B village register extract.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="ap-readiness-prohibited" onchange="runApAuditCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="ap-readiness-prohibited" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have verified that the survey number is not in the Section 22A prohibited properties list.</label>
+        </div>
+    </div>
+    
+    <div id="ap-audit-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Complete the checklist to calculate your property verification readiness.
+    </div>
+</div>
+
+<script>
+function runApAuditCheck() {
+    var check1 = document.getElementById("ap-readiness-deed").checked;
+    var check2 = document.getElementById("ap-readiness-survey").checked;
+    var check3 = document.getElementById("ap-readiness-adangal").checked;
+    var check4 = document.getElementById("ap-readiness-prohibited").checked;
+    var resultBox = document.getElementById("ap-audit-result");
+    
+    var count = 0;
+    if (check1) count++;
+    if (check2) count++;
+    if (check3) count++;
+    if (check4) count++;
+    
+    var percentage = count * 25;
+    
+    if (count === 0) {
+        resultBox.style.backgroundColor = "#f1f5f9";
+        resultBox.style.borderColor = "var(--border)";
+        resultBox.style.color = "#475569";
+        resultBox.innerHTML = "Check audit parameters to display status feedback.";
+    } else if (count < 4) {
+        resultBox.style.backgroundColor = "hsl(38, 92%, 95%)";
+        resultBox.style.borderColor = "hsl(38, 92%, 85%)";
+        resultBox.style.color = "hsl(38, 92%, 25%)";
+        resultBox.innerHTML = "⚠️ Partially Verified: Score: " + percentage + "%. Ensure you verify Section 22A prohibited lists. Proceeding with unregistered titles can lead to registry rejection.";
+    } else {
+        resultBox.style.backgroundColor = "hsl(142, 70%, 95%)";
+        resultBox.style.borderColor = "hsl(142, 70%, 85%)";
+        resultBox.style.color = "hsl(142, 70%, 25%)";
+        resultBox.innerHTML = "✓ Fully Audited! Score: 100%. Title parameters are clear. Proceed with application submission on the IGRS AP portal.";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("ap-readiness-deed")) {
+        runApAuditCheck();
+    }
+});
+</script>
+
+<h2>Troubleshooting Common SRO Search Issues in AP</h2>
+<p class="content-text">
+    When requesting an Encumbrance Certificate on the AP registry portal, citizens may experience certain technical issues. The most common error is the "Null Search Result" or "SRO Code Mismatch". This typically occurs if the survey numbers or village names were entered in English but the database uses the local regional language spelling.
+</p>
+<p class="content-text">
+    To resolve database lookup errors, consult adjacent joint Sub-Registrar code directories. The resulting document will be issued in PDF format, similar to files downloaded from our <strong><a href="https://econline.in/">ec online</a></strong> state directory pages. For older legacy documents registered before 1999, digitized records may be incomplete, requiring a manual search application at the physical SRO.
+</p>
+
+<h2>Andhra Pradesh Property Registration Portal Services Summary Table</h2>
+<p class="content-text">
+    Different states have different official portals, and processing timelines. The comparison table below outlines the service details for quick reference:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State Location</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Official Registration Portal</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Type Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Processing Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Andhra Pradesh</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS AP (registration.ap.gov.in)</td>
+                <td>Certified EC Search (Citizen Login / Document search)</td>
+                <td>Instant to 24 Hours (Online Download)</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Kaveri Online Services (2.0)</td>
+                <td>Certified EC Search (Citizen Login)</td>
+                <td>2-3 Working Days (Digital Signature Approval)</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">TNREGINET (tnreginet.gov.in)</td>
+                <td>Villangam Search (Property Wise / Document Wise)</td>
+                <td>Instant (View Draft) / 3-5 Days (Certified)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Bilingual Guide Checklist for AP Property Verification</h2>
+<p class="content-text">
+    To execute a thorough title verification, property buyers should check historical records, match land registers, and verify coordinates details:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>SRO Code Reconciliation</strong>: Match SRO code with the target district registrar.</li>
+    <li><strong>Pattadar Passbook Verification</strong>: Confirm that the seller\'s name is listed under the claimant column.</li>
+    <li><strong>Gramakantam Restrictions</strong>: Ensure the land is not registered as government/poramboke.</li>
+    <li><strong>Section 22A Prohibitions</strong>: Reconcile the survey number with the prohibited register list to avoid legal disputes.</li>
+</ul>
+
+<h2>Conclusion & Professional Support</h2>
+<p class="content-text">
+    Conducting an online title check in Andhra Pradesh helps you avoid costly legal disputes. If subdivision mismatches or legacy owner names appear on the register, we recommend initiating a formal Tahsildar mutation application. For step-by-step handbooks on other states, consult the main <strong><a href="https://econline.in/">ec online</a></strong> portal hub.
+</p>';
+    $faq_ap = '[{"question":"Is the EC copy from IGRS AP legally valid?","answer":"Yes, the digitally signed Encumbrance Certificate obtained from the official IGRS AP portal is legally valid for home loans, property sales, and court proceedings."},{"question":"How can I search EC on IGRS AP if I do not have the document number?","answer":"You can choose the property search option and input the district, SRO jurisdiction, village name, survey number, and subdivision details to run the query."},{"question":"What is Meebhoomi and how is it related to IGRS AP?","answer":"Meebhoomi is the land records portal of Andhra Pradesh (providing Adangal and 1B ROR). IGRS AP is the registration portal (providing deeds and ECs). You should cross-check both to ensure title clarity."},{"question":"What are the charges for obtaining an EC in Andhra Pradesh?","answer":"Basic online search and view of the encumbrance history is free. Obtaining a certified, digitally signed copy requires a nominal search surcharge depending on the period in years."}]';
+    $schema_type_ap = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_ap,
+        'keyword' => $keyword_ap,
+        'title' => $title_ap,
+        'meta_desc' => $meta_desc_ap,
+        'h1_title' => $h1_ap,
+        'content' => $content_ap,
+        'faq_data' => $faq_ap,
+        'schema_type' => $schema_type_ap
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
