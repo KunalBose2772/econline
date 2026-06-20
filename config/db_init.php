@@ -6507,9 +6507,364 @@ try {
         'schema_type' => $schema_type_ectv
     ]);
 
+    // --- 16. AUTO-INITIALIZE KAVERI ONLINE EC DOWNLOAD PAGE ---
+    $slug_ked = 'kaveri-online-ec-download';
+    $keyword_ked = 'kaveri online ec download';
+    $title_ked = 'kaveri online ec download';
+    $h1_ked = 'kaveri online ec download';
+    $meta_desc_ked = 'Access the interactive kaveri online ec download manual. Verify digital signature credentials, calculate search fees, and check parameters.';
+    $content_ked = '<!-- Custom Interactive Styles for KED Dashboard -->
+<style>
+    .ked-toolkit { margin: 2rem 0; width: 100%; }
+    .ked-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; width: 100%; }
+    @media (min-width: 768px) {
+        .ked-grid { flex-direction: row; }
+        .ked-card-widget { flex: 1; }
+    }
+    .ked-card-widget {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media (max-width: 480px) { .ked-card-widget { padding: 1rem; } }
+    .ked-card-widget:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+    .ked-widget-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+    }
+    .ked-widget-header h3 { font-size: 1.15rem; margin-bottom: 0; color: var(--primary); }
+    .ked-widget-icon { font-size: 1.5rem; }
+    .ked-form-group { margin-bottom: 1rem; width: 100%; }
+    .ked-form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-main); }
+    .ked-input, .ked-select {
+        width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm);
+        font-size: 0.95rem; outline: none; box-sizing: border-box; font-family: var(--font-sans); color: var(--primary);
+    }
+    .ked-input:focus, .ked-select:focus { border-color: var(--accent); }
+    
+    /* Tabs System */
+    .ked-tab-header { display: flex; border-bottom: 2px solid var(--border); gap: 0.5rem; margin-bottom: 1.25rem; }
+    .ked-tab-btn {
+        flex: 1; padding: 0.6rem 0.8rem; background: none; border: none; border-bottom: 2px solid transparent;
+        font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; color: var(--text-muted); cursor: pointer;
+        transition: color var(--transition-fast), border-color var(--transition-fast); text-align: center;
+    }
+    .ked-tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .ked-tab-pane { display: none; animation: kedFadeIn 0.3s ease; }
+    .ked-tab-pane.active { display: block; }
+    @keyframes kedFadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Checklist Progress Bar */
+    .ked-progress-wrap { background: var(--border); border-radius: 4px; height: 8px; width: 100%; margin-bottom: 1.25rem; overflow: hidden; }
+    .ked-progress-fill { height: 100%; width: 0%; background-color: var(--success); transition: width var(--transition-normal); }
+    .ked-chk-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .ked-chk-item { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; }
+    .ked-chk-item input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+    .ked-chk-item span { line-height: 1.4; color: var(--text-main); font-size: 0.95rem; }
+    .ked-chk-item.checked span { text-decoration: line-through; color: var(--text-muted); }
+    
+    /* Result Box */
+    .ked-result-box { background: #eff6ff; border: 1px solid rgba(37, 99, 211, 0.15); border-radius: var(--radius-sm); padding: 1rem; margin-top: 1rem; }
+    .ked-result-title { font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem; }
+    .ked-result-val { font-size: 1.5rem; color: var(--accent); font-weight: 800; }
+</style>
+
+<div class="ked-toolkit">
+    <div class="ked-grid">
+        <!-- Widget 1: Kaveri Tab System -->
+        <div class="ked-card-widget">
+            <div class="ked-widget-header">
+                <span class="ked-widget-icon">🗺️</span>
+                <h3>Kaveri Guide System</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Toggle guides to review citizen registration and search submission parameters.
+            </p>
+            <div class="ked-tab-header">
+                <button class="ked-tab-btn active" id="ked-btn-reg">1. Register Profile</button>
+                <button class="ked-tab-btn" id="ked-btn-apply">2. Apply Certified EC</button>
+            </div>
+            
+            <div class="ked-tab-pane active" id="ked-pane-reg">
+                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem;">
+                    <strong>Citizen Portal Registration:</strong>
+                    <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                        <li style="margin-bottom: 0.4rem;">Visit the Kaveri Online Services Portal.</li>
+                        <li style="margin-bottom: 0.4rem;">Click **"Register as a New User"**.</li>
+                        <li style="margin-bottom: 0.4rem;">Input Aadhaar, Name, Mobile, and Password details.</li>
+                        <li>Activate citizen account via SMS OTP.</li>
+                    </ol>
+                    <a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Register on Kaveri</a>
+                </div>
+            </div>
+            
+            <div class="ked-tab-pane" id="ked-pane-apply">
+                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem;">
+                    <strong>Application Steps:</strong>
+                    <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                        <li style="margin-bottom: 0.4rem;">Log in to citizen dashboard.</li>
+                        <li style="margin-bottom: 0.4rem;">Select "Online EC" services.</li>
+                        <li style="margin-bottom: 0.4rem;">Provide SRO village, Survey number, and dates.</li>
+                        <li>Submit application and pay state search fees.</li>
+                    </ol>
+                    <a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Log in & Apply</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Widget 2: Download Parameters Checklist -->
+        <div class="ked-card-widget">
+            <div class="ked-widget-header">
+                <span class="ked-widget-icon">📋</span>
+                <h3>Kaveri Search parameters</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Check items to execute an error-free kaveri online ec download.
+            </p>
+            <div class="ked-progress-wrap">
+                <div class="ked-progress-fill" id="ked-progress"></div>
+            </div>
+            <div class="ked-chk-list" id="ked-checklist">
+                <label class="ked-chk-item">
+                    <input type="checkbox">
+                    <span>District & Sub-Registrar Office SRO Name</span>
+                </label>
+                <label class="ked-chk-item">
+                    <input type="checkbox">
+                    <span>Registered Document Number & Year</span>
+                </label>
+                <label class="ked-chk-item">
+                    <input type="checkbox">
+                    <span>Survey & Subdivision codes (or Plot/Flat number)</span>
+                </label>
+                <label class="ked-chk-item">
+                    <input type="checkbox">
+                    <span>Pattadar Passbook Number (for rural agricultural lands)</span>
+                </label>
+                <label class="ked-chk-item">
+                    <input type="checkbox">
+                    <span>Validated Citizen login or Guest User credentials</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Widget 3: Kaveri Search Fee Calculator -->
+        <div class="ked-card-widget">
+            <div class="ked-widget-header">
+                <span class="ked-widget-icon">💰</span>
+                <h3>Search Fee Calculator</h3>
+            </div>
+            <div class="ked-form-group">
+                <label for="ked-years">Search Duration (Years):</label>
+                <input type="number" id="ked-years" class="ked-input" min="1" max="100" value="30">
+            </div>
+            <div class="ked-result-box">
+                <div class="ked-result-title">Estimated Government Fee:</div>
+                <div class="ked-result-val" id="ked-fee-display">₹305</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;" id="ked-fee-note">
+                    Calculation: ₹15 (1st Year) + ₹290 (Subsequent Years).
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Tab switching
+        const btnReg = document.getElementById("ked-btn-reg");
+        const btnApply = document.getElementById("ked-btn-apply");
+        const paneReg = document.getElementById("ked-pane-reg");
+        const paneApply = document.getElementById("ked-pane-apply");
+
+        btnReg.addEventListener("click", function() {
+            btnReg.classList.add("active");
+            btnApply.classList.remove("active");
+            paneReg.classList.add("active");
+            paneApply.classList.remove("active");
+        });
+
+        btnApply.addEventListener("click", function() {
+            btnApply.classList.add("active");
+            btnReg.classList.remove("active");
+            paneApply.classList.add("active");
+            paneReg.classList.remove("active");
+        });
+
+        // Checklist logic
+        const checkboxes = document.querySelectorAll("#ked-checklist input[type=\"checkbox\"]");
+        const progress = document.getElementById("ked-progress");
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                const label = chk.closest(".ked-chk-item");
+                if (chk.checked) {
+                    checkedCount++;
+                    label.classList.add("checked");
+                } else {
+                    label.classList.remove("checked");
+                }
+            });
+            const pct = Math.round((checkedCount / total) * 100);
+            progress.style.width = pct + "%";
+        }
+
+        checkboxes.forEach(chk => chk.addEventListener("change", updateProgress));
+        updateProgress();
+
+        // Fee Calculator
+        const inputYears = document.getElementById("ked-years");
+        const feeDisplay = document.getElementById("ked-fee-display");
+        const feeNote = document.getElementById("ked-fee-note");
+
+        function calculateFee() {
+            let years = parseInt(inputYears.value) || 1;
+            if (years < 1) years = 1;
+            
+            // Search Fee: First year Rs. 15, subsequent Rs. 10 per year.
+            const searchFee = 15 + (years - 1) * 10;
+            feeDisplay.innerText = "₹" + searchFee;
+            feeNote.innerText = "Calculation: ₹15 (1st Year) + ₹" + ((years - 1) * 10) + " (Subsequent Years).";
+        }
+
+        inputYears.addEventListener("input", calculateFee);
+        calculateFee();
+    });
+</script>
+
+<h2>Understanding Kaveri Online EC Download Services</h2>
+<p class="content-text">
+    An <a href="https://econline.in/">ec online</a> search has transformed real estate inspections across Karnataka, particularly in Bangalore and urban zones. The Department of Stamps and Registration provides direct digital routes to access land deeds via the Kaveri Services platform. For property buyers, executing a complete **kaveri online ec download** provides clear information on historical transactions, ensuring the land title is clean before finalizing purchases.
+</p>
+<p class="content-text">
+    In this educational reference guide, we examine the procedures required to request an <a href="https://econline.in/">ec online</a> download using the Kaveri portal. We cover user registration steps, SRO selection methodologies, date boundaries, and fee structures. By following these steps, buyers can verify their land titles and prevent registry errors.
+</p>
+
+<h2>Guest Search vs. Certified Copy: Which Download Flow?</h2>
+<p class="content-text">
+    When using the Kaveri <a href="https://econline.in/">ec online</a> portal, users can choose between two search categories:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Guest EC Search (Draft Copy)</strong>: This is a free search that displays transaction history on screen. It does not carry official signatures and is suitable for preliminary inspections. It does not require creating a user profile.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Certified Copy of EC</strong>: This requires registering a citizen account, logging in, and paying government search fees. SRO officers verify the query and attach a digital signature. This certified copy is legally valid in court and accepted by banks.</li>
+</ul>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Type</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Government Search Fees</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Digital Signature</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Legality Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Guest EC Search</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹0 (Free of cost)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">No</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Informational only; not accepted for mortgages.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Certified Online EC</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹15 (1st year) + ₹10/subsequent year</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes (Digitally signed by SRO)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Fully valid in banks & judicial trials.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Step-by-Step Guide to Download EC on Kaveri</h2>
+<p class="content-text">
+    To search and download your property certificates on Kaveri, follow these steps:
+</p>
+<div class="steps-container">
+    <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Access Kaveri</h3>
+        <p class="content-text" style="margin-bottom:0;">Go to the official Kaveri Online Services Portal: <a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener">kaverionline.karnataka.gov.in</a>.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Citizen Login</h3>
+        <p class="content-text" style="margin-bottom:0;">Log in using your registered mobile number and password, or click register to create a new profile.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Enter Parameters</h3>
+        <p class="content-text" style="margin-bottom:0;">Select the **"Online EC"** citizen service tab and fill in SRO details, survey numbers, and coordinates.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Pay & Download</h3>
+        <p class="content-text" style="margin-bottom:0;">Submit the query, pay the government search fees online, and download the signed PDF from your dashboard.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    To review registration guidelines in neighboring regions, consult our <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> portal directory or verify our neighboring guides like the <a href="/tn-ec-online/">tn ec online</a> checklist. If you are comparing parameters for Andhra or Telangana, check out the <a href="/online-ec-ap/">online ec ap</a> guide or the <a href="/ec-online-telangana/">ec online telangana</a> manual. You can also view the general index at our <a href="/ec-view-online/">ec view online</a> directory.
+</p>
+
+<h2>Preventing Search Failures on Kaveri</h2>
+<p class="content-text">
+    If the online search returns "No Record Found," it does not always mean the property is free of encumbrance. It may indicate a formatting issue. To verify the <a href="https://econline.in/">ec online</a> transaction logs accurately, consider these critical rules:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Reconcile Survey Formats</strong>: In Karnataka, survey numbers are written as <code>142/3A</code>. When entering them, input <code>142</code> in the survey number box and <code>3A</code> in the sub-division field.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Verify SRO Jurisdictions</strong>: Sub-Registrar Offices are periodically restructured. If the property was registered ten years ago, the SRO code might have changed. Try searching under both the historical and current SRO listings.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Confirm Boundaries</strong>: Ensure boundaries details match the physical deed parameters. Leaving boundaries blank can result in search failures.</li>
+</ol>
+<p class="content-text">
+    To check the current <a href="https://econline.in/">ec online</a> copy approvals, you can check the transaction history page. To print or validate downloaded files, review our <a href="/online-ec-download/">online ec download</a> instructions.
+</p>
+
+<h2>Bhoomi Portal: Agricultural Record Integration</h2>
+<p class="content-text">
+    Title verification is only half complete with an EC download. You must also check the revenue records to confirm mutation is updated. For agricultural lands in Karnataka, follow these steps to retrieve the RTC:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">Access the official Bhoomi portal: <strong>landrecords.karnataka.gov.in</strong>.</li>
+    <li style="margin-bottom: 0.5rem;">Select the option to view RTC copy or mutation status.</li>
+    <li style="margin-bottom: 0.5rem;">Provide Hobli, Taluk, Village, and Survey details.</li>
+    <li style="margin-bottom: 0.5rem;">Verify that the seller\'s name is listed as the latest claimant in mutation registers.</li>
+</ul>
+<p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+    If you are investigating other states, refer to the <a href="/ec-online-tamil/">ec online tamil</a> guide, read about TS registries in the <a href="/ec-telangana-online-search/">ec telangana online search</a> directory, or check out the <a href="/online-ec-ap/">online ec ap</a> guide. To retrieve the verified <a href="https://econline.in/">ec online</a> record for banks, you can always check our main database references.
+</p>';
+    $faq_ked = '[{"question":"Why does Kaveri Online EC download show a question mark on the signature?","answer":"The question mark indicates that Adobe Acrobat Reader has not yet trusted the digital certificate used by the Sub-Registrar Office to sign the PDF. You can trust it by adding the certificate to your Trusted Certificates list under Signature Properties."},{"question":"How can I download my EC for free in Karnataka?","answer":"You can download a draft search copy for free by using the guest search option on Kaveri Online Services. This copy is for informational review only."},{"question":"Can I download my property EC on a mobile phone?","answer":"Yes, you can access the Kaveri portal and download the EC PDF on a mobile browser. However, validating the digital signature must be done on a desktop computer using Adobe Acrobat."},{"question":"What should I do if my survey number is not found during the Kaveri search?","answer":"If the survey number is not found, double-check that the spelling of the revenue village is correct and that the SRO selected is the one currently holding records. You may also need to check the format of survey subdivision inputs."}]';
+    $schema_type_ked = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_ked,
+        'keyword' => $keyword_ked,
+        'title' => $title_ked,
+        'meta_desc' => $meta_desc_ked,
+        'h1_title' => $h1_ked,
+        'content' => $content_ked,
+        'faq_data' => $faq_ked,
+        'schema_type' => $schema_type_ked
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
+
 
 
 
