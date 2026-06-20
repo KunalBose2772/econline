@@ -6153,9 +6153,364 @@ try {
         'schema_type' => $schema_type_ecvt
     ]);
 
+    // --- 15. AUTO-INITIALIZE TNREGINET EC VIEW ONLINE PAGE ---
+    $slug_ectv = 'tnreginet-ec-view-online';
+    $keyword_ectv = 'tnreginet ec view online';
+    $title_ectv = 'tnreginet ec view online';
+    $h1_ectv = 'tnreginet ec view online';
+    $meta_desc_ectv = 'Access the interactive tnreginet ec view online dashboard. Toggle search methodologies, calculate registration fees, and check document requirements.';
+    $content_ectv = '<!-- Custom Interactive Styles for ECTV Dashboard -->
+<style>
+    .ectv-toolkit { margin: 2rem 0; width: 100%; }
+    .ectv-grid { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; width: 100%; }
+    @media (min-width: 768px) {
+        .ectv-grid { flex-direction: row; }
+        .ectv-card-widget { flex: 1; }
+    }
+    .ectv-card-widget {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media (max-width: 480px) { .ectv-card-widget { padding: 1rem; } }
+    .ectv-card-widget:hover { border-color: var(--accent); box-shadow: var(--shadow-md); }
+    .ectv-widget-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+    }
+    .ectv-widget-header h3 { font-size: 1.15rem; margin-bottom: 0; color: var(--primary); }
+    .ectv-widget-icon { font-size: 1.5rem; }
+    .ectv-form-group { margin-bottom: 1rem; width: 100%; }
+    .ectv-form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-main); }
+    .ectv-input, .ectv-select {
+        width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm);
+        font-size: 0.95rem; outline: none; box-sizing: border-box; font-family: var(--font-sans); color: var(--primary);
+    }
+    .ectv-input:focus, .ectv-select:focus { border-color: var(--accent); }
+    
+    /* Tabs System */
+    .ectv-tab-header { display: flex; border-bottom: 2px solid var(--border); gap: 0.5rem; margin-bottom: 1.25rem; }
+    .ectv-tab-btn {
+        flex: 1; padding: 0.6rem 0.8rem; background: none; border: none; border-bottom: 2px solid transparent;
+        font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; color: var(--text-muted); cursor: pointer;
+        transition: color var(--transition-fast), border-color var(--transition-fast); text-align: center;
+    }
+    .ectv-tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .ectv-tab-pane { display: none; animation: ectvFadeIn 0.3s ease; }
+    .ectv-tab-pane.active { display: block; }
+    @keyframes ectvFadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Checklist Progress Bar */
+    .ectv-progress-wrap { background: var(--border); border-radius: 4px; height: 8px; width: 100%; margin-bottom: 1.25rem; overflow: hidden; }
+    .ectv-progress-fill { height: 100%; width: 0%; background-color: var(--success); transition: width var(--transition-normal); }
+    .ectv-chk-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .ectv-chk-item { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; }
+    .ectv-chk-item input[type="checkbox"] { margin-top: 0.25rem; width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+    .ectv-chk-item span { line-height: 1.4; color: var(--text-main); font-size: 0.95rem; }
+    .ectv-chk-item.checked span { text-decoration: line-through; color: var(--text-muted); }
+    
+    /* Result Box */
+    .ectv-result-box { background: #eff6ff; border: 1px solid rgba(37, 99, 211, 0.15); border-radius: var(--radius-sm); padding: 1rem; margin-top: 1rem; }
+    .ectv-result-title { font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem; }
+    .ectv-result-val { font-size: 1.5rem; color: var(--accent); font-weight: 800; }
+</style>
+
+<div class="ectv-toolkit">
+    <div class="ectv-grid">
+        <!-- Widget 1: Search Method Selector -->
+        <div class="ectv-card-widget">
+            <div class="ectv-widget-header">
+                <span class="ectv-widget-icon">🔍</span>
+                <h3>TNREGINET Search Guide</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Select search type to view specific data fields requested on the TNREGINET portal.
+            </p>
+            <div class="ectv-tab-header">
+                <button class="ectv-tab-btn active" id="ectv-btn-survey">1. Search by Survey</button>
+                <button class="ectv-tab-btn" id="ectv-btn-doc">2. Search by Document</button>
+            </div>
+            
+            <div class="ectv-tab-pane active" id="ectv-pane-survey">
+                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem;">
+                    <strong>Survey Parameter Fields Required:</strong>
+                    <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                        <li style="margin-bottom: 0.4rem;">Zone &amp; District of registration.</li>
+                        <li style="margin-bottom: 0.4rem;">Sub-Registrar Office SRO Name.</li>
+                        <li style="margin-bottom: 0.4rem;">Revenue Village Name.</li>
+                        <li>Survey Number &amp; Sub-division Code.</li>
+                    </ol>
+                    <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Apply by Survey</a>
+                </div>
+            </div>
+            
+            <div class="ectv-tab-pane" id="ectv-pane-doc">
+                <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.9rem;">
+                    <strong>Document Parameter Fields Required:</strong>
+                    <ol style="margin-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                        <li style="margin-bottom: 0.4rem;">Sub-Registrar Office SRO Name.</li>
+                        <li style="margin-bottom: 0.4rem;">Document ID Number.</li>
+                        <li style="margin-bottom: 0.4rem;">Registration Year.</li>
+                        <li>Document Type (e.g. Regular, Book 4).</li>
+                    </ol>
+                    <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" style="display: inline-block; margin-top: 1rem; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none;">Apply by Document</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Widget 2: Audit Checklist -->
+        <div class="ectv-card-widget">
+            <div class="ectv-widget-header">
+                <span class="ectv-widget-icon">📋</span>
+                <h3>Search Verification Steps</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Check parameters to execute an error-free tnreginet ec view online lookup.
+            </p>
+            <div class="ectv-progress-wrap">
+                <div class="ectv-progress-fill" id="ectv-progress"></div>
+            </div>
+            <div class="ectv-chk-list" id="ectv-checklist">
+                <label class="ectv-chk-item">
+                    <input type="checkbox">
+                    <span>Reconciled survey details from current sale deed copies</span>
+                </label>
+                <label class="ectv-chk-item">
+                    <input type="checkbox">
+                    <span>Selected SRO name of the exact administrative village</span>
+                </label>
+                <label class="ectv-chk-item">
+                    <input type="checkbox">
+                    <span>Verified spelling of the revenue village in registration logs</span>
+                </label>
+                <label class="ectv-chk-item">
+                    <input type="checkbox">
+                    <span>Cross-checked boundaries description (North, South, East, West)</span>
+                </label>
+                <label class="ectv-chk-item">
+                    <input type="checkbox">
+                    <span>Adjusted date parameters to begin from physical transaction year</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Widget 3: TN EC Search Fee Calculator -->
+        <div class="ectv-card-widget">
+            <div class="ectv-widget-header">
+                <span class="ectv-widget-icon">💰</span>
+                <h3>Copy Fee Calculator</h3>
+            </div>
+            <div class="ectv-form-group">
+                <label for="ectv-years">Years to Inspect:</label>
+                <input type="number" id="ectv-years" class="ectv-input" min="1" max="100" value="30">
+            </div>
+            <div class="ectv-result-box">
+                <div class="ectv-result-title">Estimated Government Fee:</div>
+                <div class="ectv-result-val" id="ectv-fee-display">₹280</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;" id="ectv-fee-note">
+                    Calculation: ₹15 (1st Year) + ₹145 (Subsequent Years) + ₹100 certified fee + ₹20 portal fee.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Tab switching
+        const btnSurvey = document.getElementById("ectv-btn-survey");
+        const btnDoc = document.getElementById("ectv-btn-doc");
+        const paneSurvey = document.getElementById("ectv-pane-survey");
+        const paneDoc = document.getElementById("ectv-pane-doc");
+
+        btnSurvey.addEventListener("click", function() {
+            btnSurvey.classList.add("active");
+            btnDoc.classList.remove("active");
+            paneSurvey.classList.add("active");
+            paneDoc.classList.remove("active");
+        });
+
+        btnDoc.addEventListener("click", function() {
+            btnDoc.classList.add("active");
+            btnSurvey.classList.remove("active");
+            paneDoc.classList.add("active");
+            paneSurvey.classList.remove("active");
+        });
+
+        // Checklist logic
+        const checkboxes = document.querySelectorAll("#ectv-checklist input[type=\"checkbox\"]");
+        const progress = document.getElementById("ectv-progress");
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                const label = chk.closest(".ectv-chk-item");
+                if (chk.checked) {
+                    checkedCount++;
+                    label.classList.add("checked");
+                } else {
+                    label.classList.remove("checked");
+                }
+            });
+            const pct = Math.round((checkedCount / total) * 100);
+            progress.style.width = pct + "%";
+        }
+
+        checkboxes.forEach(chk => chk.addEventListener("change", updateProgress));
+        updateProgress();
+
+        // Fee Calculator
+        const inputYears = document.getElementById("ectv-years");
+        const feeDisplay = document.getElementById("ectv-fee-display");
+        const feeNote = document.getElementById("ectv-fee-note");
+
+        function calculateFee() {
+            let years = parseInt(inputYears.value) || 1;
+            if (years < 1) years = 1;
+            
+            // Search Fee: First year Rs. 15, subsequent Rs. 5 per year + Rs. 120 extra fees.
+            const searchFee = 15 + (years - 1) * 5 + 120;
+            feeDisplay.innerText = "₹" + searchFee;
+            feeNote.innerText = "Calculation: ₹15 (1st Year) + ₹" + ((years - 1) * 5) + " (Subsequent Years) + ₹120 (Certified copy and portal fees).";
+        }
+
+        inputYears.addEventListener("input", calculateFee);
+        calculateFee();
+    });
+</script>
+
+<h2>Understanding the tnreginet ec view online Portal Utility</h2>
+<p class="content-text">
+    An <a href="https://econline.in/">ec online</a> service is the single most important tool used by home buyers in Tamil Nadu to perform preliminary title due diligence. Through the official TNREGINET website, citizens can run a **tnreginet ec view online** check to track ownership history and verify mortgages or liens. The platform is designed to provide immediate access to registered property deeds dating back to 1975.
+</p>
+<p class="content-text">
+    In this comprehensive guide, we provide a complete educational walkthrough of how to verify <a href="https://econline.in/">ec online</a> transactions using the official portal. We cover zone selections, revenue villages, sub-registrar offices, date bounds, and fee rates. Buyers who use this guide will gain a clear understanding of how to navigate the registration department portal to download signed or draft records.
+</p>
+
+<h2>View EC (Free) vs. Certified Copy: SRO Office Processes</h2>
+<p class="content-text">
+    Before using the official <a href="https://econline.in/">ec online</a> portal (TNREGINET) to search for details, it is helpful to determine whether a draft search or a certified copy is needed. The portal processes these two formats differently:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>Informational View EC</strong>: This is a free draft search that displays on screen and allows you to search and download <a href="https://econline.in/">ec online</a> draft copies. It is instant and does not require registration. However, it lacks a digital signature and cannot be used in court trials or submitted to banks.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Certified Copy of EC</strong>: This requires a citizen registration account, portal login, and online fee payment. Sub-Registrar Office staff inspects the application, signs it cryptographically, and releases the final PDF for download. This version is legally admissible for mortgage verification.</li>
+</ul>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">Service Category</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Government Search Fees</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Admissibility (Validity)</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Officer Approval Need</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Draft View EC</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹0 (Free of cost)</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Informational only; cannot be used for bank loans.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">No approval needed; instant.</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Certified Copy</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹15 (1st year) + ₹5/subsequent year + process fees</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Legally valid; accepted by banks and registration offices.</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Yes; reviewed and digitally signed by SRO.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>How to Search and View EC on TNREGINET</h2>
+<p class="content-text">
+    To view property records on the TNREGINET portal, follow these step-by-step instructions:
+</p>
+<div class="steps-container">
+    <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Visit Site</h3>
+        <p class="content-text" style="margin-bottom:0;">Navigate to the official Tamil Nadu Inspector General of Registration homepage: <a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener">tnreginet.gov.in</a>.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Navigate to EC</h3>
+        <p class="content-text" style="margin-bottom:0;">Go to the header menu and select <strong>"E-Services" &rarr; "Encumbrance Certificate" &rarr; "View EC"</strong>.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Enter Survey Data</h3>
+        <p class="content-text" style="margin-bottom:0;">Input Zone, District, SRO office, Village, Survey number, and the sub-division code of the plot.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Search & Verify</h3>
+        <p class="content-text" style="margin-bottom:0;">Input the verification captcha code, click "Search" to display the records ledger, and export as a PDF draft.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    To review detailed guides for neighboring states, read our <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> guide, check our checklist on <a href="/tn-ec-online/">tn ec online</a>, read about AP registry searches in the <a href="/online-ec-ap/">online ec ap</a> index, or check the <a href="/ec-online-karnataka/">ec online karnataka</a> handbook. You can also view the general index at our <a href="/ec-view-online/">ec view online</a> directory.
+</p>
+
+<h2>Best Practices to Avoid Search Errors on the Portal</h2>
+<p class="content-text">
+    A common issue during property searches is typing errors in parameters. Keep these guidelines in mind to check the current <a href="https://econline.in/">ec online</a> status information correctly:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>SRO Jurisdictional History</strong>: If a property was registered twenty years ago, it may belong to a different SRO today. Be sure to check the historical registry charts on the portal.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Select Correct Revenue Village</strong>: SRO divisions contain several revenue villages. Choose the exact village listed in the sale deed schedule.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>Check Date Formats</strong>: Search date boundaries must be formatted correctly. Set the start date to a few days before the registered transaction year.</li>
+</ol>
+<p class="content-text">
+    To validate digital signature certificates on your downloaded copies, read the <a href="/online-ec-download/">online ec download</a> reference.
+</p>
+
+<h2>Patta Chitta Validation for Land Records</h2>
+<p class="content-text">
+    Title verification is only half complete with an EC download. You must also check the revenue records to confirm mutation is updated. For land parcels in Tamil Nadu, follow these steps to retrieve the Patta Chitta:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">Access the official Revenue Department e-Services page: <strong>eservices.tn.gov.in</strong>.</li>
+    <li style="margin-bottom: 0.5rem;">Select the option to view Patta copy or Chitta land records.</li>
+    <li style="margin-bottom: 0.5rem;">Input SRO Village, Taluk, and Survey/Sub-division codes.</li>
+    <li style="margin-bottom: 0.5rem;">Verify that the seller\'s name matches the current revenue Pattadar registry.</li>
+</ul>
+<p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+    For other regional directories, consult the <a href="/ec-online-tamil/">ec online tamil</a> guide, check our checklist on <a href="/ec-online-telangana/">ec online telangana</a>, or read about TS land registers in the <a href="/ec-telangana-online-search/">ec telangana online search</a> directory. To retrieve the verified <a href="https://econline.in/">ec online</a> logs, you can always check our main database references.
+</p>';
+    $faq_ectv = '[{"question":"Why does TNREGINET say No Record Found?","answer":"This can happen if the survey number was typed incorrectly, the sub-division field was left blank, or the village SRO selected is incorrect. Double-check your details and try searching with parent survey numbers."},{"question":"Is it possible to view historic Tamil Nadu EC records online?","answer":"Yes, online records on TNREGINET are available from 1975 to the present. For records prior to 1975, you must visit the SRO office to submit a physical search application."},{"question":"How can I download the English version of my TN EC?","answer":"Before you click the EC Search option on the TNREGINET homepage, select the \"English\" language toggle link in the top-right header menu. The portal will then render and generate documents in English."},{"question":"What is the fee to view an EC online on TNREGINET?","answer":"Viewing the draft copy of your encumbrance history is completely free. Fees are only charged if you request a digitally signed certified copy."}]';
+    $schema_type_ectv = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_ectv,
+        'keyword' => $keyword_ectv,
+        'title' => $title_ectv,
+        'meta_desc' => $meta_desc_ectv,
+        'h1_title' => $h1_ectv,
+        'content' => $content_ectv,
+        'faq_data' => $faq_ectv,
+        'schema_type' => $schema_type_ectv
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
+
 
 
 
