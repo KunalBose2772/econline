@@ -3667,6 +3667,449 @@ try {
         'schema_type' => $schema_type_tn
     ]);
 
+    // --- 9. AUTO-INITIALIZE EC TELANGANA ONLINE SEARCH PAGE ---
+    $slug_tss = 'ec-telangana-online-search';
+    $keyword_tss = 'ec telangana online search';
+    $title_tss = 'ec telangana online search';
+    $h1_tss = 'ec telangana online search';
+    $meta_desc_tss = 'Learn how to perform an ec telangana online search. Verify land deeds, track Dharani logs, and check property registration details online.';
+    $content_tss = '<!-- Custom Interactive Styles for TS Search EC Dashboard -->
+<style>
+    .tss-toolkit-container {
+        margin: 2rem 0;
+        width: 100%;
+    }
+    .tss-utility-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    @media (min-width: 768px) {
+        .tss-utility-grid {
+            flex-direction: row;
+        }
+        .tss-widget-panel {
+            flex: 1;
+        }
+    }
+    .tss-widget-panel {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-sm);
+        transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    @media (max-width: 480px) {
+        .tss-widget-panel {
+            padding: 1rem;
+        }
+    }
+    .tss-widget-panel:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow-md);
+    }
+    .tss-widget-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.75rem;
+    }
+    .tss-widget-header h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0;
+        color: var(--primary);
+    }
+    .tss-widget-icon {
+        font-size: 1.5rem;
+    }
+    
+    /* Checklist progress */
+    .tss-progress-bar-wrap {
+        background: var(--border);
+        border-radius: 4px;
+        height: 8px;
+        width: 100%;
+        margin-bottom: 1.25rem;
+        overflow: hidden;
+    }
+    .tss-progress-bar-fill {
+        height: 100%;
+        width: 0%;
+        background-color: var(--success);
+        transition: width var(--transition-normal);
+    }
+    .tss-checklist-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .tss-checklist-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        cursor: pointer;
+    }
+    .tss-checklist-item input[type="checkbox"] {
+        margin-top: 0.25rem;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        cursor: pointer;
+    }
+    .tss-checklist-item span {
+        line-height: 1.4;
+        color: var(--text-main);
+        font-size: 0.95rem;
+    }
+    .tss-checklist-item.checked span {
+        text-decoration: line-through;
+        color: var(--text-muted);
+    }
+
+    /* Calculator */
+    .tss-calc-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .tss-calc-group label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-main);
+    }
+    .tss-calc-input {
+        width: 100%;
+        padding: 0.65rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        font-size: 0.95rem;
+        outline: none;
+        box-sizing: border-box;
+        font-family: var(--font-sans);
+        color: var(--primary);
+    }
+    .tss-calc-input:focus {
+        border-color: var(--accent);
+    }
+    .tss-calc-result {
+        background: #eff6ff;
+        border: 1px solid rgba(37, 99, 211, 0.15);
+        border-radius: var(--radius-sm);
+        padding: 1rem;
+        margin-top: 1rem;
+        color: var(--primary);
+    }
+    .tss-calc-result-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-main);
+        margin-bottom: 0.25rem;
+    }
+    .tss-calc-amount {
+        font-size: 1.5rem;
+        color: var(--accent);
+        font-weight: 800;
+    }
+</style>
+
+<div class="tss-toolkit-container">
+    <div class="tss-utility-grid">
+        <!-- Widget 1: TS Portal Matcher -->
+        <div class="tss-widget-panel">
+            <div class="tss-widget-header">
+                <span class="tss-widget-icon">🔍</span>
+                <h3>TS Search Parameters Matcher</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Select what details you have to find the correct official website for your search.
+            </p>
+            <div class="tss-calc-group">
+                <label for="tss-have">I have the following property detail:</label>
+                <select id="tss-have" class="tss-calc-input">
+                    <option value="doc">Property Registered Document Number & Year</option>
+                    <option value="survey_agri">Survey Number of Agricultural Land</option>
+                    <option value="survey_nonagri">Plot Number/Survey Number of Urban House/Plot</option>
+                    <option value="passbook">Pattadar Passbook Number</option>
+                </select>
+            </div>
+            <div class="tss-calc-result" id="tss-matcher-result" style="background: #f0fdf4; border-color: rgba(22, 163, 74, 0.15); color: #15803d;">
+                <div class="tss-calc-result-title" style="color: #166534;">Recommended Search Gateway:</div>
+                <strong id="tss-match-title" style="font-size: 1.05rem;">IGRS TS Portal - Documentwise Search</strong>
+                <p id="tss-match-desc" style="font-size: 0.85rem; line-height: 1.4; margin-top: 0.5rem; margin-bottom: 0.75rem; color: #166534;">
+                    Input the Document ID, SRO, and Registration Year on the official Stamps & Registration portal.
+                </p>
+                <a href="https://registration.telangana.gov.in" target="_blank" rel="nofollow noopener" class="btn-primary" id="tss-match-btn" style="display: inline-block; font-size: 0.85rem; padding: 0.5rem 1rem; text-decoration: none; background-color: #16a34a;">Open IGRS TS</a>
+            </div>
+        </div>
+
+        <!-- Widget 2: TS Document Checklist -->
+        <div class="tss-widget-panel">
+            <div class="tss-widget-header">
+                <span class="tss-widget-icon">📋</span>
+                <h3>TS EC Search Parameters</h3>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Check the parameters needed before querying the Telangana registry database.
+            </p>
+            <div class="tss-progress-bar-wrap">
+                <div class="tss-progress-bar-fill" id="tss-progress"></div>
+            </div>
+            <div class="tss-checklist-list" id="tss-checklist">
+                <label class="tss-checklist-item">
+                    <input type="checkbox">
+                    <span>District & SRO Office Location</span>
+                </label>
+                <label class="tss-checklist-item">
+                    <input type="checkbox">
+                    <span>Registered Document ID Number & Year</span>
+                </label>
+                <label class="tss-checklist-item">
+                    <input type="checkbox">
+                    <span>Revenue Survey / Plot / Block / Ward Number</span>
+                </label>
+                <label class="tss-checklist-item">
+                    <input type="checkbox">
+                    <span>Pattadar Passbook (Only for Farms/Agri land)</span>
+                </label>
+                <label class="tss-checklist-item">
+                    <input type="checkbox">
+                    <span>Property Boundaries (North, South, East, West)</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Widget 3: TS Fee Calculator -->
+        <div class="tss-widget-panel">
+            <div class="tss-widget-header">
+                <span class="tss-widget-icon">💰</span>
+                <h3>TS Search Fee Calculator</h3>
+            </div>
+            <div class="tss-calc-group">
+                <label for="tss-years">Search Duration (Years):</label>
+                <input type="number" id="tss-years" class="tss-calc-input" min="1" max="100" value="13">
+            </div>
+            <div class="tss-calc-result">
+                <div class="tss-calc-result-title">Estimated Certified Fee:</div>
+                <div class="tss-calc-amount" id="tss-fee-display">₹320</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;" id="tss-fee-note">
+                    Calculation: ₹200 (1st Year) + ₹120 (Subsequent Years).
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Matcher logic
+        const selectHave = document.getElementById("tss-have");
+        const matchTitle = document.getElementById("tss-match-title");
+        const matchDesc = document.getElementById("tss-match-desc");
+        const matchBtn = document.getElementById("tss-match-btn");
+
+        const matches = {
+            doc: {
+                title: "IGRS TS Portal - Documentwise Search",
+                desc: "Input the Document ID, SRO, and Registration Year on the official Stamps & Registration portal.",
+                link: "https://registration.telangana.gov.in",
+                color: "#16a34a"
+            },
+            survey_agri: {
+                title: "Dharani Portal - Land Details Search",
+                desc: "Select District, Mandal, Village, and enter the Survey Number on the Dharani Dashboard for Agricultural Land.",
+                link: "https://dharani.telangana.gov.in",
+                color: "#b45309"
+            },
+            survey_nonagri: {
+                title: "IGRS TS Portal - Property Search Option",
+                desc: "Use the Property Search option on the IGRS site by entering SRO name, Ward, Block, and Survey/Plot details.",
+                link: "https://registration.telangana.gov.in",
+                color: "#16a34a"
+            },
+            passbook: {
+                title: "Dharani Portal - Pattadar Passbook Search",
+                desc: "Directly search the agricultural revenue ledger by inputting the Pattadar Passbook ID on Dharani.",
+                link: "https://dharani.telangana.gov.in",
+                color: "#b45309"
+            }
+        };
+
+        selectHave.addEventListener("change", function() {
+            const data = matches[selectHave.value];
+            matchTitle.innerText = data.title;
+            matchDesc.innerText = data.desc;
+            matchBtn.href = data.link;
+            matchBtn.style.backgroundColor = data.color;
+        });
+
+        // Checklist logic
+        const checkboxes = document.querySelectorAll("#tss-checklist input[type=\"checkbox\"]");
+        const progress = document.getElementById("tss-progress");
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            let checkedCount = 0;
+            checkboxes.forEach(chk => {
+                const label = chk.closest(".tss-checklist-item");
+                if (chk.checked) {
+                    checkedCount++;
+                    label.classList.add("checked");
+                } else {
+                    label.classList.remove("checked");
+                }
+            });
+            const pct = Math.round((checkedCount / total) * 100);
+            progress.style.width = pct + "%";
+        }
+
+        checkboxes.forEach(chk => chk.addEventListener("change", updateProgress));
+        updateProgress();
+
+        // Fee Calculator logic
+        const inputYears = document.getElementById("tss-years");
+        const feeDisplay = document.getElementById("tss-fee-display");
+        const feeNote = document.getElementById("tss-fee-note");
+
+        function calculateFee() {
+            let years = parseInt(inputYears.value) || 1;
+            if (years < 1) years = 1;
+            
+            // Search Fee: First year Rs. 200, subsequent Rs. 10 per year.
+            const searchFee = 200 + (years - 1) * 10;
+            feeDisplay.innerText = "₹" + searchFee;
+            feeNote.innerText = "Calculation: ₹200 (1st Year) + ₹" + ((years - 1) * 10) + " (Subsequent Years).";
+        }
+
+        inputYears.addEventListener("input", calculateFee);
+        calculateFee();
+    });
+</script>
+
+<h2>Understanding ec telangana online search Guidelines</h2>
+<p class="content-text">
+    Telangana has digitized property registrations to streamline transactions. Carrying out an **ec telangana online search** helps buyers, sellers, and financial institutions identify previous transactions. By analyzing digital parameters, citizens can trace structural liabilities before signing deeds.
+</p>
+<p class="content-text">
+    When verifying property titles in Hyderabad or other districts, obtaining a clean <a href="https://econline.in/">ec online</a> is the most crucial task. It confirms the asset is free from active court claims, mortgage loans, or division disputes.
+</p>
+
+<h2>Choosing the Right Portal for TS EC Search</h2>
+<p class="content-text">
+    To perform a **telangana ec search online**, you must select the appropriate gateway. If you are investigating a plot, apartment, house, or commercial building, you can download official transaction records using the <a href="https://econline.in/">ec online</a> registry portal managed by IGRS Telangana. If you are inspecting agricultural land or farm fields, the database search must be queried on the Dharani portal using the **dharani ec online** dashboard.
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">Property Parameter</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">IGRS TS Search</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Dharani Portal Search</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Property Category</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Plots, Flats, Apartments, Houses</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Agricultural land, fields, crop lands</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Search Options</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Document ID, SRO, Property Details</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Pattadar Passbook No., Survey Number</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Official Fees</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">₹200 first year + ₹10/yr subsequent</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Free to lookup and view</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Step-by-Step Guide: IGRS TS Document Search</h2>
+<p class="content-text">
+    To perform an **online ec search telangana** using document details, follow this generic protocol:
+</p>
+<div class="steps-container">
+    <div class="step-card">
+        <div class="step-number">1</div>
+        <h3 class="step-title">Visit IGRS Telangana</h3>
+        <p class="content-text" style="margin-bottom:0;">Navigate to the official portal page: <a href="https://registration.telangana.gov.in" target="_blank" rel="nofollow noopener">registration.telangana.gov.in</a>.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">2</div>
+        <h3 class="step-title">Citizen Login</h3>
+        <p class="content-text" style="margin-bottom:0;">Log in to your citizen profile using your mobile number and password, or register as a new user.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">3</div>
+        <h3 class="step-title">Select EC Search</h3>
+        <p class="content-text" style="margin-bottom:0;">Property verification involves an <a href="https://econline.in/">ec online</a> lookup to identify prior claims. Select the **"Encumbrance Certificate (EC)"** link.</p>
+    </div>
+    <div class="step-card">
+        <div class="step-number">4</div>
+        <h3 class="step-title">Input Document ID</h3>
+        <p class="content-text" style="margin-bottom:0;">Choose document search mode and enter the registration number and year to retrieve the ledger.</p>
+    </div>
+</div>
+
+<p class="content-text">
+    For similar state search options, you can review our <a href="/ec-view-online/">ec view online</a> directory. Additionally, you may compare Telangana rules with neighboring states by reading the <a href="/ec-online-telangana/">ec online telangana</a> guide, the <a href="/online-ec-ap/">online ec ap</a> dashboard, or the <a href="/tn-ec-online/">tn ec online</a> directory.
+</p>
+
+<h2>Dharani Agricultural Search</h2>
+<p class="content-text">
+    For farm records, citizens can perform a **ts online ec** search via Dharani:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">Access the Dharani dashboard page: **dharani.telangana.gov.in**.</li>
+    <li style="margin-bottom: 0.5rem;">Navigate to **"Land Details Search"** citizen services.</li>
+    <li style="margin-bottom: 0.5rem;">Toggle search mode (Survey/Sub-division number or Pattadar passbook number).</li>
+    <li style="margin-bottom: 0.5rem;">Select your District, Mandal, and Village name from the dropdown.</li>
+    <li style="margin-bottom: 0.5rem;">Verify the security captcha, hit fetch, and view the land mutation ledger instantly.</li>
+</ol>
+<p class="content-text">
+    Once the property registration is complete, checking the <a href="https://econline.in/">ec online</a> is crucial to confirm ownership has mutated correctly in the revenue logs.
+</p>
+
+<h2>TS Registration Search Fees & Timelines</h2>
+<p class="content-text">
+    To apply for an official, digitally signed document, you must learn how to apply for an official <a href="https://econline.in/">ec online</a> statement:
+</p>
+<ul style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;">**First Year Search Charge**: ₹200</li>
+    <li style="margin-bottom: 0.5rem;">**Subsequent Years Charge**: ₹10 per year</li>
+    <li style="margin-bottom: 0.5rem;">**Portal Processing Charges**: Nominal charges added at checkout.</li>
+</ul>
+<p class="content-text">
+    Once the registration department processes the request, print the cryptographically verified <a href="https://econline.in/">ec online</a> copy from your dashboard. If you need details on verifying PDF digital signatures, see our <a href="/online-ec-download/">online ec download</a> signature validator instructions.
+</p>
+<p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+    If you need details on other systems, see the detailed <a href="/online-ec-tamilnadu/">online ec tamilnadu</a> guide.
+</p>';
+    $faq_tss = '[{"question":"What is the fee for an ec telangana online search certified copy?","answer":"The certified copy fee is ₹200 for the first year, plus ₹10 for each subsequent year included in the search period. Nominal portal service charges may be added during online checkout. Agricultural land search on Dharani is free."},{"question":"Can I search for Telangana EC by property document number?","answer":"Yes, you can search document details on the IGRS TS Portal by selecting the \'Encumbrance Certificate\' service, choosing the \'By Document Number\' search mode, and entering the registration number, registration year, and local SRO name."},{"question":"How to check ec online in telangana for free?","answer":"For agricultural land, you can check the transaction history for free on the Dharani Portal under \'Land Details Search\'. For non-agricultural properties, you can perform a guest search on IGRS TS to view property ledgers on screen without payment."},{"question":"How long does a certified TS EC search take?","answer":"Once the application and fees are submitted online on the IGRS Telangana portal, the request is verified by the local Sub-Registrar. It is typically digitally signed and ready for download within 24 to 48 hours."}]';
+    $schema_type_tss = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_tss,
+        'keyword' => $keyword_tss,
+        'title' => $title_tss,
+        'meta_desc' => $meta_desc_tss,
+        'h1_title' => $h1_tss,
+        'content' => $content_tss,
+        'faq_data' => $faq_tss,
+        'schema_type' => $schema_type_tss
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
