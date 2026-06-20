@@ -355,13 +355,13 @@ try {
     }
     .utility-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         gap: 1.5rem;
         margin-bottom: 2rem;
     }
     @media (max-width: 768px) {
         .utility-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
         }
     }
     .widget-panel {
@@ -371,6 +371,11 @@ try {
         padding: 1.75rem;
         box-shadow: var(--shadow-sm);
         transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    @media (max-width: 600px) {
+        .widget-panel {
+            padding: 1.25rem;
+        }
     }
     .widget-panel:hover {
         border-color: var(--accent);
@@ -466,18 +471,18 @@ try {
     /* Portal Grid */
     .portal-quick-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 1rem;
         margin-bottom: 2rem;
     }
     @media (max-width: 900px) {
         .portal-quick-grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         }
     }
     @media (max-width: 480px) {
         .portal-quick-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
         }
     }
     .portal-btn {
@@ -547,11 +552,11 @@ try {
             
             <div class="form-group">
                 <label>Application Type:</label>
-                <div style="display: flex; gap: 1.5rem; margin-top: 0.5rem;">
-                    <label style="font-weight: 500; cursor: pointer;">
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+                    <label style="font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.25rem;">
                         <input type="radio" name="calc-type" value="view" checked> View EC (Free Check)
                     </label>
-                    <label style="font-weight: 500; cursor: pointer;">
+                    <label style="font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.25rem;">
                         <input type="radio" name="calc-type" value="certified"> Certified Copy (Official)
                     </label>
                 </div>

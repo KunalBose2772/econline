@@ -266,7 +266,7 @@ a:hover {
 
 .content-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     gap: 2.5rem;
 }
 
@@ -573,7 +573,7 @@ a:hover {
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 900px) {
     .content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
     
     .footer-container {
@@ -612,5 +612,9 @@ a:hover {
         border-radius: var(--radius-sm);
         margin-top: 0.5rem;
         width: 100%;
+    }
+    
+    .card {
+        padding: 1.25rem;
     }
 }
