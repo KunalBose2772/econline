@@ -10484,6 +10484,307 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_epo
     ]);
 
+    // --- 27. AUTO-INITIALIZE LAND EC ONLINE PAGE ---
+    $slug_leo = 'land-ec-online';
+    $keyword_leo = 'land ec online';
+    $title_leo = 'Land EC Online: Search & Verify Land Encumbrance Certificates';
+    $h1_leo = 'Land EC Online: Comprehensive Search Manual & Property Title Verification Guide';
+    $meta_desc_leo = 'Learn how to search, download, and verify your land ec online. Complete state-wise tutorial to check survey numbers, boundary maps, and registration records.';
+    $content_leo = '<p class="content-text">
+    Purchasing a vacant parcel of land, whether for farming, residential layout development, or industrial purposes, carries significant legal responsibilities. Unlike apartments or built-up houses, land plots are subject to unique title vulnerabilities such as boundary overlaps, government zoning restrictions, inheritance claims, and agricultural usage ceiling limits. To verify that a land plot is safe for transaction and free of mortgages, buyers must conduct a search using the <a href="https://econline.in/">ec online</a> portal system.
+</p>
+
+<p class="content-text">
+    Because land registries index records based on geographical parameters, matching the exact survey number, taluk village details, and sub-division codes is critical. In this comprehensive guide, we walk you through the process to search, download, and reconcile your land encumbrance certificate online, ensuring a secure transaction.
+</p>
+
+<!-- Widget 1: Land Survey Boundary Coordinate Mapper -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🗺️ Land Boundary Visualizer
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Map the surrounding plot details from your sale deed to cross-check boundary descriptions in registry records.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Boundary Side</label>
+            <select id="boundary-side" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+                <option value="north">North Boundary</option>
+                <option value="south">South Boundary</option>
+                <option value="east">East Boundary</option>
+                <option value="west">West Boundary</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Description / Neighbor Name</label>
+            <input type="text" id="boundary-desc" placeholder="e.g. Survey 142/4 or Main Road" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+    </div>
+    
+    <button type="button" onclick="addBoundary()" class="btn-primary" style="width: 100%; border: none; cursor: pointer; text-align: center; justify-content: center; padding: 0.75rem; font-size: 1rem; font-weight: 600; border-radius: 6px; margin-bottom: 1.25rem;">Save Boundary</button>
+    
+    <div style="overflow-x: auto; margin-top: 1rem;">
+        <table style="width: 100%; border-collapse: collapse; min-width: 400px; font-size: 0.9rem;" id="boundary-table">
+            <thead>
+                <tr style="background-color: var(--primary); color: white;">
+                    <th style="padding: 8px; border: 1px solid var(--border);">Side</th>
+                    <th style="padding: 8px; border: 1px solid var(--border);">Boundary Record Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td style="padding: 8px; border: 1px solid var(--border); font-weight: 600;">North</td><td id="b-north" style="padding: 8px; border: 1px solid var(--border); color: var(--text-muted);">Not Mapped</td></tr>
+                <tr><td style="padding: 8px; border: 1px solid var(--border); font-weight: 600;">South</td><td id="b-south" style="padding: 8px; border: 1px solid var(--border); color: var(--text-muted);">Not Mapped</td></tr>
+                <tr><td style="padding: 8px; border: 1px solid var(--border); font-weight: 600;">East</td><td id="b-east" style="padding: 8px; border: 1px solid var(--border); color: var(--text-muted);">Not Mapped</td></tr>
+                <tr><td style="padding: 8px; border: 1px solid var(--border); font-weight: 600;">West</td><td id="b-west" style="padding: 8px; border: 1px solid var(--border); color: var(--text-muted);">Not Mapped</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+function addBoundary() {
+    var side = document.getElementById("boundary-side").value;
+    var desc = document.getElementById("boundary-desc").value.trim();
+    
+    if (!desc) {
+        alert("Please enter a description for the boundary.");
+        return;
+    }
+    
+    var cell = document.getElementById("b-" + side);
+    cell.innerHTML = desc;
+    cell.style.color = "#0f172a";
+    cell.style.fontWeight = "600";
+    document.getElementById("boundary-desc").value = "";
+}
+</script>
+
+<h2>Why Land Title Searches Require Strict Boundary Inspections</h2>
+<p class="content-text">
+    Unlike residential apartments which feature defined door numbers within structural boundaries, land plots are demarked by survey stones. Consequently, boundary disputes are the most common source of real estate litigation. To protect your investment, you should compare the boundaries written in the parent deeds with the Field Measurement Book (FMB) sketches. When citizens retrieve their records via the <a href="https://econline.in/">ec online</a> stamps database, they should double check that the survey bounds align with neighbors.
+</p>
+<p class="content-text">
+    Our boundary tracker widget above helps you layout adjacent land parameters, allowing you to easily verify that your digital <a href="https://econline.in/">ec online</a> matches the physical boundary constraints described in the sale deed.
+</p>
+
+<!-- Widget 2: Land Registration Stamp Duty & EC Fee Estimator -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 Land Cost & Registration Estimator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Estimate standard government stamp duties, registry fees, and EC lookup costs for land parcels.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Property Guideline Value (₹)</label>
+            <input type="number" id="prop-value" value="1000000" min="10000" step="10000" oninput="calculateLandFees()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Target State</label>
+            <select id="prop-state" onchange="calculateLandFees()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+                <option value="tn">Tamil Nadu (7% Stamp, 4% Reg)</option>
+                <option value="ka">Karnataka (5.6% Stamp, 1% Reg)</option>
+                <option value="ts">Telangana (4% Stamp, 0.5% Reg)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="land-fees-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateLandFees() {
+    var val = parseFloat(document.getElementById("prop-value").value);
+    var state = document.getElementById("prop-state").value;
+    var resultBox = document.getElementById("land-fees-result");
+    
+    if (isNaN(val) || val <= 0) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var stampRate = 0;
+    var regRate = 0;
+    var stateName = "";
+    
+    if (state === "tn") {
+        stampRate = 0.07;
+        regRate = 0.04;
+        stateName = "Tamil Nadu";
+    } else if (state === "ka") {
+        stampRate = 0.056;
+        regRate = 0.01;
+        stateName = "Karnataka";
+    } else if (state === "ts") {
+        stampRate = 0.04;
+        regRate = 0.005;
+        stateName = "Telangana";
+    }
+    
+    var stampDuty = val * stampRate;
+    var regFee = val * regRate;
+    var total = stampDuty + regFee;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "#eff6ff";
+    resultBox.style.borderColor = "rgba(37, 99, 211, 0.15)";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; font-size: 1.05rem;\">" + stateName + " Cost Estimation:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Guideline Value:</strong> ₹" + val.toLocaleString("en-IN") + "</div>" +
+            "<div><strong>Estimated Stamp Duty:</strong> ₹" + stampDuty.toLocaleString("en-IN") + " (" + (stampRate*100).toFixed(1) + "%)</div>" +
+            "<div><strong>Estimated Registration Fee:</strong> ₹" + regFee.toLocaleString("en-IN") + " (" + (regRate*100).toFixed(1) + "%)</div>" +
+            "<div style=\"border-top: 1px solid rgba(37, 99, 211, 0.15); margin-top: 0.75rem; padding-top: 0.75rem; font-size: 1.1rem; font-weight: 700; color: var(--accent);\">" +
+                "Total Govt Registration Fees: ₹" + total.toLocaleString("en-IN") + 
+            "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("prop-value")) {
+        calculateLandFees();
+    }
+});
+</script>
+
+<h2>Agricultural Land vs. Residential Plots: Verification Rules</h2>
+<p class="content-text">
+    Before closing a deal, it is important to confirm that the land classification matches your intended usage. Residential layouts constructed on agricultural land without collector conversion orders are illegal and cannot receive building approvals. Buyers should check if agricultural ceilings restrict their ability to buy holdings. You can search these parameters to avoid structural title traps on the <a href="https://econline.in/">ec online</a> registry index.
+</p>
+
+<!-- Widget 3: Checklist (Agricultural vs. Non-Agricultural) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Land Registry Category Verification Checklist
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+        Select your land use classification to view targeted validation rules.
+    </p>
+    
+    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+        <button type="button" onclick="setLandChecklist(\'agri\')" id="btn-agri" style="flex: 1; padding: 0.75rem; font-weight: bold; border-radius: 6px; border: 1px solid var(--primary); background-color: var(--primary); color: white; cursor: pointer; transition: all 0.2s;">Agricultural Land</button>
+        <button type="button" onclick="setLandChecklist(\'na\')" id="btn-na" style="flex: 1; padding: 0.75rem; font-weight: bold; border-radius: 6px; border: 1px solid var(--border); background-color: white; color: var(--primary); cursor: pointer; transition: all 0.2s;">Non-Agri / Residential</button>
+    </div>
+    
+    <div id="land-checklist-items" style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; color: #475569;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function setLandChecklist(type) {
+    var btnAgri = document.getElementById("btn-agri");
+    var btnNa = document.getElementById("btn-na");
+    var listContainer = document.getElementById("land-checklist-items");
+    
+    if (type === "agri") {
+        btnAgri.style.backgroundColor = "var(--primary)";
+        btnAgri.style.color = "white";
+        btnAgri.style.borderColor = "var(--primary)";
+        
+        btnNa.style.backgroundColor = "white";
+        btnNa.style.color = "var(--primary)";
+        btnNa.style.borderColor = "var(--border)";
+        
+        listContainer.innerHTML = 
+            "<div>✓ Check land ownership ledger (RTC/Pahani) for active cultivator listings.</div>" +
+            "<div>✓ Verify if the land has forest department border buffer restrictions.</div>" +
+            "<div>✓ Inspect water rights and tube well registration logs in local revenue boards.</div>" +
+            "<div>✓ Check if land ceiling limits restrict the acquisition of agricultural holdings.</div>";
+    } else {
+        btnNa.style.backgroundColor = "var(--primary)";
+        btnNa.style.color = "white";
+        btnNa.style.borderColor = "var(--primary)";
+        
+        btnAgri.style.backgroundColor = "white";
+        btnAgri.style.color = "var(--primary)";
+        btnAgri.style.borderColor = "var(--border)";
+        
+        listContainer.innerHTML = 
+            "<div>✓ Inspect official Collector/DTCP conversion order (Non-Agri use approval).</div>" +
+            "<div>✓ Crosscheck municipal/panchayat layout approval sketches with layout plans.</div>" +
+            "<div>✓ Verify property tax payment registers to ensure no defaults exist.</div>" +
+            "<div>✓ Check local development authority master plans to confirm land usage zones.</div>";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("btn-agri")) {
+        setLandChecklist("agri");
+    }
+});
+</script>
+
+<h2>Official Land Registry Portals Directory</h2>
+<p class="content-text">
+    Every state manages land records through its unique revenue software. Ensure you select the correct official portal to search for records and calculate the estimated costs via <a href="https://econline.in/">ec online</a> calculators:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Land Record Software Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Key Services</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Official URL Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Anyal / e-Services</td>
+                <td>Patta Chitta download, FMB maps, revenue classifications check</td>
+                <td><a href="https://eservices.tn.gov.in/" target="_blank" rel="nofollow noopener">eservices.tn.gov.in</a></td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Bhoomi Portal</td>
+                <td>RTC pahani verification, mutation status check, spatial maps</td>
+                <td><a href="https://bhoomi.karnataka.gov.in/" target="_blank" rel="nofollow noopener">landrecords.karnataka.gov.in</a></td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Telangana</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Dharani</td>
+                <td>Land registration records, partition slots booking, patta maps</td>
+                <td><a href="https://dharani.telangana.gov.in/" target="_blank" rel="nofollow noopener">dharani.telangana.gov.in</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Verification Checklist for Secure Land Transactions</h2>
+<p class="content-text">
+    To protect your property purchase, you must execute the following checks before signing sale agreements:
+</p>
+<ol style="margin-left: 2rem; color: #475569; margin-bottom: 1.5rem; line-height: 1.8;">
+    <li><strong>Request a 30-Year EC</strong>: Run a complete search window from 1975 to today to check all historical transactions.</li>
+    <li><strong>Verify Boundary Consistency</strong>: Reconcile sale deed descriptions with adjacent survey maps.</li>
+    <li><strong>Crosscheck Revenue Records</strong>: Ensure the owner\'s name is mutated in the Patta register.</li>
+    <li><strong>Check Layout Approval Status</strong>: Verify DTCP or CMDA seal prints on layout drawings.</li>
+    <li><strong>Inspect Prohibited Registers</strong>: Ensure the land is not government land or temple land (poramboke).</li>
+</ol>
+<p class="content-text">
+    For further information on local state guidelines and details, consult our main <a href="https://econline.in/">ec online</a> reference guidelines.
+</p>';
+    $faq_leo = '[{"question":"How can I check my land EC online?","answer":"Go to the official registration department portal of your state (e.g., TNREGINET for Tamil Nadu). Select \"View EC\", choose your district/SRO, and enter the land survey and subdivision numbers."},{"question":"What does \"Poramboke Land\" mean on the Patta?","answer":"Poramboke land refers to government-owned waste land or public utility land. It is prohibited for private registration, and deeds filed on such land are void."},{"question":"How can I find my land survey number?","answer":"You can locate the survey number on your property sale deed, tax receipts, or Patta Chitta extract. You can also view spatial boundaries maps on state revenue portals."},{"question":"Is the draft land EC sufficient for bank loan applications?","answer":"No, banks strictly require a digitally signed Certified Copy of the Encumbrance Certificate. You must apply through citizen login and pay government fees."}]';
+    $schema_type_leo = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_leo,
+        'keyword' => $keyword_leo,
+        'title' => $title_leo,
+        'meta_desc' => $meta_desc_leo,
+        'h1_title' => $h1_leo,
+        'content' => $content_leo,
+        'faq_data' => $faq_leo,
+        'schema_type' => $schema_type_leo
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
