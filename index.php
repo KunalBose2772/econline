@@ -186,13 +186,11 @@ if ($slug === 'home') {
     <main class="main-container">
         <div class="content-grid">
             <article class="article-content">
-                <div class="card">
-                    <h1 style="margin-bottom: 1.5rem; font-size: 2.25rem;"><?php echo htmlspecialchars($h1_title); ?></h1>
-                    
-                    <!-- Main Body Content -->
-                    <div class="body-content-text">
-                        <?php echo $content; ?>
-                    </div>
+                <h1 style="margin-bottom: 2rem; font-size: 2.25rem; font-weight: 800; color: var(--primary);"><?php echo htmlspecialchars($h1_title); ?></h1>
+                
+                <!-- Main Body Content -->
+                <div class="body-content-text">
+                    <?php echo $content; ?>
                 </div>
 
                 <!-- Render FAQs Section -->
