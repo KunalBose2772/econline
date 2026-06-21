@@ -16719,6 +16719,242 @@ function runVeoCheck() {
         'schema_type' => $schema_type_veo
     ]);
 
+    // --- 48. AUTO-INITIALIZE HOW TO TAKE EC ONLINE PAGE ---
+    $slug_hteo = 'how-to-take-ec-online';
+    $keyword_hteo = 'how to take ec online';
+    $title_hteo = 'How to Take EC Online: Step-by-Step State-wise Encumbrance Certificate Guide';
+    $h1_hteo = 'How to Take EC Online: Step-by-Step State-wise Encumbrance Certificate Guide';
+    $meta_desc_hteo = 'Learn how to take EC online in Tamil Nadu, Karnataka, Telangana, Andhra Pradesh, and Kerala. Complete step-by-step guide with fee details and portal links.';
+    $content_hteo = '<p class="content-text">
+    An Encumbrance Certificate (EC) is one of the most critical documents required for property transactions in India. Whether you are buying a property, applying for a home loan, applying for a Patta mutation, or defending a legal title dispute, knowing how to take ec online from the correct state government portal is an essential skill. Unlike the earlier offline process that required physical visits to the Sub-Registrar Office (SRO) and weeks of waiting, most states now offer a fully digital process. For a complete state-by-state directory, visit the <strong><a href="https://econline.in/">ec online</a></strong> platform.
+</p>
+
+<h2>What is an Encumbrance Certificate and when do you need it?</h2>
+<p class="content-text">
+    An Encumbrance Certificate is an official document issued by the state registration department. It lists all registered transactions on a property within a specified time period. These transactions include sale deeds, mortgage deeds, gift deeds, partition deeds, release deeds, and court attachment orders that have been registered at the Sub-Registrar Office. A clean EC means no registered charges exist during the searched period, while a Nil EC (Form 16) confirms no transactions whatsoever.
+</p>
+<p class="content-text">
+    You need an EC in the following common situations: when purchasing a property to verify the seller has clean title; when applying for a bank loan where the bank requires a 15 to 30-year EC to confirm no prior mortgage exists; when applying for a Patta (land revenue record) mutation after purchase; when participating in a property partition or legal settlement; and when applying for government schemes involving land or housing benefits. Knowing how to take ec online quickly can save significant time and effort compared to the traditional manual process.
+</p>
+
+<!-- Widget 1: State EC Portal Selector (app-state-select) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, hsl(220, 30%, 98%) 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: hsl(220, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🗺️ State Portal Quick Access
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your state to view the portal name, login requirement, and the key steps to take EC online.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Select Your State</label>
+            <select id="hteo-state-selector" class="app-state-select" onchange="showHteoPortalInfo()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff; box-sizing: border-box;">
+                <option value="">-- Choose State --</option>
+                <option value="tn">Tamil Nadu</option>
+                <option value="ka">Karnataka</option>
+                <option value="tg">Telangana</option>
+                <option value="ap">Andhra Pradesh</option>
+                <option value="kl">Kerala</option>
+            </select>
+        </div>
+    </div>
+    <div id="hteo-portal-details" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function showHteoPortalInfo() {
+    var s = document.getElementById("hteo-state-selector").value;
+    var box = document.getElementById("hteo-portal-details");
+    if (!s) { box.style.display = "none"; return; }
+    box.style.display = "block";
+    box.style.backgroundColor = "hsl(220, 100%, 98%)";
+    box.style.borderColor = "hsl(220, 100%, 88%)";
+    var info = {
+        tn: "<strong>Portal:</strong> tnreginet.gov.in &nbsp;| <strong>Login needed:</strong> No (free guest view) &nbsp;| <strong>Key Steps:</strong> E-Services &rarr; EC View &rarr; Select Zone, District, SRO, Village, Survey No., Date Range",
+        ka: "<strong>Portal:</strong> kaverionline.karnataka.gov.in &nbsp;| <strong>Login needed:</strong> Yes (guest account) &nbsp;| <strong>Key Steps:</strong> Login &rarr; EC Search &rarr; Select District, SRO, Survey No., Period",
+        tg: "<strong>Portal:</strong> registration.telangana.gov.in &nbsp;| <strong>Login needed:</strong> Yes (citizen account) &nbsp;| <strong>Key Steps:</strong> Login &rarr; Online Services &rarr; EC &rarr; District, SRO, Mandal, Village, Survey No., Date Range",
+        ap: "<strong>Portal:</strong> igrs.ap.gov.in &nbsp;| <strong>Login needed:</strong> No (guest view) &nbsp;| <strong>Key Steps:</strong> EC Search &rarr; District, SRO, Mandal, Village, Survey No., Date Range",
+        kl: "<strong>Portal:</strong> keralaregistration.gov.in (PEARL) &nbsp;| <strong>Login needed:</strong> Yes (citizen registration) &nbsp;| <strong>Key Steps:</strong> Register &rarr; Online Applications &rarr; EC &rarr; District, SRO, Village, Survey No., Boundary"
+    };
+    box.innerHTML = "<div style=\"font-size: 0.92rem; color: hsl(220, 100%, 20%); line-height: 1.8;\">" + info[s] + "</div>";
+}
+</script>
+
+<h2>How to take EC online in Tamil Nadu via TNReginet</h2>
+<p class="content-text">
+    Tamil Nadu offers one of the most citizen-friendly portals for obtaining EC records. The Villangam (Encumbrance Certificate) can be viewed for free without login on tnreginet.gov.in. To apply for a certified copy, you must first register a user account. Here is the complete step-by-step process:
+</p>
+<p class="content-text">
+    Step 1 — Navigate to tnreginet.gov.in. Step 2 — Click on "E-Services" in the top navigation. Step 3 — Select "Encumbrance Certificate". Step 4 — Choose your registration zone, district, and Sub-Registrar Office. Step 5 — Select the revenue village name and enter the survey number with sub-division. Step 6 — Set the "From Date" and "To Date" of the search period. Step 7 — Enter the captcha code and click Search. You will instantly see all matching registered deeds. Step 8 — To apply for a certified copy, click "Apply Online" (login required), pay the fee, and submit. You will receive an application number for status tracking.
+</p>
+<p class="content-text">
+    After successful payment, the SRO processes the application within 3 to 7 working days. The digitally signed PDF is uploaded to the portal. Log in to your account, navigate to Application Status, and download the certified PDF when the status shows "Approved". For direct guidance, use the <strong><a href="https://econline.in/">ec online</a></strong> Tamil Nadu section.
+</p>
+
+<h2>How to take EC online in Karnataka via Kaveri Online Services</h2>
+<p class="content-text">
+    Karnataka uses the Kaveri Online Services portal at kaverionline.karnataka.gov.in. Unlike Tamil Nadu, the free EC view also requires a guest account registration. Here are the steps: Step 1 — Visit kaverionline.karnataka.gov.in. Step 2 — Register as a "Guest User" using your name, email, and mobile number. Step 3 — Log in with your guest credentials. Step 4 — Navigate to EC Search. Step 5 — Select the district, taluk, and Sub-Registrar Office. Step 6 — Enter the survey number and the search period dates. Step 7 — Click Search to view the indexed transaction history. Step 8 — To get a certified EC, click "Apply" and proceed to pay the government fee online.
+</p>
+<p class="content-text">
+    Karnataka EC records are available from 1976 onwards for most SROs. The EC in Karnataka is referred to as the Hak Patrika (Encumbrance) or Hakkupatra. The certified copy carries the digital signature of the Sub-Registrar and is legally valid for bank loan submissions and court proceedings. For properties in Bengaluru, use the BBMP zone filter. For agricultural lands, you may also need to check the revenue records (RTC - Record of Rights, Tenancy and Crops) on the Bhoomi portal in addition to the Kaveri EC.
+</p>
+
+<!-- Widget 2: EC Fee Calculator by State (app-calc-years) -->
+<div class="custom-card" id="app-calc-years" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: hsl(340, 80%, 28%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 EC Application Fee Calculator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your state and enter the search duration to estimate the total cost of taking an EC online.
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">State</label>
+            <select id="hteo-fee-state" onchange="calculateHteoFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+                <option value="tn">Tamil Nadu</option>
+                <option value="ka">Karnataka</option>
+                <option value="tg">Telangana</option>
+                <option value="ap">Andhra Pradesh</option>
+                <option value="kl">Kerala</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Years of Search</label>
+            <input type="number" id="hteo-years" value="20" min="1" max="50" oninput="calculateHteoFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+    </div>
+    <div id="hteo-fee-result" style="padding: 1.25rem; border-radius: 8px; background-color: hsl(340, 80%, 97%); border: 1px solid hsl(340, 80%, 85%);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateHteoFee() {
+    var state = document.getElementById("hteo-fee-state").value;
+    var years = parseInt(document.getElementById("hteo-years").value) || 1;
+    var box = document.getElementById("hteo-fee-result");
+    var rates = { tn: [20, 10, 100], ka: [50, 25, 100], tg: [200, 100, 200], ap: [150, 75, 150], kl: [30, 15, 100] };
+    var r = rates[state];
+    var search = r[0] + (years > 1 ? (years - 1) * r[1] : 0);
+    var copy = r[2];
+    var total = search + copy + 30;
+    box.innerHTML = "<div style=\"font-weight: 700; color: hsl(340, 80%, 25%); margin-bottom: 0.5rem;\">Estimated Cost to Take EC Online:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.8;\">" +
+        "<div><strong>Search Period:</strong> " + years + " Year(s)</div>" +
+        "<div><strong>Search Fee:</strong> \u20B9" + search + "</div>" +
+        "<div><strong>Certified Copy Fee:</strong> \u20B9" + copy + "</div>" +
+        "<div style=\"border-top: 1px solid hsl(340, 80%, 85%); margin-top: 0.5rem; padding-top: 0.5rem; font-weight: 700; font-size: 1.05rem; color: hsl(340, 80%, 22%);\">Total: \u20B9" + total + "</div></div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("hteo-fee-state")) { calculateHteoFee(); }
+});
+</script>
+
+<h2>How to take EC online in Telangana and Andhra Pradesh</h2>
+<p class="content-text">
+    Telangana uses the IGRS portal at registration.telangana.gov.in. Citizens must create a registered account before accessing EC services. After login, navigate to Online Services and select Encumbrance Certificate. Choose the district, SRO, mandal, and revenue village. Enter the survey number and the date range. Telangana portal supports searches from 1983 onwards. Agricultural land records in Telangana are managed separately by the Dharani portal at dharani.telangana.gov.in. The IGRS EC is for registered non-agricultural deeds only.
+</p>
+<p class="content-text">
+    In Andhra Pradesh, the IGRS AP portal at igrs.ap.gov.in allows free EC searches without registration. The search form requires the district, mandal, village, and survey number inputs. The AP database covers records from 1983 onwards. Both Telangana and AP issue ECs in bilingual format (Telugu and English). Certified copies carry the cryptographic digital signature of the Sub-Registrar. For certified EC applications, pay the government fee through the portal payment gateway and track the status online. Once approved, download the signed PDF from your login dashboard. Use the <strong><a href="https://econline.in/">ec online</a></strong> AP guide for direct portal links.
+</p>
+
+<!-- Widget 3: EC Application Readiness Checklist (app-readiness-deed) -->
+<div class="custom-card" id="app-readiness-deed" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, hsl(165, 30%, 98%) 100%);">
+    <h3 style="margin-top: 0; color: hsl(165, 80%, 22%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 EC Application Readiness Checklist
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Verify you have all necessary information before applying for your EC online.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="hteo-chk1" onchange="runHteoCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="hteo-chk1" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I know the exact district, SRO, and village name of the property.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="hteo-chk2" onchange="runHteoCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="hteo-chk2" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have the survey number (and sub-division or Sy. No.) of the land parcel.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="hteo-chk3" onchange="runHteoCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="hteo-chk3" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have a registered account on the state portal and a payment method ready.</label>
+        </div>
+    </div>
+    <div id="hteo-check-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Complete the checklist above to confirm your readiness.
+    </div>
+</div>
+
+<script>
+function runHteoCheck() {
+    var c1 = document.getElementById("hteo-chk1").checked;
+    var c2 = document.getElementById("hteo-chk2").checked;
+    var c3 = document.getElementById("hteo-chk3").checked;
+    var box = document.getElementById("hteo-check-result");
+    var score = (c1 ? 1 : 0) + (c2 ? 1 : 0) + (c3 ? 1 : 0);
+    if (score === 0) {
+        box.style.backgroundColor = "#f1f5f9"; box.style.borderColor = "var(--border)"; box.style.color = "#475569";
+        box.innerHTML = "Complete the checklist above to confirm your readiness.";
+    } else if (score < 3) {
+        box.style.backgroundColor = "hsl(38, 92%, 95%)"; box.style.borderColor = "hsl(38, 92%, 82%)"; box.style.color = "hsl(38, 92%, 25%)";
+        box.innerHTML = "&#9888; Almost there. Complete all items before submitting your EC application.";
+    } else {
+        box.style.backgroundColor = "hsl(165, 70%, 95%)"; box.style.borderColor = "hsl(165, 70%, 80%)"; box.style.color = "hsl(165, 70%, 22%)";
+        box.innerHTML = "&#10003; Ready! You can now proceed to take EC online from your state portal.";
+    }
+}
+</script>
+
+<h2>How to take EC online in Kerala via the PEARL portal</h2>
+<p class="content-text">
+    Kerala uses the PEARL portal (Paperless Electronic and Registry Land) at keralaregistration.gov.in. To take EC online in Kerala, first register a citizen account on the portal. After registration, navigate to Online Applications and select Encumbrance Certificate. Choose the district and SRO. Select the revenue village name. Enter the survey number and sub-division number. Enter the search period from and to dates. The PEARL database covers records from 1975 onwards. After submitting the form, pay the government fee online. Kerala charges a search fee of thirty rupees for the first year and fifteen rupees for each additional year, plus a copying fee of one hundred rupees.
+</p>
+<p class="content-text">
+    After payment, the SRO clerk processes the request by reviewing the Index I and Index II registers. Once verified, the Sub-Registrar applies the digital signature using a USB token. The signed PDF is uploaded to the PEARL portal. Processing typically takes 3 to 5 business days. Once available, download the certified PDF from your citizen dashboard. The certificate displays the official government seal, a QR code for validation, and the digital signature block of the Sub-Registrar. To validate the signature, you must add the Kerala Registration Department certificate to your Adobe trust store. For more help, visit the <strong><a href="https://econline.in/">ec online</a></strong> Kerala guide.
+</p>
+
+<h2>Common mistakes to avoid when taking EC online</h2>
+<p class="content-text">
+    Several mistakes commonly occur when citizens attempt to take ec online. The most frequent error is selecting the wrong SRO. Each SRO has a fixed geographic jurisdiction. If the wrong SRO is selected, the search will return zero results even if the property has a long history of transactions. Always verify the SRO name from the parent sale deed or mortgage deed registered on the property.
+</p>
+<p class="content-text">
+    Another common mistake is entering an incorrect survey number format. Most portals require the main survey number and the sub-division number to be entered separately. Entering the combined format like 142/2A in a single field will cause a search failure. Additionally, users sometimes enter incorrect date ranges that miss relevant transaction periods. For bank loan purposes, always search from at least 30 years ago to the current date. Using too short a search period may miss historical mortgage deeds that were released years ago but still form part of the title chain. For best practices, consult the <strong><a href="https://econline.in/">ec online</a></strong> troubleshooting guide.
+</p>
+
+<h2>Bilingual glossary of land registration terms used when taking EC online</h2>
+<p class="content-text">
+    When learning how to take ec online across different states, understanding the local terminology helps avoid confusion:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>Villangam (Tamil Nadu)</strong>: Encumbrance. Villangam Santhiththal = Encumbrance Certificate.</li>
+    <li><strong>Hak Patrika (Karnataka)</strong>: EC document name in Kannada. Also called Hakkupatra.</li>
+    <li><strong>Pahani / RTC (Karnataka, AP, Telangana)</strong>: Revenue record of land rights, tenancy, and crops.</li>
+    <li><strong>PEARL Portal (Kerala)</strong>: The digital registration and EC service platform of Kerala government.</li>
+    <li><strong>IGRS</strong>: Inspector General of Registration and Stamps — the authority managing deeds and ECs in most states.</li>
+    <li><strong>Index I</strong>: Registration index tracking sale deeds, gift deeds, and other property transfers.</li>
+    <li><strong>Index II</strong>: Registration index tracking mortgage deeds, charges, and encumbrances on properties.</li>
+    <li><strong>Form 15</strong>: EC issued when registered transactions exist during the search period.</li>
+    <li><strong>Form 16</strong>: Nil Encumbrance Certificate — issued when no registered transactions found in the search period.</li>
+</ul>
+<p class="content-text">
+    After downloading the certified EC, cross-verify the names, survey numbers, and dates against the original deed documents. Any discrepancy must be resolved through a legal rectification deed before the property transaction proceeds. For all state portals and step-by-step guides on how to take ec online, bookmark the comprehensive <strong><a href="https://econline.in/">ec online</a></strong> reference portal.
+</p>';
+    $faq_hteo = '[{"question":"How to take EC online without visiting the SRO?","answer":"Visit your state registration portal (e.g., tnreginet.gov.in for Tamil Nadu), navigate to EC services, enter the district, SRO, survey number, and date range, pay the fee online, and download the certified PDF once it is approved. No physical visit is required."},{"question":"How long does it take to get an EC online?","answer":"The certified EC is usually ready within 3 to 7 working days after payment confirmation. The exact time depends on the SRO workload and state portal processing time."},{"question":"Is the free online EC view valid for bank loans?","answer":"No. The free view is for reference only. Banks require the certified copy with the Sub-Registrar digital signature for home loan and mortgage processing."},{"question":"What is the fee to take EC online in Tamil Nadu?","answer":"The fee in Tamil Nadu is Rs. 20 for the first year and Rs. 10 for each additional year, plus Rs. 100 for the certified copy and nominal service charges."}]';
+    $schema_type_hteo = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_hteo,
+        'keyword' => $keyword_hteo,
+        'title' => $title_hteo,
+        'meta_desc' => $meta_desc_hteo,
+        'h1_title' => $h1_hteo,
+        'content' => $content_hteo,
+        'faq_data' => $faq_hteo,
+        'schema_type' => $schema_type_hteo
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
