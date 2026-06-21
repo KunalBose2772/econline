@@ -16490,6 +16490,235 @@ function runVoeCheck() {
         'schema_type' => $schema_type_voe
     ]);
 
+    // --- 47. AUTO-INITIALIZE VILLANGAM EC ONLINE PAGE ---
+    $slug_veo = 'villangam-ec-online';
+    $keyword_veo = 'villangam ec online';
+    $title_veo = 'Villangam EC Online: Tamil Nadu Encumbrance Certificate Search Guide';
+    $h1_veo = 'Villangam EC Online: Tamil Nadu Encumbrance Certificate Search Guide';
+    $meta_desc_veo = 'Complete guide to search villangam ec online via TNReginet. Understand Villangam Santhiththal, Form 15, Nil EC, and how to apply for a certified copy in Tamil Nadu.';
+    $content_veo = '<p class="content-text">
+    In Tamil Nadu, the property encumbrance record is locally known as Villangam (வில்லங்கம்). When citizens or property buyers need to verify the transaction history of a plot or house, they search for the Villangam Santhiththal (வில்லங்க சான்றிதழ்), which is the Tamil equivalent of an Encumbrance Certificate (EC). The official portal for villangam ec online searches is tnreginet.gov.in, maintained by the Inspector General of Registration (IGROR), Tamil Nadu. For a complete guide on all state portals, start at the <strong><a href="https://econline.in/">ec online</a></strong> platform.
+</p>
+
+<h2>What is Villangam and why is it important?</h2>
+<p class="content-text">
+    The word Villangam in Tamil means an obstruction or encumbrance. A Villangam Santhiththal is a government-issued document listing all registered legal transactions on a property from a specified start date to an end date. Every time a property is sold, mortgaged, released from mortgage, partitioned, gifted, or subjected to court attachment, a deed is registered at the local Sub-Registrar Office (SRO). This deed is indexed in the official registration records. The Villangam EC summarizes all these indexed entries to show whether the property has existing charges or is clear of encumbrances.
+</p>
+<p class="content-text">
+    Banks and financial institutions require a Villangam EC spanning 15 to 30 years before approving home loans or mortgage loans against property. Courts require a Villangam EC to verify whether a property under dispute has been transferred or charged during the litigation period. Government agencies use the Villangam EC for land acquisition, revenue mutation (Patta transfer), and building plan approvals. Buyers and investors use it to ensure they are not inheriting debts, mortgages, or litigation when purchasing a property. To get started with your property title search, use the <strong><a href="https://econline.in/">ec online</a></strong> search guide.
+</p>
+
+<!-- Widget 1: TNReginet District and SRO Selector (app-state-select) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, hsl(15, 30%, 98%) 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: hsl(15, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🏢 Tamil Nadu District SRO Directory
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your district to view Sub-Registrar Office contact information for Villangam EC requests.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Select District</label>
+            <select id="veo-district-selector" class="app-state-select" onchange="showVeoSroDetails()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff; box-sizing: border-box;">
+                <option value="">-- Choose District --</option>
+                <option value="chennai">Chennai</option>
+                <option value="coimbatore">Coimbatore</option>
+                <option value="madurai">Madurai</option>
+                <option value="trichy">Tiruchirappalli</option>
+                <option value="salem">Salem</option>
+                <option value="tirunelveli">Tirunelveli</option>
+            </select>
+        </div>
+    </div>
+    <div id="veo-sro-details" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function showVeoSroDetails() {
+    var dist = document.getElementById("veo-district-selector").value;
+    var box = document.getElementById("veo-sro-details");
+    if (!dist) { box.style.display = "none"; return; }
+    box.style.display = "block";
+    box.style.backgroundColor = "hsl(15, 100%, 98%)";
+    box.style.borderColor = "hsl(15, 100%, 88%)";
+    var info = {
+        chennai: "<strong>Chennai SROs:</strong> Tondiarpet, Royapuram, Egmore, Guindy, Mylapore, Perambur &nbsp;| Zone: North, Central, South &nbsp;| Records from: 1987 onwards",
+        coimbatore: "<strong>Coimbatore SROs:</strong> Coimbatore North, Coimbatore South, Pollachi, Tiruppur &nbsp;| Records from: 1987 onwards",
+        madurai: "<strong>Madurai SROs:</strong> Madurai North, Madurai South, Melur, Tirumangalam &nbsp;| Records from: 1987 onwards",
+        trichy: "<strong>Trichy SROs:</strong> Srirangam, Tiruverambur, Manapparai, Musiri &nbsp;| Records from: 1987 onwards",
+        salem: "<strong>Salem SROs:</strong> Salem, Attur, Mettur, Omalur &nbsp;| Records from: 1987 onwards",
+        tirunelveli: "<strong>Tirunelveli SROs:</strong> Tirunelveli, Palayamkottai, Ambasamudram, Nanguneri &nbsp;| Records from: 1987 onwards"
+    };
+    box.innerHTML = "<div style=\"font-size: 0.92rem; color: hsl(15, 100%, 20%); line-height: 1.8;\">" + info[dist] + "</div>";
+}
+</script>
+
+<h2>How to search villangam ec online on TNReginet step by step</h2>
+<p class="content-text">
+    To perform a villangam ec online search on TNReginet, follow these steps. Open a browser and navigate to tnreginet.gov.in. On the homepage, locate the top navigation menu. Click on "E-Services" and then select "Encumbrance Certificate" from the dropdown list. The EC search page will open. No user registration or login is required to use the free Villangam view service.
+</p>
+<p class="content-text">
+    On the EC search form, select the zone first. Tamil Nadu has multiple registration zones including North, South, Central, East, West, and Kongu zones. After selecting the zone, choose your district from the drop-down list. Next, select the Sub-Registrar Office (SRO) that has jurisdiction over your property. Each district has multiple SROs, and selecting the wrong SRO will return no results. If you are unsure which SRO covers your area, check the original sale deed or mortgage deed of the property. The SRO name is printed on the document header. After selecting the SRO, choose the revenue village name from the available list.
+</p>
+<p class="content-text">
+    Enter the search period start date and end date. For property purchases, enter a 30-year search range. For quick confirmation of recent transactions, a 5-year range is sufficient. Enter the survey number and the sub-division number. If the property is an apartment, enter the apartment door number and the undivided share of land (UDS) survey reference. Enter the captcha code displayed and click the "Search" button. The portal will display a list of all matching registered deeds during that period. Each entry shows the document number, date of registration, nature of deed, names of parties, and consideration value. The complete villangam data is displayed within seconds.
+</p>
+
+<!-- Widget 2: Villangam EC Duration and Fee Calculator (app-calc-years) -->
+<div class="custom-card" id="app-calc-years" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: hsl(260, 80%, 28%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 Villangam EC Fee Calculator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Enter your search duration to estimate the government fee for a certified Villangam EC copy in Tamil Nadu.
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Start Year</label>
+            <input type="number" id="veo-start-year" value="1995" min="1987" max="2026" oninput="calculateVeoFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">End Year</label>
+            <input type="number" id="veo-end-year" value="2025" min="1987" max="2026" oninput="calculateVeoFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+    </div>
+    <div id="veo-fee-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateVeoFee() {
+    var start = parseInt(document.getElementById("veo-start-year").value);
+    var end = parseInt(document.getElementById("veo-end-year").value);
+    var box = document.getElementById("veo-fee-result");
+    if (isNaN(start) || isNaN(end) || start > end) { box.style.display = "none"; return; }
+    var years = end - start + 1;
+    var search = 20 + (years > 1 ? (years - 1) * 10 : 0);
+    var copy = 100;
+    var total = search + copy + 25;
+    box.style.display = "block";
+    box.style.backgroundColor = "hsl(260, 80%, 97%)";
+    box.style.borderColor = "hsl(260, 80%, 87%)";
+    box.innerHTML = "<div style=\"font-weight: 700; color: hsl(260, 80%, 25%); margin-bottom: 0.75rem;\">Estimated Villangam EC Cost:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.8;\">" +
+        "<div><strong>Search Duration:</strong> " + years + " Year(s)</div>" +
+        "<div><strong>Search Fee:</strong> \u20B9" + search + "</div>" +
+        "<div><strong>Certified Copy Fee:</strong> \u20B9" + copy + "</div>" +
+        "<div style=\"border-top: 1px solid hsl(260, 80%, 87%); margin-top: 0.75rem; padding-top: 0.75rem; font-weight: 700; font-size: 1.1rem; color: hsl(260, 80%, 22%);\">Total Estimated: \u20B9" + total + "</div></div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("veo-start-year")) { calculateVeoFee(); }
+});
+</script>
+
+<h2>Understanding Form 15 and Form 16 Villangam certificates</h2>
+<p class="content-text">
+    The Tamil Nadu registration department issues the Villangam EC in two standard formats. Form 15 is issued when there are registered transactions on the property during the stated search period. This form contains a detailed table with each deed entry. Form 16 is issued when no registered transactions exist during the specified search period. This is called a Nil Villangam or Nil Encumbrance Certificate. For a clean property with a long history of no charges, the department issues a Form 16. For properties with historical deeds, the Form 15 will list all sales, mortgages, and discharges in chronological order. For state-specific guidance, check the <strong><a href="https://econline.in/">ec online</a></strong> resource library.
+</p>
+<p class="content-text">
+    It is important to understand that the free TNReginet online view is only a reference draft and does not carry any official authentication. For legal and banking purposes, a certified Villangam EC must be applied for through the official application process. The certified copy is printed on government paper with a tamper-evident stamp and the cryptographic digital signature of the Sub-Registrar. Banks accept only certified copies for mortgage processing. Courts accept only certified copies as evidence in property litigation.
+</p>
+
+<h2>How to apply for a certified Villangam EC online</h2>
+<p class="content-text">
+    To apply for a certified copy of the Villangam EC through the TNReginet portal, first register a user account on tnreginet.gov.in. After logging in, navigate to E-Services and select "Apply for EC". Fill in the property details including district, SRO, village, survey number, and the search period. The system will calculate and display the applicable government fee. Pay the fee online using net banking, credit card, debit card, or UPI. After successful payment, the system generates an application reference number.
+</p>
+<p class="content-text">
+    The application is then forwarded to the concerned SRO for processing. A registration clerk reviews the index registers and prepares the EC document. The Sub-Registrar verifies and digitally signs the certificate using a USB token. The signed PDF is uploaded to the TNReginet portal. Processing typically takes 3 to 7 working days for most districts. Once ready, log in to tnreginet.gov.in and navigate to your "Application Status" section. When the status shows "Approved", click the download link to retrieve the certified PDF. For the most current portal status, visit the <strong><a href="https://econline.in/">ec online</a></strong> guide.
+</p>
+
+<!-- Widget 3: Villangam EC Download Readiness Checklist (app-readiness-deed) -->
+<div class="custom-card" id="app-readiness-deed" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, hsl(120, 30%, 98%) 100%);">
+    <h3 style="margin-top: 0; color: hsl(120, 80%, 22%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Villangam EC Application Readiness Checklist
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Check all requirements before submitting your Villangam EC application on TNReginet.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="veo-chk1" onchange="runVeoCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="veo-chk1" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have the correct SRO name, district, and revenue village details.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="veo-chk2" onchange="runVeoCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="veo-chk2" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have the property survey number and sub-division number ready.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="veo-chk3" onchange="runVeoCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="veo-chk3" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have registered a user account on tnreginet.gov.in and have payment method ready.</label>
+        </div>
+    </div>
+    <div id="veo-check-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Complete the checklist above to check your application readiness.
+    </div>
+</div>
+
+<script>
+function runVeoCheck() {
+    var c1 = document.getElementById("veo-chk1").checked;
+    var c2 = document.getElementById("veo-chk2").checked;
+    var c3 = document.getElementById("veo-chk3").checked;
+    var box = document.getElementById("veo-check-result");
+    var score = (c1 ? 1 : 0) + (c2 ? 1 : 0) + (c3 ? 1 : 0);
+    if (score === 0) {
+        box.style.backgroundColor = "#f1f5f9"; box.style.borderColor = "var(--border)"; box.style.color = "#475569";
+        box.innerHTML = "Complete the checklist above to check your application readiness.";
+    } else if (score < 3) {
+        box.style.backgroundColor = "hsl(38, 92%, 95%)"; box.style.borderColor = "hsl(38, 92%, 82%)"; box.style.color = "hsl(38, 92%, 25%)";
+        box.innerHTML = "&#9888; Incomplete. Gather all required details before proceeding to TNReginet.";
+    } else {
+        box.style.backgroundColor = "hsl(120, 60%, 95%)"; box.style.borderColor = "hsl(120, 60%, 80%)"; box.style.color = "hsl(120, 60%, 22%)";
+        box.innerHTML = "&#10003; Ready! You can now proceed to apply for your Villangam EC on tnreginet.gov.in.";
+    }
+}
+</script>
+
+<h2>Common issues when searching villangam ec online</h2>
+<p class="content-text">
+    Several common problems occur when users attempt to search for villangam ec online records on TNReginet. The most frequent issue is selecting the wrong SRO. Since SROs are jurisdictional offices with fixed geographic boundaries, a single survey number in a village boundary may sometimes fall under a different SRO than expected. If your initial search returns zero results, try an adjacent SRO within the same district.
+</p>
+<p class="content-text">
+    Another common issue is incorrect survey number formatting. In Tamil Nadu, survey numbers are recorded in the land records using a specific format combining the main number with a sub-division number. For example, a survey number written as 142/1 means survey 142 with sub-division 1. On the TNReginet search form, these must be entered in separate fields. Entering 142/1 in a single field may cause a search failure. Additionally, some older records digitized before 2005 may have inconsistencies in name spellings or survey boundary references due to manual data entry errors during the digitization process.
+</p>
+<p class="content-text">
+    Font display issues are also common for Tamil language records. Older TNReginet records use TSCII encoding which may appear as garbled characters in standard web browsers. To resolve this, download the TSCII Tamil font pack from the TNReginet portal. Install it on your computer and refresh the browser page. The Tamil characters in the Villangam Santhiththal will display correctly after the font installation. For up-to-date browser compatibility notes, check the <strong><a href="https://econline.in/">ec online</a></strong> technical support section.
+</p>
+
+<h2>Bilingual glossary of Tamil Nadu land registration terms</h2>
+<p class="content-text">
+    When reviewing Villangam EC records in Tamil Nadu, you will encounter local land administration terms. Understanding these is essential for correct interpretation:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>Villangam (வில்லங்கம்)</strong>: Tamil word for encumbrance or obstruction on property title.</li>
+    <li><strong>Santhiththal (சான்றிதழ்)</strong>: Tamil word for certificate. Villangam Santhiththal = Encumbrance Certificate.</li>
+    <li><strong>Patta (பட்டா)</strong>: The revenue record that proves land ownership. Issued by the Tahsildar office.</li>
+    <li><strong>Chitta (சிட்டா)</strong>: Revenue record listing landowners in a village with their survey numbers and land extents.</li>
+    <li><strong>Adangal (அடங்கல்)</strong>: Revenue field register showing land use, soil type, and water source details.</li>
+    <li><strong>SRO (Sub-Registrar Office)</strong>: Government office where property deeds are executed and indexed.</li>
+    <li><strong>Uthiram (உரிமை)</strong>: Right or ownership. Used in deed language to denote transfer of ownership.</li>
+    <li><strong>Kiraiyam (கிரயம்)</strong>: Sale. A Kiraiya Pattiram is a Sale Deed in Tamil.</li>
+</ul>
+<p class="content-text">
+    Before finalizing any property purchase in Tamil Nadu, buyers should cross-verify the Villangam EC details against the Patta records in the revenue office. The owner name on the Patta must match the seller name on the most recent sale deed indexed in the Villangam EC. Any mismatch requires legal resolution before the purchase can proceed. For a complete state-wise EC guide, visit the <strong><a href="https://econline.in/">ec online</a></strong> documentation portal.
+</p>';
+    $faq_veo = '[{"question":"What is Villangam EC in Tamil Nadu?","answer":"Villangam EC (Villangam Santhiththal) is the Tamil Nadu term for the Encumbrance Certificate. It lists all registered property transactions like sales, mortgages, and releases on a plot during a specified period."},{"question":"How do I search villangam ec online for free?","answer":"Visit tnreginet.gov.in, go to E-Services, select Encumbrance Certificate, choose your district and SRO, enter the survey number and date range, and click Search. No login is required for the free guest view."},{"question":"What is Form 15 and Form 16 in Villangam EC?","answer":"Form 15 is issued when there are registered transactions on the property. Form 16 (Nil EC) is issued when no transactions exist during the search period."},{"question":"How long does it take to get a certified Villangam EC online?","answer":"After payment, the certified EC is usually ready within 3 to 7 working days depending on the SRO workload."}]';
+    $schema_type_veo = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_veo,
+        'keyword' => $keyword_veo,
+        'title' => $title_veo,
+        'meta_desc' => $meta_desc_veo,
+        'h1_title' => $h1_veo,
+        'content' => $content_veo,
+        'faq_data' => $faq_veo,
+        'schema_type' => $schema_type_veo
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
