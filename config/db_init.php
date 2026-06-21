@@ -13389,6 +13389,338 @@ function setServiceInfo(service) {
         'schema_type' => $schema_type_bhoomi
     ]);
 
+    // --- 36. AUTO-INITIALIZE EC ONLINE SERVICES PAGE ---
+    $slug_services = 'ec-online-services';
+    $keyword_services = 'ec online services';
+    $title_services = 'EC Online Services: Comprehensive Guide to Registered Property Encumbrances';
+    $h1_services = 'EC Online Services: Comprehensive Guide to Registered Property Encumbrances';
+    $meta_desc_services = 'Search and download registered property Encumbrances Certificates online. Step-by-step state-wise directory for TNREGINET, Kaveri, IGRS AP and TS.';
+    $content_services = '<p class="content-text">
+    Real estate transactions, home loan approvals, and agricultural land purchase audits in India require verifying that the target property is free from legal liabilities, active mortgages, court attachments, or ownership disputes. The registration department in almost every state has launched digital platforms to facilitate searches on registered transactions. To check if a property has a clean title, buyers and legal professionals can verify ownership history on the main <strong><a href="https://econline.in/">ec online</a></strong> search catalog.
+</p>
+
+<p class="content-text">
+    These electronic platforms are collectively known as online registries or digital search portals. Each state administration has developed its own database to index sale deeds, gift deeds, partitions, and release deeds. Using these web platforms makes tracking SRO applications through our <strong><a href="https://econline.in/">ec online</a></strong> status checker straightforward. In this article, we will provide a comprehensive overview of how these platforms function, the document parameters required for search, the fee structure across states, and how to verify certified PDF outputs.
+</p>
+
+<h2>Understanding registered property encumbrances</h2>
+<p class="content-text">
+    An Encumbrance Certificate (EC) acts as proof that a property has clear title ownership and is free from any outstanding financial or legal liabilities. When a landowner mortgages a property to a commercial bank or financial institution to secure a loan, the transaction is registered at the concerned Sub-Registrar Office (SRO) in Book 1 records. This creates a charge on the property, which is indexed under the survey number and document coordinates.
+</p>
+<p class="content-text">
+    If the owner attempts to sell the property without repaying the loan, the bank\'s active charge will appear in the search results of the EC. Similarly, court attachments, partition lawsuits, and municipal land acquisitions are registered to prevent fraudulent transfers. Conducting a thorough lookup of these indices is a key process step in any standard <strong><a href="https://econline.in/">ec online</a></strong> property title review.
+</p>
+
+<!-- Widget 1: State Portal Finder (app-state-select) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, hsl(215, 30%, 98%) 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🌐 State Portal Finder
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your state to discover the official portal name, document search charges, and processing speed.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Select State</label>
+            <select id="state-portal-selector" class="app-state-select" onchange="showStatePortalInfo()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff; box-sizing: border-box;">
+                <option value="">-- Choose State --</option>
+                <option value="tn">Tamil Nadu (TNREGINET)</option>
+                <option value="ka">Karnataka (Kaveri 2.0 / Bhoomi)</option>
+                <option value="ap">Andhra Pradesh (IGRS AP)</option>
+                <option value="ts">Telangana (IGRS Telangana)</option>
+                <option value="kl">Kerala (Pearl Registration)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="state-portal-info" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function showStatePortalInfo() {
+    var state = document.getElementById("state-portal-selector").value;
+    var infoBox = document.getElementById("state-portal-info");
+    
+    if (!state) {
+        infoBox.style.display = "none";
+        return;
+    }
+    
+    infoBox.style.display = "block";
+    infoBox.style.backgroundColor = "hsl(215, 100%, 98%)";
+    infoBox.style.borderColor = "hsl(215, 100%, 88%)";
+    
+    var content = "";
+    if (state === "tn") {
+        content = "<strong>Tamil Nadu:</strong> TNREGINET (tnreginet.gov.in) manages property registration and Villangam EC searches. Draft copy is free; certified copy fees range from ₹15 to ₹150+ based on search duration.";
+    } else if (state === "ka") {
+        content = "<strong>Karnataka:</strong> Kaveri Online Services (kaveri.karnataka.gov.in) handles EC searches and guidance values, while Bhoomi manages RTC/Pahani land records. Certified EC copy is ₹100-₹200.";
+    } else if (state === "ap") {
+        content = "<strong>Andhra Pradesh:</strong> IGRS AP (registration.ap.gov.in) allows users to search encumbrances on properties by survey or document numbers. Free online searches are instant.";
+    } else if (state === "ts") {
+        content = "<strong>Telangana:</strong> IGRS Telangana (registration.telangana.gov.in) provides search services for registered transaction indexes. Certified copies require citizen login.";
+    } else if (state === "kl") {
+        content = "<strong>Kerala:</strong> PEARL Registration Portal (keralaregistration.gov.in) hosts encumbrance search applications and online fee submissions.";
+    }
+    
+    infoBox.innerHTML = "<div style=\"font-size: 0.95rem; color: hsl(215, 100%, 20%); line-height: 1.6;\">" + content + "</div>";
+}
+</script>
+
+<h2>Search methods: Property-wise vs Document-wise</h2>
+<p class="content-text">
+    To query any state registration database, you must choose between two query methods: property-wise index search and document-wise index search. Property-wise search is a geographical query. It requires inputting the target District, Taluk, hobli, revenue village name, survey number, and subdivision boundary. This method searches all transactions registered against that specific land parcel. It is the best method to check if a plot or apartment has any active loans, court battles, or secondary sales.
+</p>
+<p class="content-text">
+    In contrast, document-wise search is a direct lookup. It requires inputting the document registration number, the concerned SRO office, the registration year, and the book category. This method is incredibly fast and returns the details of that single deed along with any subsequent mortgages registered on that specific document. Knowing these parameters makes property audit queries highly efficient. You can access step-by-step state tutorials on our <strong><a href="https://econline.in/">ec online</a></strong> handbook pages.
+</p>
+
+<!-- Widget 2: Service Cost Estimator (app-calc-years) -->
+<div class="custom-card" id="app-calc-years" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: hsl(35, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 EC Search Cost Estimator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Calculate the approximate government filing fees based on the required history duration.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Filing Duration (Years)</label>
+            <input type="number" id="services-calc-years-input" value="15" min="1" max="100" oninput="calculateServicesFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Copy Level</label>
+            <select id="services-copy-type" onchange="calculateServicesFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff; box-sizing: border-box;">
+                <option value="certified">Certified Digital Copy</option>
+                <option value="draft">Draft View Copy (Free/Minimal)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="services-fee-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateServicesFee() {
+    var years = parseInt(document.getElementById("services-calc-years-input").value);
+    var type = document.getElementById("services-copy-type").value;
+    var resultBox = document.getElementById("services-fee-result");
+    
+    if (isNaN(years) || years < 1) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var searchCharges = 15 + (years > 1 ? (years - 1) * 5 : 0);
+    var copyCharges = (type === "certified") ? 100 : 0;
+    var serviceTax = 20;
+    var total = searchCharges + copyCharges + serviceTax;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "hsl(35, 100%, 97%)";
+    resultBox.style.borderColor = "hsl(35, 100%, 85%)";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: hsl(35, 100%, 25%); margin-bottom: 0.75rem; font-size: 1.05rem;\">Services Cost Summary:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Search Period:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>Government Search Charge:</strong> ₹" + searchCharges + "</div>" +
+            "<div><strong>Certified Copy Surcharge:</strong> ₹" + copyCharges + "</div>" +
+            "<div><strong>Service Portal Fee:</strong> ₹" + serviceTax + "</div>" +
+            "<div style=\"border-top: 1px solid hsl(35, 100%, 85%); margin-top: 0.75rem; padding-top: 0.75rem; font-size: 1.1rem; font-weight: 700; color: hsl(35, 100%, 20%);\">" +
+                "Estimated Total: ₹" + total + 
+            "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("services-calc-years-input")) {
+        calculateServicesFee();
+    }
+});
+</script>
+
+<h2>How to avoid search failures and zero results</h2>
+<p class="content-text">
+    A common issue faced by users on electronic registration portals is getting a "No Record Found" message. This result does not guarantee that the property has no liabilities; it often indicates that incorrect search inputs were provided. SRO databases are indexing-sensitive, meaning spelling variations, spaces, and formatting typos will prevent matches. For instance, entering "Subramanyapura" instead of "Subrahmanyapura" will produce a zero result.
+</p>
+<p class="content-text">
+    Similarly, survey subdivision numbers must be formatted exactly as registered in the revenue ledger books. If a plot is sub-divided as "45/2A", entering "45/2" or "45-2A" will return incorrect or blank logs. Buyers must reference previous parent deeds to copy SRO names and village codes. Cross-referencing these indices is a major step in the Karnataka ec online land title audit flow.
+</p>
+
+<!-- Widget 3: Title Deed Checklist (app-readiness-deed) -->
+<div class="custom-card" id="app-readiness-deed" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, hsl(140, 30%, 98%) 100%);">
+    <h3 style="margin-top: 0; color: hsl(140, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Title Verification Checklist
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Check off the documents you have reviewed to assess the legal readiness of your land transaction.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="deed-check-ec" onchange="runDeedCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="deed-check-ec" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Encumbrance Certificate (minimum 30 years search history)</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="deed-check-parent" onchange="runDeedCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="deed-check-parent" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Parent Deeds / Title Chain Deeds (30 years continuous history)</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="deed-check-patta" onchange="runDeedCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="deed-check-patta" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Patta/Chitta or RTC/Pahani in current owner\'s name</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="deed-check-tax" onchange="runDeedCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="deed-check-tax" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Latest property tax payment receipts (Municipal/Revenue)</label>
+        </div>
+    </div>
+    
+    <div id="deed-check-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Review status will appear here.
+    </div>
+</div>
+
+<script>
+function runDeedCheck() {
+    var check1 = document.getElementById("deed-check-ec").checked;
+    var check2 = document.getElementById("deed-check-parent").checked;
+    var check3 = document.getElementById("deed-check-patta").checked;
+    var check4 = document.getElementById("deed-check-tax").checked;
+    var resultBox = document.getElementById("deed-check-result");
+    
+    var score = 0;
+    if (check1) score++;
+    if (check2) score++;
+    if (check3) score++;
+    if (check4) score++;
+    
+    if (score === 0) {
+        resultBox.style.backgroundColor = "#f1f5f9";
+        resultBox.style.borderColor = "var(--border)";
+        resultBox.style.color = "#475569";
+        resultBox.innerHTML = "Check checklist items to analyze transaction readiness.";
+    } else if (score < 4) {
+        resultBox.style.backgroundColor = "hsl(35, 92%, 95%)";
+        resultBox.style.borderColor = "hsl(35, 92%, 85%)";
+        resultBox.style.color = "hsl(35, 92%, 25%)";
+        resultBox.innerHTML = "⚠️ Status: Under Review. Ensure you check title chains to prevent future litigation.";
+    } else {
+        resultBox.style.backgroundColor = "hsl(142, 70%, 95%)";
+        resultBox.style.borderColor = "hsl(142, 70%, 85%)";
+        resultBox.style.color = "hsl(142, 70%, 25%)";
+        resultBox.innerHTML = "✓ Perfect! Document checklist is complete. The title history is ready for legal verification.";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("deed-check-ec")) {
+        runDeedCheck();
+    }
+});
+</script>
+
+<h2>The historical context of property registration in India</h2>
+<p class="content-text">
+    The practice of registering land deeds and transactions in India dates back to the colonial era, with the formalization of the Registration Act in 1908. This landmark legislation aimed to prevent real estate fraud, settle conflicting claims, and compile public records of property transfers. Under this act, sub-registrars were appointed to oversee local SRO jurisdictions and maintain manual index registers. These manual records were cataloged into specific books based on transaction categories. Book 1 was dedicated to recording non-testamentary deeds related to immovable properties, such as sale deeds, mortgages, and gifts.
+</p>
+<p class="content-text">
+    For nearly a century, retrieving encumbrance histories required a manual search of these heavy leather-bound indices by SRO clerks. This manual process was slow, prone to errors, and open to manipulation. With the advent of the National Land Records Modernization Programme (NLRMP), state governments launched digital registry services. Digitization has enabled SRO offices to store document indices in secure databases, allowing users to query property transactions instantly.
+</p>
+
+<h2>Understanding the legal limitations of an Encumbrance Certificate</h2>
+<p class="content-text">
+    While obtaining an EC is a critical milestone in establishing property title, buyers must understand its legal limitations. An Encumbrance Certificate only displays transactions that have been formally registered at the local Sub-Registrar Office. It does not act as an absolute warranty of clear title. Several categories of property rights and liabilities are not registered at SROs, and therefore will not appear in online searches. For instance, oral family partition agreements, inheritances under personal law, and oral tenancy agreements are legally valid but often remain unregistered.
+</p>
+<p class="content-text">
+    Additionally, in some states, landowners can create an equitable mortgage (mortgage by deposit of title deeds) by submitting physical deeds to a lender without registering a formal mortgage deed. Because these transactions do not SRO ledgers, they will not appear on the EC. To mitigate these risks, buyers should complement online index searches with public notices in local newspapers, physical verification of the parent deeds, and local revenue department queries.
+</p>
+
+<h2>Verifying certified copy digital signatures</h2>
+<p class="content-text">
+    When you apply for a certified encumbrance certificate copy online, the document undergoes physical ledger audit by the registrar staff. Once approved, the system generates a PDF document embedded with a cryptographic signature certificate. When you download this file on your personal computer and open it in Acrobat, you might see a "Signature Not Verified" badge on the digital stamp. This occurs because Adobe Reader does not possess state root certificates in its default certificate store.
+</p>
+<p class="content-text">
+    To validate the signature, open Acrobat Reader, click the signature stamp, and select "Properties". Click "Show Certificate", navigate to the "Trust" tab, and click "Add to Trusted Certificates". Validate the signature, and the question mark badge will update to a green checkmark. Establishing this trust chain ensures that your certified copy is valid for banks and municipal mutation submissions. You can cross-reference portal directories in our <strong><a href="https://econline.in/">ec online</a></strong> state directory lookup.
+</p>
+
+<h2>Property Registry Portal Features Comparison Table</h2>
+<p class="content-text">
+    To assist buyers and sellers in navigating property registries, we have compiled a comparison table outlining portal services:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State Location</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Portal Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Certified Copy Fee</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Filing Speed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">TNREGINET Portal</td>
+                <td>₹15 base + ₹5/year + ₹100 copy fee</td>
+                <td>3 to 5 Days (Certified Copy Approval)</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Kaveri Online Services (2.0)</td>
+                <td>₹100 to ₹250 based on search period</td>
+                <td>2 to 3 Working Days (Digital Signature)</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Andhra Pradesh</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS AP Portal</td>
+                <td>₹100 - ₹200 based on registration SRO</td>
+                <td>Instant download (Draft View) / 24 Hours</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Telangana</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS Telangana Portal</td>
+                <td>₹150 to ₹300 based on search period</td>
+                <td>1 to 3 Working Days (Office Verification)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Bilingual Guide Checklist for Multi-State Property Verification</h2>
+<p class="content-text">
+    When buying property across state borders, buyers must perform a series of checklist verifications to avoid ownership disputes:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>Verify Sub-Registrar Jurisdiction</strong>: Ensure that the survey coordinates match the exact SRO database registry directory.</li>
+    <li><strong>Audit Title Chain deeds</strong>: Collect sale deed history for a minimum of 30 continuous years to trace absolute owner transfers.</li>
+    <li><strong>Match Land Revenue Ledgers</strong>: Reconcile SRO records with local land revenue records (Patta in TN, RTC in Karnataka, Adangal in AP).</li>
+    <li><strong>Confirm Coordinate Dimensions</strong>: Reconcile the boundary coordinates listed in the deeds with actual physical boundaries on the ground.</li>
+    <li><strong>Verify Digital Signatures</strong>: Always import government certificates to Acrobat to confirm the validity of registrar barcodes.</li>
+</ul>
+
+<h2>Conclusion & Professional Support</h2>
+<p class="content-text">
+    Conducting comprehensive index queries using state registries represents the best way to safeguard property investments. Mismatches, missing subdivisions, and spelling errors in owner fields must be resolved through administrative correction processes in local offices. For tutorials and guidance on other states, visit the primary dashboard of our <strong><a href="https://econline.in/">ec online</a></strong> registry handbook.
+</p>';
+    $faq_services = '[{"question":"What are the primary portals for searching EC online?","answer":"The primary portals include TNREGINET for Tamil Nadu, Kaveri 2.0 for Karnataka, and IGRS portals for Andhra Pradesh and Telangana."},{"question":"Is it possible to view draft EC reports for free?","answer":"Yes, several states like Tamil Nadu and Andhra Pradesh allow users to view draft encumbrance histories on screen for free."},{"question":"How can I download a certified copy?","answer":"You must log in to the official state portal, submit the property details, pay the government search fees, and download the digitally signed PDF once approved."},{"question":"How many years of history should I review?","answer":"For a standard title audit, a search duration of 30 to 43 years is recommended to ensure no legacy encumbrances or mortgages are active."}]';
+    $schema_type_services = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_services,
+        'keyword' => $keyword_services,
+        'title' => $title_services,
+        'meta_desc' => $meta_desc_services,
+        'h1_title' => $h1_services,
+        'content' => $content_services,
+        'faq_data' => $faq_services,
+        'schema_type' => $schema_type_services
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
