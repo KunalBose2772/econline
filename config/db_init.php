@@ -16256,6 +16256,240 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_kerala
     ]);
 
+    // --- 46. AUTO-INITIALIZE VIEW ONLINE EC PAGE ---
+    $slug_voe = 'view-online-ec';
+    $keyword_voe = 'view online ec';
+    $title_voe = 'View Online EC: Search & Download Encumbrance Certificates';
+    $h1_voe = 'View Online EC: Search & Download Encumbrance Certificates';
+    $meta_desc_voe = 'Complete guide to view online ec records across all Indian states. Select your state portal, calculate search fees, and verify your property encumbrance certificate instantly.';
+    $content_voe = '<p class="content-text">
+    When you need to verify property ownership history before any purchase or financial transaction, the first step is to use the <strong>ec online</strong> platform and look up the registered transaction index for the relevant plot. The Encumbrance Certificate (EC) is an official government document that reveals all registered charges, mortgages, sales, and leases linked to a property over a defined period. In India, every state maintains its own land registration database. Knowing how to view online ec records from the correct state portal saves time and protects buyers from fraudulent transactions.
+</p>
+
+<h2>What does an Encumbrance Certificate reveal?</h2>
+<p class="content-text">
+    An EC contains a chronological log of every registered deed executed on a property. Each entry includes the document number, the book and volume reference, the registration date, the nature of the transaction (sale, mortgage, release, partition, or gift), the names of the parties, and the consideration value. A clean EC with no entries during the search period means the property has no active encumbrances during that time. The registration department in each state issues this as either a Form 15 (with transactions) or a Form 16, commonly called a Nil Encumbrance Certificate, when no transactions are found. To begin your search, use the main <strong><a href="https://econline.in/">ec online</a></strong> resource to find your state portal link.
+</p>
+<p class="content-text">
+    Property buyers, banks, and lawyers use ECs for different purposes. Banks require a certified EC spanning the last 15 to 30 years when processing mortgage loans to verify that the property is free of prior charges. Buyers check ECs to confirm the seller has clear title and no pending litigation. Lawyers use EC data to trace ownership chains during property dispute cases. Municipal corporations require ECs when processing building plan approvals or khatha transfers. In each of these scenarios, being able to view online ec records quickly from the government portal gives an immediate advantage.
+</p>
+
+<!-- Widget 1: State EC Portal Selector (app-state-select) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, hsl(210, 30%, 98%) 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: hsl(210, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🗺️ State EC Portal Directory
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your state to view the official portal name, search method, and login requirement details.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Select State</label>
+            <select id="voe-state-selector" class="app-state-select" onchange="showVoePortalInfo()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff; box-sizing: border-box;">
+                <option value="">-- Choose Your State --</option>
+                <option value="tamilnadu">Tamil Nadu</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="telangana">Telangana</option>
+                <option value="andhra">Andhra Pradesh</option>
+                <option value="kerala">Kerala</option>
+                <option value="pondicherry">Puducherry</option>
+            </select>
+        </div>
+    </div>
+    <div id="voe-portal-details" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function showVoePortalInfo() {
+    var state = document.getElementById("voe-state-selector").value;
+    var box = document.getElementById("voe-portal-details");
+    if (!state) { box.style.display = "none"; return; }
+    box.style.display = "block";
+    box.style.backgroundColor = "hsl(210, 100%, 98%)";
+    box.style.borderColor = "hsl(210, 100%, 88%)";
+    var info = {
+        tamilnadu: "<strong>Portal:</strong> tnreginet.gov.in &nbsp;|&nbsp; <strong>Method:</strong> Guest view available without login &nbsp;|&nbsp; <strong>Search By:</strong> Survey number or Document number &nbsp;|&nbsp; <strong>Records From:</strong> 1987 onwards",
+        karnataka: "<strong>Portal:</strong> kaverionline.karnataka.gov.in &nbsp;|&nbsp; <strong>Method:</strong> Guest user login required &nbsp;|&nbsp; <strong>Search By:</strong> Survey number or Property number &nbsp;|&nbsp; <strong>Records From:</strong> 1976 onwards",
+        telangana: "<strong>Portal:</strong> registration.telangana.gov.in &nbsp;|&nbsp; <strong>Method:</strong> Citizen login required &nbsp;|&nbsp; <strong>Search By:</strong> Document number or Survey number &nbsp;|&nbsp; <strong>Records From:</strong> 1983 onwards",
+        andhra: "<strong>Portal:</strong> igrs.ap.gov.in &nbsp;|&nbsp; <strong>Method:</strong> Guest view available &nbsp;|&nbsp; <strong>Search By:</strong> Survey number or Document number &nbsp;|&nbsp; <strong>Records From:</strong> 1983 onwards",
+        kerala: "<strong>Portal:</strong> keralaregistration.gov.in (PEARL) &nbsp;|&nbsp; <strong>Method:</strong> Citizen registration required &nbsp;|&nbsp; <strong>Search By:</strong> Survey number or Boundary wise &nbsp;|&nbsp; <strong>Records From:</strong> 1975 onwards",
+        pondicherry: "<strong>Portal:</strong> igrs.py.gov.in &nbsp;|&nbsp; <strong>Method:</strong> Guest view available &nbsp;|&nbsp; <strong>Search By:</strong> Survey number or Document number &nbsp;|&nbsp; <strong>Records From:</strong> 1980 onwards"
+    };
+    box.innerHTML = "<div style=\"font-size: 0.92rem; color: hsl(210, 100%, 20%); line-height: 1.8;\">" + info[state] + "</div>";
+}
+</script>
+
+<h2>How to view online ec records in Tamil Nadu (Villangam Santhiththal)</h2>
+<p class="content-text">
+    In Tamil Nadu, the Encumbrance Certificate is known locally as the Villangam Santhiththal (வில்லங்க சான்றிதழ்). All property registration records are digitized on the TNReginet portal managed by the Inspector General of Registration (IGROR). To view online ec data, visit tnreginet.gov.in and navigate to the EC View section under Online Services. Select your district, zone, Sub-Registrar Office (SRO), and enter the revenue village name. Enter the survey number and subdivision number along with the search period start and end dates. The portal provides a free guest view of all registered transactions without requiring login credentials.
+</p>
+<p class="content-text">
+    After submitting the search query, the portal displays a table listing each registered deed with its document number, nature of document (sale deed, mortgage deed, release deed, partition deed, or power of attorney), parties involved, and the value of consideration. If no transactions are found, the system displays a Nil EC response. It is important to note that the free online view is a draft display and does not carry a digital signature. For bank loan submissions or court purposes, users must apply for a certified copy bearing the digital signature of the Sub-Registrar. For a step-by-step guide, check the <strong><a href="https://econline.in/">ec online</a></strong> state guide section.
+</p>
+
+<h2>Karnataka Kaveri Online Services EC search (Hak Patrika)</h2>
+<p class="content-text">
+    In Karnataka, the EC is referred to as the Hak Patrika or Hakkupatra. The government maintains all registration records on the Kaveri Online Services portal at kaverionline.karnataka.gov.in. Unlike Tamil Nadu, Karnataka requires users to register a guest account before accessing the EC view module. After logging in as a guest user, navigate to the EC Search section. Select the district and then the SRO jurisdiction. Enter the survey number and the village name. The Kaveri database supports searches from 1976 onwards for urban properties and from earlier years for certain rural survey records.
+</p>
+<p class="content-text">
+    The search result will display all registered transactions against the property. Karnataka registration indexes include Index I entries (which track registered deeds) and Index II entries (which track mortgages and charges). Both types of entries will appear in the EC view. For properties in Bengaluru, use the Bruhat Bengaluru Mahanagara Palike (BBMP) zone to narrow down the SRO selection. If you search by document number, the portal can directly display a single deed record. Use the <strong><a href="https://econline.in/">ec online</a></strong> Karnataka section for direct portal links.
+</p>
+
+<!-- Widget 2: EC Search Duration & Fee Calculator (app-calc-years) -->
+<div class="custom-card" id="app-calc-years" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: hsl(28, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 EC Search Fee Estimator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your state and enter the search duration to estimate the government fee for obtaining a certified EC copy.
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">State</label>
+            <select id="voe-fee-state" onchange="calculateVoeFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+                <option value="tn">Tamil Nadu</option>
+                <option value="ka">Karnataka</option>
+                <option value="tg">Telangana</option>
+                <option value="ap">Andhra Pradesh</option>
+                <option value="kl">Kerala</option>
+            </select>
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Years of Search</label>
+            <input type="number" id="voe-years" value="15" min="1" max="50" oninput="calculateVoeFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+    </div>
+    <div id="voe-fee-result" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: hsl(28, 100%, 97%); border-color: hsl(28, 100%, 85%);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateVoeFee() {
+    var state = document.getElementById("voe-fee-state").value;
+    var years = parseInt(document.getElementById("voe-years").value) || 1;
+    var resultBox = document.getElementById("voe-fee-result");
+    var fees = { tn: [20, 10, 100], ka: [50, 25, 100], tg: [200, 100, 200], ap: [150, 75, 150], kl: [30, 15, 100] };
+    var f = fees[state];
+    var search = f[0] + (years > 1 ? (years - 1) * f[1] : 0);
+    var copy = f[2];
+    var total = search + copy + 30;
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: hsl(28, 100%, 25%); margin-bottom: 0.5rem;\">Estimated Cost:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.8;\">" +
+        "<div><strong>Search Period:</strong> " + years + " Year(s)</div>" +
+        "<div><strong>Search Fee:</strong> \u20B9" + search + "</div>" +
+        "<div><strong>Certified Copy Fee:</strong> \u20B9" + copy + "</div>" +
+        "<div style=\"border-top: 1px solid hsl(28, 100%, 85%); margin-top: 0.5rem; padding-top: 0.5rem; font-weight: 700; font-size: 1.05rem; color: hsl(28, 100%, 20%);\">Total Estimated: \u20B9" + total + "</div></div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("voe-fee-state")) { calculateVoeFee(); }
+});
+</script>
+
+<h2>Telangana and Andhra Pradesh EC search portals</h2>
+<p class="content-text">
+    In Telangana, the Encumbrance Certificate is issued by the Stamps and Registration Department through the IGRS Telangana portal at registration.telangana.gov.in. Non-agricultural urban properties are registered here. The portal requires a citizen login account to access the EC services module. After logging in, navigate to Online Services and select the Encumbrance Certificate option. Enter the district, SRO, revenue mandal, and village. Then enter the survey number and the date range. The Dharani portal handles agricultural land records separately from the IGRS system.
+</p>
+<p class="content-text">
+    In Andhra Pradesh, the IGRS AP portal at igrs.ap.gov.in provides a free guest EC view option. No login is required for basic searches. Enter the registration district, the mandal, the village, and the survey details. The AP portal allows searches from 1983 onwards. For legacy records before digitization, physical visits to the local SRO are required. Both states issue the EC in bilingual format (Telugu and English) and the certified copy carries the digital signature of the Sub-Registrar of the jurisdiction. For the latest portal link, visit the <strong><a href="https://econline.in/">ec online</a></strong> AP resources section.
+</p>
+
+<h2>How to search by document number instead of survey number</h2>
+<p class="content-text">
+    Most EC searches are conducted using the property survey number. However, if you do not know the survey number, you can also search using the document number of a previously registered deed. The document number appears on the sale deed or mortgage deed issued at the time of registration. It is printed in the deed format as: "Document No. XXXX of YYYY" where XXXX is the serial number and YYYY is the registration year. On the TNReginet portal for Tamil Nadu, this search is available under the "Document Search" section. On the Kaveri Karnataka portal, this option is available under "Document Details" search.
+</p>
+<p class="content-text">
+    When using document number search, you must know the SRO where the deed was originally registered. The document number is unique only within a single SRO and year combination. Two different SROs can have the same document number for the same year, so entering the correct SRO is mandatory. After the search returns results, click on the document entry to view its full index details, including all parties, survey numbers, and consideration value. This method is particularly useful for property lawyers who are tracing the ownership chain for a single property across multiple registered deeds. The <strong><a href="https://econline.in/">ec online</a></strong> platform provides direct links to each state document search page.
+</p>
+
+<!-- Widget 3: EC Download Readiness Checklist (app-readiness-deed) -->
+<div class="custom-card" id="app-readiness-deed" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, hsl(145, 30%, 98%) 100%);">
+    <h3 style="margin-top: 0; color: hsl(145, 90%, 22%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 EC Search Readiness Checklist
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Confirm you have all required details before starting your EC search to avoid wasted attempts.
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="voe-chk1" onchange="runVoeCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="voe-chk1" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I know the correct district and Sub-Registrar Office (SRO) name.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="voe-chk2" onchange="runVoeCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="voe-chk2" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have the exact survey number and sub-division number for the plot.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="voe-chk3" onchange="runVoeCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="voe-chk3" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have decided the search period start and end dates (minimum 15 years recommended).</label>
+        </div>
+    </div>
+    <div id="voe-check-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Complete the checklist above to check your search readiness.
+    </div>
+</div>
+
+<script>
+function runVoeCheck() {
+    var c1 = document.getElementById("voe-chk1").checked;
+    var c2 = document.getElementById("voe-chk2").checked;
+    var c3 = document.getElementById("voe-chk3").checked;
+    var box = document.getElementById("voe-check-result");
+    var score = (c1 ? 1 : 0) + (c2 ? 1 : 0) + (c3 ? 1 : 0);
+    if (score === 0) {
+        box.style.backgroundColor = "#f1f5f9"; box.style.borderColor = "var(--border)"; box.style.color = "#475569";
+        box.innerHTML = "Complete the checklist above to check your search readiness.";
+    } else if (score < 3) {
+        box.style.backgroundColor = "hsl(38, 92%, 95%)"; box.style.borderColor = "hsl(38, 92%, 82%)"; box.style.color = "hsl(38, 92%, 25%)";
+        box.innerHTML = "&#9888; Almost ready. Complete all items to ensure a successful search.";
+    } else {
+        box.style.backgroundColor = "hsl(145, 70%, 95%)"; box.style.borderColor = "hsl(145, 70%, 80%)"; box.style.color = "hsl(145, 70%, 22%)";
+        box.innerHTML = "&#10003; You are ready! Proceed to your state portal to view online ec records.";
+    }
+}
+</script>
+
+<h2>Understanding Form 15 and Form 16 EC certificates</h2>
+<p class="content-text">
+    When the registration department processes an EC search query, the output is issued in one of two standard formats. Form 15 is issued when the search returns one or more registered transactions during the specified period. It lists each deed with full details including the document number, date, parties, nature of transaction, and consideration amount. Banks and lawyers typically require Form 15 EC spanning 15 to 30 years to validate the ownership chain and confirm the absence of undisclosed mortgages.
+</p>
+<p class="content-text">
+    Form 16 is issued when the department finds no registered transactions during the stated search period. This is known as a Nil Encumbrance Certificate (Nil EC or Nil Villangam in Tamil Nadu). A Nil EC proves that no sales, mortgages, or charges were registered during that window. However, it is important to understand that an EC only covers registered deeds. Unregistered agreements or oral transactions are not reflected. Buyers must independently verify possession and check for occupancy certificates, property tax receipts (Katha in Karnataka, Chitta in Tamil Nadu), and revenue records (Adangal, Pahani) to complete the full due diligence process.
+</p>
+
+<h2>Bilingual glossary of EC and land registration terms</h2>
+<p class="content-text">
+    When you view online ec records, you will encounter government and local language terms. Understanding them helps you interpret the certificate correctly:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>Villangam (வில்லங்கம்)</strong>: Tamil term for encumbrance. Villangam Santhiththal means Encumbrance Certificate.</li>
+    <li><strong>Hak Patrika / Hakkupatra</strong>: Kannada term used in Karnataka for the EC document.</li>
+    <li><strong>Pahani / Adangal</strong>: Revenue land record in Andhra Pradesh and Telangana that tracks crop and land use data.</li>
+    <li><strong>Pattadar Passbook</strong>: Telangana land ownership document issued to agricultural land owners by the revenue department.</li>
+    <li><strong>Thandaper</strong>: Kerala revenue record account number that tracks land owned by an individual in a village.</li>
+    <li><strong>Katha / Khata</strong>: Karnataka municipality record that tracks who is responsible for property tax payments.</li>
+    <li><strong>SRO</strong>: Sub-Registrar Office — the government office where all property deeds are executed and archived.</li>
+    <li><strong>Index I / Index II</strong>: The official registration indexes. Index I tracks sale deeds. Index II tracks mortgages and charges.</li>
+</ul>
+<p class="content-text">
+    Buyers conducting property due diligence should verify that the names on the EC match the names on all related revenue records. Any discrepancy in owner names or survey parameters should be investigated and resolved legally before proceeding with a purchase. For guidance on each state registration process, visit the comprehensive <strong><a href="https://econline.in/">ec online</a></strong> documentation portal.
+</p>';
+    $faq_voe = '[{"question":"Can I view my EC online for free without login?","answer":"Yes. Tamil Nadu (TNReginet), Andhra Pradesh (IGRS AP), and Puducherry allow free guest views. Karnataka and Telangana require a registered user account before accessing the EC view module."},{"question":"What is the difference between Form 15 and Form 16 EC?","answer":"Form 15 lists all registered transactions on the property during the search period. Form 16 (Nil EC) means no transactions were registered during that period."},{"question":"How many years of EC search should I do before buying a property?","answer":"Banks typically require 15 years minimum. For safety, 30 years is recommended to catch any historical mortgages or partition deeds that may still have legal implications."},{"question":"Is the free online view of EC legally valid for bank loan submissions?","answer":"No. The free guest view is for reference only. Banks require a certified copy with the Sub-Registrar digital signature for loan processing purposes."}]';
+    $schema_type_voe = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_voe,
+        'keyword' => $keyword_voe,
+        'title' => $title_voe,
+        'meta_desc' => $meta_desc_voe,
+        'h1_title' => $h1_voe,
+        'content' => $content_voe,
+        'faq_data' => $faq_voe,
+        'schema_type' => $schema_type_voe
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
