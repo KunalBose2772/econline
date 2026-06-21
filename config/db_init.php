@@ -12372,6 +12372,364 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_ap
     ]);
 
+    // --- 33. AUTO-INITIALIZE ONLINE EC TAMIL NADU PAGE ---
+    $slug_tn_sp = 'online-ec-tamil-nadu';
+    $keyword_tn_sp = 'online ec tamil nadu';
+    $title_tn_sp = 'Online EC Tamil Nadu: Search Villangam Certificate & Verify Deeds';
+    $h1_tn_sp = 'Online EC Tamil Nadu: Step-by-Step TNREGINET Land Registry Manual';
+    $meta_desc_tn_sp = 'Complete guide to check online ec tamil nadu for land and property registration. Step-by-step tutorial for TNREGINET Villangam, Patta Chitta verification.';
+    $content_tn_sp = '<p class="content-text">
+    An Encumbrance Certificate (EC) is a critical document for any property owner or prospective buyer in Tamil Nadu. Popularly known as the Villangam சான்றிதழ், this document lists all registered transactions associated with a property. The Inspector General of Registration (TNREGINET) manages this system digitally. To start your search, property buyers can access the main <strong><a href="https://econline.in/">ec online</a></strong> index database.
+</p>
+
+<p class="content-text">
+    Under land administration guidelines in Tamil Nadu, registry verification covers both agricultural lands and residential properties. Checking the registry helps ensure that the property has a clear, marketable title, free from unpaid bank mortgages or court attachments. This digital summary represents a clean <strong><a href="https://econline.in/">ec online</a></strong> listing, meaning no mortgages exist.
+</p>
+
+<!-- Widget 1: TN Encumbrance Search Assistant -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📝 Terminology Translation lookup
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Translate official Tamil land registry terms to English definitions dynamically.
+    </p>
+    
+    <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Select Term</label>
+        <select id="tn-glossary-select" onchange="runGlossaryLookup()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+            <option value="villangam">Villangam சான்றிதழ் (Encumbrance Certificate)</option>
+            <option value="patta">Patta (பட்டா - Title Deed)</option>
+            <option value="chitta">Chitta (சிட்டா - Land Details)</option>
+            <option value="sro">Sub-Registrar Office (சார்பதிவாளர் அலுவலகம்)</option>
+            <option value="fmb">FMB (புல வரைபடம் - Field Measurement Book)</option>
+        </select>
+    </div>
+    
+    <div id="tn-glossary-result" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: #ffffff; min-height: 80px;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function runGlossaryLookup() {
+    var term = document.getElementById("tn-glossary-select").value;
+    var resultBox = document.getElementById("tn-glossary-result");
+    
+    var termsMap = {
+        villangam: {
+            tamil: "வில்லங்க சான்றிதழ்",
+            english: "Encumbrance Certificate",
+            desc: "The transaction log recording sales, mortgages, court leases, and boundary changes registered for the property."
+        },
+        patta: {
+            tamil: "பட்டா",
+            english: "Land Title Register Entry",
+            desc: "Revenue record issued by the Tahsildar indicating legal ownership of the land holding."
+        },
+        chitta: {
+            tamil: "சிட்டா",
+            english: "Land Category and Classification Book",
+            desc: "Details whether the land is Nanjai (wetland), Punjai (dryland), or residential site, including tax parameters."
+        },
+        sro: {
+            tamil: "சார்பதிவாளர் அலுவலகம்",
+            english: "Sub-Registrar Office (SRO)",
+            desc: "The government office where property deeds are registered, executed, and cataloged."
+        },
+        fmb: {
+            tamil: "புல வரைபடம்",
+            english: "Field Measurement Sketch",
+            desc: "The scale map layout containing exact boundary survey dimensions of the land parcel."
+        }
+    };
+    
+    var data = termsMap[term];
+    resultBox.style.borderColor = "var(--border)";
+    resultBox.style.backgroundColor = "#f8fafc";
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;\">" + data.english + " (" + data.tamil + ")</div>" +
+                          "<div style=\"font-size: 0.95rem; color: #475569; line-height: 1.5;\">" + data.desc + "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("tn-glossary-select")) {
+        runGlossaryLookup();
+    }
+});
+</script>
+
+<h2>How to Search Villangam (EC) in Tamil Nadu</h2>
+<p class="content-text">
+    The Inspector General of Registration allows citizens to register and inspect their <strong><a href="https://econline.in/">ec online</a></strong> reports safely. To perform a search, you can choose between two main routes:
+</p>
+<h3 style="color: var(--primary);">Method 1: Search by Property Details</h3>
+<p class="content-text">
+    This option requires detailed location identifiers. Users must select the District, Zone, and Sub-Registrar Office (SRO) where the property deed was executed. Next, select the Village name, Survey Number, and Sub-division Number. Enter the date range for your search, solve the captcha, and click search.
+</p>
+<h3 style="color: var(--primary);">Method 2: Search by Document Details</h3>
+<p class="content-text">
+    If you already have a copy of the parent sale deed, you can use the Document-wise search. Select the SRO name, input the registered Document Number, select the registration Year, and select the document type (e.g., Regular Document, lease, or partition). This method is significantly faster and displays instant matches.
+</p>
+
+<h2>Step-by-Step Walkthrough for Guest Users on TNREGINET</h2>
+<p class="content-text">
+    Guest search features on the TNREGINET portal are incredibly useful for quick verification of property titles. To check a property as a guest user, visit the official site and navigate to the search page. Enter the survey and sub-division identifiers. The system will process the parameters and display the registered transactions directly on the screen.
+</p>
+<p class="content-text">
+    However, guest users cannot download a certified copy. The copy generated is marked as a "draft search result" and does not have the legal digital signature of the Sub-Registrar. To obtain a certified, legally signed copy for home loan applications or court requirements, you must log in using a registered citizen account. Paying the required government fee generates the official PDF document.
+</p>
+
+<!-- Widget 2: TN Search Fee Estimation Calculator -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 TN EC Search Fee Estimator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Compute the official TNREGINET registration fees based on search duration in years.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Search Years</label>
+            <input type="number" id="tn-calc-years" value="30" min="1" max="100" oninput="calculateTnFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Copy Copy Type</label>
+            <select id="tn-calc-type" onchange="calculateTnFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+                <option value="certified">Certified Digital Copy (₹100 extra)</option>
+                <option value="draft">Draft View Copy (Free view)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="tn-fee-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateTnFee() {
+    var years = parseInt(document.getElementById("tn-calc-years").value);
+    var type = document.getElementById("tn-calc-type").value;
+    var resultBox = document.getElementById("tn-fee-result");
+    
+    if (isNaN(years) || years < 1) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var baseSearch = 15; // 1st year search fee
+    var additionalSearch = (years > 1) ? (years - 1) * 5 : 0; // Rs. 5 per subsequent year
+    var copyCharges = (type === "certified") ? 100 : 0; // Rs. 100 for copy
+    var portalFee = 20; // Nominal portal service charges
+    
+    var total = baseSearch + additionalSearch + copyCharges + portalFee;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "hsl(210, 100%, 97%)";
+    resultBox.style.borderColor = "hsl(210, 100%, 85%)";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: hsl(210, 100%, 25%); margin-bottom: 0.75rem; font-size: 1.05rem;\">Tamil Nadu Registration Fee Summary:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Filing Duration:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>First Year Search Charge:</strong> ₹" + baseSearch + "</div>" +
+            "<div><strong>Subsequent Years Surcharge:</strong> ₹" + additionalSearch + "</div>" +
+            "<div><strong>Certified Copy Fee:</strong> ₹" + copyCharges + "</div>" +
+            "<div><strong>Portal Filing Fee:</strong> ₹" + portalFee + "</div>" +
+            "<div style=\"border-top: 1px solid hsl(210, 100%, 85%); margin-top: 0.75rem; padding-top: 0.75rem; font-size: 1.1rem; font-weight: 700; color: hsl(210, 100%, 20%);\">" +
+                "Estimated Total Charges: ₹" + total + 
+            "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("tn-calc-years")) {
+        calculateTnFee();
+    }
+});
+</script>
+
+<h2>Cross-Checking Patta Chitta Land Records</h2>
+<p class="content-text">
+    To ensure complete transaction security, checking the EC is only half the work. Property buyers must also verify the land revenue records (Patta in Tamil Nadu, RTC Pahani in Karnataka, or Adangal in AP) to confirm the seller\'s name is updated in the land tax books. Mismatches must be resolved before initiating queries on the ec online website. Before finalizing land purchases, verify the <strong><a href="https://econline.in/">ec online</a></strong> status from the official archives.
+</p>
+<p class="content-text">
+    The Land Records department provides Patta (Ownership document) and Chitta (Land register details) extracts via the official AnyRoR/e-Services portal. If the seller\'s name does not match the Patta records, you must request a Patta transfer (Patta Maarudhal) from the local Tahsildar before initiating registry updates.
+</p>
+
+<h2>Detailed Guidelines for Checking Guideline Values in Tamil Nadu</h2>
+<p class="content-text">
+    Guideline Value is the minimum valuation of property set by the Tamil Nadu government for registration and stamp duty calculation. Different streets and land zones have different guideline values. You should verify this before purchasing any real estate, as under-reporting values is a punishable offence.
+</p>
+<p class="content-text">
+    You can query current guideline values on the TNREGINET dashboard by selecting the zone, street name, and ward coordinates. Reconciling this guideline value with the boundaries and dimensions mentioned on your Encumbrance Certificate prevents document registration rejections at the SRO.
+</p>
+
+<!-- Widget 3: TN SRO Jurisdiction Finder -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🗺️ TN SRO Zone Jurisdiction Finder
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Identify the correct Sub-Registrar Office (SRO) names under key registration Zones in Tamil Nadu.
+    </p>
+    
+    <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Select Zone</label>
+        <select id="tn-zone-select" onchange="runTnSroFinder()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+            <option value="ch-s">Chennai South</option>
+            <option value="ch-n">Chennai North</option>
+            <option value="cbe">Coimbatore</option>
+            <option value="mdu">Madurai</option>
+        </select>
+    </div>
+    
+    <div id="tn-sro-result" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: #ffffff;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function runTnSroFinder() {
+    var zone = document.getElementById("tn-zone-select").value;
+    var resultBox = document.getElementById("tn-sro-result");
+    
+    var zoneMap = {
+        "ch-s": {
+            offices: [
+                { name: "SRO Tambaram", code: "SRO-TAM", district: "Chennai South" },
+                { name: "SRO Mylapore", code: "SRO-MYL", district: "Chennai South" },
+                { name: "SRO Adyar", code: "SRO-ADY", district: "Chennai South" }
+            ],
+            tip: "Tambaram SRO covers extensive suburbs; verify boundary maps carefully."
+        },
+        "ch-n": {
+            offices: [
+                { name: "SRO Ponneri", code: "SRO-PON", district: "Chennai North" },
+                { name: "SRO Redhills", code: "SRO-RED", district: "Chennai North" }
+            ],
+            tip: "Ponneri region is undergoing rapid industrial layout changes."
+        },
+        cbe: {
+            offices: [
+                { name: "SRO Singanallur", code: "SRO-SGN", district: "Coimbatore" },
+                { name: "SRO Gandhipuram", code: "SRO-GDP", district: "Coimbatore" }
+            ],
+            tip: "Coimbatore urban developments require local corporation layout codes."
+        },
+        mdu: {
+            offices: [
+                { name: "SRO Madurai Tallakulam", code: "SRO-TAL", district: "Madurai" },
+                { name: "SRO Madurai South", code: "SRO-MDS", district: "Madurai" }
+            ],
+            tip: "Agricultural mutations in Madurai must match local canal irrigation coordinates."
+        }
+    };
+    
+    var data = zoneMap[zone];
+    var html = "<div style=\"font-weight: 700; margin-bottom: 0.5rem; color: var(--primary);\">Key SRO Offices:</div>";
+    html += "<div style=\"display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin-bottom: 0.75rem;\">";
+    for (var i = 0; i < data.offices.length; i++) {
+        var off = data.offices[i];
+        html += "<div style=\"padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; display: flex; justify-content: space-between; font-size: 0.9rem;\">" +
+                    "<strong>" + off.name + " (" + off.code + ")</strong>" +
+                    "<span style=\"color: var(--text-muted);\">" + off.district + "</span>" +
+                "</div>";
+    }
+    html += "</div>";
+    html += "<div style=\"font-size: 0.8rem; font-style: italic; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 0.5rem;\">" +
+                "Search Tip: " + data.tip +
+            "</div>";
+    resultBox.innerHTML = html;
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("tn-zone-select")) {
+        runTnSroFinder();
+    }
+});
+</script>
+
+<h2>The Role of Subdivision (Sub-div) Numbers in Land Verification</h2>
+<p class="content-text">
+    During title verification, subdivision numbers play a critical role. Large agricultural survey parcels are often split into smaller residential layout blocks over time. The subdivision details (e.g. 142/2A, 142/2B) record these segmentations. 
+</p>
+<p class="content-text">
+    If the seller lists a general survey number without the subdivision suffix, the registration search query will fail to display relevant title modifications. Always cross-verify SRO subdivision boundaries with the maps documented in the local Field Measurement Book (FMB) to ensure absolute title accuracy.
+</p>
+
+<h2>Troubleshooting Common TNREGINET Portal Errors</h2>
+<p class="content-text">
+    During the online search process on TNREGINET, users may encounter several common errors. One of the most frequent is the "SRO and Village Mismatch". This happens because sub-registrars are periodically reorganized, shifting local villages under new jurisdictions. To avoid this, cross-check the village list on the official portal before submitting queries.
+</p>
+<p class="content-text">
+    Another issue is related to payment processing. SRO copy fees paid through the treasury gate sometimes take up to 48 hours to reconcile. If the gateway page fails but your account is debited, do not submit a new transaction. Check the payment status history on the user dashboard. To download certified files, use the links from our <strong><a href="https://econline.in/">ec online</a></strong> guide listings.
+</p>
+
+<h2>State-Wise Official Registration Services Summary Table</h2>
+<p class="content-text">
+    Different states have different official portals, and processing timelines. You can search these details and calculate standard rates using ec online calculators:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State Location</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Official Registration Portal</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Type Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Processing Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">TNREGINET (tnreginet.gov.in)</td>
+                <td>Villangam Search (Property Wise / Document Wise)</td>
+                <td>Instant (View Draft) / 3-5 Days (Certified)</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Kaveri Online Services (2.0)</td>
+                <td>Certified EC Search (Citizen Login)</td>
+                <td>2-3 Working Days (Digital Signature Approval)</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Andhra Pradesh</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS AP (registration.ap.gov.in)</td>
+                <td>Encumbrance Search (Document / Property search)</td>
+                <td>Instant to 24 Hours (Online Download)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Bilingual Guide Checklist for Tamil Nadu Property Verification</h2>
+<p class="content-text">
+    To execute a thorough title verification, property buyers should check historical records, match Patta registers, and verify coordinates details:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>SRO Code Reconciliation</strong>: Match SRO code with the target district registrar.</li>
+    <li><strong>Patta Ownership Verification</strong>: Verify that the latest buyer listed in the claimant column matches the current Patta.</li>
+    <li><strong>Guideline Value Audit</strong>: Reconcile guideline values with local survey parameters.</li>
+    <li><strong>FMB Sketch Crosscheck</strong>: Match boundaries described in the deed with the Field Measurement Book drawings.</li>
+</ul>
+
+<h2>Conclusion & Professional Support</h2>
+<p class="content-text">
+    Conducting a thorough title check in Tamil Nadu prevents ownership conflicts. If subdivision mismatches or legacy owner names appear on the register, we recommend initiating a formal Tahsildar mutation application. For general guidance and references for other states, visit the primary <strong><a href="https://econline.in/">ec online</a></strong> portal.
+</p>';
+    $faq_tn_sp = '[{"question":"Is there any search charge for checking Villangam EC online?","answer":"Basic property searches and viewing the on-screen ledger results are free on the TNREGINET portal. However, obtaining a digitally certified, legally signed copy requires a nominal government fee paid online."},{"question":"How can I download a digitally signed EC online?","answer":"Once your application is approved by the SRO, log in to your TNREGINET dashboard, navigate to the requests page, and click the download button next to your transaction."},{"question":"What is the difference between Form 15 and Form 16 in TN?","answer":"Form 15 is issued when transactions have been registered on the property during the search window. Form 16 is a Nil Encumbrance Certificate, indicating that no registrations occurred."},{"question":"What should I do if my EC search returns No Record Found?","answer":"Ensure you entered the survey numbers and subdivision numbers correctly. If it still returns empty, check adjacent SRO joint codes or submit a manual search request."}]';
+    $schema_type_tn_sp = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_tn_sp,
+        'keyword' => $keyword_tn_sp,
+        'title' => $title_tn_sp,
+        'meta_desc' => $meta_desc_tn_sp,
+        'h1_title' => $h1_tn_sp,
+        'content' => $content_tn_sp,
+        'faq_data' => $faq_tn_sp,
+        'schema_type' => $schema_type_tn_sp
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
