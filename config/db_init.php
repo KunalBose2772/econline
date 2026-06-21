@@ -15157,6 +15157,283 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_ka_blr
     ]);
 
+    // --- 42. AUTO-INITIALIZE EC DOWNLOAD ONLINE TAMILNADU PAGE ---
+    $slug_tn_download = 'ec-download-online-tamilnadu';
+    $keyword_tn_download = 'ec download online tamilnadu';
+    $title_tn_download = 'EC Download Online Tamilnadu: Complete Villangam PDF Retrieval Guide';
+    $h1_tn_download = 'EC Download Online Tamilnadu: Complete Villangam PDF Retrieval Guide';
+    $meta_desc_tn_download = 'Learn how to execute your certified EC download online in Tamilnadu. Detailed step-by-step instructions for tnreginet.gov.in portal searches and PDF signature validation.';
+    $content_tn_download = '<p class="content-text">
+    Property verification in Tamil Nadu requires acquiring a formal history of deed transactions registered under the specific survey number. If you are conducting a property purchase, you must perform a comprehensive <strong><a href="https://econline.in/">ec online</a></strong> check. In Tamil Nadu, the stamps and registration department manages all transaction records. To begin the document search, query the official <strong><a href="https://econline.in/">ec online</a></strong> portal.
+</p>
+
+<h2>Understanding the legal role of a Villangam Certificate</h2>
+<p class="content-text">
+    A Villangam Certificate, locally called "Villangam Saandridhazh" (வில்லங்க சான்றிதழ்) in Tamil Nadu, is a certified register index recording all sales, mortgages, family divisions, land releases, and court decrees. Before completing any real estate deal, checking this certificate is critical to confirm the seller has absolute title ownership and no legacy liabilities exist. When a property is mortgaged to secure a bank loan, a mortgage deed is registered at the Sub-Registrar Office, which will appear on the search history.
+</p>
+<p class="content-text">
+    The concept of a land encumbrance registry was introduced to establish trust in property transfers. When you request a search, the portal queries Book 1 index files. These files contain transcripts of registered sale deeds, mortgage deeds, gift deeds, release deeds, and exchange deeds. By checking the claimant and executant columns, you can verify if a property has been transferred multiple times. If a developer has mortgaged a portion of a project to a local planning body (like CMDA or DTCP) as security for infrastructure development, this mortgage will appear on the registry and must be released before individual plots can be registered.
+</p>
+<p class="content-text">
+    The Inspector General of Registration (IGR) department digitizes records from 1975 onwards. These are queried on the TNREGINET portal. For transactions registered before 1975, manual search registers at the SRO office must be inspected. A draft copy retrieved online has no legal validity, while a certified copy bears a cryptographic digital signature from the Sub-Registrar, which is legally valid.
+</p>
+
+<!-- Widget 1: Tamil Nadu District & SRO Directory Selector (app-state-select) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, hsl(200, 30%, 98%) 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: hsl(200, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🏢 Tamil Nadu SRO Directory
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select your registration district to display corresponding Sub-Registrar Office details and contact info.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Registration District</label>
+            <select id="tn-district-selector" class="app-state-select" onchange="showTnSroDetails()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff; box-sizing: border-box;">
+                <option value="">-- Choose District --</option>
+                <option value="chennai">Chennai Central</option>
+                <option value="coimbatore">Coimbatore</option>
+                <option value="madurai">Madurai</option>
+                <option value="trichy">Trichy</option>
+                <option value="salem">Salem</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="tn-sro-details" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function showTnSroDetails() {
+    var dist = document.getElementById("tn-district-selector").value;
+    var infoBox = document.getElementById("tn-sro-details");
+    
+    if (!dist) {
+        infoBox.style.display = "none";
+        return;
+    }
+    
+    infoBox.style.display = "block";
+    infoBox.style.backgroundColor = "hsl(200, 100%, 98%)";
+    infoBox.style.borderColor = "hsl(200, 100%, 88%)";
+    
+    var content = "";
+    if (dist === "chennai") {
+        content = "<strong>Chennai Central SRO:</strong> 100, Santhome High Road, Chennai - 600028. Phone: 044-24640160. Timings: 10:00 AM - 5:45 PM.";
+    } else if (dist === "coimbatore") {
+        content = "<strong>Coimbatore SRO:</strong> Collectorate Complex, Coimbatore - 641018. Phone: 0422-2301260. Timings: 10:00 AM - 5:45 PM.";
+    } else if (dist === "madurai") {
+        content = "<strong>Madurai SRO:</strong> Palace Road, Near Mahal, Madurai - 625001. Phone: 0452-2338270. Timings: 10:00 AM - 5:45 PM.";
+    } else if (dist === "trichy") {
+        content = "<strong>Trichy SRO:</strong> Court Complex Road, Cantonment, Trichy - 620001. Phone: 0431-2410880. Timings: 10:00 AM - 5:45 PM.";
+    } else if (dist === "salem") {
+        content = "<strong>Salem SRO:</strong> Collectorate Office Compound, Salem - 636001. Phone: 0427-2415120. Timings: 10:00 AM - 5:45 PM.";
+    }
+    
+    infoBox.innerHTML = "<div style=\"font-size: 0.95rem; color: hsl(200, 100%, 20%); line-height: 1.6;\">" + content + "</div>";
+}
+</script>
+
+<h2>Citizen Registration Process on the TNREGINET Portal</h2>
+<p class="content-text">
+    To apply for a certified Villangam Certificate, you must register a citizen user profile on the TNREGINET web portal (tnreginet.gov.in). Locate the user registration link on the homepage. The registration form requires creating a secure password and entering your mobile number, address, and ID proof. After verifying your registration with a mobile OTP, you will receive login credentials. When registered, users gain access to the citizen service dashboard to download documents. Mention that the <strong><a href="https://econline.in/">ec online</a></strong> dashboard is updated after every transaction.
+</p>
+<p class="content-text">
+    When registering a user account, you must select whether you want to register as a citizen or a document writer. Most users should choose citizen registration. Enter a unique login ID that contains alphanumeric characters. The system will run a lookup to check if the ID is available. Ensure that the email address and mobile number you provide are active, as the portal relies on these details for transactional notifications, OTP confirmations, and sending PDF download alerts. The registry database tracks user logins to prevent automated scraping of property index data.
+</p>
+<p class="content-text">
+    It is important to enter your personal details exactly as they appear on your government identification documents. Once registered, log in to your account. The dashboard provides citizen services including Guideline Value search, stamp duty calculations, document writer directories, and slot bookings for deed registrations.
+</p>
+
+<!-- Widget 2: Search & Copy Fee Calculator (app-calc-years) -->
+<div class="custom-card" id="app-calc-years" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: hsl(15, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 TN Search Fee Calculator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Calculate estimated TNREGINET search fees based on your query duration.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Start Year</label>
+            <input type="number" id="tn-start-year" value="1990" min="1975" max="2026" oninput="calculateTnSearchFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">End Year</label>
+            <input type="number" id="tn-end-year" value="2025" min="1975" max="2026" oninput="calculateTnSearchFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+    </div>
+    
+    <div id="tn-fee-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateTnSearchFee() {
+    var start = parseInt(document.getElementById("tn-start-year").value);
+    var end = parseInt(document.getElementById("tn-end-year").value);
+    var resultBox = document.getElementById("tn-fee-result");
+    
+    if (isNaN(start) || isNaN(end) || start > end) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var years = end - start + 1;
+    var searchCharge = 15 + (years > 1 ? (years - 1) * 5 : 0);
+    var certifiedFee = 100;
+    var total = searchCharge + certifiedFee + 20;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "hsl(15, 100%, 97%)";
+    resultBox.style.borderColor = "hsl(15, 100%, 85%)";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: hsl(15, 100%, 25%); margin-bottom: 0.75rem; font-size: 1.05rem;\">Estimated Filing Fees:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Duration:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>Search Surcharge:</strong> ₹" + searchCharge + "</div>" +
+            "<div><strong>Certified Copy Fee:</strong> ₹" + certifiedFee + "</div>" +
+            "<div style=\"border-top: 1px solid hsl(15, 100%, 85%); margin-top: 0.75rem; padding-top: 0.75rem; font-size: 1.1rem; font-weight: 700; color: hsl(15, 100%, 20%);\">" +
+                "Estimated Total: ₹" + total + 
+            "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("tn-start-year")) {
+        calculateTnSearchFee();
+    }
+});
+</script>
+
+<h2>Step-by-Step Guide to Search and Query Villangam Online</h2>
+<p class="content-text">
+    To query property logs, select the menu: Encumbrance Certificate &rarr; Search and Apply EC. The form contains location and description fields. First, select the Zone (such as Chennai, Madurai, or Coimbatore), District, and Sub-Registrar Office. Choose the revenue village from the list. Enter the survey number and subdivision details. You can check the status of your request using the <strong><a href="https://econline.in/">ec online</a></strong> portal.
+</p>
+<p class="content-text">
+    When selecting the Sub-Registrar Office, make sure you choose the correct administrative jurisdiction. In some cases, a single revenue village may fall under the search boundaries of multiple offices. For instance, in the Chennai zone, village names may overlap between Tambaram SRO and Selaiyur SRO. To ensure you query the correct database index, look at the parent sale deed document. The header section of the deed lists the SRO name where the document was signed. Selecting the wrong office will result in a blank record response, even if the property has a long transaction history.
+</p>
+<p class="content-text">
+    If the survey number has complex subdivisions, you can search using property boundaries. Check that the boundaries (North, South, East, West boundaries) match the details in the original deed. Submit the request by solving the captcha code. The matches are displayed in a table index. Select the entries to request in your certified copy.
+</p>
+
+<!-- Widget 3: Certified PDF Download Checklist (app-readiness-deed) -->
+<div class="custom-card" id="app-readiness-deed" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, hsl(140, 30%, 98%) 100%);">
+    <h3 style="margin-top: 0; color: hsl(140, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 TNREGINET Readiness Checklist
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Confirm your system settings and SRO approval status to ensure a successful PDF download.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="tn-check-app" onchange="runTnCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="tn-check-app" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Application status in the request list shows "Approved".</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="tn-check-pay" onchange="runTnCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="tn-check-pay" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Government fee transaction is fully reconciled and success receipt generated.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="tn-check-pop" onchange="runTnCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="tn-check-pop" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Browser pop-up blockers are turned off for tnreginet.gov.in domain.</label>
+        </div>
+    </div>
+    
+    <div id="tn-check-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Verification checklist status.
+    </div>
+</div>
+
+<script>
+function runTnCheck() {
+    var check1 = document.getElementById("tn-check-app").checked;
+    var check2 = document.getElementById("tn-check-pay").checked;
+    var check3 = document.getElementById("tn-check-pop").checked;
+    var resultBox = document.getElementById("tn-check-result");
+    
+    var score = 0;
+    if (check1) score++;
+    if (check2) score++;
+    if (check3) score++;
+    
+    if (score === 0) {
+        resultBox.style.backgroundColor = "#f1f5f9";
+        resultBox.style.borderColor = "var(--border)";
+        resultBox.style.color = "#475569";
+        resultBox.innerHTML = "Check all items to verify download readiness.";
+    } else if (score < 3) {
+        resultBox.style.backgroundColor = "hsl(35, 92%, 95%)";
+        resultBox.style.borderColor = "hsl(35, 92%, 85%)";
+        resultBox.style.color = "hsl(35, 92%, 25%)";
+        resultBox.innerHTML = "⚠️ Status: Incomplete. Ensure you disable browser pop-up blocks to download files.";
+    } else {
+        resultBox.style.backgroundColor = "hsl(142, 70%, 95%)";
+        resultBox.style.borderColor = "hsl(142, 70%, 85%)";
+        resultBox.style.color = "hsl(142, 70%, 25%)";
+        resultBox.innerHTML = "✓ Ready! You can download the certified copy PDF from the portal.";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("tn-check-app")) {
+        runTnCheck();
+    }
+});
+</script>
+
+<h2>Government Fee Payments and Application Processing</h2>
+<p class="content-text">
+    To apply for a certified Villangam Certificate, you must pay the required government application fees. The portal is integrated with major bank gateways, enabling users to pay via net banking, credit cards, or UPI. The fee structure includes a base search charge and a copying fee. Once the transaction is successful, keep the reference receipt number. You can verify if the payment is reconciled using the search history on the homepage. Any discrepancies can be checked using the main <strong><a href="https://econline.in/">ec online</a></strong> registry lookup tools.
+</p>
+<p class="content-text">
+    Reconciling electronic transactions is key when applying for certified copies. During peak portal traffic, transaction updates can delay payment receipts. If the payment dashboard shows a pending status, check the bank statement to verify if the fund was deducted. SRO officers verify applications only after the portal marks the transaction status as successful. In Tamil Nadu, the Treasury department handles payment reconciliation. Citizens can verify payment status using the portal GRN check utility. If the transaction remains pending for more than forty-eight hours, file a ticket on the support desk.
+</p>
+<p class="content-text">
+    After fee submission, the application is forwarded to the digital worklist of the Sub-Registrar Office. A clerk reviews the digitized index files, verifies the survey parameters, and matches details with registered deeds database. If the entries match, the Sub-Registrar signs the certificate using a cryptographic USB token key. The certified certificate is then uploaded to the portal in PDF format, taking 3 to 5 business days.
+</p>
+
+<h2>Downloading the Certified PDF and Digital Signature Validation</h2>
+<p class="content-text">
+    Once approved, download the certified PDF copy from your citizen request list dashboard. Open the file in Adobe Acrobat Reader. If you see a signature block displaying "Signature Not Verified" with a yellow question mark, it means Adobe Reader does not trust the Tamil Nadu registration department root certificate. To resolve this, right-click on the signature panel and select Signature Properties. Click Show Signer Certificate, navigate to the Trust tab, and select Add to Trusted Certificates. Check the boxes that permit trusting this certificate for certified documents, close the dialogs, and click Validate Signature. The question mark will turn into a green checkmark, confirming the document is authentic and legally acceptable for land administration mutations or bank transactions.
+</p>
+<p class="content-text">
+    Digital signature certificates are validated using cryptographic security frameworks. SRO signatures are based on root certificates issued by the National Informatics Centre (NIC) or other licensed certifying authorities in India. When you import the signature certificate to the Adobe Acrobat trust store, you establish a secure path. This verification is crucial because banks and municipal offices verify the electronic hash of the document. If any pixel or text in the PDF is modified after approval, the digital signature will instantly break and show an invalid status message.
+</p>
+
+<h2>Bilingual Glossary of Tamil Nadu Land Registry Terms</h2>
+<p class="content-text">
+    Understanding land administration terminology is important when reviewing your Encumbrance Certificate. Here are the key terms you will encounter:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>Patta (பட்டா)</strong>: A land revenue document issued by the Tahsildar indicating property ownership.</li>
+    <li><strong>Chitta (சிட்டா)</strong>: A record showing ownership details, size of land, and property tax details.</li>
+    <li><strong>Adangal (அடங்கல்)</strong>: A register maintained by the VAO tracking land type and crop details.</li>
+    <li><strong>Guideline Value (வழிகாட்டி மதிப்பு)</strong>: The minimum valuation of land fixed by the government for registration fees.</li>
+    <li><strong>SRO (சார்பதிவாளர் அலுவலகம்)</strong>: The local sub-registrar office where deeds are executed and registered.</li>
+    <li><strong>FMB Sketch (புல வரைபடம்)</strong>: The field measurement sketch showing survey boundaries and subdivision stones.</li>
+</ul>
+<p class="content-text">
+    Checking that all entries match is essential for title verification. Reference the <strong><a href="https://econline.in/">ec online</a></strong> main manual for additional details.
+</p>';
+    $faq_tn_download = '[{"question":"Is there any fee to download Villangam EC online in Tamil Nadu?","answer":"Viewing the draft copy on-screen is free. However, downloading a digitally certified copy requires paying a government application fee based on search duration."},{"question":"How long does it take for SRO approval?","answer":"Normally it takes 2 to 5 working days for the Sub-Registrar to verify the entries, digitally sign the certificate, and release the PDF file for download."},{"question":"Why is the signature marked as not verified?","answer":"This happens because your PDF reader does not automatically trust the registration department certificate. You must import the certificate to trusted credentials to validate."},{"question":"Can I download legacy ECs registered before 1975?","answer":"Digitized records are generally available from 1975 onwards. For records prior to that year, you must apply manually at the physical SRO office."}]';
+    $schema_type_tn_download = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_tn_download,
+        'keyword' => $keyword_tn_download,
+        'title' => $title_tn_download,
+        'meta_desc' => $meta_desc_tn_download,
+        'h1_title' => $h1_tn_download,
+        'content' => $content_tn_download,
+        'faq_data' => $faq_tn_download,
+        'schema_type' => $schema_type_tn_download
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
