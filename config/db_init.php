@@ -14636,6 +14636,256 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_tn_dl
     ]);
 
+    // --- 40. AUTO-INITIALIZE TN EC VIEW ONLINE PAGE ---
+    $slug_tn_view = 'tn-ec-view-online';
+    $keyword_tn_view = 'tn ec view online';
+    $title_tn_view = 'TN EC View Online: Check Villangam Certificate Registry Records';
+    $h1_tn_view = 'TN EC View Online: Check Villangam Certificate Registry Records';
+    $meta_desc_tn_view = 'Check and view your Villangam Encumbrance Certificate online in Tamil Nadu. Complete step-by-step guide to verify property registration indices on TNREGINET.';
+    $content_tn_view = '<p class="content-text">
+    Property title check is a core step for any real estate transaction in Tamil Nadu. The Inspector General of Registration (IGR) provides citizen services to examine property records. To start, you must perform an <strong><a href="https://econline.in/">ec online</a></strong> search to review past transaction history. The certificate, known as Villangam (வில்லங்க சான்றிதழ்), tracks property details. For complete listings, consult the <strong><a href="https://econline.in/">ec online</a></strong> homepage.
+</p>
+
+<h2>Understanding the legal importance of a Villangam Certificate (EC)</h2>
+<p class="content-text">
+    An Encumbrance Certificate, commonly known in Tamil Nadu as a Villangam Certificate or "Villangam Saandridhazh" (வில்லங்க சான்றிதழ்), is a formal registry record that tracks every registered transaction associated with a specific plot of land, commercial property, or residential apartment. The term "encumbrance" denotes any legal liability, financial claim, or mortgage charge created on the property that could affect the transfer of clean title. When a bank lends money against a property, it creates a mortgage deed that is formally registered at the local Sub-Registrar Office (SRO). This transaction is immediately recorded in the government registration index.
+</p>
+<p class="content-text">
+    A Villangam Certificate contains all details of such transactions, including the registration date, names of the buyer and seller (executant and claimant), document number, book number, transaction type, and valuation details. If no transactions have occurred within the specified search period, the department issues a "Nil Encumbrance Certificate" (பூஜ்ய வில்லங்க சான்றிதழ்), proving that the property has no registered claims. This document is essential for getting a home loan from financial institutions, which require a 13-year or 30-year clean record to ensure the property is free of prior claims.
+</p>
+<p class="content-text">
+    In Tamil Nadu, the digitization of land deeds started in 1975. Any transaction registered from 1975 to the present day is indexed in the central registry database and can be searched on the official TNREGINET website. However, for historical transactions executed prior to 1975, manual searching is necessary. To perform a manual search, you must visit the respective Sub-Registrar Office, fill in a physical form, search the paper registers (Book 1), and pay manual search fees. Understanding the distinction between a draft copy and a certified copy is critical. A draft copy retrieved online has no legal value and is only for viewing, while a certified copy bears a cryptographic digital signature and is legally binding in a court of law.
+</p>
+<p class="content-text">
+    Furthermore, many buyers do not check for historical lease agreements or court orders that could be registered under Book 1. A complete legal search on the portal reveals if there are any pending land acquisition processes or civil suits that could affect ownership transfers. If a previous owner did not pay boundary layout charges, local municipal authorities can block document registration. Performing a search history check ensures you do not inherit legacy financial liabilities or legal disputes from the seller.
+</p>
+
+<!-- Widget 1: Interactive Zone & District Selector (app-state-select) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, hsl(210, 30%, 98%) 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: hsl(210, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🏢 TN Registration Zone Lookup
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Select an administrative zone to display the corresponding registration districts.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Administrative Zone</label>
+            <select id="tn-zone-selector" class="app-state-select" onchange="showTnZoneDetails()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff; box-sizing: border-box;">
+                <option value="">-- Choose Zone --</option>
+                <option value="chennai">Chennai Zone</option>
+                <option value="coimbatore">Coimbatore Zone</option>
+                <option value="madurai">Madurai Zone</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="tn-zone-details" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function showTnZoneDetails() {
+    var zone = document.getElementById("tn-zone-selector").value;
+    var infoBox = document.getElementById("tn-zone-details");
+    
+    if (!zone) {
+        infoBox.style.display = "none";
+        return;
+    }
+    
+    infoBox.style.display = "block";
+    infoBox.style.backgroundColor = "hsl(210, 100%, 98%)";
+    infoBox.style.borderColor = "hsl(210, 100%, 88%)";
+    
+    var content = "";
+    if (zone === "chennai") {
+        content = "<strong>Chennai Zone Districts:</strong> Chennai Central, Chennai North, Chennai South, Chengalpattu, Kanchipuram, Thiruvallur.";
+    } else if (zone === "coimbatore") {
+        content = "<strong>Coimbatore Zone Districts:</strong> Coimbatore, Erode, Nilgiris, Tiruppur.";
+    } else if (zone === "madurai") {
+        content = "<strong>Madurai Zone Districts:</strong> Madurai, Dindigul, Karaikudi, Ramanathapuram, Theni, Virudhunagar.";
+    }
+    
+    infoBox.innerHTML = "<div style=\"font-size: 0.95rem; color: hsl(210, 100%, 20%); line-height: 1.6;\">" + content + "</div>";
+}
+</script>
+
+<h2>Step-by-Step Guide to Query TNREGINET for Villangam View</h2>
+<p class="content-text">
+    To view a property status online, log in to the official TNREGINET portal. The homepage has options for both certified copy applications and uncertified draft searches. If you want a quick check, navigate to the menu: E-Services &rarr; Encumbrance Certificate &rarr; View EC. This search is free and displays document entries directly on your screen. Enter the required parameters: SRO Zone, District, Sub-Registrar Office, start date, end date, village, survey number, and subdivision details. Note that the <strong><a href="https://econline.in/">ec online</a></strong> status checker helps you track transaction entries.
+</p>
+<p class="content-text">
+    After entering the location fields, complete the captcha challenge and submit the search. The system will process your query and display the matches in a chronological ledger. Each row details a registered deed, tracking the document number, date of execution, buyer name, seller name, property boundaries, and transaction value. If you need a printed copy for bank submissions, select the records and submit a formal request.
+</p>
+
+<!-- Widget 2: Encumbrance Search Year Calculator (app-calc-years) -->
+<div class="custom-card" id="app-calc-years" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: hsl(15, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 TN Search Surcharge Calculator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Calculate the base government search surcharge based on the number of years.
+    </p>
+    
+    <div style="margin-bottom: 1.5rem;">
+        <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Number of Years to Search</label>
+        <input type="number" id="tn-search-years-input" value="13" min="1" max="100" oninput="calculateTnSurcharge()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+    </div>
+    
+    <div id="tn-surcharge-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateTnSurcharge() {
+    var years = parseInt(document.getElementById("tn-search-years-input").value);
+    var resultBox = document.getElementById("tn-surcharge-result");
+    
+    if (isNaN(years) || years < 1) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var surcharge = 15 + (years > 1 ? (years - 1) * 5 : 0);
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "hsl(15, 100%, 97%)";
+    resultBox.style.borderColor = "hsl(15, 100%, 85%)";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: hsl(15, 100%, 25%); margin-bottom: 0.75rem; font-size: 1.05rem;\">Surcharge Summary:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Duration:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>Search Surcharge:</strong> ₹" + surcharge + "</div>" +
+            "<div style=\"font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;\">Note: This is the baseline search fee. Certified copy issuance requires an additional ₹100 copying fee.</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("tn-search-years-input")) {
+        calculateTnSurcharge();
+    }
+});
+</script>
+
+<h2>Understanding Survey Numbers and Subdivision Mismatches</h2>
+<p class="content-text">
+    When searching land records in Tamil Nadu, survey numbers and subdivision numbers identify the property location. The revenue department assigns a unique survey number to each agricultural or residential zone. Over time, properties are divided among family members or sold as individual plots, resulting in subdivision numbers. For example, survey number 125 might be divided into 125/1, 125/2, and 125/2A. It is critical to search using the exact survey subdivision format listed in your registration deeds.
+</p>
+<p class="content-text">
+    Subdivision processes occur when a large land parcel is divided into smaller plots for individual ownership or sale. When a plot is sold, the owner submits a subdivision application to the Taluk surveyor. The surveyor measures the land, updates the survey maps, and assigns a subdivision letter or number, such as 125/2A or 125/2B. These subdivisions are recorded in the Field Measurement Book (FMB) and must match the registration index.
+</p>
+<p class="content-text">
+    A minor mistake in entering subdivision characters (such as writing 125/2 instead of 125/2A) could return an incorrect transaction ledger or a "No Record Found" result. This occurs because the registration database indexes records under exact alphanumeric strings. If a mismatch is identified, verify the details against the official land boundary map (FMB sketch) and Patta register documents. You can verify these details using the <strong><a href="https://econline.in/">ec online</a></strong> handbook.
+</p>
+
+<!-- Widget 3: Document Search Status Checklist (app-readiness-deed) -->
+<div class="custom-card" id="app-readiness-deed" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, hsl(140, 30%, 98%) 100%);">
+    <h3 style="margin-top: 0; color: hsl(140, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Search Parameters Verification
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Confirm you have all necessary property descriptors before initiating the query on the registration portal.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="param-sro" onchange="runParamCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="param-sro" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have verified the correct SRO name and Zone location.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="param-survey" onchange="runParamCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="param-survey" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have identified the survey and subdivision numbers from the sale deed.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="param-village" onchange="runParamCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="param-village" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have verified the revenue village name matches the guideline registers.</label>
+        </div>
+    </div>
+    
+    <div id="param-check-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Verification list report.
+    </div>
+</div>
+
+<script>
+function runParamCheck() {
+    var check1 = document.getElementById("param-sro").checked;
+    var check2 = document.getElementById("param-survey").checked;
+    var check3 = document.getElementById("param-village").checked;
+    var resultBox = document.getElementById("param-check-result");
+    
+    var score = 0;
+    if (check1) score++;
+    if (check2) score++;
+    if (check3) score++;
+    
+    if (score === 0) {
+        resultBox.style.backgroundColor = "#f1f5f9";
+        resultBox.style.borderColor = "var(--border)";
+        resultBox.style.color = "#475569";
+        resultBox.innerHTML = "Check checklist items to assess search preparation.";
+    } else if (score < 3) {
+        resultBox.style.backgroundColor = "hsl(35, 92%, 95%)";
+        resultBox.style.borderColor = "hsl(35, 92%, 85%)";
+        resultBox.style.color = "hsl(35, 92%, 25%)";
+        resultBox.innerHTML = "⚠️ Status: Incomplete. Ensure you have the exact revenue village and SRO details.";
+    } else {
+        resultBox.style.backgroundColor = "hsl(142, 70%, 95%)";
+        resultBox.style.borderColor = "hsl(142, 70%, 85%)";
+        resultBox.style.color = "hsl(142, 70%, 25%)";
+        resultBox.innerHTML = "✓ Ready! You have gathered all core parameters. Proceed to search land records.";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("param-sro")) {
+        runParamCheck();
+    }
+});
+</script>
+
+<h2>Fee Reconciliation for Certified Copies vs Free View</h2>
+<p class="content-text">
+    It is important to understand when to use the free view service and when to apply for a certified copy. The free view option displays the encumbrance registry log on your screen, which is suitable for initial title checks, verifying owner history, and reviewing property boundaries. However, this draft copy cannot be used for legal transactions, municipal records updates, or home loan approvals. Bank loan departments and mutation offices require a certified copy signed by the Sub-Registrar.
+</p>
+<p class="content-text">
+    If an online payment fails, the bank may deduct the amount, but the registration portal might show a pending status. SRO guidelines recommend waiting for twenty-four hours for automatic reconciliation before initiating another payment. Double payments can be refunded by submitting a manual application at the district treasury, which takes significant administrative time. Keep payment logs and receipt PDFs safe to support any refund claims.
+</p>
+<p class="content-text">
+    Filing a request for a certified copy requires paying the prescribed government fees online. The gateway reconciles payments using SBI ePay or net banking options. Once the transaction is complete, download the receipt with your transaction ID. The SRO will process your request, verify the survey indexes, sign the document cryptographically, and upload the PDF file. You can check the fee structures and track applications on the primary dashboard of our <strong><a href="https://econline.in/">ec online</a></strong> portal.
+</p>
+
+<h2>Bilingual Glossary of Revenue and Stamp Registration Terms</h2>
+<p class="content-text">
+    Navigating Tamil Nadu land administration requires familiarity with local terms. Here are the key terms you will encounter in registration documents:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>Patta (பட்டா)</strong>: A document issued by the revenue department confirming ownership of the land.</li>
+    <li><strong>Chitta (சிட்டா)</strong>: A record maintained by the VAO detailing ownership, land classification ( Punja or Nanja ), and tax details.</li>
+    <li><strong>Adangal (அடங்கல்)</strong>: The annual cultivation register tracking land type, crop cultivation, and tenancy.</li>
+    <li><strong>FMB Sketch (வரைபடம்)</strong>: The Field Measurement Book map showing boundary dimensions, layout stones, and coordinates.</li>
+    <li><strong>Guideline Value (சார்பதிவாளர் வழிகாட்டி)</strong>: The minimum property valuation fixed by the government for registration fees.</li>
+    <li><strong>SRO (சார்பதிவாளர்)</strong>: The Sub-Registrar Office where deeds are executed and indexed.</li>
+</ul>
+<p class="content-text">
+    Ensuring that names, survey numbers, and subdivision parameters match across all these records is essential for a clean property title. For additional assistance, consult the <strong><a href="https://econline.in/">ec online</a></strong> main portal.
+</p>';
+    $faq_tn_view = '[{"question":"Is viewing the Villangam EC online free in Tamil Nadu?","answer":"Yes, viewing the uncertified draft copy of the Encumbrance Certificate on the screen is completely free on the TNREGINET portal."},{"question":"What details are needed to view the EC online?","answer":"You need the property location details including Zone, District, Sub-Registrar Office, Village name, Survey Number, and Subdivision Number."},{"question":"How can I obtain a certified copy of the EC?","answer":"Select the matches on the search results page, click Apply Online, pay the calculated government fees, and download the digitally signed PDF once SRO approves."},{"question":"How far back can I search for EC records online in Tamil Nadu?","answer":"Digitized records on the TNREGINET database are available from 1975 onwards. For older records, you must submit a manual request at the physical SRO office."}]';
+    $schema_type_tn_view = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_tn_view,
+        'keyword' => $keyword_tn_view,
+        'title' => $title_tn_view,
+        'meta_desc' => $meta_desc_tn_view,
+        'h1_title' => $h1_tn_view,
+        'content' => $content_tn_view,
+        'faq_data' => $faq_tn_view,
+        'schema_type' => $schema_type_tn_view
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
