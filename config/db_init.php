@@ -12730,6 +12730,342 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_tn_sp
     ]);
 
+    // --- 34. AUTO-INITIALIZE TAMILNADU ONLINE EC DOWNLOAD PAGE ---
+    $slug_tn_dl = 'tamilnadu-online-ec-download';
+    $keyword_tn_dl = 'tamilnadu online ec download';
+    $title_tn_dl = 'Tamil Nadu Online EC Download: Step-by-Step Certified Copy Guide';
+    $h1_tn_dl = 'Tamil Nadu Online EC Download: Step-by-Step Certified Copy Guide';
+    $meta_desc_tn_dl = 'Learn how to download your certified Villangam EC online in Tamil Nadu. Complete state-wise tutorial to search TNREGINET and verify digital signatures.';
+    $content_tn_dl = '<p class="content-text">
+    Property buyers and owners in Tamil Nadu frequently need to download a certified, digitally signed copy of their Encumbrance Certificate (Villangam சான்றிதழ்) for formal legal submissions, property tax assessments, and bank loan approvals. While viewing on-screen draft records is free for all users, downloading a legally valid PDF copy requires a paid application. To retrieve legal records, you can query the main <strong><a href="https://econline.in/">ec online</a></strong> search dashboard.
+</p>
+
+<p class="content-text">
+    The Inspector General of Registration (IGR) provides this digital search and copy retrieval service via the official TNREGINET portal. Downloading the certificate represents a clear <strong><a href="https://econline.in/">ec online</a></strong> verification milestone. Through this tutorial, we will explain the step-by-step process of submitting an online application, paying the necessary fees, and verifying the digital signature.
+</p>
+
+<h2>Why the certified copy is legally required</h2>
+<p class="content-text">
+    In Tamil Nadu, an Encumbrance Certificate (EC) shows the history of transactions related to a property over a defined time period. It acts as primary evidence that a property has clear title ownership and is free from any outstanding mortgages, sales, or court attachments. While the registration portal allows citizens to search and view draft copies of the transaction history for free, financial institutions, courts, and government bodies do not accept draft copies. They require a digitally signed copy certified by the concerned Sub-Registrar. This certified document bears a unique barcode and a digital signature of the Sub-Registrar, making it admissible in courts of law under the Indian Evidence Act.
+</p>
+
+<!-- Widget 1: TNEC Download Method Assistant -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📂 TN EC Download Method Assistant
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Toggle between the two official application methods on TNREGINET to understand the required input parameters.
+    </p>
+    
+    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+        <button type="button" onclick="setDlMethod(\'doc\')" id="btn-dl-doc" style="flex: 1; padding: 0.75rem; font-weight: bold; border-radius: 6px; border: 1px solid var(--primary); background-color: var(--primary); color: white; cursor: pointer; transition: all 0.2s;">Search by Document</button>
+        <button type="button" onclick="setDlMethod(\'prop\')" id="btn-dl-prop" style="flex: 1; padding: 0.75rem; font-weight: bold; border-radius: 6px; border: 1px solid var(--border); background-color: white; color: var(--primary); cursor: pointer; transition: all 0.2s;">Search by Property</button>
+    </div>
+    
+    <div id="dl-method-items" style="padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); background-color: #ffffff; font-size: 0.95rem; color: #475569; line-height: 1.6;">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function setDlMethod(type) {
+    var btnDoc = document.getElementById("btn-dl-doc");
+    var btnProp = document.getElementById("btn-dl-prop");
+    var container = document.getElementById("dl-method-items");
+    
+    if (type === "doc") {
+        btnDoc.style.backgroundColor = "var(--primary)";
+        btnDoc.style.color = "white";
+        btnDoc.style.borderColor = "var(--primary)";
+        
+        btnProp.style.backgroundColor = "white";
+        btnProp.style.color = "var(--primary)";
+        btnProp.style.borderColor = "var(--border)";
+        
+        container.innerHTML = 
+            "<div style=\"font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;\">Method 1: Document-Wise EC Search</div>" +
+            "<div><strong>Best for:</strong> Buyers who already have the previous sale deed copy.</div>" +
+            "<div><strong>Required Parameters:</strong> Sub-Registrar Office (SRO) Name, Document Number, Year of Registration (e.g. 2024), and Document Type (Regular Deed).</div>" +
+            "<div style=\"margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic;\">Tip: This is the fastest search method and reduces SRO processing times.</div>";
+    } else {
+        btnProp.style.backgroundColor = "var(--primary)";
+        btnProp.style.color = "white";
+        btnProp.style.borderColor = "var(--primary)";
+        
+        btnDoc.style.backgroundColor = "white";
+        btnDoc.style.color = "var(--primary)";
+        btnDoc.style.borderColor = "var(--border)";
+        
+        container.innerHTML = 
+            "<div style=\"font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;\">Method 2: Property-Wise EC Search</div>" +
+            "<div><strong>Best for:</strong> Broad searches to check all transactions on a plot or survey parcel.</div>" +
+            "<div><strong>Required Parameters:</strong> District, Zone, SRO Name, Village Name, Survey Number, and Subdivision Number.</div>" +
+            "<div style=\"margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted); font-style: italic;\">Tip: Ensure you write survey numbers exactly as listed in the land tax books.</div>";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("btn-dl-doc")) {
+        setDlMethod("doc");
+    }
+});
+</script>
+
+<h2>Understanding the Difference between Free Search and Certified EC Download</h2>
+<p class="content-text">
+    The Tamil Nadu Registration Department provides citizen users with two primary search facilities: the "View EC" options and the "Apply Certified Copy" services. In the free "View EC" portal tab, users can generate a draft copy of the transaction records. This document contains a watermarked PDF that lists all land transactions, sales deeds, mortgages, and attachments. While this draft copy is highly useful for personal research, property negotiations, and checking historical titles, it does not hold any legal value. It cannot be used in sub-registrar offices to register a new sale deed, nor can it be submitted to commercial banks for home loan applications.
+</p>
+<p class="content-text">
+    In contrast, a certified EC download provides a legally valid document. When a user applies for a certified copy, the application is queued at the corresponding Sub-Registrar Office (SRO). A department official manually verifies the physical registration ledgers, reconciles the survey entries, and approves the application. Once approved, the document is digitally signed by the Sub-Registrar. The final download copy contains a secure QR code and a digital signature certificate. This certified copy is legally binding and can be submitted to any financial institution, local municipal office, or court of law as proof of property encumbrances.
+</p>
+
+<h2>How to Register on TNREGINET to Download EC</h2>
+<p class="content-text">
+    To request a certified copy, you must first create a citizen account on the TNREGINET system. The registration department allows you to check your <strong><a href="https://econline.in/">ec online</a></strong> document status. Open the homepage, select the language preference (English/Tamil), and click "User Registration" under the login panel. Fill in the profile form, including user type (Citizen), unique username, password, security question, and personal address details. A verification OTP will be sent to your mobile phone. Once verified, log in to access the citizen services dashboard.
+</p>
+<p class="content-text">
+    Choosing a strong password and an easily accessible email ID is critical because all communications, application updates, and copy downloads are routed through your user profile. The portal requires security questions to recover password details in the future. After creating the citizen user account, you can login at any time, navigate to the "Citizen Services" section, and initiate the EC request process. Before applying for a land mutation, check the <strong><a href="https://econline.in/">ec online</a></strong> status log.
+</p>
+<p class="content-text">
+    Once logged in, navigate to the menu tab: **More &rarr; Search EC &rarr; Apply Online**. Fill in the search parameter form: enter geographical boundaries (North, South, East, West boundaries) and survey codes. Make sure the village name and SRO details correspond perfectly with your registration deeds. A minor mismatch can result in a "No Record Found" response, delaying your verification.
+</p>
+
+<!-- Widget 2: TN Search Fee Estimation Calculator -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 TN EC Download Fee Calculator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Compute the official TNREGINET government copy fees based on search duration.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Search Years</label>
+            <input type="number" id="tn-dl-years" value="30" min="1" max="100" oninput="calculateDlFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Copy Type</label>
+            <select id="tn-dl-type" onchange="calculateDlFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff;">
+                <option value="certified">Certified Digital Copy (₹100 extra)</option>
+                <option value="draft">Draft View Copy (Free view)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="tn-dl-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateDlFee() {
+    var years = parseInt(document.getElementById("tn-dl-years").value);
+    var type = document.getElementById("tn-dl-type").value;
+    var resultBox = document.getElementById("tn-dl-result");
+    
+    if (isNaN(years) || years < 1) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var baseSearch = 15; // 1st year search fee
+    var additionalSearch = (years > 1) ? (years - 1) * 5 : 0; // Rs. 5 per subsequent year
+    var copyCharges = (type === "certified") ? 100 : 0; // Rs. 100 for copy
+    var portalFee = 20; // Nominal portal service charges
+    
+    var total = baseSearch + additionalSearch + copyCharges + portalFee;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "hsl(210, 100%, 97%)";
+    resultBox.style.borderColor = "hsl(210, 100%, 85%)";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: hsl(210, 100%, 25%); margin-bottom: 0.75rem; font-size: 1.05rem;\">Tamil Nadu Registration Fee Summary:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Filing Duration:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>First Year Search Charge:</strong> ₹" + baseSearch + "</div>" +
+            "<div><strong>Subsequent Years Surcharge:</strong> ₹" + additionalSearch + "</div>" +
+            "<div><strong>Certified Copy Fee:</strong> ₹" + copyCharges + "</div>" +
+            "<div><strong>Portal Filing Fee:</strong> ₹" + portalFee + "</div>" +
+            "<div style=\"border-top: 1px solid hsl(210, 100%, 85%); margin-top: 0.75rem; padding-top: 0.75rem; font-size: 1.1rem; font-weight: 700; color: hsl(210, 100%, 20%);\">" +
+                "Estimated Total Charges: ₹" + total + 
+            "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("tn-dl-years")) {
+        calculateDlFee();
+    }
+});
+</script>
+
+<h2>Key Parameters Needed for Document Search and Property Search</h2>
+<p class="content-text">
+    To ensure a successful search on the TNREGINET website, you must provide precise and accurate geographical information. If you select the property-wise search method, the system requires the District name, Zone division, Sub-Registrar Office name, Taluk division, Village name, Survey Number, and Sub-division Number. Even a minor typo in the survey or sub-division numbers can retrieve records for a completely different plot or result in a blank result.
+</p>
+<p class="content-text">
+    When searching by document number, you must enter the exact document number, the year of registration, and the type of document. In Tamil Nadu, documents are categorized under different books, with Book 1 representing regular deeds like Sale, Gift, and Mortgage deeds. Ensure you choose the correct registration year, as document numbers are reset at the beginning of each calendar year. Having a physical copy of the previous parent document (முந்தைய ஆவணம்) can greatly simplify extracting these parameters.
+</p>
+
+<h2>Verifying the Digital Signature in PDF Reader</h2>
+<p class="content-text">
+    After making the payment, the Sub-Registrar Office reviews your application. If all boundary and survey parameters are correct, the SRO issues a digitally signed PDF. When you download and open this PDF in Adobe Acrobat Reader, you might see a warning message: "Signature Not Verified" or a question mark on the signature panel. To download certified files, use the tools from our <strong><a href="https://econline.in/">ec online</a></strong> handbook pages.
+</p>
+<p class="content-text">
+    This standard security warning appears because PDF viewers require manual authorization to recognize state-issued root certificates. Digital signatures are protected using public-key cryptography to prevent tampering after issuance. The validation process ensures that the certificate details have not been altered or falsified since the Sub-Registrar digitally signed the file. By importing the certificate to the list of trusted identities, you establish a chain of trust on your computer.
+</p>
+<p class="content-text">
+    To validate the signature, follow these steps: open the PDF in Adobe Acrobat, right-click on the signature box at the bottom of the certificate, select "Signature Properties", and click "Show Certificate". Navigate to the "Trust" tab and click "Add to Trusted Certificates". Click "OK", check all validation checkboxes, and click "Validate Signature". The signature status will update to display a green checkmark, confirming it is legally valid.
+</p>
+
+<!-- Widget 3: Digital Signature Validation Checklist -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Signature Validation Assistant
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Follow this interactive checklist to verify the Sub-Registrar\'s signature validity inside your PDF viewer.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="sig-check-pdf" onchange="runSigValidationCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="sig-check-pdf" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have downloaded the certified PDF and opened it in Adobe Acrobat Reader.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="sig-check-prop" onchange="runSigValidationCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="sig-check-prop" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have right-clicked the signature block and opened Signature Properties.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="sig-check-trust" onchange="runSigValidationCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="sig-check-trust" style="font-size: 0.9rem; color: #334155; cursor: pointer;">I have added the Sub-Registrar\'s certificate to Trusted Certificates list.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="sig-check-green" onchange="runSigValidationCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="sig-check-green" style="font-size: 0.9rem; color: #334155; cursor: pointer;">The signature box now displays a green tick (Signature is Valid).</label>
+        </div>
+    </div>
+    
+    <div id="sig-validation-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Check checklist boxes to confirm validation steps.
+    </div>
+</div>
+
+<script>
+function runSigValidationCheck() {
+    var check1 = document.getElementById("sig-check-pdf").checked;
+    var check2 = document.getElementById("sig-check-prop").checked;
+    var check3 = document.getElementById("sig-check-trust").checked;
+    var check4 = document.getElementById("sig-check-green").checked;
+    var resultBox = document.getElementById("sig-validation-result");
+    
+    var count = 0;
+    if (check1) count++;
+    if (check2) count++;
+    if (check3) count++;
+    if (check4) count++;
+    
+    var percentage = count * 25;
+    
+    if (count === 0) {
+        resultBox.style.backgroundColor = "#f1f5f9";
+        resultBox.style.borderColor = "var(--border)";
+        resultBox.style.color = "#475569";
+        resultBox.innerHTML = "Check the boxes to monitor signature verification status.";
+    } else if (count < 4) {
+        resultBox.style.backgroundColor = "hsl(38, 92%, 95%)";
+        resultBox.style.borderColor = "hsl(38, 92%, 85%)";
+        resultBox.style.color = "hsl(38, 92%, 25%)";
+        resultBox.innerHTML = "⚠️ In Progress: Verification is " + percentage + "% complete. Ensure you import certificates to avoid legal signature doubts.";
+    } else {
+        resultBox.style.backgroundColor = "hsl(142, 70%, 95%)";
+        resultBox.style.borderColor = "hsl(142, 70%, 85%)";
+        resultBox.style.color = "hsl(142, 70%, 25%)";
+        resultBox.innerHTML = "✓ Verified! Signature status is valid. The certificate is now legally valid for all registry submissions.";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("sig-check-pdf")) {
+        runSigValidationCheck();
+    }
+});
+</script>
+
+<h2>Troubleshooting Common Download Failure Errors</h2>
+<p class="content-text">
+    Many users experience browser errors while downloading files from the TNREGINET dashboard. The most frequent bottleneck is payment processing delays. If you pay SRO copy charges but the transaction history shows a "pending status", wait 24 hours for treasury reconciliation. Do not submit double payments immediately. Most pending transactions are cleared automatically by the integrated payment system.
+</p>
+<p class="content-text">
+    Another common issue is browser pop-up blockers. By default, Chrome, Edge, and Safari block new window generation. Because TNREGINET launches the PDF copy in a new browser tab, the blocker stops the file from opening. Ensure that your browser allows pop-ups from the official domain. If the downloaded PDF contains blank pages, it means the survey ledger requires manual indexing by registrar staff. In such rare scenarios, visit the SRO office to submit a physical search query.
+</p>
+
+<h2>South Indian Property Registration Portal Services Summary Table</h2>
+<p class="content-text">
+    Different states have different official portals, and processing timelines. The comparison table below outlines the service details for quick reference:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State Location</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Official Registration Portal</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Type Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Processing Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">TNREGINET (tnreginet.gov.in)</td>
+                <td>Villangam Search (Property Wise / Document Wise)</td>
+                <td>Instant (View Draft) / 3-5 Days (Certified)</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Kaveri Online Services (2.0)</td>
+                <td>Certified EC Search (Citizen Login)</td>
+                <td>2-3 Working Days (Digital Signature Approval)</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Andhra Pradesh</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS AP (registration.ap.gov.in)</td>
+                <td>Encumbrance Search (Document / Property search)</td>
+                <td>Instant to 24 Hours (Online Download)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Bilingual Guide Checklist for Tamil Nadu Property Verification</h2>
+<p class="content-text">
+    To execute a thorough title verification, property buyers should check historical records, match Patta registers, and verify coordinates details:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>SRO Code Reconciliation</strong>: Match SRO code with the target district registrar to ensure jurisdictional correctness.</li>
+    <li><strong>Patta Ownership Verification</strong>: Verify that the latest buyer listed in the claimant column matches the current Patta certificate name exactly.</li>
+    <li><strong>Guideline Value Audit</strong>: Reconcile guideline values with local survey parameters to compute the stamp duty payable accurately.</li>
+    <li><strong>FMB Sketch Crosscheck</strong>: Match boundaries described in the deed with the Field Measurement Book drawings and survey maps.</li>
+</ul>
+
+<h2>Conclusion & Professional Support</h2>
+<p class="content-text">
+    Conducting an online title check in Tamil Nadu helps you avoid costly legal disputes and ownership conflicts. If subdivision mismatches or legacy owner names appear on the register, we recommend initiating a formal Tahsildar mutation application to clean up records. For step-by-step handbooks on other states, visit the main <strong><a href="https://econline.in/">ec online</a></strong> portal.
+</p>';
+    $faq_tn_dl = '[{"question":"Is there any fee to download Villangam EC online in Tamil Nadu?","answer":"Viewing the draft copy on-screen is free. However, downloading a digitally certified copy requires paying a government application fee based on search duration."},{"question":"How long does it take for SRO approval?","answer":"Normally it takes 2 to 5 working days for the Sub-Registrar to verify the entries, digitally sign the certificate, and release the PDF file for download."},{"question":"Why is the signature marked as not verified?","answer":"This happens because your PDF reader does not automatically trust the registration department certificate. You must import the certificate to trusted credentials to validate."},{"question":"Can I download legacy ECs registered before 1975?","answer":"Digitized records are generally available from 1975 onwards. For records prior to that year, you must apply manually at the physical SRO office."}]';
+    $schema_type_tn_dl = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_tn_dl,
+        'keyword' => $keyword_tn_dl,
+        'title' => $title_tn_dl,
+        'meta_desc' => $meta_desc_tn_dl,
+        'h1_title' => $h1_tn_dl,
+        'content' => $content_tn_dl,
+        'faq_data' => $faq_tn_dl,
+        'schema_type' => $schema_type_tn_dl
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
