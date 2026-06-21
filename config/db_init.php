@@ -14045,6 +14045,317 @@ document.addEventListener("DOMContentLoaded", function() {
         'schema_type' => $schema_type_kaveri_serv
     ]);
 
+    // --- 38. AUTO-INITIALIZE HOW TO DOWNLOAD EC ONLINE PAGE ---
+    $slug_download = 'how-to-download-ec-online';
+    $keyword_download = 'how to download ec online';
+    $title_download = 'How to Download EC Online: Complete Multi-State PDF Retrieval Guide';
+    $h1_download = 'How to Download EC Online: Complete Multi-State PDF Retrieval Guide';
+    $meta_desc_download = 'Learn how to download your certified Encumbrance Certificate online. Comprehensive step-by-step guidelines for multiple states and digital signature verification.';
+    $content_download = '<p class="content-text">
+    Property buyers, developers, and agricultural land owners in India rely on digitized land administration tools to verify titles, check possession statuses, and monitor mutation processes. In almost all Indian states, the land records system is divided between the revenue department\'s land registers and the registration department\'s stamps databases. If you are conducting a transaction, you must query the main <strong><a href="https://econline.in/">ec online</a></strong> search utility.
+</p>
+
+<p class="content-text">
+    The download system digitizes land registers, land maps, and EC (Encumbrance Certificate) details, making it one of the most advanced land record systems in the region. Keeping track of land ownership details, survey coordinates, and liabilities makes checking the status of your <strong><a href="https://econline.in/">ec online</a></strong> application simple. In this detailed guide, we will walk you through searching state portals, downloading your EC records, tracking mutation status, and understanding the differences between various registry services.
+</p>
+
+<h2>Why downloading a certified PDF copy is necessary</h2>
+<p class="content-text">
+    In India, property transactions require establishing a clear chain of title history. A certified Encumbrance Certificate (EC) acts as primary evidence that the property has not been sold, mortgaged, or legally disputed over a specific period. Conducting an <strong><a href="https://econline.in/">ec online</a></strong> search helps property buyers check for these liabilities. While most state portals allow citizen users to search and view draft copies of the transaction registers for free, these draft copies do not have any legal value. Financial institutions, municipal mutation offices, and civil courts require a certified, digitally signed copy issued by the Sub-Registrar. This certified document bears a secure barcode and the Sub-Registrar\'s digital signature, making it a legally binding record.
+</p>
+<p class="content-text">
+    Having a legally certified document is especially important when obtaining a home loan, as banks require absolute assurance that the collateral is free from any previous claims or encumbrances. In addition, when local municipalities update their property tax registers or mutation ledgers (such as Patta mutation in Tamil Nadu or RTC mutation in Karnataka), they require a certified copy to prove the transfer of title. The digital copy can be easily downloaded in PDF format, saved on your computer, and printed for physical verification.
+</p>
+
+<!-- Widget 1: State Selector Tool (app-state-select) -->
+<div class="custom-card" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, hsl(215, 30%, 98%) 0%, #ffffff 100%);">
+    <h3 style="margin-top: 0; color: var(--primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🌐 Regional Registry Selector
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Choose your property state to identify the correct digital portal for online PDF downloads.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">State Location</label>
+            <select id="download-state-selector" class="app-state-select" onchange="showDownloadStateDetails()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff; box-sizing: border-box;">
+                <option value="">-- Choose State --</option>
+                <option value="tn">Tamil Nadu (TNREGINET)</option>
+                <option value="ka">Karnataka (Kaveri 2.0)</option>
+                <option value="ap">Andhra Pradesh (IGRS AP)</option>
+                <option value="ts">Telangana (IGRS Telangana)</option>
+                <option value="kl">Kerala (PEARL Portal)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="download-state-details" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function showDownloadStateDetails() {
+    var state = document.getElementById("download-state-selector").value;
+    var infoBox = document.getElementById("download-state-details");
+    
+    if (!state) {
+        infoBox.style.display = "none";
+        return;
+    }
+    
+    infoBox.style.display = "block";
+    infoBox.style.backgroundColor = "hsl(215, 100%, 98%)";
+    infoBox.style.borderColor = "hsl(215, 100%, 88%)";
+    
+    var content = "";
+    if (state === "tn") {
+        content = "<strong>Tamil Nadu (TNREGINET):</strong> Search by Document or Property. Pay ₹100 certified fee + portal charges to download the signed Villangam certificate PDF.";
+    } else if (state === "ka") {
+        content = "<strong>Karnataka (Kaveri 2.0):</strong> Requires citizen registration. Go to Online EC menu, search by survey/boundaries, and pay ₹100-200 for digital signature copy download.";
+    } else if (state === "ap") {
+        content = "<strong>Andhra Pradesh (IGRS AP):</strong> Search property history using document key or survey subdivision. View draft copy instantly or apply for certified copy.";
+    } else if (state === "ts") {
+        content = "<strong>Telangana (IGRS TS):</strong> Search for registered encumbrances under index services. Certified copies require payment via integrated e-Seva portal.";
+    } else if (state === "kl") {
+        content = "<strong>Kerala (PEARL):</strong> Online applications are processed through local sub-registrar queues. Certified PDF contains secure QR code verification.";
+    }
+    
+    infoBox.innerHTML = "<div style=\"font-size: 0.95rem; color: hsl(215, 100%, 20%); line-height: 1.6;\">" + content + "</div>";
+}
+</script>
+
+<h2>Step-by-step registration on state portals</h2>
+<p class="content-text">
+    To download a certified copy, you must first register as a citizen user on the respective state portal. The user registration page typically requires filling in personal details, unique username setups, and verifying details using mobile OTPs. Once registered, log in to the dashboard to initiate the encumbrance certificate search. Before applying for a land mutation, check the <strong><a href="https://econline.in/">ec online</a></strong> status log.
+</p>
+<p class="content-text">
+    After logging in, navigate to the menu tab: **Citizen Services &rarr; Online EC &rarr; Apply Online**. Fill in the search parameter form: enter geographical boundaries (North, South, East, West boundaries) and survey codes. Make sure the village name and SRO details correspond perfectly with your registration deeds. A minor mismatch can result in a "No Record Found" response, delaying your verification.
+</p>
+
+<!-- Widget 2: Multi-Year Fee Calculator (app-calc-years) -->
+<div class="custom-card" id="app-calc-years" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background-color: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+    <h3 style="margin-top: 0; color: hsl(35, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        🧮 Multi-Year EC Download Fee Calculator
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Compute estimated registry fees based on search duration and copying fees.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Search Years</label>
+            <input type="number" id="download-calc-years-input" value="30" min="1" max="100" oninput="calculateDownloadFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+        <div>
+            <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.85rem; color: #475569;">Copy Level</label>
+            <select id="download-copy-type" onchange="calculateDownloadFee()" style="width: 100%; padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border); font-size: 0.95rem; background-color: #fff; box-sizing: border-box;">
+                <option value="certified">Certified PDF Copy</option>
+                <option value="draft">Draft View Copy (Free/Minimal)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="download-fee-result" style="display: none; padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border);">
+        <!-- Filled dynamically -->
+    </div>
+</div>
+
+<script>
+function calculateDownloadFee() {
+    var years = parseInt(document.getElementById("download-calc-years-input").value);
+    var type = document.getElementById("download-copy-type").value;
+    var resultBox = document.getElementById("download-fee-result");
+    
+    if (isNaN(years) || years < 1) {
+        resultBox.style.display = "none";
+        return;
+    }
+    
+    var searchCharge = 15 + (years > 1 ? (years - 1) * 5 : 0);
+    var copyCharge = (type === "certified") ? 100 : 0;
+    var total = searchCharge + copyCharge + 20;
+    
+    resultBox.style.display = "block";
+    resultBox.style.backgroundColor = "hsl(35, 100%, 97%)";
+    resultBox.style.borderColor = "hsl(35, 100%, 85%)";
+    
+    resultBox.innerHTML = "<div style=\"font-weight: 700; color: hsl(35, 100%, 25%); margin-bottom: 0.75rem; font-size: 1.05rem;\">Filing Cost Summary:</div>" +
+        "<div style=\"font-size: 0.95rem; color: #334155; line-height: 1.6;\">" +
+            "<div><strong>Duration:</strong> " + years + " Year(s)</div>" +
+            "<div><strong>Search Surcharge:</strong> ₹" + searchCharge + "</div>" +
+            "<div><strong>Certified Fee:</strong> ₹" + copyCharge + "</div>" +
+            "<div style=\"border-top: 1px solid hsl(35, 100%, 85%); margin-top: 0.75rem; padding-top: 0.75rem; font-size: 1.1rem; font-weight: 700; color: hsl(35, 100%, 20%);\">" +
+                "Estimated Total: ₹" + total + 
+            "</div>" +
+        "</div>";
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("download-calc-years-input")) {
+        calculateDownloadFee();
+    }
+});
+</script>
+
+<h2>How to initiate a search query on the dashboard</h2>
+<p class="content-text">
+    To query the system, select the property search method. Enter SRO name, village name, survey number, and subdivision details. Check that the survey boundaries are matching with your physical document. Some states also support document-wise search. This is the fastest search method. SRO coordinates are matching if you copy SRO names from parent documents. This geographical approach ensures that all registered transactions related to the specific plot boundaries are retrieved.
+</p>
+
+<!-- Widget 3: Download Readiness Checklist (app-readiness-deed) -->
+<div class="custom-card" id="app-readiness-deed" style="margin: 2rem 0; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(135deg, #ffffff 0%, hsl(140, 30%, 98%) 100%);">
+    <h3 style="margin-top: 0; color: hsl(140, 90%, 25%); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        📋 Download Readiness Checklist
+    </h3>
+    <p class="content-text" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Mark the checkboxes to confirm your computer setup and SRO status before downloading the PDF.
+    </p>
+    
+    <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="dl-check-status" onchange="runDlCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="dl-check-status" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Application status shows "Approved" in SRO login history.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="dl-check-popup" onchange="runDlCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="dl-check-popup" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Browser pop-up blocker is disabled for official SRO portal domain.</label>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="dl-check-acrobat" onchange="runDlCheck()" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="dl-check-acrobat" style="font-size: 0.9rem; color: #334155; cursor: pointer;">Adobe Acrobat Reader is installed to enable signature validation.</label>
+        </div>
+    </div>
+    
+    <div id="dl-check-result" style="padding: 1rem; border-radius: 6px; border: 1px solid var(--border); background-color: #f1f5f9; font-size: 0.9rem; font-weight: 600; color: #475569;">
+        Validation report will appear here.
+    </div>
+</div>
+
+<script>
+function runDlCheck() {
+    var check1 = document.getElementById("dl-check-status").checked;
+    var check2 = document.getElementById("dl-check-popup").checked;
+    var check3 = document.getElementById("dl-check-acrobat").checked;
+    var resultBox = document.getElementById("dl-check-result");
+    
+    var score = 0;
+    if (check1) score++;
+    if (check2) score++;
+    if (check3) score++;
+    
+    if (score === 0) {
+        resultBox.style.backgroundColor = "#f1f5f9";
+        resultBox.style.borderColor = "var(--border)";
+        resultBox.style.color = "#475569";
+        resultBox.innerHTML = "Check checklist items to assess download readiness.";
+    } else if (score < 3) {
+        resultBox.style.backgroundColor = "hsl(35, 92%, 95%)";
+        resultBox.style.borderColor = "hsl(35, 92%, 85%)";
+        resultBox.style.color = "hsl(35, 92%, 25%)";
+        resultBox.innerHTML = "⚠️ Status: Incomplete. Ensure you disable pop-up blockers to prevent download failures.";
+    } else {
+        resultBox.style.backgroundColor = "hsl(142, 70%, 95%)";
+        resultBox.style.borderColor = "hsl(142, 70%, 85%)";
+        resultBox.style.color = "hsl(142, 70%, 25%)";
+        resultBox.innerHTML = "✓ Ready! Your system setup is complete. You can download and validate the certified copy PDF.";
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("dl-check-status")) {
+        runDlCheck();
+    }
+});
+</script>
+
+<h2>Making the government fee payment online</h2>
+<p class="content-text">
+    Certified copy applications are processed only after paying the government fees. State portals support payment systems like SBI ePay, net banking, or debit card options. SRO guidelines require keeping the payment receipts safe. Pending payments are reconciled within 24 hours. For detailed guidelines, visit our state portal listings at the primary dashboard of our <strong><a href="https://econline.in/">ec online</a></strong> registry handbook.
+</p>
+
+<h2>Verifying digital signature trust certificates</h2>
+<p class="content-text">
+    Cryptographic digital signatures are secure. After SRO approval, down-loaded PDF documents display a "Signature Not Verified" mark. Establish a chain of trust by adding SRO certificates to the Adobe trusted certificates registry. Green checkmarks show valid registration records.
+</p>
+<p class="content-text">
+    To set up trusted credentials, open the downloaded document in Adobe Acrobat Reader. Right-click on the signature panel exhibiting the question mark, click on "Show Signature Properties", and select "Show Signer Certificate". Navigate to the "Trust" tab and click on "Add to Trusted Certificates". Check the options for certified documents, dynamic content, and JavaScript execution, and click OK. Once done, close the properties window and click "Validate Signature". The question mark will transform into a green checkmark, indicating the document is fully verified and admissible for property valuation, bank loan processing, and municipal register entry updates.
+</p>
+
+<h2>Troubleshooting common PDF download blocks</h2>
+<p class="content-text">
+    If the PDF copy fails to download, check the browser settings. Pop-up blocks prevent new tabs from launching. SRO survey subdivisions must be index-aligned. If errors continue, consult the local sub-registrar office to submit physical search requests.
+</p>
+<p class="content-text">
+    In addition to browser settings, network connection dropouts or server timeouts can cause corrupted file downloads. If the PDF file is zero bytes or displays a load error, clear your browser cache and cookies, or try using an alternative browser like Firefox or Edge in private browsing mode. For Kaveri 2.0 or TNREGINET users, check the application status table. If the transaction has completed but the download option is unresponsive, it could indicate that the sub-registrar office is currently updating the survey database. Waiting a few hours or resubmitting the query usually resolves these transient portal communication issues.
+</p>
+
+<h2>Property Registry Download Comparison Table</h2>
+<p class="content-text">
+    Different states have different official portals, and processing timelines. The comparison table below outlines the service details for quick reference:
+</p>
+
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; border: 1px solid var(--border);">
+        <thead>
+            <tr style="background-color: var(--primary); color: white;">
+                <th style="padding: 12px; border: 1px solid var(--border);">State Location</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Official Registration Portal</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Search Type Name</th>
+                <th style="padding: 12px; border: 1px solid var(--border);">Processing Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Tamil Nadu</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">TNREGINET (tnreginet.gov.in)</td>
+                <td>Villangam Search (Property Wise / Document Wise)</td>
+                <td>Instant (View Draft) / 3-5 Days (Certified)</td>
+            </tr>
+            <tr style="background-color: #f8fafc;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Karnataka</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">Kaveri Online Services (2.0)</td>
+                <td>Certified EC Search (Citizen Login)</td>
+                <td>2-3 Working Days (Digital Signature Approval)</td>
+            </tr>
+            <tr style="background-color: #ffffff;">
+                <td style="padding: 12px; border: 1px solid var(--border); font-weight: 600;">Andhra Pradesh</td>
+                <td style="padding: 12px; border: 1px solid var(--border);">IGRS AP (registration.ap.gov.in)</td>
+                <td>Encumbrance Search (Document / Property search)</td>
+                <td>Instant to 24 Hours (Online Download)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Bilingual Checklist for SRO Portal Verification</h2>
+<p class="content-text">
+    To execute a thorough title verification, property buyers should check historical records, match Patta registers, and verify coordinates details:
+</p>
+<ul class="guide-list" style="margin-left: 2rem; color: #475569; line-height: 1.8;">
+    <li><strong>SRO Code Reconciliation</strong>: Match SRO code with the target district registrar.</li>
+    <li><strong>Patta Ownership Verification</strong>: Verify that the latest buyer listed in the claimant column matches the current Patta.</li>
+    <li><strong>Guideline Value Audit</strong>: Reconcile guideline values with local survey parameters.</li>
+    <li><strong>FMB Sketch Crosscheck</strong>: Match boundaries described in the deed with the Field Measurement Book drawings.</li>
+</ul>
+
+<h2>Conclusion & Professional Support</h2>
+<p class="content-text">
+    Conducting an online title check in Andhra Pradesh helps you avoid costly legal disputes. If subdivision mismatches or legacy owner names appear on the register, we recommend initiating a formal Tahsildar mutation application. For step-by-step handbooks on other states, visit the main <strong><a href="https://econline.in/">ec online</a></strong> portal.
+</p>';
+    $faq_download = '[{"question":"Is there any fee to download Villangam EC online in Tamil Nadu?","answer":"Viewing the draft copy on-screen is free. However, downloading a digitally certified copy requires paying a government application fee based on search duration."},{"question":"How long does it take for SRO approval?","answer":"Normally it takes 2 to 5 working days for the Sub-Registrar to verify the entries, digitally sign the certificate, and release the PDF file for download."},{"question":"Why is the signature marked as not verified?","answer":"This happens because your PDF reader does not automatically trust the registration department certificate. You must import the certificate to trusted credentials to validate."},{"question":"Can I download legacy ECs registered before 1975?","answer":"Digitized records are generally available from 1975 onwards. For records prior to that year, you must apply manually at the physical SRO office."}]';
+    $schema_type_download = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_download,
+        'keyword' => $keyword_download,
+        'title' => $title_download,
+        'meta_desc' => $meta_desc_download,
+        'h1_title' => $h1_download,
+        'content' => $content_download,
+        'faq_data' => $faq_download,
+        'schema_type' => $schema_type_download
+    ]);
+
 } catch (PDOException $e) {
     // Fail silently in production
 }
