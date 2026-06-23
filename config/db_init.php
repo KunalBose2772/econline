@@ -47393,6 +47393,4629 @@ function runAonCheck() {
         'schema_type' => $schema_type_aon
     ]);
 
+
+    // Page: ec-apply-online-kerala
+    // -------------------------------------------------------
+    $slug_eak = 'ec-apply-online-kerala';
+    $keyword_eak = 'ec apply online kerala';
+    $title_eak = 'EC Apply Online Kerala: Pearl Portal Application Guide';
+    $meta_desc_eak = 'Step-by-step tutorial to complete your EC apply online in Kerala. Access the Pearl portal, pay fees online, and retrieve certified copies.';
+    $h1_eak = 'EC Apply Online Kerala: Complete Pearl Guide';
+    $content_eak = '<p class="content-text">
+    Property transaction checks in Kerala have been simplified with the launch of the digital registration network. Through the official Pearl portal managed by the registration department, citizens can submit application details from home. Completing your search parameters using <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and helps verify SRO transaction logs.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="eak-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showEakStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+        <option value="kl">Kerala</option>
+    </select>
+    <div id="eak-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showEakStateInfo() {
+    var s = document.getElementById("eak-state-sel").value;
+    var r = document.getElementById("eak-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    else if (s === "kl") { txt = "<strong>Kerala Pearl Portal:</strong> Search encumbrances and check stamp registrations online."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="eak-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcEakYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="eak-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcEakYears() {
+    var y = parseInt(document.getElementById("eak-years-inp").value) || 0;
+    var r = document.getElementById("eak-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcEakYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eak-chk1" onchange="runEakCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eak-chk2" onchange="runEakCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eak-chk3" onchange="runEakCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="eak-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runEakCheck() {
+    var c1 = document.getElementById("eak-chk1").checked;
+    var c2 = document.getElementById("eak-chk2").checked;
+    var c3 = document.getElementById("eak-chk3").checked;
+    var r = document.getElementById("eak-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_eak = '[
+        {"question": "How do I do Kerala EC apply online?", "answer": "Register a citizen profile on the Pearl portal, navigate to search encumbrance certificate, fill in SRO details, pay online, and download."},
+        {"question": "What is the fee for an online EC in Kerala?", "answer": "Viewing basic search results online is free, but certified PDF files signed by SRO officers require copying fees online."},
+        {"question": "What parameters are needed for a Kerala EC check?", "answer": "You need the sub-registrar office name, district, village, and property survey details."},
+        {"question": "Can I search agricultural records in Kerala?", "answer": "Yes, both agricultural layout plots and non-agricultural buildings are searched on the Pearl portal."}
+    ]';
+    $schema_type_eak = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_eak,
+        'keyword' => $keyword_eak,
+        'title' => $title_eak,
+        'meta_desc' => $meta_desc_eak,
+        'h1_title' => $h1_eak,
+        'content' => $content_eak,
+        'faq_data' => $faq_eak,
+        'schema_type' => $schema_type_eak
+    ]);
+
+    // Page: how-to-check-ec-online-karnataka
+    // -------------------------------------------------------
+    $slug_ckk = 'how-to-check-ec-online-karnataka';
+    $keyword_ckk = 'how to check ec online karnataka';
+    $title_ckk = 'How to Check EC Online Karnataka: Kaveri 2.0 Guide';
+    $meta_desc_ckk = 'Step-by-step tutorial on how to check EC online in Karnataka using Kaveri 2.0. Search SRO entries, check mortgage history, and download copies.';
+    $h1_ckk = 'How to Check EC Online Karnataka: Complete Steps';
+    $content_ckk = '<p class="content-text">
+    Verifying land ownership ledger books in Karnataka is simple with the stamps and registration services of the state government. Through the online citizen utilities on Kaveri 2.0, buyers can inspect transaction histories from home. Accessing property files using <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and protects buyers from legal disputes.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="ckk-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showCkkStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="ckk-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showCkkStateInfo() {
+    var s = document.getElementById("ckk-state-sel").value;
+    var r = document.getElementById("ckk-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="ckk-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcCkkYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="ckk-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcCkkYears() {
+    var y = parseInt(document.getElementById("ckk-years-inp").value) || 0;
+    var r = document.getElementById("ckk-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcCkkYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="ckk-chk1" onchange="runCkkCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="ckk-chk2" onchange="runCkkCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="ckk-chk3" onchange="runCkkCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="ckk-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runCkkCheck() {
+    var c1 = document.getElementById("ckk-chk1").checked;
+    var c2 = document.getElementById("ckk-chk2").checked;
+    var c3 = document.getElementById("ckk-chk3").checked;
+    var r = document.getElementById("ckk-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_ckk = '[
+        {"question": "How do I check EC online in Karnataka?", "answer": "Log in to the Kaveri online services portal, search for encumbrance certificate, input property village and survey details, and check the ledger."},
+        {"question": "Is checking Karnataka EC online free?", "answer": "Viewing the transaction listings is free on Kaveri portal, but requesting certified signed PDF copies requires a small online fee."},
+        {"question": "What details are required for Karnataka property lookups?", "answer": "You need the district, sub-registrar office name, village name, and property survey number details."},
+        {"question": "How do I verify the Kaveri EC signature?", "answer": "Open the downloaded PDF file in Acrobat Reader and check for the green tick mark representing the registrar officer signature."}
+    ]';
+    $schema_type_ckk = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_ckk,
+        'keyword' => $keyword_ckk,
+        'title' => $title_ckk,
+        'meta_desc' => $meta_desc_ckk,
+        'h1_title' => $h1_ckk,
+        'content' => $content_ckk,
+        'faq_data' => $faq_ckk,
+        'schema_type' => $schema_type_ckk
+    ]);
+
+    // Page: how-to-check-ec-online-in-andhra-pradesh
+    // -------------------------------------------------------
+    $slug_cap = 'how-to-check-ec-online-in-andhra-pradesh';
+    $keyword_cap = 'how to check ec online in andhra pradesh';
+    $title_cap = 'How to Check EC Online in Andhra Pradesh: AP IGRS Guide';
+    $meta_desc_cap = 'Step-by-step tutorial on how to check EC online in Andhra Pradesh using IGRS AP. Search property transaction logs, verify details, and check mortgage charges.';
+    $h1_cap = 'How to Check EC Online in AP: Complete Steps Guide';
+    $content_cap = '<p class="content-text">
+    Property title verification in Andhra Pradesh is simple with the Stamps and Registration department portal. Land buyers and property owners can easily run search queries, check ownership transfers, and review registered deeds from home. Verifying transaction logs using <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and protects buyers from legal disputes.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="cap-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showCapStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="cap-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showCapStateInfo() {
+    var s = document.getElementById("cap-state-sel").value;
+    var r = document.getElementById("cap-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="cap-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcCapYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="cap-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcCapYears() {
+    var y = parseInt(document.getElementById("cap-years-inp").value) || 0;
+    var r = document.getElementById("cap-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcCapYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cap-chk1" onchange="runCapCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cap-chk2" onchange="runCapCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cap-chk3" onchange="runCapCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="cap-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runCapCheck() {
+    var c1 = document.getElementById("cap-chk1").checked;
+    var c2 = document.getElementById("cap-chk2").checked;
+    var c3 = document.getElementById("cap-chk3").checked;
+    var r = document.getElementById("cap-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_cap = '[
+        {"question": "How do I check EC online in Andhra Pradesh?", "answer": "Go to the AP IGRS portal, click on Search Encumbrance Certificate, input location survey numbers, and submit search."},
+        {"question": "What is the fee to check EC online in AP?", "answer": "Basic transaction listing search on the IGRS portal is free, but certified PDF files signed by SRO officers require copying fees online."},
+        {"question": "What details are required for AP property check?", "answer": "You need the district, sub-registrar office location, village name, and property survey number details."},
+        {"question": "Can I search AP EC by document details?", "answer": "Yes, AP registration databases support searching via document number and registration year."}
+    ]';
+    $schema_type_cap = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_cap,
+        'keyword' => $keyword_cap,
+        'title' => $title_cap,
+        'meta_desc' => $meta_desc_cap,
+        'h1_title' => $h1_cap,
+        'content' => $content_cap,
+        'faq_data' => $faq_cap,
+        'schema_type' => $schema_type_cap
+    ]);
+
+    // Page: how-to-check-ec-online-telangana
+    // -------------------------------------------------------
+    $slug_cotg = 'how-to-check-ec-online-telangana';
+    $keyword_cotg = 'how to check ec online telangana';
+    $title_cotg = 'How to Check EC Online Telangana: IGRS TS Search Guide';
+    $meta_desc_cotg = 'Step-by-step tutorial on how to check EC online in Telangana using IGRS TS or Dharani. Learn to search sub-registrar databases and check mortgage entries.';
+    $h1_cotg = 'How to Check EC Online in Telangana: Complete Steps';
+    $content_cotg = '<p class="content-text">
+    Verifying property encumbrances in Telangana is simplified with the digital citizen services of the stamps and registration department. Through the official IGRS TS and Dharani portals, land buyers can easily search transaction logs and verify boundaries from home. Reviewing registered files on <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and protects buyers from legal disputes.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="cotg-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showCotgStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="cotg-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showCotgStateInfo() {
+    var s = document.getElementById("cotg-state-sel").value;
+    var r = document.getElementById("cotg-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="cotg-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcCotgYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="cotg-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcCotgYears() {
+    var y = parseInt(document.getElementById("cotg-years-inp").value) || 0;
+    var r = document.getElementById("cotg-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcCotgYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cotg-chk1" onchange="runCotgCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cotg-chk2" onchange="runCotgCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cotg-chk3" onchange="runCotgCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="cotg-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runCotgCheck() {
+    var c1 = document.getElementById("cotg-chk1").checked;
+    var c2 = document.getElementById("cotg-chk2").checked;
+    var c3 = document.getElementById("cotg-chk3").checked;
+    var r = document.getElementById("cotg-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_cotg = '[
+        {"question": "How do I perform TS EC online search?", "answer": "Visit TS IGRS website, select Encumbrance Certificate search, enter login details, and check property listings."},
+        {"question": "Is checking TS EC online free?", "answer": "Viewing the transaction listings is free on the IGRS portal, but downloading officially certified PDFs requires copying fees online."},
+        {"question": "What details are required for Telangana property lookups?", "answer": "You need the name of the sub-registrar office SRO, district, village, and survey details of the property."},
+        {"question": "How long does SRO verification take in Telangana?", "answer": "Once requested online, SRO officers digitally verify the ledger books, usually taking 2 to 3 business days."}
+    ]';
+    $schema_type_cotg = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_cotg,
+        'keyword' => $keyword_cotg,
+        'title' => $title_cotg,
+        'meta_desc' => $meta_desc_cotg,
+        'h1_title' => $h1_cotg,
+        'content' => $content_cotg,
+        'faq_data' => $faq_cotg,
+        'schema_type' => $schema_type_cotg
+    ]);
+
+    // Page: how-to-check-ec-online-tamilnadu
+    // -------------------------------------------------------
+    $slug_cotn = 'how-to-check-ec-online-tamilnadu';
+    $keyword_cotn = 'how to check ec online tamilnadu';
+    $title_cotn = 'How to Check EC Online Tamilnadu: TNreginet Guide';
+    $meta_desc_cotn = 'Step-by-step instructions on how to check EC online in Tamilnadu. Register on TNreginet, locate SRO registry, and download copies.';
+    $h1_cotn = 'How to Check EC Online in Tamilnadu: Complete Guide';
+    $content_cotn = '<p class="content-text">
+    Checking property encumbrances in Tamil Nadu is simplified with the digital citizen options of the registration department on TNreginet. Home buyers can easily search public indexes, check historical sale deeds, and verify boundary measurements from home. Reviewing ownership history on <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and protects buyers from legal disputes.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="cotn-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showCotnStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="cotn-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showCotnStateInfo() {
+    var s = document.getElementById("cotn-state-sel").value;
+    var r = document.getElementById("cotn-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="cotn-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcCotnYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="cotn-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcCotnYears() {
+    var y = parseInt(document.getElementById("cotn-years-inp").value) || 0;
+    var r = document.getElementById("cotn-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcCotnYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cotn-chk1" onchange="runCotnCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cotn-chk2" onchange="runCotnCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cotn-chk3" onchange="runCotnCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="cotn-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runCotnCheck() {
+    var c1 = document.getElementById("cotn-chk1").checked;
+    var c2 = document.getElementById("cotn-chk2").checked;
+    var c3 = document.getElementById("cotn-chk3").checked;
+    var r = document.getElementById("cotn-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_cotn = '[
+        {"question": "How do I check EC online in TN?", "answer": "Access the TNreginet website, register a citizen login profile, navigate to the search encumbrance certificate option, and check."},
+        {"question": "What is the fee to check TN EC online?", "answer": "Viewing historical registries on-screen is free, but certified PDF files signed by sub-registrars require copying fees online."},
+        {"question": "What details are required for Tamil Nadu property lookup?", "answer": "You need the SRO office location, district, village name, and property survey number details."},
+        {"question": "Can I search TN EC using document details?", "answer": "Yes, TNreginet allows searching records using document registration details and registration year."}
+    ]';
+    $schema_type_cotn = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_cotn,
+        'keyword' => $keyword_cotn,
+        'title' => $title_cotn,
+        'meta_desc' => $meta_desc_cotn,
+        'h1_title' => $h1_cotn,
+        'content' => $content_cotn,
+        'faq_data' => $faq_cotn,
+        'schema_type' => $schema_type_cotn
+    ]);
+
+    // Page: how-to-download-ec-from-kaveri-online
+    // -------------------------------------------------------
+    $slug_dko = 'how-to-download-ec-from-kaveri-online';
+    $keyword_dko = 'how to download ec from kaveri online';
+    $title_dko = 'How to Download EC from Kaveri Online: Karnataka Portal Steps';
+    $meta_desc_dko = 'Step-by-step instructions on how to download EC from Kaveri online in Karnataka. Register on citizen login, check survey numbers, and save signed copies.';
+    $h1_dko = 'How to Download EC from Kaveri Online: Complete Guide';
+    $content_dko = '<p class="content-text">
+    Downloading certified property encumbrance certificates in Karnataka is made easy with Kaveri online services. Through the official portal operated by the stamps and registration department, property owners can search SRO registers and request documents. Utilizing <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and protects buyers from legal disputes.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="dko-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showDkoStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="dko-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showDkoStateInfo() {
+    var s = document.getElementById("dko-state-sel").value;
+    var r = document.getElementById("dko-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="dko-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcDkoYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="dko-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcDkoYears() {
+    var y = parseInt(document.getElementById("dko-years-inp").value) || 0;
+    var r = document.getElementById("dko-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcDkoYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="dko-chk1" onchange="runDkoCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="dko-chk2" onchange="runDkoCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="dko-chk3" onchange="runDkoCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="dko-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runDkoCheck() {
+    var c1 = document.getElementById("dko-chk1").checked;
+    var c2 = document.getElementById("dko-chk2").checked;
+    var c3 = document.getElementById("dko-chk3").checked;
+    var r = document.getElementById("dko-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_dko = '[
+        {"question": "How do I download EC from Kaveri online?", "answer": "Create a citizen login, go to the Services section, select Search/Download EC, input property boundaries, and pay fees."},
+        {"question": "What is the fee for downloading a Karnataka EC on Kaveri?", "answer": "Basic database transaction checking is free, but downloading an officially certified copy signed by SRO officers requires standard online fees."},
+        {"question": "What details are required for Kaveri EC download?", "answer": "You need the sub-registrar office location, district, village, and survey details of the property."},
+        {"question": "Can I search Kaveri EC by document number?", "answer": "Yes, Kaveri online services support searches using document registration serials and registration year."}
+    ]';
+    $schema_type_dko = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_dko,
+        'keyword' => $keyword_dko,
+        'title' => $title_dko,
+        'meta_desc' => $meta_desc_dko,
+        'h1_title' => $h1_dko,
+        'content' => $content_dko,
+        'faq_data' => $faq_dko,
+        'schema_type' => $schema_type_dko
+    ]);
+
+    // Page: online-ec-charges-in-tamilnadu
+    // -------------------------------------------------------
+    $slug_oct = 'online-ec-charges-in-tamilnadu';
+    $keyword_oct = 'online ec charges in tamilnadu';
+    $title_oct = 'Online EC Charges in Tamilnadu: TNreginet Guide';
+    $meta_desc_oct = 'Detailed guide on online EC charges in Tamilnadu. Access TNreginet citizen services, calculate search costs, and check copying fees online.';
+    $h1_oct = 'Online EC Charges in Tamilnadu: Complete Steps';
+    $content_oct = '<p class="content-text">
+    Understanding the online EC charges in Tamilnadu is essential for property title searches. The state registration department manages search queries through the TNreginet portal, which charges nominal copying and search fees. Checking transaction histories on <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and protects buyers from legal disputes.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="oct-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showOctStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="oct-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showOctStateInfo() {
+    var s = document.getElementById("oct-state-sel").value;
+    var r = document.getElementById("oct-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="oct-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcOctYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="oct-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcOctYears() {
+    var y = parseInt(document.getElementById("oct-years-inp").value) || 0;
+    var r = document.getElementById("oct-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcOctYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="oct-chk1" onchange="runOctCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="oct-chk2" onchange="runOctCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="oct-chk3" onchange="runOctCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="oct-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runOctCheck() {
+    var c1 = document.getElementById("oct-chk1").checked;
+    var c2 = document.getElementById("oct-chk2").checked;
+    var c3 = document.getElementById("oct-chk3").checked;
+    var r = document.getElementById("oct-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_oct = '[
+        {"question": "What are the online EC charges in TN?", "answer": "Viewing lists online is free, but downloading certified copies signed by SRO officers requires ₹15 for the first year, ₹5 for each subsequent year, and a ₹100 search fee."},
+        {"question": "How do I calculate Tamil Nadu EC fee online?", "answer": "You can calculate charges on the TNreginet portal using the fee search calculator tool based on registration years."},
+        {"question": "What details do I need to pay EC charges online?", "answer": "You need property survey information, village parameters, SRO name, and your credit/debit card or net banking details."},
+        {"question": "Will I get a receipt for online EC charges?", "answer": "Yes, TNreginet generates an official payment receipt listing reference numbers and fee splits after payment."}
+    ]';
+    $schema_type_oct = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_oct,
+        'keyword' => $keyword_oct,
+        'title' => $title_oct,
+        'meta_desc' => $meta_desc_oct,
+        'h1_title' => $h1_oct,
+        'content' => $content_oct,
+        'faq_data' => $faq_oct,
+        'schema_type' => $schema_type_oct
+    ]);
+
+    // Page: ec-patta-online-tamilnadu
+    // -------------------------------------------------------
+    $slug_ept = 'ec-patta-online-tamilnadu';
+    $keyword_ept = 'ec patta online tamilnadu';
+    $title_ept = 'EC Patta Online Tamilnadu: Combined Records Guide';
+    $meta_desc_ept = 'Official guide on accessing EC and Patta online in Tamil Nadu. Learn to verify deed histories on TNreginet and extract patta records on Anyalila.';
+    $h1_ept = 'EC Patta Online Tamilnadu: Complete Search Guide';
+    $content_ept = '<p class="content-text">
+    Checking land status in Tamil Nadu requires verifying both registration records and revenue registers. The state government provides separate systems for property transaction lookup and patta document mutation. Accessing these <strong><a href="https://econline.in/">ec online</a></strong> directories ensures that buyers verify deed histories and secure clean titles.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="ept-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showEptStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="ept-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showEptStateInfo() {
+    var s = document.getElementById("ept-state-sel").value;
+    var r = document.getElementById("ept-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="ept-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcEptYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="ept-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcEptYears() {
+    var y = parseInt(document.getElementById("ept-years-inp").value) || 0;
+    var r = document.getElementById("ept-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcEptYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="ept-chk1" onchange="runEptCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="ept-chk2" onchange="runEptCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="ept-chk3" onchange="runEptCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="ept-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runEptCheck() {
+    var c1 = document.getElementById("ept-chk1").checked;
+    var c2 = document.getElementById("ept-chk2").checked;
+    var c3 = document.getElementById("ept-chk3").checked;
+    var r = document.getElementById("ept-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_ept = '[
+        {"question": "How do I check EC and Patta online in Tamil Nadu?", "answer": "Check EC on the TNreginet portal using survey numbers, and download the Patta certificate from the Anyalila land records database."},
+        {"question": "What is the difference between EC and Patta?", "answer": "An EC lists registered transaction records at the SRO, while a Patta is an official tax assessment book showing the current land owner name."},
+        {"question": "Do SRO offices verify Patta details before registration?", "answer": "Yes, sub-registrars check the Patta registry to confirm ownership details before registering sale deeds."},
+        {"question": "Can I download a combined EC Patta document?", "answer": "No, they are maintained by different state portals and must be downloaded individually."}
+    ]';
+    $schema_type_ept = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_ept,
+        'keyword' => $keyword_ept,
+        'title' => $title_ept,
+        'meta_desc' => $meta_desc_ept,
+        'h1_title' => $h1_ept,
+        'content' => $content_ept,
+        'faq_data' => $faq_ept,
+        'schema_type' => $schema_type_ept
+    ]);
+
+    // Page: get-ec-online-tamilnadu
+    // -------------------------------------------------------
+    $slug_got = 'get-ec-online-tamilnadu';
+    $keyword_got = 'get ec online tamilnadu';
+    $title_got = 'Get EC Online Tamilnadu: TNreginet Guide';
+    $meta_desc_got = 'Step-by-step instructions to get EC online in Tamil Nadu. Create citizen login accounts, search registry databases, and retrieve certified copies.';
+    $h1_got = 'Get EC Online Tamilnadu: Step-by-Step Guide';
+    $content_got = '<p class="content-text">
+    Obtaining an encumbrance certificate in Tamil Nadu has been made very simple with the citizen options on the TNreginet portal. Property owners and buyers can search registries, check historical transactions, and request signed copies from home. Accessing details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities protects buyers from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="got-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showGotStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="got-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showGotStateInfo() {
+    var s = document.getElementById("got-state-sel").value;
+    var r = document.getElementById("got-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="got-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcGotYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="got-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcGotYears() {
+    var y = parseInt(document.getElementById("got-years-inp").value) || 0;
+    var r = document.getElementById("got-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcGotYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="got-chk1" onchange="runGotCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="got-chk2" onchange="runGotCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="got-chk3" onchange="runGotCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="got-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runGotCheck() {
+    var c1 = document.getElementById("got-chk1").checked;
+    var c2 = document.getElementById("got-chk2").checked;
+    var c3 = document.getElementById("got-chk3").checked;
+    var r = document.getElementById("got-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_got = '[
+        {"question": "How do I get EC online in Tamilnadu?", "answer": "Log in to the TNreginet portal, navigate to search encumbrance certificate, input property boundary details, and download the copy."},
+        {"question": "What is the fee to get an online EC in TN?", "answer": "Viewing database listings on-screen is free, but certified PDF files signed by SRO officers require copying fees online."},
+        {"question": "What details are needed for a TN property check?", "answer": "You need the sub-registrar office location, district, village name, and property survey number details."},
+        {"question": "Can I search TN EC using document details?", "answer": "Yes, TNreginet allows citizens to search encumbrances using document registrations numbers and registration year."}
+    ]';
+    $schema_type_got = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_got,
+        'keyword' => $keyword_got,
+        'title' => $title_got,
+        'meta_desc' => $meta_desc_got,
+        'h1_title' => $h1_got,
+        'content' => $content_got,
+        'faq_data' => $faq_got,
+        'schema_type' => $schema_type_got
+    ]);
+
+    // Page: tn-ec-status-online
+    // -------------------------------------------------------
+    $slug_tes = 'tn-ec-status-online';
+    $keyword_tes = 'tn ec status online';
+    $title_tes = 'TN EC Status Online: Track TNreginet Copy Progress';
+    $meta_desc_tes = 'How to check your TN EC status online. Use TNreginet citizen dashboards, enter application reference numbers, and download certified copies.';
+    $h1_tes = 'TN EC Status Online: Complete Tracking Guide';
+    $content_tes = '<p class="content-text">
+    Checking your TN EC status online is an essential final step after submitting an application for a certified copy. The registration department updates the progress on the TNreginet dashboard, allowing buyers to verify their document signature status. Accessing logs via <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and protects buyers from legal disputes.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="tes-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showTesStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="tes-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showTesStateInfo() {
+    var s = document.getElementById("tes-state-sel").value;
+    var r = document.getElementById("tes-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="tes-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcTesYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="tes-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcTesYears() {
+    var y = parseInt(document.getElementById("tes-years-inp").value) || 0;
+    var r = document.getElementById("tes-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcTesYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="tes-chk1" onchange="runTesCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="tes-chk2" onchange="runTesCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="tes-chk3" onchange="runTesCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="tes-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runTesCheck() {
+    var c1 = document.getElementById("tes-chk1").checked;
+    var c2 = document.getElementById("tes-chk2").checked;
+    var c3 = document.getElementById("tes-chk3").checked;
+    var r = document.getElementById("tes-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_tes = '[
+        {"question": "How do I check my TN EC status online?", "answer": "Log in to TNreginet, navigate to citizen services, select Encumbrance Certificate, select check status, and enter your reference number."},
+        {"question": "What does a pending status mean on TNreginet?", "answer": "It means sub-registrar clerks are searching the historical registry logs manually to verify SRO boundaries before signing."},
+        {"question": "What details are required to track TN EC progress?", "answer": "You need the application reference transaction number received after paying copy fees online."},
+        {"question": "How long does it take for TN EC status to show completed?", "answer": "Verification generally takes 2 to 3 business days, after which the status updates to complete and download is enabled."}
+    ]';
+    $schema_type_tes = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_tes,
+        'keyword' => $keyword_tes,
+        'title' => $title_tes,
+        'meta_desc' => $meta_desc_tes,
+        'h1_title' => $h1_tes,
+        'content' => $content_tes,
+        'faq_data' => $faq_tes,
+        'schema_type' => $schema_type_tes
+    ]);
+
+    // Page: online-ec-status-tamilnadu
+    // -------------------------------------------------------
+    $slug_est = 'online-ec-status-tamilnadu';
+    $keyword_est = 'online ec status tamilnadu';
+    $title_est = 'Online EC Status Tamilnadu: TNreginet Application Tracking';
+    $meta_desc_est = 'Check your online EC status in Tamilnadu via the TNreginet portal. Retrieve search results, verify sub-registrar records, and track applications.';
+    $h1_est = 'Online EC Status Tamilnadu: Search and Tracking';
+    $content_est = '<p class="content-text">
+    Tracking your registration applications in Tamil Nadu has been simplified with the introduction of electronic search databases. Through the TNreginet system administered by the registration department, citizens can check their transaction statuses online. Completing your lookup using <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and helps verify SRO transaction logs.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="est-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showEstStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="est-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showEstStateInfo() {
+    var s = document.getElementById("est-state-sel").value;
+    var r = document.getElementById("est-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="est-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcEstYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="est-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcEstYears() {
+    var y = parseInt(document.getElementById("est-years-inp").value) || 0;
+    var r = document.getElementById("est-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcEstYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="est-chk1" onchange="runEstCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="est-chk2" onchange="runEstCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="est-chk3" onchange="runEstCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="est-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runEstCheck() {
+    var c1 = document.getElementById("est-chk1").checked;
+    var c2 = document.getElementById("est-chk2").checked;
+    var c3 = document.getElementById("est-chk3").checked;
+    var r = document.getElementById("est-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_est = '[
+        {"question": "How do I check Tamil Nadu EC status online?", "answer": "Log in to TNreginet, select Check Document Status under citizen options, enter SRO application identifiers, and retrieve current logging status."},
+        {"question": "Is checking online EC status in Tamilnadu free?", "answer": "Checking status updates for submitted searches is free, while generating new official certificates is a paid process."},
+        {"question": "What is the typical time for Tamilnadu EC approval?", "answer": "Normally SRO offices complete and sign online EC applications within 2 to 4 working days."},
+        {"question": "Can I check historic Tamilnadu EC status?", "answer": "Yes, TNreginet maintains transaction tracking indexes from 1987 onwards for easy retrieval."}
+    ]';
+    $schema_type_est = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_est,
+        'keyword' => $keyword_est,
+        'title' => $title_est,
+        'meta_desc' => $meta_desc_est,
+        'h1_title' => $h1_est,
+        'content' => $content_est,
+        'faq_data' => $faq_est,
+        'schema_type' => $schema_type_est
+    ]);
+
+    // Page: check-ec-online-karnataka
+    // -------------------------------------------------------
+    $slug_cek = 'check-ec-online-karnataka';
+    $keyword_cek = 'check ec online karnataka';
+    $title_cek = 'Check EC Online Karnataka: Kaveri 2.0 Web Guide';
+    $meta_desc_cek = 'Comprehensive tutorial on how to check EC online in Karnataka. Create Kaveri accounts, input property details, and check registration status.';
+    $h1_cek = 'Check EC Online Karnataka: Step-by-Step Kaveri Guide';
+    $content_cek = '<p class="content-text">
+    Verifying property details in Karnataka has been simplified with the introduction of electronic search databases. Through the Kaveri 2.0 system administered by the registration department, citizens can check their transaction statuses online. Completing your lookup using <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and helps verify SRO transaction logs.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="cek-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showCekStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="cek-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showCekStateInfo() {
+    var s = document.getElementById("cek-state-sel").value;
+    var r = document.getElementById("cek-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="cek-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcCekYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="cek-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcCekYears() {
+    var y = parseInt(document.getElementById("cek-years-inp").value) || 0;
+    var r = document.getElementById("cek-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcCekYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cek-chk1" onchange="runCekCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cek-chk2" onchange="runCekCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cek-chk3" onchange="runCekCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="cek-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runCekCheck() {
+    var c1 = document.getElementById("cek-chk1").checked;
+    var c2 = document.getElementById("cek-chk2").checked;
+    var c3 = document.getElementById("cek-chk3").checked;
+    var r = document.getElementById("cek-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_cek = '[
+        {"question": "How do I check EC online in Karnataka?", "answer": "Visit Kaveri online portal, login to citizen services, fill in property district and village, and search for document indices."},
+        {"question": "Is Karnataka EC status search free?", "answer": "Viewing the lists on the screen is free, but request for signed PDF certificates requires payment of copying fees."},
+        {"question": "Which state portal checks Karnataka land registry data?", "answer": "Kaveri 2.0 stamps and registration portal is the official channel for checking Karnataka land registry records online."},
+        {"question": "Can I search my Karnataka EC using survey number?", "answer": "Yes, entering the village name and revenue survey numbers is the standard method for searching transactions."}
+    ]';
+    $schema_type_cek = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_cek,
+        'keyword' => $keyword_cek,
+        'title' => $title_cek,
+        'meta_desc' => $meta_desc_cek,
+        'h1_title' => $h1_cek,
+        'content' => $content_cek,
+        'faq_data' => $faq_cek,
+        'schema_type' => $schema_type_cek
+    ]);
+
+    // Page: computer-ec-online
+    // -------------------------------------------------------
+    $slug_cmo = 'computer-ec-online';
+    $keyword_cmo = 'computer ec online';
+    $title_cmo = 'Computer EC Online: Digital Land Registry Access';
+    $meta_desc_cmo = 'Complete guide to retrieving computer EC online. Search digitized sub-registrar indexes, download signed certificates, and check title status.';
+    $h1_cmo = 'Computer EC Online: Digital Encumbrance Portal Guide';
+    $content_cmo = '<p class="content-text">
+    Extracting property records from computer databases has replaced old manual indexing ledger lookups. Across multiple state registration departments, computerized searches allow citizens to inspect sale transaction histories from home. Accessing property databases through <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and helps verify SRO transaction logs.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="cmo-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showCmoStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="cmo-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showCmoStateInfo() {
+    var s = document.getElementById("cmo-state-sel").value;
+    var r = document.getElementById("cmo-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="cmo-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcCmoYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="cmo-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcCmoYears() {
+    var y = parseInt(document.getElementById("cmo-years-inp").value) || 0;
+    var r = document.getElementById("cmo-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcCmoYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cmo-chk1" onchange="runCmoCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cmo-chk2" onchange="runCmoCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cmo-chk3" onchange="runCmoCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="cmo-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runCmoCheck() {
+    var c1 = document.getElementById("cmo-chk1").checked;
+    var c2 = document.getElementById("cmo-chk2").checked;
+    var c3 = document.getElementById("cmo-chk3").checked;
+    var r = document.getElementById("cmo-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_cmo = '[
+        {"question": "What is a computer EC online?", "answer": "It is an electronically generated encumbrance certificate displaying property history recorded in the computerized registries of registration departments."},
+        {"question": "How do I check a computer EC online?", "answer": "Select the state registry portal, navigate to the transaction index search, input your property survey number, and display the sheet."},
+        {"question": "Are computerized land records legally valid?", "answer": "Yes, legally certified computer-generated certificates containing digital signatures of registrars have identical status to manually signed ones."},
+        {"question": "Can I obtain a computerized property report for free?", "answer": "Most states let citizens search and check transaction sheets for free on screen, while certified copies require payment."}
+    ]';
+    $schema_type_cmo = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_cmo,
+        'keyword' => $keyword_cmo,
+        'title' => $title_cmo,
+        'meta_desc' => $meta_desc_cmo,
+        'h1_title' => $h1_cmo,
+        'content' => $content_cmo,
+        'faq_data' => $faq_cmo,
+        'schema_type' => $schema_type_cmo
+    ]);
+
+    // Page: can-i-get-ec-online
+    // -------------------------------------------------------
+    $slug_cgo = 'can-i-get-ec-online';
+    $keyword_cgo = 'can i get ec online';
+    $title_cgo = 'Can I Get EC Online: State-by-State Registry Availability';
+    $meta_desc_cgo = 'Answers to your questions about getting an EC online. Learn about online options in different states, processing fees, and document formats.';
+    $h1_cgo = 'Can I Get EC Online: Registry Access Guide';
+    $content_cgo = '<p class="content-text">
+    A common inquiry from real estate investors is whether they can retrieve digital encumbrance summaries. Today, stamps and registration networks across India provide digital platforms to request these search documents. Inspecting your records via <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and helps verify SRO transaction logs.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="cgo-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showCgoStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="cgo-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showCgoStateInfo() {
+    var s = document.getElementById("cgo-state-sel").value;
+    var r = document.getElementById("cgo-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="cgo-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcCgoYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="cgo-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcCgoYears() {
+    var y = parseInt(document.getElementById("cgo-years-inp").value) || 0;
+    var r = document.getElementById("cgo-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcCgoYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cgo-chk1" onchange="runCgoCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cgo-chk2" onchange="runCgoCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cgo-chk3" onchange="runCgoCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="cgo-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runCgoCheck() {
+    var c1 = document.getElementById("cgo-chk1").checked;
+    var c2 = document.getElementById("cgo-chk2").checked;
+    var c3 = document.getElementById("cgo-chk3").checked;
+    var r = document.getElementById("cgo-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_cgo = '[
+        {"question": "Can I get EC online for my property?", "answer": "Yes, in many Indian states like Tamil Nadu, Karnataka, Andhra Pradesh, and Telangana, you can search and download encumbrance records online."},
+        {"question": "How do I download an online EC?", "answer": "Register on the respective state stamps and registration portal, input SRO details and survey numbers, and request the document."},
+        {"question": "Are online EC copies valid for home loans?", "answer": "Only certified PDF copies with digital signatures of sub-registrar officers are accepted by banks for mortgage approval."},
+        {"question": "What is the fee to retrieve an EC online?", "answer": "While database checking is mostly free, downloading verified certificates costs a nominal fee depending on tenure."}
+    ]';
+    $schema_type_cgo = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_cgo,
+        'keyword' => $keyword_cgo,
+        'title' => $title_cgo,
+        'meta_desc' => $meta_desc_cgo,
+        'h1_title' => $h1_cgo,
+        'content' => $content_cgo,
+        'faq_data' => $faq_cgo,
+        'schema_type' => $schema_type_cgo
+    ]);
+
+    // Page: can-we-get-ec-online-in-karnataka
+    // -------------------------------------------------------
+    $slug_cwk = 'can-we-get-ec-online-in-karnataka';
+    $keyword_cwk = 'can we get ec online in karnataka';
+    $title_cwk = 'Can We Get EC Online in Karnataka: Kaveri Web Service Limits';
+    $meta_desc_cwk = 'Find out if you can get an EC online in Karnataka. Learn to use the Kaveri 2.0 system, check search limits, and apply for certified copies.';
+    $h1_cwk = 'Can We Get EC Online in Karnataka: complete Details';
+    $content_cwk = '<p class="content-text">
+    For property buyers in Bangalore and other districts, verifying title history online is a key step. The stamps and registration department manages all registry records digitally. Accessing the database through <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and helps verify SRO transaction logs.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="cwk-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showCwkStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="cwk-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showCwkStateInfo() {
+    var s = document.getElementById("cwk-state-sel").value;
+    var r = document.getElementById("cwk-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="cwk-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcCwkYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="cwk-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcCwkYears() {
+    var y = parseInt(document.getElementById("cwk-years-inp").value) || 0;
+    var r = document.getElementById("cwk-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcCwkYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cwk-chk1" onchange="runCwkCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cwk-chk2" onchange="runCwkCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="cwk-chk3" onchange="runCwkCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="cwk-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runCwkCheck() {
+    var c1 = document.getElementById("cwk-chk1").checked;
+    var c2 = document.getElementById("cwk-chk2").checked;
+    var c3 = document.getElementById("cwk-chk3").checked;
+    var r = document.getElementById("cwk-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_cwk = '[
+        {"question": "Can we get EC online in Karnataka for free?", "answer": "Yes, view-only searches on the Kaveri 2.0 portal are free of charge, but formal digitally signed PDF certificates are paid documents."},
+        {"question": "Is Kaveri 2.0 portal active for all Karnataka districts?", "answer": "Yes, Kaveri online services cover all sub-registrar offices across Bangalore, Mysore, and other Karnataka districts."},
+        {"question": "What parameters verify a Karnataka EC search?", "answer": "Provide SRO location details, local village/ward name, and survey numbers to load transaction rows."},
+        {"question": "Can we get historic Karnataka EC online?", "answer": "Kaveri 2.0 databases host indexed digital logs going back up to 20 years depending on the specific SRO."}
+    ]';
+    $schema_type_cwk = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_cwk,
+        'keyword' => $keyword_cwk,
+        'title' => $title_cwk,
+        'meta_desc' => $meta_desc_cwk,
+        'h1_title' => $h1_cwk,
+        'content' => $content_cwk,
+        'faq_data' => $faq_cwk,
+        'schema_type' => $schema_type_cwk
+    ]);
+
+    // Page: ec-certificate-online-karnataka
+    // -------------------------------------------------------
+    $slug_eck = 'ec-certificate-online-karnataka';
+    $keyword_eck = 'ec certificate online karnataka';
+    $title_eck = 'EC Certificate Online Karnataka: Kaveri Registry Guide';
+    $meta_desc_eck = 'Step-by-step instructions to get your EC certificate online in Karnataka. Use the Kaveri portal, enter property details, and pay certified copy fees.';
+    $h1_eck = 'EC Certificate Online Karnataka: Complete Steps Guide';
+    $content_eck = '<p class="content-text">
+    Securing property records in Karnataka has been simplified with the introduction of electronic search databases. Through the Kaveri 2.0 system administered by the registration department, citizens can check their transaction statuses online. Completing your lookup using <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and helps verify SRO transaction logs.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="eck-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showEckStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="eck-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showEckStateInfo() {
+    var s = document.getElementById("eck-state-sel").value;
+    var r = document.getElementById("eck-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="eck-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcEckYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="eck-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcEckYears() {
+    var y = parseInt(document.getElementById("eck-years-inp").value) || 0;
+    var r = document.getElementById("eck-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcEckYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eck-chk1" onchange="runEckCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eck-chk2" onchange="runEckCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eck-chk3" onchange="runEckCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="eck-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runEckCheck() {
+    var c1 = document.getElementById("eck-chk1").checked;
+    var c2 = document.getElementById("eck-chk2").checked;
+    var c3 = document.getElementById("eck-chk3").checked;
+    var r = document.getElementById("eck-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_eck = '[
+        {"question": "How do I get an EC certificate online in Karnataka?", "answer": "Go to the Kaveri online services website, sign in to your citizen profile, choose Application for EC, fill in survey details, and submit."},
+        {"question": "What is the fee for a Karnataka EC certificate online?", "answer": "The fee depends on the tenure selected, starting with ₹100 search fee plus copying charges calculated per SRO year."},
+        {"question": "Is the online Kaveri EC certificate legally accepted?", "answer": "Yes, PDF certificates carrying digital signatures of sub-registrars are legally binding and valid for banking transactions."},
+        {"question": "How can I verify the status of my Karnataka EC application?", "answer": "Log in to Kaveri 2.0 and view pending applications to track progress of SRO digital signatures."}
+    ]';
+    $schema_type_eck = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_eck,
+        'keyword' => $keyword_eck,
+        'title' => $title_eck,
+        'meta_desc' => $meta_desc_eck,
+        'h1_title' => $h1_eck,
+        'content' => $content_eck,
+        'faq_data' => $faq_eck,
+        'schema_type' => $schema_type_eck
+    ]);
+
+    // Page: ec-online-in-tamil
+    // -------------------------------------------------------
+    $slug_eit = 'ec-online-in-tamil';
+    $keyword_eit = 'ec online in tamil';
+    $title_eit = 'EC Online in Tamil: TNreginet Bilingual Search Guide';
+    $meta_desc_eit = 'How to access EC online in Tamil language on TNreginet. Complete guide to property search, translation terms, and local registration indexes.';
+    $h1_eit = 'EC Online in Tamil: Bilingual Search and Deed Guide';
+    $content_eit = '<p class="content-text">
+    Checking property records in Tamil Nadu in the local language has been simplified with bilingual portal updates. Through the TNreginet portal operated by the registration department, search outputs are accessible in both Tamil and English. Accessing registration files using <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and protects buyers from legal disputes.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="eit-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showEitStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="eit-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showEitStateInfo() {
+    var s = document.getElementById("eit-state-sel").value;
+    var r = document.getElementById("eit-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="eit-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcEitYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="eit-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcEitYears() {
+    var y = parseInt(document.getElementById("eit-years-inp").value) || 0;
+    var r = document.getElementById("eit-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcEitYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eit-chk1" onchange="runEitCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eit-chk2" onchange="runEitCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eit-chk3" onchange="runEitCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="eit-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runEitCheck() {
+    var c1 = document.getElementById("eit-chk1").checked;
+    var c2 = document.getElementById("eit-chk2").checked;
+    var c3 = document.getElementById("eit-chk3").checked;
+    var r = document.getElementById("eit-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_eit = '[
+        {"question": "How do I check EC online in Tamil language?", "answer": "Switch language on the TNreginet portal header to Tamil, then select Villainangam Chaandridhal status lookup."},
+        {"question": "What is the Tamil name for Encumbrance Certificate?", "answer": "The certificate is known locally as Villainanga Chaandridhal in Tamil land registries."},
+        {"question": "Can I search SRO indices in Tamil?", "answer": "Yes, search forms allow input of village names and document registration serial numbers in local script."},
+        {"question": "Is TNreginet EC download available in Tamil?", "answer": "Yes, citizens can generate bilingual certificates displaying transaction descriptions in both Tamil and English."}
+    ]';
+    $schema_type_eit = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_eit,
+        'keyword' => $keyword_eit,
+        'title' => $title_eit,
+        'meta_desc' => $meta_desc_eit,
+        'h1_title' => $h1_eit,
+        'content' => $content_eit,
+        'faq_data' => $faq_eit,
+        'schema_type' => $schema_type_eit
+    ]);
+
+    // Page: ec-check-online-telangana
+    // -------------------------------------------------------
+    $slug_ecc = 'ec-check-online-telangana';
+    $keyword_ecc = 'ec check online telangana';
+    $title_ecc = 'EC Check Online Telangana: Dharani and IGRS Guides';
+    $meta_desc_ecc = 'Step-by-step tutorial to run an EC check online in Telangana. Search registration details on Dharani portal and check transaction status.';
+    $h1_ecc = 'EC Check Online Telangana: Complete Steps Guide';
+    $content_ecc = '<p class="content-text">
+    Checking title transactions in Telangana has been simplified with the launch of centralized land databases. Through the Dharani and IGRS portals operated by the registration department, citizens can check their transaction statuses online. Completing your lookup using <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and helps verify SRO transaction logs.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="ecc-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showEccStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="ecc-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showEccStateInfo() {
+    var s = document.getElementById("ecc-state-sel").value;
+    var r = document.getElementById("ecc-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="ecc-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcEccYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="ecc-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcEccYears() {
+    var y = parseInt(document.getElementById("ecc-years-inp").value) || 0;
+    var r = document.getElementById("ecc-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcEccYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="ecc-chk1" onchange="runEccCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="ecc-chk2" onchange="runEccCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="ecc-chk3" onchange="runEccCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="ecc-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runEccCheck() {
+    var c1 = document.getElementById("ecc-chk1").checked;
+    var c2 = document.getElementById("ecc-chk2").checked;
+    var c3 = document.getElementById("ecc-chk3").checked;
+    var r = document.getElementById("ecc-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_ecc = '[
+        {"question": "How do I do an online EC check in Telangana?", "answer": "Register a profile on the IGRS Telangana website or log in to the Dharani portal, input district and survey details, and search indexes."},
+        {"question": "What details run a Telangana EC check?", "answer": "You need property boundaries, sub-registrar office jurisdiction, local revenue village, and specific survey numbers."},
+        {"question": "Can I search agricultural records in Telangana?", "answer": "Yes, Dharani portal specializes in agricultural lands, while urban layouts are managed by IGRS TS."},
+        {"question": "Is checking Telangana EC status online free?", "answer": "Viewing the transaction listings is free on the screen, but downloading signed copies requires registry fees."}
+    ]';
+    $schema_type_ecc = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_ecc,
+        'keyword' => $keyword_ecc,
+        'title' => $title_ecc,
+        'meta_desc' => $meta_desc_ecc,
+        'h1_title' => $h1_ecc,
+        'content' => $content_ecc,
+        'faq_data' => $faq_ecc,
+        'schema_type' => $schema_type_ecc
+    ]);
+
+    // Page: ec-encumbrance-certificate-online
+    // -------------------------------------------------------
+    $slug_eeco = 'ec-encumbrance-certificate-online';
+    $keyword_eeco = 'ec encumbrance certificate online';
+    $title_eeco = 'EC Encumbrance Certificate Online: National Search Guide';
+    $meta_desc_eeco = 'Complete guide on how to get an EC encumbrance certificate online. Choose state registration directories, enter land details, and download certified deeds.';
+    $h1_eeco = 'EC Encumbrance Certificate Online: Search Portal Guide';
+    $content_eeco = '<p class="content-text">
+    Verifying land titles has become simple with the launch of centralized digital indexes. Across multiple states, citizens can inspect registry records and check previous transactions. Accessing property directories via <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and protects buyers from legal disputes.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="eeco-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showEecoStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="eeco-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showEecoStateInfo() {
+    var s = document.getElementById("eeco-state-sel").value;
+    var r = document.getElementById("eeco-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="eeco-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcEecoYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="eeco-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcEecoYears() {
+    var y = parseInt(document.getElementById("eeco-years-inp").value) || 0;
+    var r = document.getElementById("eeco-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcEecoYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eeco-chk1" onchange="runEecoCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eeco-chk2" onchange="runEecoCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="eeco-chk3" onchange="runEecoCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="eeco-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runEecoCheck() {
+    var c1 = document.getElementById("eeco-chk1").checked;
+    var c2 = document.getElementById("eeco-chk2").checked;
+    var c3 = document.getElementById("eeco-chk3").checked;
+    var r = document.getElementById("eeco-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_eeco = '[
+        {"question": "How do I get an EC encumbrance certificate online?", "answer": "Go to the regional registration website of your state, select encumbrance certificate, input search coordinates, and download the report."},
+        {"question": "Is checking the EC encumbrance certificate online free?", "answer": "Checking indexed records is usually free on state portals, but certified digital printouts require online payment of fees."},
+        {"question": "What information does an online encumbrance certificate contain?", "answer": "It lists legal sale deeds, partition records, release deeds, and outstanding bank mortgages registered on the land."},
+        {"question": "How do I print my EC encumbrance certificate?", "answer": "Open the approved PDF copy, verify the digital signature, and print the pages using a standard layout."}
+    ]';
+    $schema_type_eeco = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_eeco,
+        'keyword' => $keyword_eeco,
+        'title' => $title_eeco,
+        'meta_desc' => $meta_desc_eeco,
+        'h1_title' => $h1_eeco,
+        'content' => $content_eeco,
+        'faq_data' => $faq_eeco,
+        'schema_type' => $schema_type_eeco
+    ]);
+
+    // Page: how-to-get-land-ec-online
+    // -------------------------------------------------------
+    $slug_hgl = 'how-to-get-land-ec-online';
+    $keyword_hgl = 'how to get land ec online';
+    $title_hgl = 'How to Get Land EC Online: SRO Search Platforms Guide';
+    $meta_desc_hgl = 'Step-by-step tutorial on how to get a land EC online. Access state registration departments, verify boundary survey details, and download copies.';
+    $h1_hgl = 'How to Get Land EC Online: Complete Guide';
+    $content_hgl = '<p class="content-text">
+    Acquiring land transaction certificates online has become standard practice for property purchases. Through digitized registers maintained by state registration departments, buyers can search SRO transaction logs from home. Accessing records via <strong><a href="https://econline.in/">ec online</a></strong> portals ensures clean property transfers and helps verify SRO transaction logs.
+</p>
+
+<h2>Understanding Encumbrance Records and Their Value</h2>
+<p class="content-text">
+    An encumbrance certificate lists all recorded property transactions for a specified search tenure. It displays sale deeds, gift deeds, partitions, and outstanding mortgages. The official state registration directories offer <strong><a href="https://econline.in/">ec online</a></strong> status check features to verify transactions.
+</p>
+<p class="content-text">
+    If the owner mortgaged their property to a bank, the registration department registers a charge. The online EC shows this entry, which prevents buyers from purchasing encumbered lands. Transactions completed without verifying these logs can result in unexpected financial liabilities.
+</p>
+
+<h2>Role of State Registration Portals</h2>
+<p class="content-text">
+    The registration department maintains detailed records for every registered deed. Before completing any property purchase, checking details using <strong><a href="https://econline.in/">ec online</a></strong> search facilities validates the owner name. Users must register accounts to access these features and track their applications.
+</p>
+<p class="content-text">
+    Inputting survey details under an incorrect SRO returns no results. When checking records online, select the correct SRO matching the property location.
+</p>
+
+<div id="app-state-select" style="background: linear-gradient(135deg, hsl(210,65%,96%), hsl(210,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(210,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(210,55%,22%);">&#128506; SRO State Finder</h3>
+    <p style="font-size:0.9rem; color:hsl(210,45%,30%); margin:0 0 0.8rem;">Select your state to locate SRO directories:</p>
+    <select id="hgl-state-sel" style="padding:0.5rem; border-radius:8px; border:1px solid hsl(210,55%,72%); font-size:1rem; width:100%; max-width:300px; background:#fff;" onchange="showHglStateInfo()">
+        <option value="">-- Select State --</option>
+        <option value="ap">Andhra Pradesh</option>
+        <option value="ts">Telangana</option>
+        <option value="ka">Karnataka</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="hgl-state-result" style="margin-top:1rem; font-size:0.95rem; color:hsl(210,55%,22%); line-height:1.5;"></div>
+</div>
+<script>
+function showHglStateInfo() {
+    var s = document.getElementById("hgl-state-sel").value;
+    var r = document.getElementById("hgl-state-result");
+    if (s === "") { r.innerHTML = ""; return; }
+    var txt = "";
+    if (s === "ap") { txt = "<strong>Andhra Pradesh IGRS:</strong> Search property transactions using document numbers or location layout codes."; }
+    else if (s === "ts") { txt = "<strong>Telangana IGRS:</strong> Enter search parameters on Dharani or IGRS TS to generate transaction history."; }
+    else if (s === "ka") { txt = "<strong>Karnataka Kaveri 2.0:</strong> Access SRO indexes online. Log in to pay and request certified search reports."; }
+    else if (s === "tn") { txt = "<strong>Tamil Nadu TNReginet:</strong> Retrieve deed indices registered from 1987 onwards free of charge."; }
+    r.innerHTML = txt;
+}
+</script>
+
+<h2>How SRO Jurisdictions Help Property Searches</h2>
+<p class="content-text">
+    States are partitioned into registration districts and sub-registrar offices. Each SRO coordinates registrations for a defined geography. To start your inquiry, locate the state portal. The <strong><a href="https://econline.in/">ec online</a></strong> form requires precise boundary details. If you enter incorrect parameters, the system will not show any matching records.
+</p>
+<p class="content-text">
+    Verify the local sub-registrar limits by matching revenue village files with SRO directories online.
+</p>
+
+<h2>Step-by-Step Guide to View Encumbrance Lists Online</h2>
+<p class="content-text">
+    While search logs can be viewed on computer screens for free, obtaining certified copies via <strong><a href="https://econline.in/">ec online</a></strong> services is a paid process. Follow these generic instructions to conduct your property search:
+</p>
+<p class="content-text">
+    First, navigate to the services page on the home page layout of the state portal. Choose the Encumbrance Certificate option and read the instructions. Second, select the search option: Document-wise or Property-wise. If searching property-wise, select the district name and sub-registrar office from the dropdown menus.
+</p>
+<p class="content-text">
+    Third, enter the survey number, village name, and division number. Enter the start year and end year for your search query. Fourth, enter the visual security text and submit the search request to view matches.
+</p>
+
+<div id="app-calc-years" style="background: linear-gradient(135deg, hsl(160,65%,96%), hsl(160,65%,92%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(160,55%,82%);">
+    <h3 style="margin-top:0; color:hsl(160,55%,22%);">&#128197; Select Search Tenure</h3>
+    <p style="font-size:0.9rem; color:hsl(160,45%,30%); margin:0 0 0.8rem;">Select search duration for property encumbrances:</p>
+    <input type="number" id="hgl-years-inp" min="1" max="40" value="15" style="width:90px; padding:0.5rem; border-radius:8px; border:1px solid hsl(160,55%,72%); font-size:1rem; text-align:center;" oninput="calcHglYears()">
+    <span style="margin-left:0.5rem; color:hsl(160,45%,28%);">years</span>
+    <div id="hgl-years-result" style="margin-top:0.8rem; font-weight:600; color:hsl(160,55%,22%); font-size:0.95rem;"></div>
+</div>
+<script>
+function calcHglYears() {
+    var y = parseInt(document.getElementById("hgl-years-inp").value) || 0;
+    var r = document.getElementById("hgl-years-result");
+    if (1 > y) { r.innerHTML = "Please enter valid years."; return; }
+    var today = new Date();
+    var past = new Date();
+    past.setFullYear(today.getFullYear() - y);
+    var options = {year:"numeric", month:"long", day:"numeric"};
+    r.innerHTML = "From: <strong>" + past.toLocaleDateString("en-IN", options) + "</strong> &nbsp;|&nbsp; To: <strong>" + today.toLocaleDateString("en-IN", options) + "</strong>";
+}
+calcHglYears();
+</script>
+
+<h2>Differences Between Free Reports and Certified Copies</h2>
+<p class="content-text">
+    While view-only results are free, downloading certified copies requires a fee. Free reports list transaction summaries but lack the official seals and signatures of SRO officers.
+</p>
+<p class="content-text">
+    For comparison with property search tools in other parts of India, explore our <strong><a href="https://econline.in/">ec online</a></strong> reference database for complete transaction records. If you require the document for court cases or home loan applications, you must apply for a certified encumbrance certificate.
+</p>
+
+<div id="app-readiness-deed" style="background: linear-gradient(135deg, hsl(35,80%,97%), hsl(35,70%,93%)); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid hsl(35,60%,85%);">
+    <h3 style="margin-top:0; color:hsl(35,55%,22%);">&#9745; Search Parameter Check</h3>
+    <p style="font-size:0.9rem; color:hsl(35,45%,30%); margin:0 0 0.8rem;">Select parameters you possess for search verification:</p>
+    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="hgl-chk1" onchange="runHglCheck()" style="width:16px; height:16px;"> District name, SRO location, and village name
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="hgl-chk2" onchange="runHglCheck()" style="width:16px; height:16px;"> Valid Survey number and subdivision code
+        </label>
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:hsl(35,55%,25%); cursor:pointer;">
+            <input type="checkbox" id="hgl-chk3" onchange="runHglCheck()" style="width:16px; height:16px;"> Registered document number and year
+        </label>
+    </div>
+    <div id="hgl-chk-result" style="margin-top:0.8rem; padding:0.7rem 1rem; border-radius:8px; background:#fff8f1; border:1px solid hsl(30,70%,80%); font-size:0.9rem; color:hsl(30,55%,28%); font-weight:600;">
+        Confirm search inputs are verified.
+    </div>
+</div>
+<script>
+function runHglCheck() {
+    var c1 = document.getElementById("hgl-chk1").checked;
+    var c2 = document.getElementById("hgl-chk2").checked;
+    var c3 = document.getElementById("hgl-chk3").checked;
+    var r = document.getElementById("hgl-chk-result");
+    var total = (c1?1:0) + (c2?1:0) + (c3?1:0);
+    if (total === 0) {
+        r.style.background = "#fff8f1";
+        r.style.borderColor = "hsl(30,70%,80%)";
+        r.style.color = "hsl(30,55%,28%)";
+        r.innerHTML = "Confirm search inputs are verified.";
+    } else if (3 > total) {
+        r.style.background = "hsl(45,90%,94%)";
+        r.style.borderColor = "hsl(45,80%,78%)";
+        r.style.color = "hsl(30,70%,22%)";
+        r.innerHTML = "Parameters partially loaded. Confirm survey number codes.";
+    } else {
+        r.style.background = "hsl(140,60%,95%)";
+        r.style.borderColor = "hsl(140,55%,78%)";
+        r.style.color = "hsl(140,55%,22%)";
+        r.innerHTML = "Perfect! Required parameters verified for query submission.";
+    }
+}
+</script>
+
+<h2>Analyzing the Document Layout and Details</h2>
+<p class="content-text">
+    The certificate is formatted as a transaction sheet, listing entries chronologically. Each record lists the document code, the date of registration, the purchase price, and the land measurements. It also details the names of executing parties and boundary details.
+</p>
+<p class="content-text">
+    When checking ownership histories, confirm that the buyer of the first deed is the seller of the subsequent deed. If you find a break in this sequence, inspect the parent deeds to identify how the seller acquired the title.
+</p>
+<p class="content-text">
+    This validation protects you from legal disputes and confirms that the land has clean titles.
+</p>
+
+<h2>Role of Revenue Portals in Title Checks</h2>
+<p class="content-text">
+    While SRO records show the execution of deeds, mutation logs in revenue books confirm property updates. Mutation transfers the property tax assessment from the seller name to the buyer name. Failing to mutate property files can cause tax notices to remain under old names.
+</p>
+<p class="content-text">
+    Buyers should apply for online mutation immediately after registering their sale deeds. Confirming mutation updates on the land records portal completes property acquisition validation.
+</p>
+
+<h2>Understanding the Structure of Land Administration</h2>
+<p class="content-text">
+    The administrative hierarchy of land records in India is divided into registration and revenue departments. The registration department deals with the execution of deeds, while the revenue department handles land taxation and possession. Understanding this division helps buyers navigate the verification process. An encumbrance certificate only shows transactions registered at the sub-registrar office, but does not confirm physical possession.
+</p>
+<p class="content-text">
+    To secure absolute titles, buyers must check both registration deeds and revenue patta records. Discrepancies between these files are common and require legal rectification. Completing both checks ensures that you have verified both the transaction history and the tax record.
+</p>
+
+<h2>Verification of Digital Signatures on Land Records</h2>
+<p class="content-text">
+    Modern land records are issued with digital signatures to prevent tampering. When downloading a certified copy, check the validity of the digital signature. PDF readers can verify the certificate authority keys. A valid signature displays a green check mark, indicating the file was not altered after signature.
+</p>
+<p class="content-text">
+    If the signature shows an error, contact the sub-registrar office for resolution. Using unsigned documents in legal proceedings can lead to rejection. Consequently, verification of digital signatures is a critical step in document authentication.
+</p>
+
+<h2>Steps to Resolve Boundary Discrepancies</h2>
+<p class="content-text">
+    Discrepancies in boundary measurements can cause boundary disputes between neighbors. To resolve these, check the survey maps stored at the revenue office. You can request a physical survey of the land by submitting an application to the local surveyor. The surveyor will measure the land using official boundary coordinate files.
+</p>
+<p class="content-text">
+    If the survey confirms a difference, the parties must execute a boundary correction deed. This deed must be registered at the sub-registrar office to update the transaction history. Resolving these issues before construction prevents future legal claims.
+</p>
+
+<h2>Important Clauses to Verify in Construction Agreements</h2>
+<p class="content-text">
+    When purchasing apartments, verify the construction agreement executed with the developer. Ensure the agreement lists the exact area and undivided share of land. The undivided share represents your ownership in the land plot. Check if the developer has secured municipal approvals for the building layout.
+</p>
+<p class="content-text">
+    Verify the payment schedules and completion timelines listed in the agreement. The agreement must align with local real estate authority regulations. Checking these details protects buyers from project delays and structural issues.
+</p>
+
+<h2>Historical Digitization Scope and Manual Legacy Searches</h2>
+<p class="content-text">
+    The transition to online databases has been progressive, meaning that historical records are not always completely digitized. In many registration districts, search databases contain records starting only from a specific year. For example, records registered prior to the digitization baseline year require manual index checks at the local office.
+</p>
+<p class="content-text">
+    If your search requires tracing ownership for a 30-year period, check the digitized baseline of your SRO. If the online database only goes back 15 years, you must submit a physical application for the remaining duration. SRO clerks will manually search the physical index books and issue a combined certificate.
+</p>
+
+<h2>The Future of Unified Digital Registry Systems</h2>
+<p class="content-text">
+    State governments are actively updating stamps and registration infrastructure to build unified property cards. These new systems aim to link sub-registrar transaction data with land revenue records in real time. When a sale deed is registered, the system automatically triggers a mutation request in the revenue database, reducing mutation delays.
+</p>
+<p class="content-text">
+    Furthermore, integrated portals will verify property boundaries using geographic information system coordinate maps. This prevents multiple registrations for the same layout plot. Buyers can look forward to accessing comprehensive deed, patta, tax, and survey logs through a single portal.
+</p>';
+
+    $faq_hgl = '[
+        {"question": "How to get land EC online?", "answer": "Go to the state land registration portal, select the Search Encumbrance utility, enter localized survey numbers, and display transaction results."},
+        {"question": "What is required to get a land EC online?", "answer": "You need the registration district, sub-registrar office, local revenue village, survey code, and property boundaries."},
+        {"question": "Are agricultural land EC searches done online?", "answer": "Yes, state databases index transactions for both agricultural plots and built-up urban layouts."},
+        {"question": "How do I check if my land EC application is approved?", "answer": "Log in to the state registry portal and monitor the application tracking menu to check digital signature completion status."}
+    ]';
+    $schema_type_hgl = 'Article';
+
+    $stmt->execute([
+        'slug' => $slug_hgl,
+        'keyword' => $keyword_hgl,
+        'title' => $title_hgl,
+        'meta_desc' => $meta_desc_hgl,
+        'h1_title' => $h1_hgl,
+        'content' => $content_hgl,
+        'faq_data' => $faq_hgl,
+        'schema_type' => $schema_type_hgl
+    ]);
+
 } catch (PDOException $e) {
 
     // Fail silently in production
