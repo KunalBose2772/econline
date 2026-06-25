@@ -2,6 +2,12 @@
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/db_init.php';
 
+// Prevent browser and proxy caching for dynamic HTML content
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+
 ob_start();
 
 // Helper function to map page slug to its state category for breadcrumbs
