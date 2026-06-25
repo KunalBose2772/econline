@@ -36,6 +36,8 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/EC_Favicon.png">
+    <link rel="shortcut icon" href="/EC_Favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/EC_Favicon.png">
     
     <!-- Dynamic Schema Markups -->
     <?php if (isset($schemas) && is_array($schemas)): ?>
@@ -51,7 +53,7 @@
 <header class="site-header">
     <div class="header-container">
         <a href="/" class="logo-link">
-            <span class="logo-text">EC Online</span>
+            <img src="/econline_logo.png" alt="EC Online Logo" width="160" height="40">
         </a>
         <nav>
             <ul class="nav-menu">
