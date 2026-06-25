@@ -269,6 +269,7 @@ if ($slug === 'home') {
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Search your state or keywords (e.g. Tamil Nadu, Kaveri)..." aria-label="Search documents">
                 <button class="search-btn">Search</button>
+                <ul class="suggest-dropdown" style="display: none;"></ul>
             </div>
         </div>
     </section>

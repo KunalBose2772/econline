@@ -71,14 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchBtn = document.querySelector(".search-btn");
     
     if (searchInput) {
-        // Create suggestion dropdown element if not exists
-        let suggestList = document.querySelector(".suggest-dropdown");
-        if (!suggestList) {
-            suggestList = document.createElement("ul");
-            suggestList.className = "suggest-dropdown";
-            searchInput.parentElement.appendChild(suggestList);
-        }
-        
+        const suggestList = document.querySelector(".suggest-dropdown");
         searchInput.addEventListener("input", function() {
             const val = this.value.trim();
             if (val.length < 2) {
