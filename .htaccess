@@ -23,7 +23,18 @@ RewriteRule ^ - [L]
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# Enforce trailing slash for paths not pointing to files
+# Enforce trailing slash for paths not pointing to files (HTTPS-aware to prevent double-redirects)
+RewriteCond %{HTTP_HOST} ^econline\.in$ [NC]
+RewriteCond %{REQUEST_URI} [^/]$
+RewriteRule ^(.*)$ https://econline.in%{REQUEST_URI}/ [R=301,L]
+
+RewriteCond %{HTTP_HOST} !^econline\.in$ [NC]
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} [^/]$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}/ [R=301,L]
+
+RewriteCond %{HTTP_HOST} !^econline\.in$ [NC]
+RewriteCond %{HTTPS} off
 RewriteCond %{REQUEST_URI} [^/]$
 RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI}/ [R=301,L]
 
@@ -57,4 +68,24 @@ RewriteRule ^(.*)/$ index.php?slug=$1 [QSA,L]
     <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|woff|woff2)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
+</IfModule>
+
+# Enable Gzip Compression (mod_deflate) for high page-speed performance
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML, and fonts
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
 </IfModule>

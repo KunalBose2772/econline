@@ -11,7 +11,11 @@
     <link rel="canonical" href="<?php echo isset($canonical_url) ? htmlspecialchars($canonical_url) : BASE_URL; ?>">
     
     <!-- Robots Meta -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <?php if (isset($_GET['search_failed']) || isset($_GET['q'])): ?>
+        <meta name="robots" content="noindex, follow">
+    <?php else: ?>
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <?php endif; ?>
     
     <!-- Open Graph (OG) Meta Tags -->
     <meta property="og:locale" content="en_US">
