@@ -60,6 +60,41 @@ $content = str_replace(
     $content
 );
 
+// Dynamic runtime link title sanitizer and injector
+$content = preg_replace_callback('/<a\b([^>]*)>(.*?)<\/a>/is', function($anchor_matches) {
+    $attrs_string = $anchor_matches[1];
+    $link_text = trim(strip_tags($anchor_matches[2]));
+    
+    // Parse existing attributes
+    $attrs = [];
+    preg_match_all('/([a-z0-9\-]+)\s*=\s*["\']([^"\']*)["\']/i', $attrs_string, $attr_matches, PREG_SET_ORDER);
+    foreach ($attr_matches as $match) {
+        $attrs[strtolower($match[1])] = $match[2];
+    }
+    
+    // Generate title if it doesn't exist and link has text
+    if (!isset($attrs['title']) && !empty($link_text)) {
+        $href = isset($attrs['href']) ? $attrs['href'] : '';
+        $is_external = false;
+        if (!empty($href) && (strpos($href, 'http') === 0) && (strpos($href, 'econline.in') === false)) {
+            $is_external = true;
+        }
+        
+        if ($is_external) {
+            $attrs['title'] = "Visit the official " . $link_text . " website (External Link)";
+        } else {
+            $attrs['title'] = "Read our comprehensive guide on " . $link_text;
+        }
+    }
+    
+    // Rebuild anchor tag
+    $new_attrs = [];
+    foreach ($attrs as $name => $val) {
+        $new_attrs[] = $name . '="' . htmlspecialchars($val) . '"';
+    }
+    return '<a ' . implode(' ', $new_attrs) . '>' . $anchor_matches[2] . '</a>';
+}, $content);
+
 // Dynamic runtime image lazy loading and dimension sanitizer
 $content = preg_replace_callback('/<img\s+([^>]*)\/?>/is', function($img_matches) {
     $attrs_string = $img_matches[1];
