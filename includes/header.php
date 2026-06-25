@@ -37,8 +37,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?v=1.1">
+    <!-- Inline Stylesheet to eliminate render-blocking CSS and achieve 100/100 Lighthouse performance -->
+    <style>
+    <?php echo file_get_contents(dirname(__DIR__) . '/assets/css/style.css'); ?>
+    </style>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/EC_Favicon.png">
