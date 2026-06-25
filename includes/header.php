@@ -38,7 +38,7 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1.1">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/EC_Favicon.png">
