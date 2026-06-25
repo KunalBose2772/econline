@@ -316,10 +316,10 @@ if ($slug === 'home') {
                 <?php if (!empty($toc_links)): ?>
                     <div class="toc-widget" style="margin-bottom: 2.5rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius-md); background-color: var(--surface); box-shadow: var(--shadow-sm);">
                         <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; margin-bottom: 1rem; cursor: pointer;" onclick="document.getElementById('toc-list').style.display = document.getElementById('toc-list').style.display === 'none' ? 'block' : 'none';">
-                            <h4 style="margin: 0; font-size: 1.15rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
+                            <h3 style="margin: 0; font-size: 1.15rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 0.5rem;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-ordered"><line x1="10" x2="21" y1="6" y2="6"/><line x1="10" x2="21" y1="12" y2="12"/><line x1="10" x2="21" y1="18" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
                                 Table of Contents
-                            </h4>
+                            </h3>
                             <span style="font-size: 0.85rem; color: var(--accent); font-weight: 600;">[Show/Hide]</span>
                         </div>
                         <ul id="toc-list" style="list-style-type: none; padding-left: 0.5rem; margin: 0; display: block;">
@@ -351,7 +351,7 @@ if ($slug === 'home') {
                     </div>
                     <div class="author-info">
                         <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
-                            <h4 style="margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--primary);">Vikash</h4>
+                            <h3 style="margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--primary);">Vikash</h3>
                             <span style="background-color: #dbeafe; color: #1e40af; font-size: 0.75rem; font-weight: 600; padding: 0.125rem 0.5rem; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.25rem;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Verified Expert
                             </span>
@@ -384,7 +384,7 @@ if ($slug === 'home') {
             <!-- Sidebar Widgets (Aggressive Internal Linking) -->
             <aside class="sidebar">
                 <div class="sidebar-widget">
-                    <h4 class="widget-title">Important Guides</h4>
+                    <h3 class="widget-title">Important Guides</h3>
                     <ul class="widget-list">
                         <li><a href="/online-ec-tamilnadu/">Tamil Nadu EC Online</a></li>
                         <li><a href="/ec-view-online/">EC View Online Search</a></li>
@@ -395,7 +395,7 @@ if ($slug === 'home') {
                 </div>
                 
                 <div class="sidebar-widget" style="background-color: #eff6ff; border-color: rgba(37, 99, 211, 0.2);">
-                    <h4 class="widget-title" style="color: var(--accent); border-color: rgba(37, 99, 211, 0.1);">Verified Official Portals</h4>
+                    <h3 class="widget-title" style="color: var(--accent); border-color: rgba(37, 99, 211, 0.1);">Verified Official Portals</h3>
                     <ul class="widget-list">
                         <li><a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener">&rarr; TNREGINET Tamil Nadu</a></li>
                         <li><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener">&rarr; Kaveri Karnataka</a></li>

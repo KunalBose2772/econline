@@ -7,7 +7,7 @@
             <p>Your independent guide to official government land registry and Encumbrance Certificate (EC) portals. We help you find direct, secure links to state portals and follow step-by-step procedures to check property titles safely.</p>
         </div>
         <div class="footer-links-col">
-            <h4>Quick Guides</h4>
+            <h3>Quick Guides</h3>
             <ul>
                 <li><a href="/online-ec-tamilnadu/">Tamil Nadu EC</a></li>
                 <li><a href="/online-ec-karnataka/">Karnataka EC</a></li>
@@ -16,7 +16,7 @@
             </ul>
         </div>
         <div class="footer-links-col">
-            <h4>Official Portals</h4>
+            <h3>Official Portals</h3>
             <ul>
                 <li><a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener">TNREGINET Portal</a></li>
                 <li><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener">Kaveri Online Services</a></li>
@@ -25,7 +25,7 @@
             </ul>
         </div>
         <div class="footer-links-col">
-            <h4>Legal</h4>
+            <h3>Legal</h3>
             <ul>
                 <li><a href="/about-us/">About Us</a></li>
                 <li><a href="/contact-us/">Contact Us</a></li>

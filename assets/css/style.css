@@ -536,7 +536,7 @@ a:hover {
     line-height: 1.5;
 }
 
-.footer-links-col h4 {
+.footer-links-col h3 {
     color: white;
     font-size: 1.1rem;
     margin-bottom: 1.25rem;
@@ -1081,4 +1081,29 @@ a:hover {
     color: var(--text-muted);
     font-weight: 500;
     pointer-events: none;
+}
+
+/* ==========================================================================
+   Accessibility & Usability Optimizations (Lighthouse A11y compliance)
+   ========================================================================== */
+
+/* Make all links inside blocks of body text clearly distinguishable by using an underline */
+.body-content-text a,
+.content-text a,
+p a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Keep action buttons and navigation links clean from default underlines */
+.nav-menu a,
+.btn-primary,
+.btn-success,
+.breadcrumbs a,
+.widget-list a,
+.logo-link {
+    text-decoration: none !important;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline !important;
 }
