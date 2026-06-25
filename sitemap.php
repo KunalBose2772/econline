@@ -8,7 +8,7 @@ echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
 // Add homepage
 echo '  <url>' . "\n";
-echo '    <loc>https://econline.in/</loc>' . "\n";
+echo '    <loc>' . htmlspecialchars(BASE_URL) . '</loc>' . "\n";
 echo '    <changefreq>daily</changefreq>' . "\n";
 echo '    <priority>1.0</priority>' . "\n";
 echo '  </url>' . "\n";
@@ -21,7 +21,7 @@ try {
     foreach ($pages as $page) {
         $lastmod = date('Y-m-d', strtotime($page['updated_at']));
         echo '  <url>' . "\n";
-        echo '    <loc>https://econline.in/' . htmlspecialchars($page['slug']) . '/</loc>' . "\n";
+        echo '    <loc>' . htmlspecialchars(BASE_URL) . htmlspecialchars($page['slug']) . '/</loc>' . "\n";
         echo '    <lastmod>' . $lastmod . '</lastmod>' . "\n";
         echo '    <changefreq>weekly</changefreq>' . "\n";
         echo '    <priority>0.8</priority>' . "\n";

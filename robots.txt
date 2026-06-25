@@ -1,4 +1,25 @@
+# General Search Engine Crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://econline.in/sitemap.xml
+# AI Search Crawlers and LLM Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap Location
+Sitemap: /sitemap.xml

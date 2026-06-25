@@ -1,0 +1,52 @@
+# econline.in - Encumbrance Certificate Guide Portal
+
+A comprehensive, authoritative directory and informational guide portal for searching, verifying, and downloading property Encumbrance Certificates (EC) online across Indian states. 
+
+This portal simplifies complex property registration and Stamps and Registration Department (SRO) procedures, providing verified, step-by-step documentation.
+
+---
+
+## Editorial Expertise (E-E-A-T)
+All guides and tools on this website are authored and verified by:
+*   **Expert:** Vikash
+*   **Role:** Land Records & Property Registration Specialist
+*   **Background:** Over a decade of hands-on advisory experience in property due diligence, title searches, and state registry portal systems (SROs).
+
+---
+
+## Core Hubs & State-Specific Guides
+
+The website is structured into main regional hubs, with deep internal guides linked across the network.
+
+### 1. Tamil Nadu (TNREGINET Portal)
+Comprehensive instructions for property valuation, EC search, and document viewing on the Tamil Nadu Registration Department portal.
+*   **Official Portal:** [TNREGINET (tnreginet.gov.in)](https://tnreginet.gov.in)
+*   **Key Guides:**
+    *   [Tamil Nadu EC Online Guide](/online-ec-tamilnadu/) - Step-by-step registration and search tutorial.
+    *   [EC View Online Search](/ec-view-online/) - Instantly search and preview EC status.
+    *   [Tamil Nadu Registration Department Overview](/tamil-nadu-registration-department/) - Overview of SRO offices and stamp duty rates.
+
+### 2. Karnataka (Kaveri Portal)
+Guides for navigating Karnataka's Kaveri 2.0 portal for encumbrance verification and land record retrieval.
+*   **Official Portal:** [Kaveri Online Services (kaverionline.karnataka.gov.in)](https://kaverionline.karnataka.gov.in)
+*   **Key Guides:**
+    *   [Kaveri Karnataka EC Guide](/online-ec-karnataka/) - Step-by-step guide for Kaveri 2.0 registry and document requests.
+
+### 3. Telangana (IGRS Telangana Portal)
+Official procedures for verifying registered deeds and searching encumbrances on properties in Telangana.
+*   **Official Portal:** [IGRS Telangana (registration.telangana.gov.in)](https://registration.telangana.gov.in)
+*   **Key Guides:**
+    *   [TS IGRS Telangana EC Guide](/ec-online-telangana/) - Online search, transaction history, and certified copy downloads.
+
+### 4. Andhra Pradesh (IGRS AP Portal)
+Valuation and encumbrance search tutorials for properties located in Andhra Pradesh.
+*   **Official Portal:** [IGRS Andhra Pradesh (igrs.ap.gov.in)](https://igrs.ap.gov.in)
+*   **Key Guides:**
+    *   [AP IGRS Andhra Pradesh EC Guide](/online-ec-ap/) - Detailed search walkthrough using doc numbers and survey numbers.
+
+---
+
+## Technical Specifications
+*   **Sitemap:** `/sitemap.xml` (Dynamically updated index of all 353 active pages).
+*   **Canonicalization:** Every page implements self-referencing absolute canonical URLs based on the target domain.
+*   **Structure:** Dynamic JSON-LD schema markups (`TechArticle`, `BreadcrumbList`, `FAQPage`, `HowTo`) are embedded on all pages to ensure structured readability.

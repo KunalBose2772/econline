@@ -7,10 +7,10 @@
         <div class="footer-links-col">
             <h4>Quick Guides</h4>
             <ul>
-                <li><a href="#">Tamil Nadu EC</a></li>
-                <li><a href="#">Karnataka EC</a></li>
-                <li><a href="#">Telangana EC</a></li>
-                <li><a href="#">Andhra Pradesh EC</a></li>
+                <li><a href="/online-ec-tamilnadu/">Tamil Nadu EC</a></li>
+                <li><a href="/online-ec-karnataka/">Karnataka EC</a></li>
+                <li><a href="/ec-online-telangana/">Telangana EC</a></li>
+                <li><a href="/online-ec-ap/">Andhra Pradesh EC</a></li>
             </ul>
         </div>
         <div class="footer-links-col">
@@ -25,9 +25,11 @@
         <div class="footer-links-col">
             <h4>Legal</h4>
             <ul>
-                <li><a href="/disclaimer/">Disclaimer</a></li>
+                <li><a href="/about-us/">About Us</a></li>
+                <li><a href="/contact-us/">Contact Us</a></li>
                 <li><a href="/privacy-policy/">Privacy Policy</a></li>
-                <li><a href="/contact/">Contact Us</a></li>
+                <li><a href="/terms-conditions/">Terms & Conditions</a></li>
+                <li><a href="/disclaimer/">Disclaimer</a></li>
             </ul>
         </div>
     </div>
@@ -118,18 +120,36 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         // Click search button redirects to search list page or top result
-        if (searchBtn) {
-            searchBtn.addEventListener("click", function() {
-                const val = searchInput.value.trim();
-                if (val.length > 0) {
-                    // Slugify the search term to find the page
-                    const slug = val.toLowerCase()
-                                    .replace(/[^a-z0-9\s-]/g, '')
-                                    .replace(/\s+/g, '-');
-                    window.location.href = "/" + slug + "/";
-                }
-            });
+        function performSearch() {
+            const val = searchInput.value.trim();
+            if (val.length > 0) {
+                // Fetch matches from search-suggest.php to prevent triggering 404s
+                fetch("/search-suggest.php?q=" + encodeURIComponent(val))
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data && data.length > 0) {
+                            // Redirect to the first validated guide slug
+                            window.location.href = "/" + data[0].slug + "/";
+                        } else {
+                            // Safe fallback to homepage with query param instead of triggering a 404
+                            window.location.href = "/?search_failed=1&q=" + encodeURIComponent(val);
+                        }
+                    })
+                    .catch(() => {
+                        window.location.href = "/";
+                    });
+            }
         }
+
+        if (searchBtn) {
+            searchBtn.addEventListener("click", performSearch);
+        }
+
+        searchInput.addEventListener("keydown", function(e) {
+            if (e.key === "Enter") {
+                performSearch();
+            }
+        });
     }
 });
 </script>
