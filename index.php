@@ -270,6 +270,7 @@ if ($slug === 'home') {
     ?>
     <section class="hero-section">
         <div class="hero-container">
+            <div style="color: red; font-weight: bold; font-size: 1.5rem; margin-bottom: 15px; text-align: center;">test done</div>
             <h1 class="hero-title"><?php echo htmlspecialchars($h1_title); ?></h1>
             <p class="hero-subtitle"><?php echo htmlspecialchars($meta_desc); ?></p>
             <div class="search-container">
