@@ -36,6 +36,7 @@ if ($is_localhost) {
 
     // DB Config for local
     define('DB_HOST', 'localhost');
+    define('DB_PORT', '3307'); // Local XAMPP MySQL port is 3307
     define('DB_USER', 'root');
     define('DB_PASS', '');
     define('DB_NAME', 'econline');
@@ -49,6 +50,7 @@ if ($is_localhost) {
 
     // DB Config for production
     define('DB_HOST', 'localhost');
+    define('DB_PORT', '3306'); // Production MySQL port is 3306
     define('DB_USER', 'u827121208_ec');
     define('DB_PASS', 'KunalGW@1411');
     define('DB_NAME', 'u827121208_ec');
@@ -70,7 +72,7 @@ function base_url($path = '')
 
 // Database Connection Setup
 try {
-    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS);
+    $pdo = new PDO("mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
