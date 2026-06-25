@@ -2,8 +2,7 @@
    Econline.in Premium CSS Design System
    ========================================================================== */
 
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+/* Google Fonts loaded via preconnect in header.php for high-performance rendering */
 
 :root {
     /* Color Palette */

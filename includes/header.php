@@ -31,13 +31,18 @@
     <meta name="twitter:description" content="<?php echo isset($meta_desc) ? htmlspecialchars($meta_desc) : ''; ?>">
     <meta name="twitter:image" content="<?php echo BASE_URL; ?>EC_Favicon.png">
     
+    <!-- Google Fonts Preconnect & Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/EC_Favicon.png" title="EC Online Favicon">
-    <link rel="shortcut icon" href="/EC_Favicon.png" type="image/x-icon" title="EC Online Favicon">
-    <link rel="apple-touch-icon" href="/EC_Favicon.png" title="EC Online Favicon">
+    <link rel="icon" type="image/png" href="/EC_Favicon.png">
+    <link rel="shortcut icon" href="/EC_Favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/EC_Favicon.png">
     
     <!-- Dynamic Schema Markups -->
     <?php if (isset($schemas) && is_array($schemas)): ?>
@@ -52,8 +57,9 @@
 
 <header class="site-header">
     <div class="header-container">
-        <a href="/" class="logo-link" title="Go to the EC Online Homepage">
+        <a href="/" class="logo-link" title="Go to the EC Online Homepage" aria-label="EC Online Homepage">
             <img src="/econline_logo.png" alt="EC Online Logo" title="EC Online Logo" width="160" height="40">
+            <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">EC Online Homepage</span>
         </a>
         <nav>
             <ul class="nav-menu">
