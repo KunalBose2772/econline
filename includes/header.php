@@ -61,7 +61,7 @@
 <header class="site-header">
     <div class="header-container">
         <a href="/" class="logo-link" title="Go to the EC Online Homepage">
-            <img src="/econline_logo.png" alt="EC Online" width="150" height="50">
+            <img src="/econline_logo.png" alt="EC Online" title="EC Online" width="150" height="50">
         </a>
         <nav>
             <ul class="nav-menu">
