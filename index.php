@@ -2,6 +2,8 @@
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/db_init.php';
 
+ob_start();
+
 // Helper function to map page slug to its state category for breadcrumbs
 function get_state_from_slug($slug) {
     $slug_lower = strtolower($slug);
@@ -59,41 +61,6 @@ $content = str_replace(
     ['href="/online-ec-karnataka/"', 'href="/ec-online-telangana/"', 'href="/online-ec-ap/"', 'href="/ec-online/"', 'href="/ec-online/"'],
     $content
 );
-
-// Dynamic runtime link title sanitizer and injector
-$content = preg_replace_callback('/<a\b([^>]*)>(.*?)<\/a>/is', function($anchor_matches) {
-    $attrs_string = $anchor_matches[1];
-    $link_text = trim(strip_tags($anchor_matches[2]));
-    
-    // Parse existing attributes
-    $attrs = [];
-    preg_match_all('/([a-z0-9\-]+)\s*=\s*["\']([^"\']*)["\']/i', $attrs_string, $attr_matches, PREG_SET_ORDER);
-    foreach ($attr_matches as $match) {
-        $attrs[strtolower($match[1])] = $match[2];
-    }
-    
-    // Generate title if it doesn't exist and link has text
-    if (!isset($attrs['title']) && !empty($link_text)) {
-        $href = isset($attrs['href']) ? $attrs['href'] : '';
-        $is_external = false;
-        if (!empty($href) && (strpos($href, 'http') === 0) && (strpos($href, 'econline.in') === false)) {
-            $is_external = true;
-        }
-        
-        if ($is_external) {
-            $attrs['title'] = "Visit the official " . $link_text . " website (External Link)";
-        } else {
-            $attrs['title'] = "Read our comprehensive guide on " . $link_text;
-        }
-    }
-    
-    // Rebuild anchor tag
-    $new_attrs = [];
-    foreach ($attrs as $name => $val) {
-        $new_attrs[] = $name . '="' . htmlspecialchars($val) . '"';
-    }
-    return '<a ' . implode(' ', $new_attrs) . '>' . $anchor_matches[2] . '</a>';
-}, $content);
 
 // Dynamic runtime image lazy loading and dimension sanitizer
 $content = preg_replace_callback('/<img\s+([^>]*)\/?>/is', function($img_matches) {
@@ -444,4 +411,58 @@ if ($slug === 'home') {
 
 // 8. Render Page Footer
 require_once __DIR__ . '/includes/footer.php';
+
+// Capture the entire page HTML output
+$html = ob_get_clean();
+
+// Run the link title sanitizer and injector on the entire page HTML!
+$html = preg_replace_callback('/<a\b([^>]*)>(.*?)<\/a>/is', function($anchor_matches) {
+    $attrs_string = $anchor_matches[1];
+    $link_text = trim(strip_tags($anchor_matches[2]));
+    
+    // Parse existing attributes
+    $attrs = [];
+    preg_match_all('/([a-z0-9\-]+)\s*=\s*["\']([^"\']*)["\']/i', $attrs_string, $attr_matches, PREG_SET_ORDER);
+    foreach ($attr_matches as $match) {
+        $attrs[strtolower($match[1])] = $match[2];
+    }
+    
+    // Generate title if it doesn't exist and link has text
+    if (!isset($attrs['title']) && !empty($link_text)) {
+        $href = isset($attrs['href']) ? $attrs['href'] : '';
+        $is_external = false;
+        if (!empty($href) && (strpos($href, 'http') === 0) && (strpos($href, 'econline.in') === false)) {
+            $is_external = true;
+        }
+        
+        $link_text_lower = strtolower($link_text);
+        
+        if ($is_external) {
+            $attrs['title'] = "Visit the official " . $link_text . " website (External Link)";
+        } elseif ($link_text_lower === 'home' || $href === '/' || $href === '/index.php') {
+            $attrs['title'] = "Go to the EC Online Homepage";
+        } elseif ($link_text_lower === 'about us') {
+            $attrs['title'] = "Learn more about us and our mission";
+        } elseif ($link_text_lower === 'contact us') {
+            $attrs['title'] = "Get in touch with our team";
+        } elseif ($link_text_lower === 'privacy policy') {
+            $attrs['title'] = "Read our privacy policy";
+        } elseif ($link_text_lower === 'terms & conditions' || $link_text_lower === 'terms and conditions') {
+            $attrs['title'] = "Read our terms and conditions";
+        } elseif ($link_text_lower === 'disclaimer') {
+            $attrs['title'] = "Read our legal disclaimer";
+        } else {
+            $attrs['title'] = "Read our comprehensive guide on " . $link_text;
+        }
+    }
+    
+    // Rebuild anchor tag
+    $new_attrs = [];
+    foreach ($attrs as $name => $val) {
+        $new_attrs[] = $name . '="' . htmlspecialchars($val) . '"';
+    }
+    return '<a ' . implode(' ', $new_attrs) . '>' . $anchor_matches[2] . '</a>';
+}, $html);
+
+echo $html;
 ?>
