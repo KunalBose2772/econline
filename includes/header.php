@@ -35,9 +35,9 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/EC_Favicon.png">
-    <link rel="shortcut icon" href="/EC_Favicon.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/EC_Favicon.png">
+    <link rel="icon" type="image/png" href="/EC_Favicon.png" title="EC Online Favicon">
+    <link rel="shortcut icon" href="/EC_Favicon.png" type="image/x-icon" title="EC Online Favicon">
+    <link rel="apple-touch-icon" href="/EC_Favicon.png" title="EC Online Favicon">
     
     <!-- Dynamic Schema Markups -->
     <?php if (isset($schemas) && is_array($schemas)): ?>
@@ -52,8 +52,8 @@
 
 <header class="site-header">
     <div class="header-container">
-        <a href="/" class="logo-link">
-            <img src="/econline_logo.png" alt="EC Online Logo" width="160" height="40">
+        <a href="/" class="logo-link" title="Go to the EC Online Homepage">
+            <img src="/econline_logo.png" alt="EC Online Logo" title="EC Online Logo" width="160" height="40">
         </a>
         <nav>
             <ul class="nav-menu">
