@@ -53,7 +53,7 @@ $page_title = $page['title'];
 $meta_desc = $page['meta_desc'];
 $page_keywords = $page['keyword'] . ', ec online, encumbrance certificate, download ec online, check ec online';
 $h1_title = $page['h1_title'];
-$content = preg_replace('/<style\b[^>]*>(.*?)<\/style>/is', '', $page['content']);
+$content = $page['content'];
 $content = str_replace(
     ['href="#ka-guide"', 'href="#ts-guide"', 'href="#ap-guide"', 'href="https://econline.in/"', 'href=\'https://econline.in/\''],
     ['href="/online-ec-karnataka/"', 'href="/ec-online-telangana/"', 'href="/online-ec-ap/"', 'href="/ec-online/"', 'href="/ec-online/"'],
