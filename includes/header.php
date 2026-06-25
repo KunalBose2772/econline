@@ -58,7 +58,7 @@
 <header class="site-header">
     <div class="header-container">
         <a href="/" class="logo-link" title="Go to the EC Online Homepage" aria-label="EC Online Homepage">
-            <img src="/econline_logo.png" alt="EC Online Logo" title="EC Online Logo" width="160" height="40">
+            <img src="/econline_logo.png" alt="EC Online Logo" title="EC Online Logo" width="150" height="50">
             <span style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">EC Online Homepage</span>
         </a>
         <nav>
