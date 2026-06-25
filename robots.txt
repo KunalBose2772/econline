@@ -22,4 +22,4 @@ User-agent: Google-Extended
 Allow: /
 
 # Sitemap Location
-Sitemap: /sitemap.xml
+Sitemap: https://econline.in/sitemap.xml
