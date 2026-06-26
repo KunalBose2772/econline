@@ -147,4 +147,12 @@ foreach ($pages as $p) {
         echo "Created page: " . $p['slug'] . "\n";
     }
 }
+
+// Clear static HTML and sitemap cache
+$cache_dir = __DIR__ . '/../cache';
+if (is_dir($cache_dir)) {
+    array_map('unlink', glob($cache_dir . '/*'));
+    echo "Cleared static cache.\n";
+}
+
 echo "Trust pages seeding complete!\n";

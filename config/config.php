@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+define('CANONICAL_BASE_URL', 'https://econline.in/');
+
+
 // Automatically detect environment
 $host = isset($_SERVER['HTTP_HOST']) ? strtolower($_SERVER['HTTP_HOST']) : '';
 $addr = $_SERVER['REMOTE_ADDR'] ?? '';
@@ -68,6 +71,130 @@ function is_production()
 function base_url($path = '')
 {
     return BASE_URL . ltrim($path, '/');
+}
+
+/**
+ * Optimizes HTML content for technical SEO:
+ * 1. Image dimension injection via local getimagesize() & native lazy loading/decoding
+ * 2. Pre-calculates unique IDs for all <h2> headings to prepare for Table of Contents
+ * 3. Injects descriptive title attributes to all <a> tags
+ */
+function optimize_content_for_seo($content) {
+    // 1. Image Sanitizer
+    $content = preg_replace_callback('/<img\s+([^>]*)\/?>/is', function($img_matches) {
+        $attrs_string = $img_matches[1];
+        $attrs = [];
+        preg_match_all('/([a-z0-9\-]+)\s*=\s*["\']([^"\']*)["\']/i', $attrs_string, $attr_matches, PREG_SET_ORDER);
+        foreach ($attr_matches as $match) {
+            $attrs[strtolower($match[1])] = $match[2];
+        }
+        $attrs['loading'] = 'lazy';
+        $attrs['decoding'] = 'async';
+        if (!isset($attrs['width']) && !isset($attrs['height'])) {
+            $src = $attrs['src'] ?? '';
+            $resolved = false;
+            if (!empty($src) && !str_starts_with($src, 'http') && !str_starts_with($src, 'data:')) {
+                // Resolve path relative to the document root (workspace)
+                $local_path = dirname(__DIR__) . '/' . ltrim(parse_url($src, PHP_URL_PATH), '/');
+                if (file_exists($local_path) && !is_dir($local_path)) {
+                    $size = @getimagesize($local_path);
+                    if ($size) {
+                        $attrs['width'] = (string)$size[0];
+                        $attrs['height'] = (string)$size[1];
+                        $resolved = true;
+                    }
+                }
+            }
+            if (!$resolved) {
+                $attrs['width'] = '800';
+                $attrs['height'] = '450';
+            }
+        }
+        $new_attrs = [];
+        foreach ($attrs as $name => $val) {
+            $new_attrs[] = $name . '="' . htmlspecialchars($val) . '"';
+        }
+        return '<img ' . implode(' ', $new_attrs) . ' />';
+    }, $content);
+
+    // 2. Heading TOC IDs injection
+    $toc_links = [];
+    $h2_count = 0;
+    $content = preg_replace_callback('/<h2\b([^>]*)>(.*?)<\/h2>/is', function($h2_matches) use (&$toc_links, &$h2_count) {
+        $h2_count++;
+        $attrs_string = $h2_matches[1];
+        $heading_text = strip_tags($h2_matches[2]);
+        $clean_id = 'heading-' . $h2_count;
+        
+        $attrs = [];
+        if (!empty($attrs_string)) {
+            preg_match_all('/([a-z0-9\-]+)\s*=\s*["\']([^"\']*)["\']/i', $attrs_string, $attr_matches, PREG_SET_ORDER);
+            foreach ($attr_matches as $match) {
+                $attrs[strtolower($match[1])] = $match[2];
+            }
+        }
+        $attrs['id'] = $clean_id;
+        $new_attrs = [];
+        foreach ($attrs as $name => $val) {
+            $new_attrs[] = $name . '="' . htmlspecialchars($val) . '"';
+        }
+        $toc_links[] = [
+            'id' => $clean_id,
+            'text' => $heading_text
+        ];
+        return '<h2 ' . implode(' ', $new_attrs) . '>' . $h2_matches[2] . '</h2>';
+    }, $content);
+
+    // 3. Link Sanitizer (Title injection)
+    $content = preg_replace_callback('/<a\b([^>]*)>(.*?)<\/a>/is', function($anchor_matches) {
+        $attrs_string = $anchor_matches[1];
+        $link_text = trim(strip_tags($anchor_matches[2]));
+        
+        $attrs = [];
+        preg_match_all('/([a-z0-9\-]+)\s*=\s*["\']([^"\']*)["\']/i', $attrs_string, $attr_matches, PREG_SET_ORDER);
+        foreach ($attr_matches as $match) {
+            $attrs[strtolower($match[1])] = $match[2];
+        }
+        
+        if (!isset($attrs['title']) && !empty($link_text)) {
+            $href = isset($attrs['href']) ? $attrs['href'] : '';
+            $is_external = false;
+            if (!empty($href) && (strpos($href, 'http') === 0) && (strpos($href, 'econline.in') === false)) {
+                $is_external = true;
+            }
+            
+            $link_text_lower = strtolower($link_text);
+            
+            if ($is_external) {
+                $attrs['title'] = "Visit the official " . $link_text . " website (External Link)";
+            } elseif ($link_text_lower === 'home' || $href === '/' || $href === '/index.php') {
+                $attrs['title'] = "Go to the EC Online Homepage";
+            } elseif ($link_text_lower === 'about us') {
+                $attrs['title'] = "Learn more about us and our mission";
+            } elseif ($link_text_lower === 'contact us') {
+                $attrs['title'] = "Get in touch with our team";
+            } elseif ($link_text_lower === 'privacy policy') {
+                $attrs['title'] = "Read our privacy policy";
+            } elseif ($link_text_lower === 'terms & conditions' || $link_text_lower === 'terms and conditions') {
+                $attrs['title'] = "Read our terms and conditions";
+            } elseif ($link_text_lower === 'disclaimer') {
+                $attrs['title'] = "Read our legal disclaimer";
+            } else {
+                $attrs['title'] = "Read our comprehensive guide on " . $link_text;
+            }
+        }
+        
+        $new_attrs = [];
+        foreach ($attrs as $name => $val) {
+            $new_attrs[] = $name . '="' . htmlspecialchars($val) . '"';
+        }
+        return '<a ' . implode(' ', $new_attrs) . '>' . $anchor_matches[2] . '</a>';
+    }, $content);
+
+    return [
+        'content' => $content,
+        'toc_links' => $toc_links
+    ];
 }
 
 // Database Connection Setup

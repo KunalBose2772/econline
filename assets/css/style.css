@@ -1107,3 +1107,17 @@ p a {
 .breadcrumbs a:hover {
     text-decoration: underline !important;
 }
+
+/* Layout variation: Sidebar on Left */
+@media (min-width: 901px) {
+    .content-grid.grid-sidebar-left {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+    .content-grid.grid-sidebar-left .article-content {
+        grid-column: 2;
+    }
+    .content-grid.grid-sidebar-left .sidebar {
+        grid-column: 1;
+        grid-row: 1;
+    }
+}

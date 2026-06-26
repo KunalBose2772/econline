@@ -9,29 +9,29 @@
         <div class="footer-links-col">
             <h3>Quick Guides</h3>
             <ul>
-                <li><a href="/online-ec-tamilnadu/">Tamil Nadu EC</a></li>
-                <li><a href="/online-ec-karnataka/">Karnataka EC</a></li>
-                <li><a href="/ec-online-telangana/">Telangana EC</a></li>
-                <li><a href="/online-ec-ap/">Andhra Pradesh EC</a></li>
+                <li><a href="/online-ec-tamilnadu/" title="Read our guide on Tamil Nadu online EC search">Tamil Nadu EC</a></li>
+                <li><a href="/online-ec-karnataka/" title="Read our guide on Karnataka online EC search">Karnataka EC</a></li>
+                <li><a href="/ec-online-telangana/" title="Read our guide on Telangana online EC search">Telangana EC</a></li>
+                <li><a href="/online-ec-ap/" title="Read our guide on Andhra Pradesh online EC search">Andhra Pradesh EC</a></li>
             </ul>
         </div>
         <div class="footer-links-col">
             <h3>Official Portals</h3>
             <ul>
-                <li><a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener">TNREGINET Portal</a></li>
-                <li><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener">Kaveri Online Services</a></li>
-                <li><a href="https://registration.telangana.gov.in" target="_blank" rel="nofollow noopener">IGRS Telangana</a></li>
-                <li><a href="https://igrs.ap.gov.in" target="_blank" rel="nofollow noopener">IGRS Andhra Pradesh</a></li>
+                <li><a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official TNREGINET Portal (External Link)">TNREGINET Portal</a></li>
+                <li><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official Kaveri Online Services Portal (External Link)">Kaveri Online Services</a></li>
+                <li><a href="https://registration.telangana.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official IGRS Telangana Portal (External Link)">IGRS Telangana</a></li>
+                <li><a href="https://igrs.ap.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official IGRS Andhra Pradesh Portal (External Link)">IGRS Andhra Pradesh</a></li>
             </ul>
         </div>
         <div class="footer-links-col">
             <h3>Legal</h3>
             <ul>
-                <li><a href="/about-us/">About Us</a></li>
-                <li><a href="/contact-us/">Contact Us</a></li>
-                <li><a href="/privacy-policy/">Privacy Policy</a></li>
-                <li><a href="/terms-conditions/">Terms & Conditions</a></li>
-                <li><a href="/disclaimer/">Disclaimer</a></li>
+                <li><a href="/about-us/" title="Learn more about us and our mission">About Us</a></li>
+                <li><a href="/contact-us/" title="Get in touch with our team">Contact Us</a></li>
+                <li><a href="/privacy-policy/" title="Read our privacy policy">Privacy Policy</a></li>
+                <li><a href="/terms-conditions/" title="Read our terms and conditions">Terms & Conditions</a></li>
+                <li><a href="/disclaimer/" title="Read our legal disclaimer">Disclaimer</a></li>
             </ul>
         </div>
     </div>

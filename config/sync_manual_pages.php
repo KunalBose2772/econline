@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/db_init.php';
 
 $dir = __DIR__ . '/manual_pages/';
 $files = glob($dir . '*.php');
@@ -7,8 +7,8 @@ $files = glob($dir . '*.php');
 echo "Found " . count($files) . " manual pages.\n";
 
 $sql = "INSERT INTO econline_pages 
-        (slug, keyword, title, meta_desc, h1_title, content, faq_data, schema_type, status) 
-        VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :schema_type, 'published')
+        (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status) 
+        VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
         ON DUPLICATE KEY UPDATE 
         keyword = VALUES(keyword),
         title = VALUES(title),
@@ -16,6 +16,7 @@ $sql = "INSERT INTO econline_pages
         h1_title = VALUES(h1_title),
         content = VALUES(content),
         faq_data = VALUES(faq_data),
+        toc_data = VALUES(toc_data),
         schema_type = VALUES(schema_type)";
 
 $stmt = $pdo->prepare($sql);
@@ -40,4 +41,12 @@ foreach ($files as $file) {
         }
     }
 }
+
+// Clear static HTML and sitemap cache
+$cache_dir = __DIR__ . '/../cache';
+if (is_dir($cache_dir)) {
+    array_map('unlink', glob($cache_dir . '/*'));
+    echo "Cleared static cache.\n";
+}
+
 echo "Sync complete!\n";

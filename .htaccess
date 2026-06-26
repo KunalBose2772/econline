@@ -1,14 +1,21 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Production only: Force HTTPS and Non-WWW
-# Match main domain and exclude localhost/dev entirely
-RewriteCond %{HTTP_HOST} ^www\.econline\.in$ [NC]
-RewriteRule ^(.*)$ https://econline.in/$1 [R=301,L]
+# Production only: Force HTTPS, Non-WWW, and Trailing Slash in a Single Hop
+# 1. HTTP or WWW on production domain, AND needs a trailing slash (not a file/directory, and doesn't end in slash)
+RewriteCond %{HTTP_HOST} ^(www\.)?econline\.in$ [NC]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} [^/]$
+RewriteRule ^(.*)$ https://econline.in%{REQUEST_URI}/ [R=301,L]
 
-RewriteCond %{HTTP_HOST} ^econline\.in$ [NC]
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# 2. HTTP or WWW on production domain, AND it already has a trailing slash (or is a file/directory)
+RewriteCond %{HTTP_HOST} ^(www\.)?econline\.in$ [NC]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://econline.in%{REQUEST_URI} [R=301,L]
 
 # Sitemaps
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
@@ -25,17 +32,25 @@ RewriteRule ^ - [L]
 
 # Enforce trailing slash for paths not pointing to files (HTTPS-aware to prevent double-redirects)
 RewriteCond %{HTTP_HOST} ^econline\.in$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} [^/]$
 RewriteRule ^(.*)$ https://econline.in%{REQUEST_URI}/ [R=301,L]
 
 RewriteCond %{HTTP_HOST} !^econline\.in$ [NC]
-RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} !^www\.econline\.in$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} [^/]$
+RewriteCond %{HTTPS} on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}/ [R=301,L]
 
 RewriteCond %{HTTP_HOST} !^econline\.in$ [NC]
-RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^www\.econline\.in$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} [^/]$
+RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ http://%{HTTP_HOST}%{REQUEST_URI}/ [R=301,L]
 
 # Route all other URLs to index.php passing slug
