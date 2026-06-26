@@ -1,8 +1,9 @@
 <footer class="site-footer">
     <div class="footer-container">
         <div class="footer-brand">
-            <a href="/" style="display: inline-block; margin-bottom: 1rem;" title="Go to the EC Online Homepage">
-                <img src="/econline_logo.png" alt="EC Online" title="EC Online" width="120" height="40" style="filter: brightness(0) invert(1); opacity: 0.9;">
+            <a href="/" style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; text-decoration: none;" title="Go to the EC Online Homepage">
+                <img src="/econline_logo.png" alt="EC Online Logo" title="EC Online" width="40" height="40" style="border-radius: 50%; opacity: 0.9;">
+                <span style="font-weight: 800; font-size: 1.5rem; color: white;">EC Online</span>
             </a>
             <p>Your independent guide to official government land registry and Encumbrance Certificate (EC) portals. We help you find direct, secure links to state portals and follow step-by-step procedures to check property titles safely.</p>
         </div>
