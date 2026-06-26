@@ -45,15 +45,31 @@ $cache_dir = __DIR__ . '/cache';
 $cache_file = $cache_dir . '/' . md5($slug) . '.html';
 $cache_time = 86400; // 24-hour cache TTL
 
-if (defined('ENVIRONMENT') && ENVIRONMENT === 'production' && !isset($_GET['q']) && !isset($_GET['search_failed'])) {
-    if (file_exists($cache_file) && (time() - filemtime($cache_file) < $cache_time)) {
-        ob_end_clean();
-        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-        header("Cache-Control: post-check=0, pre-check=0", false);
-        header("Pragma: no-cache");
-        header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-        readfile($cache_file);
-        exit;
+if (defined('ENVIRONMENT') && ENVIRONMENT === 'production') {
+    // Manual cache purge option
+    if (isset($_GET['clear_cache'])) {
+        if (is_dir($cache_dir)) {
+            array_map('unlink', glob($cache_dir . '/*'));
+        }
+    }
+    
+    if (!isset($_GET['q']) && !isset($_GET['search_failed'])) {
+        // Automatic invalidation if header/footer/styles are newer than cache
+        $theme_mtime = max(
+            file_exists(__DIR__ . '/includes/header.php') ? filemtime(__DIR__ . '/includes/header.php') : 0,
+            file_exists(__DIR__ . '/includes/footer.php') ? filemtime(__DIR__ . '/includes/footer.php') : 0,
+            file_exists(__DIR__ . '/assets/css/style.css') ? filemtime(__DIR__ . '/assets/css/style.css') : 0
+        );
+
+        if (file_exists($cache_file) && (time() - filemtime($cache_file) < $cache_time) && (filemtime($cache_file) > $theme_mtime)) {
+            ob_end_clean();
+            header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+            header("Cache-Control: post-check=0, pre-check=0", false);
+            header("Pragma: no-cache");
+            header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+            readfile($cache_file);
+            exit;
+        }
     }
 }
 

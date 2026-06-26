@@ -24,7 +24,7 @@
     <meta property="og:description" content="<?php echo isset($meta_desc) ? htmlspecialchars($meta_desc) : ''; ?>">
     <meta property="og:url" content="<?php echo isset($canonical_url) ? htmlspecialchars($canonical_url) : CANONICAL_BASE_URL; ?>">
     <meta property="og:site_name" content="EC Online">
-    <meta property="og:image" content="<?php echo CANONICAL_BASE_URL; ?>EC_Favicon.png">
+    <meta property="og:image" content="<?php echo CANONICAL_BASE_URL; ?>EC_Favicon.png?v=2">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
     <meta property="og:image:type" content="image/png">
@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="<?php echo isset($page_title) ? htmlspecialchars($page_title) : 'EC Online - Encumbrance Certificate Portals'; ?>">
     <meta name="twitter:description" content="<?php echo isset($meta_desc) ? htmlspecialchars($meta_desc) : ''; ?>">
-    <meta name="twitter:image" content="<?php echo CANONICAL_BASE_URL; ?>EC_Favicon.png">
+    <meta name="twitter:image" content="<?php echo CANONICAL_BASE_URL; ?>EC_Favicon.png?v=2">
     
     <!-- Google Fonts Preconnect & Stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,9 +47,9 @@
     </style>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/EC_Favicon.png">
-    <link rel="shortcut icon" href="/EC_Favicon.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/EC_Favicon.png">
+    <link rel="icon" type="image/png" href="/EC_Favicon.png?v=2">
+    <link rel="shortcut icon" href="/EC_Favicon.png?v=2" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/EC_Favicon.png?v=2">
     
     <!-- Dynamic Schema Markups -->
     <?php if (isset($schemas) && is_array($schemas)): ?>
@@ -65,7 +65,7 @@
 <header class="site-header">
     <div class="header-container">
         <a href="/" class="logo-link" title="Go to the EC Online Homepage">
-            <img src="/econline_logo.png" alt="EC Online Logo" title="EC Online" width="40" height="40" style="border-radius: 50%;">
+            <img src="/econline_logo.png?v=2" alt="EC Online Logo" title="EC Online" width="40" height="40" style="border-radius: 50%;">
             <span class="logo-text">EC Online</span>
         </a>
         <nav>
