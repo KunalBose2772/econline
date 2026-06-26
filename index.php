@@ -2,6 +2,55 @@
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/db_init.php';
 
+// Programmatically seed redirect mapping for the 30 consolidated duplicate pages
+try {
+    $check_redirects = $pdo->query("SELECT COUNT(*) FROM econline_pages WHERE redirect_to IS NOT NULL")->fetchColumn();
+    if ($check_redirects == 0) {
+        $redirects = [
+            'ec-apply-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'ec-check-online-tamilnadu' => 'online-ec-tamilnadu',
+            'ec-copy-online-tamilnadu' => 'online-ec-tamilnadu',
+            'get-ec-online-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-apply-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-apply-for-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-check-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-check-ec-online-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-get-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-take-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            
+            'ecview-tnreginet' => 'tnreginet-ec-view',
+            'ecview-tnreginet-net' => 'tnreginet-ec-view',
+            'tnreginet-ec-online-view' => 'tnreginet-ec-view',
+            'tnreginet-net-ec-view' => 'tnreginet-ec-view',
+            'www-tnreginet-net-ec' => 'tnreginet-ec-view',
+            'www-tnreginet-net-ec-view' => 'tnreginet-ec-view',
+            'www-tnreginet-net-2018-ec' => 'tnreginet-ec-view',
+            'tnreginet-ec-view-online' => 'tnreginet-ec-view',
+            
+            'guideline-value-tamilnadu' => 'check-guideline-value',
+            'tnreginet-guideline-value-tamilnadu' => 'check-guideline-value',
+            'tnreginet-net-guideline-value' => 'check-guideline-value',
+            'www-tnreginet-net-guideline-value' => 'check-guideline-value',
+            'wwwtnreginetnet-guideline-value-2023' => 'check-guideline-value',
+            'tnreginet-land-value' => 'check-guideline-value',
+            
+            'patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+            'patta-chitta-ec-online-status-tamilnadu' => 'patta-chitta-online-tamil-nadu',
+            'patta-chitta-ec-online-tamil' => 'patta-chitta-online-tamil-nadu',
+            'tn-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+            'tamil-nadu-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+            'tnreginet-patta' => 'patta-chitta-online-tamil-nadu',
+        ];
+        
+        $stmt_redir = $pdo->prepare("UPDATE econline_pages SET redirect_to = :target WHERE slug = :slug");
+        foreach ($redirects as $old_slug => $new_slug) {
+            $stmt_redir->execute(['target' => $new_slug, 'slug' => $old_slug]);
+        }
+    }
+} catch (PDOException $e) {
+    // Fail silently
+}
+
 // Prevent browser and proxy caching for dynamic HTML content
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
@@ -80,6 +129,30 @@ try {
     $page = $stmt->fetch();
 } catch (PDOException $e) {
     die("Database query error: " . $e->getMessage());
+}
+
+// 2b. Handle Programmatic 301 Redirects for consolidated content hub pages
+if ($page && !empty($page['redirect_to'])) {
+    $target_slug = trim($page['redirect_to'], '/');
+    if ($target_slug === 'home') {
+        $redirect_url = CANONICAL_BASE_URL;
+    } else {
+        $redirect_url = CANONICAL_BASE_URL . $target_slug . "/";
+    }
+    
+    // Preserve any existing query string parameters
+    if (!empty($_SERVER['QUERY_STRING'])) {
+        // Exclude internal slug parameter if using rewrite rules
+        $query_params = $_GET;
+        unset($query_params['slug']);
+        if (!empty($query_params)) {
+            $redirect_url .= '?' . http_build_query($query_params);
+        }
+    }
+    
+    header("HTTP/1.1 301 Moved Permanently");
+    header("Location: " . $redirect_url);
+    exit;
 }
 
 // 3. Handle Page Not Found (404) vs Valid Page

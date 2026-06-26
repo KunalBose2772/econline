@@ -202,6 +202,13 @@ try {
     $pdo = new PDO("mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8mb4", DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+    // Self-migration: ensure redirect_to column exists on pre-existing database tables
+    try {
+        $pdo->query("SELECT `redirect_to` FROM `econline_pages` LIMIT 1");
+    } catch (PDOException $e) {
+        $pdo->exec("ALTER TABLE `econline_pages` ADD COLUMN `redirect_to` VARCHAR(255) DEFAULT NULL AFTER `status`");
+    }
 } catch (PDOException $e) {
     if (ENVIRONMENT === 'development') {
         die("Database connection failed: " . $e->getMessage());
