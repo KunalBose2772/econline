@@ -6,10 +6,76 @@
  * 1. Place your downloaded Google credentials JSON file in the ROOT folder of your project.
  * 2. Rename the file to: google_key.json
  * 3. Run this script from the command line: php config/google_index_bulk.php
+ * 
+ * Command-line options:
+ *   php config/google_index_bulk.php              (Runs indexer only for pending pages)
+ *   php config/google_index_bulk.php --status     (Shows indexing stats)
+ *   php config/google_index_bulk.php --pending    (Lists pending page URLs)
+ *   php config/google_index_bulk.php --submitted  (Lists already submitted URLs)
+ *   php config/google_index_bulk.php --reset      (Resets state to submit all again)
  */
 
 require_once __DIR__ . '/config.php';
 
+// Self-migrate database to add tracking column if it doesn't exist
+try {
+    $pdo->query("SELECT google_indexed_at FROM econline_pages LIMIT 1");
+} catch (PDOException $e) {
+    echo "Adding 'google_indexed_at' column to database to track indexing state...\n";
+    $pdo->exec("ALTER TABLE econline_pages ADD COLUMN google_indexed_at TIMESTAMP NULL DEFAULT NULL");
+}
+
+// Parse Command Line Arguments
+$arg = $argv[1] ?? '';
+
+if ($arg === '--status' || $arg === '-s') {
+    $total = $pdo->query("SELECT COUNT(*) FROM econline_pages WHERE status = 'published'")->fetchColumn();
+    $submitted = $pdo->query("SELECT COUNT(*) FROM econline_pages WHERE status = 'published' AND google_indexed_at IS NOT NULL")->fetchColumn();
+    $pending = $pdo->query("SELECT COUNT(*) FROM econline_pages WHERE status = 'published' AND google_indexed_at IS NULL")->fetchColumn();
+    
+    echo "\n--- GOOGLE INDEXING STATE ---\n";
+    echo "Total Published Pages: $total\n";
+    echo "Already Submitted:    $submitted\n";
+    echo "Pending Submission:   $pending\n";
+    echo "-----------------------------\n\n";
+    exit(0);
+}
+
+if ($arg === '--pending' || $arg === '-p') {
+    $stmt = $pdo->query("SELECT slug FROM econline_pages WHERE status = 'published' AND google_indexed_at IS NULL ORDER BY id ASC");
+    $pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    echo "\n--- PENDING URLS (" . count($pages) . ") ---\n";
+    foreach ($pages as $page) {
+        $slug = $page['slug'];
+        $url = ($slug === 'home') ? CANONICAL_BASE_URL : CANONICAL_BASE_URL . $slug . '/';
+        echo $url . "\n";
+    }
+    echo "---------------------------\n\n";
+    exit(0);
+}
+
+if ($arg === '--submitted' || $arg === '-d') {
+    $stmt = $pdo->query("SELECT slug, google_indexed_at FROM econline_pages WHERE status = 'published' AND google_indexed_at IS NOT NULL ORDER BY google_indexed_at ASC");
+    $pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    echo "\n--- SUBMITTED URLS (" . count($pages) . ") ---\n";
+    foreach ($pages as $page) {
+        $slug = $page['slug'];
+        $url = ($slug === 'home') ? CANONICAL_BASE_URL : CANONICAL_BASE_URL . $slug . '/';
+        echo $url . " (Submitted: " . $page['google_indexed_at'] . ")\n";
+    }
+    echo "-----------------------------\n\n";
+    exit(0);
+}
+
+if ($arg === '--reset' || $arg === '-r') {
+    $pdo->exec("UPDATE econline_pages SET google_indexed_at = NULL");
+    echo "\n[SUCCESS] Indexing state has been reset. All pages are marked as pending submission.\n\n";
+    exit(0);
+}
+
+// Default run: Index remaining pages
 $key_file = __DIR__ . '/../google_key.json';
 
 if (!file_exists($key_file)) {
@@ -86,20 +152,20 @@ if (!$access_token) {
 
 echo "Access Token retrieved successfully.\n";
 
-// 4. Fetch all published pages from database
+// 4. Fetch pending pages from database
 try {
-    $stmt = $pdo->query("SELECT slug FROM econline_pages WHERE status = 'published' ORDER BY id ASC");
+    $stmt = $pdo->query("SELECT slug FROM econline_pages WHERE status = 'published' AND google_indexed_at IS NULL ORDER BY id ASC");
     $pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     echo "[ERROR] Database query failed: " . $e->getMessage() . "\n";
     exit(1);
 }
 
-$total_pages = count($pages);
-echo "Found $total_pages published pages in the database.\n\n";
+$total_pending = count($pages);
+echo "Found $total_pending pending pages in the database.\n\n";
 
-if ($total_pages === 0) {
-    echo "No pages found to index.\n";
+if ($total_pending === 0) {
+    echo "All pages have already been successfully submitted to Google! Nothing to do.\n";
     exit(0);
 }
 
@@ -107,11 +173,13 @@ if ($total_pages === 0) {
 $submitted = 0;
 $failed = 0;
 
+$update_stmt = $pdo->prepare("UPDATE econline_pages SET google_indexed_at = CURRENT_TIMESTAMP WHERE slug = :slug");
+
 foreach ($pages as $index => $page) {
     $slug = $page['slug'];
     $url = ($slug === 'home') ? CANONICAL_BASE_URL : CANONICAL_BASE_URL . $slug . '/';
     
-    echo "[" . ($index + 1) . "/$total_pages] Submitting: $url ... ";
+    echo "[" . ($index + 1) . "/$total_pending] Submitting: $url ... ";
     
     $ch = curl_init('https://indexing.googleapis.com/v3/urlNotifications:publish');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -130,13 +198,14 @@ foreach ($pages as $index => $page) {
     curl_close($ch);
     
     if ($api_code === 200) {
+        // Update database state immediately on success
+        $update_stmt->execute(['slug' => $slug]);
         echo "SUCCESS\n";
         $submitted++;
     } else {
         $error_data = json_decode($api_response, true);
         $error_msg = $error_data['error']['message'] ?? 'Unknown Error';
         echo "FAILED (HTTP $api_code: $error_msg)\n";
-        
         $failed++;
         
         // If daily quota limit (429) is hit, stop processing
