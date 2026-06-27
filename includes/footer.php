@@ -33,6 +33,7 @@
                 <li><a href="/privacy-policy/" title="Read our privacy policy">Privacy Policy</a></li>
                 <li><a href="/terms-conditions/" title="Read our terms and conditions">Terms & Conditions</a></li>
                 <li><a href="/disclaimer/" title="Read our legal disclaimer">Disclaimer</a></li>
+                <li><a href="/site-directory/" title="View all property guides and sitemap">Site Directory</a></li>
             </ul>
         </div>
     </div>

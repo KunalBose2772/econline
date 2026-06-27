@@ -26,6 +26,13 @@ echo '    <changefreq>daily</changefreq>' . "\n";
 echo '    <priority>1.0</priority>' . "\n";
 echo '  </url>' . "\n";
 
+// Add site directory
+echo '  <url>' . "\n";
+echo '    <loc>' . htmlspecialchars(CANONICAL_BASE_URL) . 'site-directory/</loc>' . "\n";
+echo '    <changefreq>daily</changefreq>' . "\n";
+echo '    <priority>0.9</priority>' . "\n";
+echo '  </url>' . "\n";
+
 try {
     // Get all other published pages (excluding redirected ones)
     $stmt = $pdo->query("SELECT slug, updated_at FROM econline_pages WHERE status = 'published' AND slug != 'home' AND (redirect_to IS NULL OR redirect_to = '') ORDER BY id ASC");

@@ -157,6 +157,50 @@ if ($page && !empty($page['redirect_to'])) {
 
 // 3. Handle Page Not Found (404) vs Valid Page
 if (!$page) {
+    if ($slug === 'site-directory') {
+        try {
+            $stmt_all = $pdo->query("SELECT slug, h1_title FROM econline_pages WHERE status = 'published' AND redirect_to IS NULL ORDER BY title ASC");
+            $all_pages = $stmt_all->fetchAll();
+        } catch (PDOException $e) {
+            $all_pages = [];
+        }
+        
+        $page_title = "Site Directory - All Guides | econline.in";
+        $meta_desc = "Explore our complete directory of Indian property registration, stamp duty calculators, and online Encumbrance Certificate (EC) lookup guides.";
+        $page_keywords = "site directory, sitemap, all guides, econline";
+        $h1_title = "Site Directory - All Guides";
+        
+        $content = '<div class="card" style="padding: 2.5rem 2rem;">';
+        $content .= '<h2 style="font-size: 1.75rem; color: var(--primary); margin-bottom: 1.5rem;">All Property Guides & Calculators</h2>';
+        $content .= '<p style="color: var(--text-muted); margin-bottom: 2rem;">A complete index of all online EC lookup guides, stamp duty information, and land area calculators available on econline.in.</p>';
+        $content .= '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">';
+        
+        foreach ($all_pages as $p) {
+            $p_slug = htmlspecialchars($p['slug']);
+            $p_title = htmlspecialchars($p['h1_title']);
+            $content .= '<div style="padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface);">';
+            $content .= '<a href="/' . $p_slug . '/" style="font-weight: 600; color: var(--accent); text-decoration: none; hover:text-decoration: underline;" title="' . $p_title . '">' . $p_title . '</a>';
+            $content .= '</div>';
+        }
+        
+        $content .= '</div></div>';
+        $schema_type = 'WebPage';
+        $toc_links = [];
+        
+        $page = [
+            'title' => $page_title,
+            'meta_desc' => $meta_desc,
+            'keyword' => $page_keywords,
+            'h1_title' => $h1_title,
+            'content' => $content,
+            'schema_type' => $schema_type,
+            'created_at' => date('c'),
+            'updated_at' => date('c')
+        ];
+    }
+}
+
+if (!$page) {
     header("HTTP/1.1 404 Not Found");
     $page_title = "Page Not Found | econline.in";
     $meta_desc = "The page you are looking for does not exist on econline.in.";
