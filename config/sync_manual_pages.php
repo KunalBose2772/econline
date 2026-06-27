@@ -33,6 +33,7 @@ foreach ($files as $file) {
                 'h1_title' => $data['h1_title'],
                 'content' => $data['content'],
                 'faq_data' => $data['faq_data'] ?? null,
+                'toc_data' => $data['toc_data'] ?? null,
                 'schema_type' => $data['schema_type'] ?? 'Article'
             ]);
             echo "Synced page: " . $data['slug'] . "\n";

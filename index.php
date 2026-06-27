@@ -615,10 +615,10 @@ if ($slug === 'home') {
                 <div class="sidebar-widget" style="background-color: #eff6ff; border-color: rgba(37, 99, 211, 0.2);">
                     <h3 class="widget-title" style="color: var(--accent); border-color: rgba(37, 99, 211, 0.1);">Verified Official Portals</h3>
                     <ul class="widget-list">
-                        <li><a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official TNREGINET Tamil Nadu portal (External Link)">&rarr; TNREGINET Tamil Nadu</a></li>
-                        <li><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official Kaveri Karnataka portal (External Link)">&rarr; Kaveri Karnataka</a></li>
-                        <li><a href="https://registration.telangana.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official IGRS Telangana portal (External Link)">&rarr; IGRS Telangana</a></li>
-                        <li><a href="https://igrs.ap.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official IGRS Andhra Pradesh portal (External Link)">&rarr; IGRS Andhra Pradesh</a></li>
+                        <li><a href="https://tnreginet.gov.in" target="_blank" rel="noopener" title="Visit the official TNREGINET Tamil Nadu portal (External Link)">&rarr; TNREGINET Tamil Nadu</a></li>
+                        <li><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="noopener" title="Visit the official Kaveri Karnataka portal (External Link)">&rarr; Kaveri Karnataka</a></li>
+                        <li><a href="https://registration.telangana.gov.in" target="_blank" rel="noopener" title="Visit the official IGRS Telangana portal (External Link)">&rarr; IGRS Telangana</a></li>
+                        <li><a href="https://igrs.ap.gov.in" target="_blank" rel="noopener" title="Visit the official IGRS Andhra Pradesh portal (External Link)">&rarr; IGRS Andhra Pradesh</a></li>
                     </ul>
                 </div>
             </aside>

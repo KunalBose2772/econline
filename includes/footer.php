@@ -19,10 +19,10 @@
         <div class="footer-links-col">
             <h3>Official Portals</h3>
             <ul>
-                <li><a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official TNREGINET Portal (External Link)">TNREGINET Portal</a></li>
-                <li><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official Kaveri Online Services Portal (External Link)">Kaveri Online Services</a></li>
-                <li><a href="https://registration.telangana.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official IGRS Telangana Portal (External Link)">IGRS Telangana</a></li>
-                <li><a href="https://igrs.ap.gov.in" target="_blank" rel="nofollow noopener" title="Visit the official IGRS Andhra Pradesh Portal (External Link)">IGRS Andhra Pradesh</a></li>
+                <li><a href="https://tnreginet.gov.in" target="_blank" rel="noopener" title="Visit the official TNREGINET Portal (External Link)">TNREGINET Portal</a></li>
+                <li><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="noopener" title="Visit the official Kaveri Online Services Portal (External Link)">Kaveri Online Services</a></li>
+                <li><a href="https://registration.telangana.gov.in" target="_blank" rel="noopener" title="Visit the official IGRS Telangana Portal (External Link)">IGRS Telangana</a></li>
+                <li><a href="https://igrs.ap.gov.in" target="_blank" rel="noopener" title="Visit the official IGRS Andhra Pradesh Portal (External Link)">IGRS Andhra Pradesh</a></li>
             </ul>
         </div>
         <div class="footer-links-col">

@@ -39,7 +39,7 @@ if ($is_localhost) {
 
     // DB Config for local
     define('DB_HOST', 'localhost');
-    define('DB_PORT', '3307'); // Local XAMPP MySQL port is 3307
+    define('DB_PORT', '3306'); // Local XAMPP MySQL port is 3306
     define('DB_USER', 'root');
     define('DB_PASS', '');
     define('DB_NAME', 'econline');

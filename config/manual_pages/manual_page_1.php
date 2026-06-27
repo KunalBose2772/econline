@@ -3,7 +3,7 @@
 return [
     'slug' => 'ec-online',
     'keyword' => 'ec online',
-    'title' => 'EC Online: Real Estate Title Deeds & Encumbrance Certificate Guide',
+    'title' => 'EC Online Search: Verify Real Estate Title Deeds & Encumbrance Certificate',
     'meta_desc' => 'Learn how to perform an ec online search for real estate property title verification. Find guides on SRO registrations, survey numbers, and mortgages.',
     'h1_title' => 'EC Online: Real Estate Title Deeds & Encumbrance Certificate Guide',
     'schema_type' => 'Article',
@@ -27,7 +27,7 @@ return [
     <p>Additionally, properties are often subject to civil suits where courts issue attachment orders prohibiting the transfer of the asset. SROs are notified of these orders and record them in the registry. An <a href="/ec-online/">ec online</a> search will reveal such court attachments, warning the buyer that the transaction is legally blocked. Easement rights, such as a neighbor\'s right of way through the land, are also registered in some states and will be documented in the EC. Thus, title search via a <a href="/tn-ec/">TN EC</a> portal provides absolute clarity on what liabilities are associated with the property before you sign a sale agreement.</p>
 
     <h2>Portal Systems Across Indian States</h2>
-    <p>State governments have developed custom digital portals to handle land registrations. In Tamil Nadu, the Registration Department operates the TNREGINET portal, which provides free view of encumbrance certificates and certified copy downloads. Karnataka uses the Kaveri 2.0 portal, which requires user registration but offers highly structured encumbrance reports. Andhra Pradesh and Telangana utilize their respective IGRS portals to provide online search capabilities. These systems index properties using survey numbers, subdivision numbers, and boundary details, making it essential to have accurate land parameters before initiating your search.</p>
+    <p>State governments have developed custom digital portals to handle land registrations. In Tamil Nadu, the Registration Department operates the TNREGINET portal, which provides free view of encumbrance certificates and certified copy downloads. Karnataka uses the Kaveri 2.0 portal, which requires user registration but offers highly structured encumbrance reports. Andhra Pradesh and Telangana utilize their respective IGRS portals to provide online search capabilities. These systems index properties using survey numbers, subdivision numbers, and boundary details, making it essential to have accurate land parameters before initiating your search. You can also check the official <a href="/guideline-value/">guideline value</a> to estimate property registry charges.</p>
 
     <h2>Detailed Analysis of SRO Book Indexing</h2>
     <p>SRO registries organize transactions into separate ledger books. Book I is the register of non-testamentary documents relating to immovable property. All sale deeds, gift settlements, partition arrangements, and mortgages are compiled here. Book II is the record of reasons for refusal to register. Book III is the register of wills and authorities to adopt, while Book IV is the miscellaneous register for documents not affecting land titles. Encumbrance searches compile data strictly from Book I. This means details of a registered will or power of attorney may not directly appear on a standard land EC, requiring secondary indices checks at the SRO archives.</p>

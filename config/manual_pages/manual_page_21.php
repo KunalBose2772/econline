@@ -2,7 +2,7 @@
 return [
     'slug' => 'igrs-tamil-nadu',
     'keyword' => 'igrs tamil nadu',
-    'title' => 'IGRS Tamil Nadu: Portal Services, SRO Search & EC Online',
+    'title' => 'IGRS Tamil Nadu Portal: Online EC, SRO & Document Registry',
     'meta_desc' => 'Master guide to IGRS Tamil Nadu (TNREGINET). Learn to check Villangam EC online, search SRO locations, verify document status, and calculate stamp duty.',
     'h1_title' => 'IGRS Tamil Nadu: Registration Services Portal',
     'schema_type' => 'Article',
@@ -14,7 +14,7 @@ return [
     ]',
     'content' => '
 <div class="manual-page-container">
-    <p>The **Inspector General of Registration (IGRS) Tamil Nadu** is the nodal government agency responsible for managing property registration, collecting stamp duty, registering marriages, and licensing chit funds in the state. To make these services accessible, the department created the **TNREGINET** portal. Understanding how to navigate IGRS services is essential for property buyers seeking to perform due diligence, download certified copies, or calculate registry costs. This article explains the services, structure, and features of the official IGRS Tamil Nadu portal.</p>
+    <p>The **Inspector General of Registration (IGRS) Tamil Nadu** is the nodal government agency responsible for managing property registration, collecting stamp duty, registering marriages, and licensing chit funds in the state. To make these services accessible, the department created the **TNREGINET** portal. Citizens can easily perform a <a href="/tn-ec-view/">TN EC View</a> search, obtain a certified <a href="/villangam/">villangam certificate</a>, or check property ownership records on the official <a href="/patta-chitta-online-tamil-nadu/">patta chitta</a> registry before registering any deed. Understanding how to navigate IGRS services is essential for property buyers seeking to perform due diligence, verify historical records, or check the latest <a href="/guideline-value-tamilnadu/">guideline value Tamilnadu</a> to calculate registry costs. This article explains the services, structure, and features of the official IGRS Tamil Nadu portal.</p>
 
     <h2>Primary Services Offered by IGRS Tamil Nadu</h2>
     <p>The digitized IGRS portal offers a wide range of services to citizens, reducing the need to visit Sub-Registrar Offices (SRO) in person. The most frequently used portal utilities include:</p>

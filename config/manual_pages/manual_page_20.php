@@ -14,7 +14,7 @@ return [
     ]',
     'content' => '
 <div class="manual-page-container">
-    <p>Registering a marriage in Tamil Nadu is a vital legal process that provides legal recognition to the marital union. The Registration Department of Tamil Nadu administers this service through Sub-Registrar Offices (SRO) across the state. In recent years, the registration process has been digitized via the <strong><a href="/tnreginet-portal/">TNREGINET</a></strong> portal, allowing citizens to fill out forms, upload documents, and schedule appointment slots online. This guide covers the legislative rules, eligibility criteria, documentation, and step-by-step procedures for registering a marriage under both the Hindu Marriage Act, 1955, and the Special Marriage Act, 1954.</p>
+    <p>Registering a marriage in Tamil Nadu is a vital legal process that provides legal recognition to the marital union. The Registration Department of Tamil Nadu administers this service through Sub-Registrar Offices (SRO) across the state. In recent years, the registration process has been digitized via the <strong><a href="/tnreginet-portal/">TNREGINET</a></strong> portal, allowing citizens to fill out forms, upload documents, and schedule appointment slots online. If you need to verify your property address proof details, you can use the <a href="/tn-ec-view/">TN EC View</a> portal or verify land ownership records via the <a href="/patta-chitta-online-tamil-nadu/">patta chitta</a> registry. This guide covers the legislative rules, eligibility criteria, documentation, and step-by-step procedures for registering a marriage under both the Hindu Marriage Act, 1955, and the Special Marriage Act, 1954.</p>
 
     <h2>Governing Legislations for Marriage Registration</h2>
     <p>In Tamil Nadu, marriages are primarily registered under three Acts, depending on the religious background of the couples and the nature of the ceremony:</p>
@@ -64,7 +64,7 @@ return [
     <div class="steps-container" style="display: flex; flex-direction: column; gap: 15px; margin: 20px 0;">
         <div class="step-card" style="padding: 15px; border-left: 4px solid var(--accent); background: #f8fafc;">
             <strong>Step 1: Registration Portal Access</strong>
-            <p style="margin: 5px 0 0 0;">Create an account on the official <strong><a href="https://tnreginet.gov.in" target="_blank" rel="nofollow noopener">TNREGINET portal</a></strong>, or log in with existing user credentials.</p>
+            <p style="margin: 5px 0 0 0;">Create an account on the official <strong><a href="https://tnreginet.gov.in" target="_blank" rel="noopener">TNREGINET portal</a></strong>, or log in with existing user credentials.</p>
         </div>
         <div class="step-card" style="padding: 15px; border-left: 4px solid var(--accent); background: #f8fafc;">
             <strong>Step 2: Choose Marriage Register Option</strong>
