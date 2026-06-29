@@ -387,6 +387,9 @@ require_once __DIR__ . '/includes/header.php';
 if ($slug === 'home') {
     // HOMEPAGE TEMPLATE LAYOUT
     ?>
+    <div style="color: red; font-weight: bold; text-align: center; padding: 12px; background-color: #ffe4e6; border: 1px solid #fca5a5; margin: 15px auto; max-width: 1200px; border-radius: 8px; font-family: sans-serif;">
+        TEST TEXT: Code deployment is live.
+    </div>
     <section class="hero-section">
         <div class="hero-container">
             <h1 class="hero-title"><?php echo htmlspecialchars($h1_title); ?></h1>
