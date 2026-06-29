@@ -135,7 +135,10 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
 
 $token_response = curl_exec($ch);
 $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
+if (PHP_VERSION_ID < 80000) {
+    $close_handle = 'curl_close';
+    $close_handle($ch);
+}
 
 if ($http_code !== 200) {
     echo "[ERROR] OAuth request failed with code $http_code. Response:\n$token_response\n";
@@ -195,7 +198,10 @@ foreach ($pages as $index => $page) {
     
     $api_response = curl_exec($ch);
     $api_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+    if (PHP_VERSION_ID < 80000) {
+        $close_handle = 'curl_close';
+        $close_handle($ch);
+    }
     
     if ($api_code === 200) {
         // Update database state immediately on success

@@ -126,6 +126,7 @@ a:hover {
 .logo-text {
     background: linear-gradient(135deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -167,6 +168,7 @@ a:hover {
     line-height: 1.15;
     background: linear-gradient(135deg, var(--primary) 30%, var(--accent) 90%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
