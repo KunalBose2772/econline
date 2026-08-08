@@ -211,7 +211,10 @@ try {
     }
 } catch (PDOException $e) {
     if (ENVIRONMENT === 'development') {
-        die("Database connection failed: " . $e->getMessage());
+        $sqlite_file = __DIR__ . '/../econline.sqlite';
+        $pdo = new PDO("sqlite:" . $sqlite_file);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     } else {
         die("A database error occurred.");
     }

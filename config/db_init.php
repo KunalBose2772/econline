@@ -84,6 +84,7 @@ $pdo = new PDOSanitizerWrapper($real_pdo);
 
 try {
     // 1. Check if table exists, create if missing
+    $driver = $pdo->getAttribute(PDO::ATTR_DRIVER_NAME);
     $tableExists = false;
     try {
         $result = $pdo->query("SELECT 1 FROM `econline_pages` LIMIT 1");
@@ -92,25 +93,46 @@ try {
         $tableExists = false;
     }
 
-        if (!$tableExists) {
-        $sql = "
-        CREATE TABLE IF NOT EXISTS `econline_pages` (
-            `id` INT AUTO_INCREMENT PRIMARY KEY,
-            `slug` VARCHAR(255) UNIQUE NOT NULL,
-            `keyword` VARCHAR(255) NOT NULL,
-            `title` VARCHAR(255) NOT NULL,
-            `meta_desc` VARCHAR(255) NOT NULL,
-            `h1_title` VARCHAR(255) NOT NULL,
-            `content` LONGTEXT NOT NULL,
-            `faq_data` JSON DEFAULT NULL,
-            `toc_data` JSON DEFAULT NULL,
-            `schema_type` VARCHAR(100) DEFAULT 'Article',
-            `status` VARCHAR(50) DEFAULT 'published',
-            `redirect_to` VARCHAR(255) DEFAULT NULL,
-            `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-        ";
+    if (!$tableExists) {
+        if ($driver === 'sqlite') {
+            $sql = "
+            CREATE TABLE IF NOT EXISTS `econline_pages` (
+                `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+                `slug` TEXT UNIQUE NOT NULL,
+                `keyword` TEXT NOT NULL,
+                `title` TEXT NOT NULL,
+                `meta_desc` TEXT NOT NULL,
+                `h1_title` TEXT NOT NULL,
+                `content` TEXT NOT NULL,
+                `faq_data` TEXT DEFAULT NULL,
+                `toc_data` TEXT DEFAULT NULL,
+                `schema_type` TEXT DEFAULT 'Article',
+                `status` TEXT DEFAULT 'published',
+                `redirect_to` TEXT DEFAULT NULL,
+                `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+                `updated_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+            );
+            ";
+        } else {
+            $sql = "
+            CREATE TABLE IF NOT EXISTS `econline_pages` (
+                `id` INT AUTO_INCREMENT PRIMARY KEY,
+                `slug` VARCHAR(255) UNIQUE NOT NULL,
+                `keyword` VARCHAR(255) NOT NULL,
+                `title` VARCHAR(255) NOT NULL,
+                `meta_desc` VARCHAR(255) NOT NULL,
+                `h1_title` VARCHAR(255) NOT NULL,
+                `content` LONGTEXT NOT NULL,
+                `faq_data` JSON DEFAULT NULL,
+                `toc_data` JSON DEFAULT NULL,
+                `schema_type` VARCHAR(100) DEFAULT 'Article',
+                `status` VARCHAR(50) DEFAULT 'published',
+                `redirect_to` VARCHAR(255) DEFAULT NULL,
+                `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            ";
+        }
         $pdo->exec($sql);
     } else {
         // Self-migration: ensure toc_data column exists on pre-existing database tables
@@ -127,6 +149,13 @@ try {
             $pdo->exec("ALTER TABLE `econline_pages` ADD COLUMN `redirect_to` VARCHAR(255) DEFAULT NULL AFTER `status`");
         }
     }
+
+    // Skip redundant seeding if pages already exist in DB
+    try {
+        if ($pdo->query("SELECT COUNT(*) FROM econline_pages")->fetchColumn() > 0 && !isset($_GET['reseed'])) {
+            return;
+        }
+    } catch (PDOException $e) {}
 
 // 2. Define Homepage Metadata and Content with exact 'ec online' keyword phrasing
     $slug = 'home';
@@ -413,21 +442,29 @@ try {
     ];
     $faq_json = json_encode($faqs, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-    // Use ON DUPLICATE KEY UPDATE to seamlessly run on page reload
+    if ($driver === 'sqlite') {
+        if ($driver === 'sqlite') {
         $stmt = $pdo->prepare("
-        INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
-        VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
-        ON DUPLICATE KEY UPDATE 
-            keyword = VALUES(keyword),
-            title = VALUES(title),
-            meta_desc = VALUES(meta_desc),
-            h1_title = VALUES(h1_title),
-            content = VALUES(content),
-            faq_data = VALUES(faq_data),
-            toc_data = VALUES(toc_data),
-            schema_type = VALUES(schema_type),
-            status = 'published'
-    ");
+            INSERT OR REPLACE INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+        ");
+    } else {
+        $stmt = $pdo->prepare("
+            INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+            ON DUPLICATE KEY UPDATE 
+                keyword = VALUES(keyword),
+                title = VALUES(title),
+                meta_desc = VALUES(meta_desc),
+                h1_title = VALUES(h1_title),
+                content = VALUES(content),
+                faq_data = VALUES(faq_data),
+                toc_data = VALUES(toc_data),
+                schema_type = VALUES(schema_type),
+                status = 'published'
+        ");
+    }
+    }
 $stmt->execute([
         'slug' => $slug,
         'keyword' => $keyword,
@@ -1028,20 +1065,27 @@ $stmt->execute([
     $faq_tn = '[{"question":"What is the fee for downloading a certified EC online in Tamil Nadu?","answer":"The search fee is \\u20b915 per year of search, plus a small application processing charge. The draft \\"View EC\\" option is completely free of cost."},{"question":"For how many years can we get the EC online in Tamil Nadu?","answer":"Property transaction records from 1975 to the current date are available online. For pre-1975 records, you must visit the respective Sub-Registrar Office."},{"question":"How long does it take to get a certified online ec in Tamil Nadu?","answer":"While the draft \\"View EC\\" is instant, a certified, digitally signed copy takes between 2 to 7 working days to be verified and approved by the Sub-Registrar."},{"question":"Why are Tamil fonts not displaying correctly on my downloaded EC?","answer":"This is usually a font encoding issue. You may need to download the Tamil Unicode font or view the PDF document using a modern browser like Chrome that supports dynamic font rendering."}]';
     $schema_type_tn = 'Article';
 
+        if ($driver === 'sqlite') {
         $stmt = $pdo->prepare("
-        INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
-        VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
-        ON DUPLICATE KEY UPDATE 
-            keyword = VALUES(keyword),
-            title = VALUES(title),
-            meta_desc = VALUES(meta_desc),
-            h1_title = VALUES(h1_title),
-            content = VALUES(content),
-            faq_data = VALUES(faq_data),
-            toc_data = VALUES(toc_data),
-            schema_type = VALUES(schema_type),
-            status = 'published'
-    ");
+            INSERT OR REPLACE INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+        ");
+    } else {
+        $stmt = $pdo->prepare("
+            INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+            ON DUPLICATE KEY UPDATE 
+                keyword = VALUES(keyword),
+                title = VALUES(title),
+                meta_desc = VALUES(meta_desc),
+                h1_title = VALUES(h1_title),
+                content = VALUES(content),
+                faq_data = VALUES(faq_data),
+                toc_data = VALUES(toc_data),
+                schema_type = VALUES(schema_type),
+                status = 'published'
+        ");
+    }
 $stmt->execute([
         'slug' => $slug_tn,
         'keyword' => $keyword_tn,
@@ -1651,20 +1695,27 @@ $stmt->execute([
     $faq_view = '[{"question":"Can I view my property EC online for free?","answer":"Yes, most states provide a guest \\"View EC\\" service that is completely free of charge. This gives an instant view of the transaction ledger on screen."},{"question":"What information is required to perform an online EC search?","answer":"You typically need the property district, village name, the specific Sub-Registrar Office (SRO), and the land survey number or registered document number."},{"question":"What is the difference between Form 15 and Form 16 EC?","answer":"Form 15 contains details of all registered transactions (sales, mortgages, leases) on the property. Form 16 is a \\"Nil Encumbrance Certificate,\\" meaning no transactions were recorded."},{"question":"Can I print the online draft EC for official bank loans?","answer":"No, banks require a Certified copy which has a digital signature from the Sub-Registrar. The free online view draft is only for research and information."}]';
     $schema_type_view = 'Article';
 
+        if ($driver === 'sqlite') {
         $stmt = $pdo->prepare("
-        INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
-        VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
-        ON DUPLICATE KEY UPDATE 
-            keyword = VALUES(keyword),
-            title = VALUES(title),
-            meta_desc = VALUES(meta_desc),
-            h1_title = VALUES(h1_title),
-            content = VALUES(content),
-            faq_data = VALUES(faq_data),
-            toc_data = VALUES(toc_data),
-            schema_type = VALUES(schema_type),
-            status = 'published'
-    ");
+            INSERT OR REPLACE INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+        ");
+    } else {
+        $stmt = $pdo->prepare("
+            INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+            ON DUPLICATE KEY UPDATE 
+                keyword = VALUES(keyword),
+                title = VALUES(title),
+                meta_desc = VALUES(meta_desc),
+                h1_title = VALUES(h1_title),
+                content = VALUES(content),
+                faq_data = VALUES(faq_data),
+                toc_data = VALUES(toc_data),
+                schema_type = VALUES(schema_type),
+                status = 'published'
+        ");
+    }
 $stmt->execute([
         'slug' => $slug_view,
         'keyword' => $keyword_view,
@@ -2285,20 +2336,27 @@ $stmt->execute([
     $faq_dl = '[{"question":"How can I download my Encumbrance Certificate online?","answer":"To complete an <strong>online ec download</strong>, you must register a citizen account on your state\'s official registration department portal. Fill in the property Zone, District, SRO office, and Land Survey Number, pay the nominal government fee online, and download the digitally signed PDF copy from your user dashboard once approved by the officer."},{"question":"What is the fee to download a certified EC online?","answer":"Stamps and registration fees vary by state. For example, in Tamil Nadu, the search fee is ₹15 per year. In Karnataka, the government charges a base search fee of ₹15 for the first year, and ₹10 for each subsequent year. Free draft view downloads are available in most states for informational lookup."},{"question":"How do I resolve \\"Signature Not Verified\\" on my downloaded EC PDF?","answer":"Open the downloaded PDF document in Adobe Acrobat Reader. Right-click the signature signature stamp at the bottom of the page, click **Signature Properties > Show Signer\'s Certificate**, select the **Trust** tab, click **Add to Trusted Certificates**, check all certified trust options, and click **Validate Signature** to convert the question mark to a valid green checkmark."},{"question":"How can I verify the authenticity of a downloaded EC copy?","answer":"Every digitally signed certified EC download contains a unique document number, application reference key, or QR code. You can verify the validity of the copy by entering this key on the official state portal under the \\"Verify Certified Copy\\" citizen services section."}]';
     $schema_type_dl = 'Article';
 
+        if ($driver === 'sqlite') {
         $stmt = $pdo->prepare("
-        INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
-        VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
-        ON DUPLICATE KEY UPDATE 
-            keyword = VALUES(keyword),
-            title = VALUES(title),
-            meta_desc = VALUES(meta_desc),
-            h1_title = VALUES(h1_title),
-            content = VALUES(content),
-            faq_data = VALUES(faq_data),
-            toc_data = VALUES(toc_data),
-            schema_type = VALUES(schema_type),
-            status = 'published'
-    ");
+            INSERT OR REPLACE INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+        ");
+    } else {
+        $stmt = $pdo->prepare("
+            INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+            ON DUPLICATE KEY UPDATE 
+                keyword = VALUES(keyword),
+                title = VALUES(title),
+                meta_desc = VALUES(meta_desc),
+                h1_title = VALUES(h1_title),
+                content = VALUES(content),
+                faq_data = VALUES(faq_data),
+                toc_data = VALUES(toc_data),
+                schema_type = VALUES(schema_type),
+                status = 'published'
+        ");
+    }
 $stmt->execute([
         'slug' => $slug_dl,
         'keyword' => $keyword_dl,
@@ -2765,20 +2823,27 @@ $stmt->execute([
     $faq_ts = '[{"question":"What details are required to check ec online telangana?","answer":"For non-agricultural properties, you need the property document number, registration year, and the specific Sub-Registrar Office (SRO) name. For agricultural land, you need the Pattadar Passbook Number or Survey/Sub-division Number along with the District, Mandal, and Village details."},{"question":"What is the fee for telangana ec search online?","answer":"The official government search fee is ₹200 for the first year, plus ₹10 for every additional year included in your search period. Additional service/portal processing charges may apply at the time of online payment."},{"question":"How do I download a certified copy of ts ec online?","answer":"Log in to the IGRS Telangana Portal, select \'Encumbrance Certificate\', enter your property registered details, calculate and pay the fees online. Once processed by the sub-registrar office, you can download the digitally signed PDF certified copy directly from your user dashboard."},{"question":"Can I check agricultural land encumbrance details for free?","answer":"Yes, you can search and check agricultural land records for free on the Dharani Portal under the \'Land Details Search\' service. This allows citizens to view ownership status, survey records, and liabilities instantly without paying any search fee."}]';
     $schema_type_ts = 'Article';
 
+        if ($driver === 'sqlite') {
         $stmt = $pdo->prepare("
-        INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
-        VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
-        ON DUPLICATE KEY UPDATE 
-            keyword = VALUES(keyword),
-            title = VALUES(title),
-            meta_desc = VALUES(meta_desc),
-            h1_title = VALUES(h1_title),
-            content = VALUES(content),
-            faq_data = VALUES(faq_data),
-            toc_data = VALUES(toc_data),
-            schema_type = VALUES(schema_type),
-            status = 'published'
-    ");
+            INSERT OR REPLACE INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+        ");
+    } else {
+        $stmt = $pdo->prepare("
+            INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+            ON DUPLICATE KEY UPDATE 
+                keyword = VALUES(keyword),
+                title = VALUES(title),
+                meta_desc = VALUES(meta_desc),
+                h1_title = VALUES(h1_title),
+                content = VALUES(content),
+                faq_data = VALUES(faq_data),
+                toc_data = VALUES(toc_data),
+                schema_type = VALUES(schema_type),
+                status = 'published'
+        ");
+    }
 $stmt->execute([
         'slug' => $slug_ts,
         'keyword' => $keyword_ts,
@@ -3273,20 +3338,27 @@ $stmt->execute([
     $faq_ap = '[{"question":"What is the fee for an online ec ap certified copy?","answer":"For searches up to 30 years, the government fee is ₹200 plus a portal service charge of ₹25, totaling ₹225. For searches extending beyond 30 years, the fee is ₹500 plus a ₹25 service charge, totaling ₹525. The Guest View informational search is completely free of charge."},{"question":"Are older land records available on the IGRS AP website?","answer":"Digital records on the AP registration portal are available from January 1, 1983. For property transactions, deeds, or encumbrance histories dated prior to 1983, you must submit a physical search application at the concerned local Sub-Registrar Office (SRO)."},{"question":"How to check ec online in andhra pradesh for free?","answer":"Go to the official registration.ap.gov.in portal and navigate to the Encumbrance Certificate section under citizen services. Use the \'Guest Search\' option, enter the property details (SRO, Document number, and year), and you can instantly check and view the EC on your screen for free."},{"question":"How long does it take to download a certified copy of AP EC?","answer":"After paying the fees online, the request is verified by the local SRO. Typically, the digitally signed certified EC certificate is approved and available for download in your portal account within 24 to 48 hours."}]';
     $schema_type_ap = 'Article';
 
+        if ($driver === 'sqlite') {
         $stmt = $pdo->prepare("
-        INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
-        VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
-        ON DUPLICATE KEY UPDATE 
-            keyword = VALUES(keyword),
-            title = VALUES(title),
-            meta_desc = VALUES(meta_desc),
-            h1_title = VALUES(h1_title),
-            content = VALUES(content),
-            faq_data = VALUES(faq_data),
-            toc_data = VALUES(toc_data),
-            schema_type = VALUES(schema_type),
-            status = 'published'
-    ");
+            INSERT OR REPLACE INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+        ");
+    } else {
+        $stmt = $pdo->prepare("
+            INSERT INTO econline_pages (slug, keyword, title, meta_desc, h1_title, content, faq_data, toc_data, schema_type, status)
+            VALUES (:slug, :keyword, :title, :meta_desc, :h1_title, :content, :faq_data, :toc_data, :schema_type, 'published')
+            ON DUPLICATE KEY UPDATE 
+                keyword = VALUES(keyword),
+                title = VALUES(title),
+                meta_desc = VALUES(meta_desc),
+                h1_title = VALUES(h1_title),
+                content = VALUES(content),
+                faq_data = VALUES(faq_data),
+                toc_data = VALUES(toc_data),
+                schema_type = VALUES(schema_type),
+                status = 'published'
+        ");
+    }
 $stmt->execute([
         'slug' => $slug_ap,
         'keyword' => $keyword_ap,

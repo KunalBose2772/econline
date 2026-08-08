@@ -2,3 +2,5 @@ google_key.json
 ec-online-indexer-*.json
 cache/
 scratch/
+econline.sqlite
+
