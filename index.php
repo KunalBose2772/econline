@@ -122,13 +122,42 @@ if (defined('ENVIRONMENT') && ENVIRONMENT === 'production') {
     }
 }
 
-// 2. Fetch page from database
-try {
-    $stmt = $pdo->prepare("SELECT * FROM econline_pages WHERE slug = :slug AND status = 'published' LIMIT 1");
-    $stmt->execute(['slug' => $slug]);
-    $page = $stmt->fetch();
-} catch (PDOException $e) {
-    die("Database query error: " . $e->getMessage());
+// 1c. Direct Individual File Lookup inside pages/ directory
+$page_file_candidates = [
+    __DIR__ . '/pages/' . $slug . '.php',
+    __DIR__ . '/pages/' . str_replace('/', '-', $slug) . '.php',
+    __DIR__ . '/pages/' . basename($slug) . '.php'
+];
+
+$page = null;
+foreach ($page_file_candidates as $candidate) {
+    if (file_exists($candidate)) {
+        $file_data = include $candidate;
+        if (is_array($file_data)) {
+            $page = $file_data;
+            if (!isset($page['slug'])) {
+                $page['slug'] = $slug;
+            }
+            if (!isset($page['created_at'])) {
+                $page['created_at'] = date('c', filemtime($candidate));
+            }
+            if (!isset($page['updated_at'])) {
+                $page['updated_at'] = date('c', filemtime($candidate));
+            }
+            break;
+        }
+    }
+}
+
+// 2. Fetch page from database if no dedicated file was found
+if (!$page) {
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM econline_pages WHERE slug = :slug AND status = 'published' LIMIT 1");
+        $stmt->execute(['slug' => $slug]);
+        $page = $stmt->fetch();
+    } catch (PDOException $e) {
+        die("Database query error: " . $e->getMessage());
+    }
 }
 
 // 2b. Handle Programmatic 301 Redirects for consolidated content hub pages
