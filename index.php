@@ -4,48 +4,45 @@ require_once __DIR__ . '/config/db_init.php';
 
 // Programmatically seed redirect mapping for the 30 consolidated duplicate pages
 try {
-    $check_redirects = $pdo->query("SELECT COUNT(*) FROM econline_pages WHERE redirect_to IS NOT NULL")->fetchColumn();
-    if ($check_redirects == 0) {
-        $redirects = [
-            'ec-apply-online-in-tamilnadu' => 'online-ec-tamilnadu',
-            'ec-check-online-tamilnadu' => 'online-ec-tamilnadu',
-            'ec-copy-online-tamilnadu' => 'online-ec-tamilnadu',
-            'get-ec-online-tamilnadu' => 'online-ec-tamilnadu',
-            'how-to-apply-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
-            'how-to-apply-for-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
-            'how-to-check-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
-            'how-to-check-ec-online-tamilnadu' => 'online-ec-tamilnadu',
-            'how-to-get-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
-            'how-to-take-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
-            
-            'ecview-tnreginet' => 'tnreginet-ec-view',
-            'ecview-tnreginet-net' => 'tnreginet-ec-view',
-            'tnreginet-ec-online-view' => 'tnreginet-ec-view',
-            'tnreginet-net-ec-view' => 'tnreginet-ec-view',
-            'www-tnreginet-net-ec' => 'tnreginet-ec-view',
-            'www-tnreginet-net-ec-view' => 'tnreginet-ec-view',
-            'www-tnreginet-net-2018-ec' => 'tnreginet-ec-view',
-            'tnreginet-ec-view-online' => 'tnreginet-ec-view',
-            
-            'guideline-value-tamilnadu' => 'check-guideline-value',
-            'tnreginet-guideline-value-tamilnadu' => 'check-guideline-value',
-            'tnreginet-net-guideline-value' => 'check-guideline-value',
-            'www-tnreginet-net-guideline-value' => 'check-guideline-value',
-            'wwwtnreginetnet-guideline-value-2023' => 'check-guideline-value',
-            'tnreginet-land-value' => 'check-guideline-value',
-            
-            'patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
-            'patta-chitta-ec-online-status-tamilnadu' => 'patta-chitta-online-tamil-nadu',
-            'patta-chitta-ec-online-tamil' => 'patta-chitta-online-tamil-nadu',
-            'tn-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
-            'tamil-nadu-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
-            'tnreginet-patta' => 'patta-chitta-online-tamil-nadu',
-        ];
+    $redirects = [
+        'ec-apply-online-in-tamilnadu' => 'online-ec-tamilnadu',
+        'ec-check-online-tamilnadu' => 'online-ec-tamilnadu',
+        'ec-copy-online-tamilnadu' => 'online-ec-tamilnadu',
+        'get-ec-online-tamilnadu' => 'online-ec-tamilnadu',
+        'how-to-apply-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+        'how-to-apply-for-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+        'how-to-check-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+        'how-to-check-ec-online-tamilnadu' => 'online-ec-tamilnadu',
+        'how-to-get-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+        'how-to-take-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
         
-        $stmt_redir = $pdo->prepare("UPDATE econline_pages SET redirect_to = :target WHERE slug = :slug");
-        foreach ($redirects as $old_slug => $new_slug) {
-            $stmt_redir->execute(['target' => $new_slug, 'slug' => $old_slug]);
-        }
+        'ecview-tnreginet' => 'tnreginet-ec-view',
+        'ecview-tnreginet-net' => 'tnreginet-ec-view',
+        'tnreginet-ec-online-view' => 'tnreginet-ec-view',
+        'tnreginet-net-ec-view' => 'tnreginet-ec-view',
+        'www-tnreginet-net-ec' => 'tnreginet-ec-view',
+        'www-tnreginet-net-ec-view' => 'tnreginet-ec-view',
+        'www-tnreginet-net-2018-ec' => 'tnreginet-ec-view',
+        'tnreginet-ec-view-online' => 'tnreginet-ec-view',
+        
+        'guideline-value-tamilnadu' => 'check-guideline-value',
+        'tnreginet-guideline-value-tamilnadu' => 'check-guideline-value',
+        'tnreginet-net-guideline-value' => 'check-guideline-value',
+        'www-tnreginet-net-guideline-value' => 'check-guideline-value',
+        'wwwtnreginetnet-guideline-value-2023' => 'check-guideline-value',
+        'tnreginet-land-value' => 'check-guideline-value',
+        
+        'patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+        'patta-chitta-ec-online-status-tamilnadu' => 'patta-chitta-online-tamil-nadu',
+        'patta-chitta-ec-online-tamil' => 'patta-chitta-online-tamil-nadu',
+        'tn-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+        'tamil-nadu-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+        'tnreginet-patta' => 'patta-chitta-online-tamil-nadu',
+    ];
+    
+    $stmt_redir = $pdo->prepare("UPDATE econline_pages SET redirect_to = :target WHERE slug = :slug AND (redirect_to IS NULL OR redirect_to = '')");
+    foreach ($redirects as $old_slug => $new_slug) {
+        $stmt_redir->execute(['target' => $new_slug, 'slug' => $old_slug]);
     }
 } catch (PDOException $e) {
     // Fail silently
