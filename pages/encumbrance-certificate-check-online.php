@@ -2,7 +2,7 @@
 return array (
   'slug' => 'encumbrance-certificate-check-online',
   'keyword' => 'encumbrance certificate check online, encumbrance search, check ec online, free ec online, verify ec online',
-  'title' => 'Encumbrance Certificate Check Online: National Verification Guide (2026)',
+  'title' => 'Encumbrance Certificate Check Online: National Verification (2026)',
   'meta_desc' => 'National guide to Encumbrance Certificate (EC) online search and verification. Check SRO registered property deeds, bank mortgages, and Nil EC status.',
   'h1_title' => 'Encumbrance Certificate Check Online: National Portal Guide',
   'schema_type' => 'TechArticle',

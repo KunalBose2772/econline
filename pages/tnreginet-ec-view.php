@@ -2,7 +2,7 @@
 return array (
   'slug' => 'tnreginet-ec-view',
   'keyword' => 'tnreginet ec view, ecview tnreginet, tnreginet net ec view, tnreginet ec online view, villangam download online',
-  'title' => 'TNREGINET EC View: Online Encumbrance Certificate Guide (2026)',
+  'title' => 'TNREGINET EC View: Online Encumbrance Certificate (2026)',
   'meta_desc' => 'How to use TNREGINET EC View online search service. View Villangam certificates by document number, survey number, or plot details in Tamil Nadu.',
   'h1_title' => 'TNREGINET EC View: Online Villangam Certificate Guide',
   'schema_type' => 'TechArticle',

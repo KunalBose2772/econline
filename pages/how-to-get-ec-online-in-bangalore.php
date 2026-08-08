@@ -2,7 +2,7 @@
 return array (
   'slug' => 'how-to-get-ec-online-in-bangalore',
   'keyword' => 'how to get ec online in bangalore, online ec bangalore, kaveri ec search bangalore, bbmp pid ec search, ec online bangalore',
-  'title' => 'How to Get EC Online in Bangalore: BBMP PID & Kaveri 2.0 Guide (2026)',
+  'title' => 'How to Get EC Online in Bangalore: BBMP PID & Kaveri 2.0 (2026)',
   'meta_desc' => 'Step-by-step 2026 guide to search and download Encumbrance Certificate (EC) online in Bangalore. Use PID number, Khata details, and Kaveri 2.0 SRO lookup.',
   'h1_title' => 'How to Get EC Online in Bangalore: Kaveri 2.0 & BBMP Guide',
   'schema_type' => 'TechArticle',

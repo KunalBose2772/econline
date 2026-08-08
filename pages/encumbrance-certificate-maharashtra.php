@@ -2,7 +2,7 @@
 return array (
   'slug' => 'encumbrance-certificate-maharashtra',
   'keyword' => 'encumbrance certificate maharashtra, igr maharashtra search 2.0, e-search maharashtra ec, maharashtra property search online',
-  'title' => 'Encumbrance Certificate Maharashtra: IGR e-Search 2.0 Guide (2026)',
+  'title' => 'Encumbrance Certificate Maharashtra: IGR e-Search 2.0 (2026)',
   'meta_desc' => 'Search and download Maharashtra Encumbrance Certificate online via IGR Maharashtra (igrmaharashtra.gov.in) e-Search 2.0. Check 7/12 extract and Ready Reckoner.',
   'h1_title' => 'Encumbrance Certificate Maharashtra: IGR e-Search 2.0 Guide',
   'schema_type' => 'TechArticle',
@@ -297,5 +297,5 @@ function runMhCheck() {
         <li><strong>Verify Mortgage Discharge Certificates:</strong> If a prior mortgage appears on Index II / Form 15, ensure a registered Release Deed or Memorandum of Deposit of Title Deeds (MODTD) discharge receipt is attached.</li>
         <li><strong>Obtain Certified Search Copies for Missing Periods:</strong> If digital portal records show gaps due to historical digitisation limits (pre-1985), submit a physical application for manual SRO index searches.</li>
 </div>
-'
+',
 );

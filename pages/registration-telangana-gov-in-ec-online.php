@@ -2,7 +2,7 @@
 return array (
   'slug' => 'registration-telangana-gov-in-ec-online',
   'keyword' => 'registration telangana gov in ec online, igrs ts official portal, telangana registration department ec, www registration telangana gov in',
-  'title' => 'registration.telangana.gov.in EC Online: Official Portal Guide (2026)',
+  'title' => 'registration.telangana.gov.in EC Online: Official Portal (2026)',
   'meta_desc' => 'How to navigate registration.telangana.gov.in for online Encumbrance Certificate (EC) search, SRO market value, and document verification in Telangana.',
   'h1_title' => 'registration.telangana.gov.in EC Online: Official Portal Guide',
   'schema_type' => 'TechArticle',

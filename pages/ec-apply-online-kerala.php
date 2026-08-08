@@ -2,7 +2,7 @@
 return array (
   'slug' => 'ec-apply-online-kerala',
   'keyword' => 'ec apply online kerala, apply ec online kerala, kudippika apply online, kerala registration ec payment, PEARL ec application',
-  'title' => 'EC Apply Online Kerala: PEARL Application & Payment Guide (2026)',
+  'title' => 'EC Apply Online Kerala: PEARL Application & Payment (2026)',
   'meta_desc' => 'How to apply for an Encumbrance Certificate (Kudippika) online in Kerala. Step-by-step tutorial for PEARL portal registration, fee payment, and PDF download.',
   'h1_title' => 'EC Apply Online Kerala: PEARL Application Guide',
   'schema_type' => 'TechArticle',

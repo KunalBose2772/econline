@@ -2,8 +2,8 @@
 return array (
   'slug' => 'online-ec-ap',
   'keyword' => 'online ec ap, ap ec search online, igrs ap online ec, encumbrance certificate online ap, webland ap online',
-  'title' => 'Online EC Andhra Pradesh: IGRS AP Search & Webland Guide (2026)',
-  'meta_desc' => 'Search and download Andhra Pradesh Encumbrance Certificate (EC) online via IGRS AP (registration.ap.gov.in). Check Webland Adangal, SRO fees, and document search.',
+  'title' => 'Online EC AP: IGRS AP Search & Webland Adangal (2026)',
+  'meta_desc' => 'Instant Online EC AP Search & Download via IGRS AP (registration.ap.gov.in) & Webland. Check Adangal 1B records, SRO fees & EC status free.',
   'h1_title' => 'Online EC Andhra Pradesh: IGRS AP & Webland Guide',
   'schema_type' => 'TechArticle',
   'faq_data' => '[{"question":"How do I search for an Encumbrance Certificate online in Andhra Pradesh?","answer":"Visit registration.ap.gov.in (IGRS AP), click \'Encumbrance Search (EC)\', accept the search terms, select Document No, Memo No, or None (Property Details), and submit your request."},{"question":"What is the official website for AP Registration and Stamps Department?","answer":"The official Andhra Pradesh registration portal is registration.ap.gov.in."},{"question":"What is the difference between IGRS AP and Webland AP?","answer":"IGRS AP manages registered non-agricultural deeds, flat registrations, and SRO encumbrances. Webland AP (webland.ap.gov.in) is managed by the Revenue Department for agricultural land Adangal, 1B 1-B records, and mutation passbooks."}]',

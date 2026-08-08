@@ -2,67 +2,70 @@
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/db_init.php';
 
-// Programmatically seed redirect mapping for the 30 consolidated duplicate pages
-try {
-    $redirects = [
-        'ec-apply-online-in-tamilnadu' => 'online-ec-tamilnadu',
-        'ec-check-online-tamilnadu' => 'online-ec-tamilnadu',
-        'ec-copy-online-tamilnadu' => 'online-ec-tamilnadu',
-        'get-ec-online-tamilnadu' => 'online-ec-tamilnadu',
-        'how-to-apply-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
-        'how-to-apply-for-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
-        'how-to-check-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
-        'how-to-check-ec-online-tamilnadu' => 'online-ec-tamilnadu',
-        'how-to-get-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
-        'how-to-take-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+// Decouple database seeding and auto-cleanup from visitor GET requests
+// Run DB maintenance operations ONLY during CLI commands or explicit admin sync requests
+if (php_sapi_name() === 'cli' || isset($_GET['admin_sync'])) {
+    try {
+        $redirects = [
+            'ec-apply-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'ec-check-online-tamilnadu' => 'online-ec-tamilnadu',
+            'ec-copy-online-tamilnadu' => 'online-ec-tamilnadu',
+            'get-ec-online-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-apply-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-apply-for-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-check-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-check-ec-online-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-get-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            'how-to-take-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+            
+            'ecview-tnreginet' => 'tnreginet-ec-view',
+            'ecview-tnreginet-net' => 'tnreginet-ec-view',
+            'tnreginet-ec-online-view' => 'tnreginet-ec-view',
+            'tnreginet-net-ec-view' => 'tnreginet-ec-view',
+            'www-tnreginet-net-ec' => 'tnreginet-ec-view',
+            'www-tnreginet-net-ec-view' => 'tnreginet-ec-view',
+            'www-tnreginet-net-2018-ec' => 'tnreginet-ec-view',
+            'tnreginet-ec-view-online' => 'tnreginet-ec-view',
+            
+            'guideline-value-tamilnadu' => 'check-guideline-value',
+            'tnreginet-guideline-value-tamilnadu' => 'check-guideline-value',
+            'tnreginet-net-guideline-value' => 'check-guideline-value',
+            'www-tnreginet-net-guideline-value' => 'check-guideline-value',
+            'wwwtnreginetnet-guideline-value-2023' => 'check-guideline-value',
+            'tnreginet-land-value' => 'check-guideline-value',
+            
+            'patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+            'patta-chitta-ec-online-status-tamilnadu' => 'patta-chitta-online-tamil-nadu',
+            'patta-chitta-ec-online-tamil' => 'patta-chitta-online-tamil-nadu',
+            'tn-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+            'tamil-nadu-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+            'tnreginet-patta' => 'patta-chitta-online-tamil-nadu',
+        ];
         
-        'ecview-tnreginet' => 'tnreginet-ec-view',
-        'ecview-tnreginet-net' => 'tnreginet-ec-view',
-        'tnreginet-ec-online-view' => 'tnreginet-ec-view',
-        'tnreginet-net-ec-view' => 'tnreginet-ec-view',
-        'www-tnreginet-net-ec' => 'tnreginet-ec-view',
-        'www-tnreginet-net-ec-view' => 'tnreginet-ec-view',
-        'www-tnreginet-net-2018-ec' => 'tnreginet-ec-view',
-        'tnreginet-ec-view-online' => 'tnreginet-ec-view',
-        
-        'guideline-value-tamilnadu' => 'check-guideline-value',
-        'tnreginet-guideline-value-tamilnadu' => 'check-guideline-value',
-        'tnreginet-net-guideline-value' => 'check-guideline-value',
-        'www-tnreginet-net-guideline-value' => 'check-guideline-value',
-        'wwwtnreginetnet-guideline-value-2023' => 'check-guideline-value',
-        'tnreginet-land-value' => 'check-guideline-value',
-        
-        'patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
-        'patta-chitta-ec-online-status-tamilnadu' => 'patta-chitta-online-tamil-nadu',
-        'patta-chitta-ec-online-tamil' => 'patta-chitta-online-tamil-nadu',
-        'tn-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
-        'tamil-nadu-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
-        'tnreginet-patta' => 'patta-chitta-online-tamil-nadu',
-    ];
-    
-    $stmt_redir = $pdo->prepare("UPDATE econline_pages SET redirect_to = :target WHERE slug = :slug AND (redirect_to IS NULL OR redirect_to = '')");
-    foreach ($redirects as $old_slug => $new_slug) {
-        $stmt_redir->execute(['target' => $new_slug, 'slug' => $old_slug]);
-    }
+        $stmt_redir = $pdo->prepare("UPDATE econline_pages SET redirect_to = :target WHERE slug = :slug AND (redirect_to IS NULL OR redirect_to = '')");
+        foreach ($redirects as $old_slug => $new_slug) {
+            $stmt_redir->execute(['target' => $new_slug, 'slug' => $old_slug]);
+        }
 
-    // Auto-clean database: Delete duplicate DB rows for pages that exist as physical files in pages/
-    $pages_dir = __DIR__ . '/pages';
-    if (is_dir($pages_dir)) {
-        $dir_files = scandir($pages_dir);
-        $file_slugs = [];
-        foreach ($dir_files as $f) {
-            if (substr($f, -4) === '.php') {
-                $file_slugs[] = substr($f, 0, -4);
+        // Auto-clean database: Delete duplicate DB rows for pages that exist as physical files in pages/
+        $pages_dir = __DIR__ . '/pages';
+        if (is_dir($pages_dir)) {
+            $dir_files = scandir($pages_dir);
+            $file_slugs = [];
+            foreach ($dir_files as $f) {
+                if (substr($f, -4) === '.php') {
+                    $file_slugs[] = substr($f, 0, -4);
+                }
+            }
+            if (!empty($file_slugs)) {
+                $in_clause = implode(',', array_fill(0, count($file_slugs), '?'));
+                $stmt_del = $pdo->prepare("DELETE FROM econline_pages WHERE slug IN ($in_clause)");
+                $stmt_del->execute($file_slugs);
             }
         }
-        if (!empty($file_slugs)) {
-            $in_clause = implode(',', array_fill(0, count($file_slugs), '?'));
-            $stmt_del = $pdo->prepare("DELETE FROM econline_pages WHERE slug IN ($in_clause)");
-            $stmt_del->execute($file_slugs);
-        }
+    } catch (PDOException $e) {
+        // Fail silently
     }
-} catch (PDOException $e) {
-    // Fail silently
 }
 
 // Prevent browser and proxy caching for dynamic HTML content
@@ -96,6 +99,67 @@ if (isset($_GET['slug'])) {
     // Fallback for built-in PHP web server
     $request_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $slug = trim($request_path, '/');
+}
+
+// 1a-1. Handle Legacy URL Prefixes (e.g. /india/slug, /es/india/slug, /fr/slug) with Instant 301 Redirects
+$raw_slug = $slug;
+if (strpos($slug, 'india/') === 0) {
+    $slug = substr($slug, 6);
+} elseif (preg_match('/^(es|fr|de|en|it)\/(india\/)?(.*)$/', $slug, $matches)) {
+    $slug = !empty($matches[3]) ? $matches[3] : '';
+} elseif ($slug === 'es' || $slug === 'fr' || $slug === 'de' || $slug === 'en' || $slug === 'it' || $slug === 'india') {
+    $slug = '';
+}
+
+if (!empty($raw_slug) && $raw_slug !== $slug) {
+    $target_url = empty($slug) ? CANONICAL_BASE_URL : CANONICAL_BASE_URL . $slug . '/';
+    header("HTTP/1.1 301 Moved Permanently");
+    header("Location: " . $target_url);
+    exit;
+}
+
+// 1a-2. Fast In-Memory 301 Redirect Mapping for Consolidated Pages (Bypasses DB Reads/Writes)
+$static_redirects = [
+    'ec-apply-online-in-tamilnadu' => 'online-ec-tamilnadu',
+    'ec-check-online-tamilnadu' => 'online-ec-tamilnadu',
+    'ec-copy-online-tamilnadu' => 'online-ec-tamilnadu',
+    'get-ec-online-tamilnadu' => 'online-ec-tamilnadu',
+    'how-to-apply-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+    'how-to-apply-for-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+    'how-to-check-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+    'how-to-check-ec-online-tamilnadu' => 'online-ec-tamilnadu',
+    'how-to-get-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+    'how-to-take-ec-online-in-tamilnadu' => 'online-ec-tamilnadu',
+    
+    'ecview-tnreginet' => 'tnreginet-ec-view',
+    'ecview-tnreginet-net' => 'tnreginet-ec-view',
+    'tnreginet-ec-online-view' => 'tnreginet-ec-view',
+    'tnreginet-net-ec-view' => 'tnreginet-ec-view',
+    'www-tnreginet-net-ec' => 'tnreginet-ec-view',
+    'www-tnreginet-net-ec-view' => 'tnreginet-ec-view',
+    'www-tnreginet-net-2018-ec' => 'tnreginet-ec-view',
+    'tnreginet-ec-view-online' => 'tnreginet-ec-view',
+    
+    'guideline-value-tamilnadu' => 'check-guideline-value',
+    'tnreginet-guideline-value-tamilnadu' => 'check-guideline-value',
+    'tnreginet-net-guideline-value' => 'check-guideline-value',
+    'www-tnreginet-net-guideline-value' => 'check-guideline-value',
+    'wwwtnreginetnet-guideline-value-2023' => 'check-guideline-value',
+    'tnreginet-land-value' => 'check-guideline-value',
+    
+    'patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+    'patta-chitta-ec-online-status-tamilnadu' => 'patta-chitta-online-tamil-nadu',
+    'patta-chitta-ec-online-tamil' => 'patta-chitta-online-tamil-nadu',
+    'tn-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+    'tamil-nadu-patta-chitta-ec-online' => 'patta-chitta-online-tamil-nadu',
+    'tnreginet-patta' => 'patta-chitta-online-tamil-nadu',
+];
+
+if (isset($static_redirects[$slug])) {
+    $target_slug = $static_redirects[$slug];
+    header("HTTP/1.1 301 Moved Permanently");
+    header("Location: " . CANONICAL_BASE_URL . $target_slug . '/');
+    exit;
 }
 
 // If slug is empty, we serve the homepage

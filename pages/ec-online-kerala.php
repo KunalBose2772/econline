@@ -2,7 +2,7 @@
 return array (
   'slug' => 'ec-online-kerala',
   'keyword' => 'ec online kerala, kerala pearl portal ec, encumbrance certificate online kerala, keralaregistration gov in ec, kerala sro search',
-  'title' => 'EC Online Kerala: PEARL Registration Portal Guide (2026)',
+  'title' => 'EC Online Kerala: PEARL Registration Portal (2026)',
   'meta_desc' => 'Search and download Kerala Encumbrance Certificate (Kudippika / EC) online via PEARL portal (keralaregistration.gov.in). Check SRO fees and Fair Value.',
   'h1_title' => 'EC Online Kerala: PEARL Portal Guide',
   'schema_type' => 'TechArticle',

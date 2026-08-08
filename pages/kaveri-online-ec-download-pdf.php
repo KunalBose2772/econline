@@ -2,8 +2,8 @@
 return array (
   'slug' => 'kaveri-online-ec-download-pdf',
   'keyword' => 'kaveri online ec download pdf, kaveri online ec view, kaveri online ec download pdf karnataka, download ec pdf kaveri 2.0',
-  'title' => 'Kaveri Online EC Download PDF: Digitally Signed Copy Guide (2026)',
-  'meta_desc' => 'Download digitally signed Encumbrance Certificate (EC) PDF on Kaveri 2.0 Karnataka portal. Learn online payment fees, QR code verification, and e-signature steps.',
+  'title' => 'Kaveri Online EC Download PDF & View: Karnataka 2.0 (2026)',
+  'meta_desc' => 'Direct guide for Kaveri online EC view & download PDF in Karnataka via Kaveri 2.0. Get digitally signed Form 15/16 PDF, QR code verification & SRO fee calculator.',
   'h1_title' => 'Kaveri Online EC Download PDF: Certified E-Signed Copy Guide',
   'schema_type' => 'TechArticle',
   'faq_data' => '[{"question":"How do I download a certified PDF Encumbrance Certificate on Kaveri 2.0?","answer":"Log into kaverionline.karnataka.gov.in, navigate to \'Saved Applications\' -> \'Online EC Applications\', check the status \'Approved by SRO\', and click \'Download Signed PDF\'."},{"question":"How do I verify the authenticity of a downloaded Kaveri PDF EC?","answer":"Every certified PDF EC issued by Kaveri 2.0 contains an embedded digital signature certificate and a QR Code. Scan the QR code using any smartphone or click \'Verify Document\' on Kaveri 2.0 to confirm authenticity."}]',

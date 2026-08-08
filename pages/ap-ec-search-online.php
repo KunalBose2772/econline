@@ -2,7 +2,7 @@
 return array (
   'slug' => 'ap-ec-search-online',
   'keyword' => 'ap ec search online, apcard ec, online ec ap download, how to check ec online in ap, encumbrance certificate online ap',
-  'title' => 'AP EC Search Online: IGRS Andhra Pradesh Document Lookup Guide (2026)',
+  'title' => 'AP EC Search Online: IGRS Andhra Pradesh Document Lookup (2026)',
   'meta_desc' => 'How to search AP Encumbrance Certificate (EC) online by document number, memo number, or survey details on IGRS AP (registration.ap.gov.in).',
   'h1_title' => 'AP EC Search Online: IGRS Andhra Pradesh Guide',
   'schema_type' => 'TechArticle',

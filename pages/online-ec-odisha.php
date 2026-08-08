@@ -2,7 +2,7 @@
 return array (
   'slug' => 'online-ec-odisha',
   'keyword' => 'online ec odisha, igrs odisha ec search, encumbrance certificate online odisha, igrsodisha gov in, bhulekh odisha',
-  'title' => 'Online EC Odisha: IGRS Odisha & Bhulekh Search Guide (2026)',
+  'title' => 'Online EC Odisha: IGRS Odisha & Bhulekh Search (2026)',
   'meta_desc' => 'Search and download Encumbrance Certificate (EC) online in Odisha via IGRS Odisha (igrsodisha.gov.in). Check SRO fees, benchmark value, and Bhulekh ROR.',
   'h1_title' => 'Online EC Odisha: IGRS Odisha & Bhulekh Guide',
   'schema_type' => 'TechArticle',

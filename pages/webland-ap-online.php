@@ -2,7 +2,7 @@
 return array (
   'slug' => 'webland-ap-online',
   'keyword' => 'webland ap online, webland ap gov in, ap adangal online, meebhoomi ap adangal, 1b adangal ap',
-  'title' => 'Webland AP Online: Adangal 1B Land Records & Mutation Guide (2026)',
+  'title' => 'Webland AP Online: Adangal 1B Land Records & Mutation (2026)',
   'meta_desc' => 'Download AP Webland Adangal, 1B 1-B village land records online via webland.ap.gov.in and Meebhoomi portal. Verify agricultural land mutation status.',
   'h1_title' => 'Webland AP Online: Adangal & 1B Revenue Records Guide',
   'schema_type' => 'TechArticle',
@@ -227,7 +227,7 @@ return array (
         });
 
         // Checklist logic
-        const chkboxes = document.querySelectorAll("#wap-chk-list input[type=\"checkbox\"]");
+        const chkboxes = document.querySelectorAll("#wap-chk-list input[type=\\"checkbox\\"]");
         const chkProgress = document.getElementById("wap-chk-progress");
 
         function updateChecklist() {
@@ -393,4 +393,3 @@ return array (
 </div>
 </div>',
 );
-

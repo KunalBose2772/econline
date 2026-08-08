@@ -2,7 +2,7 @@
 return array (
   'slug' => 'how-to-check-ec-online-in-ap',
   'keyword' => 'how to check ec online in ap, how to get encumbrance certificate in ap, ap ec search steps, check ec in andhra pradesh',
-  'title' => 'How to Check EC Online in AP: Step-by-Step IGRS AP Guide (2026)',
+  'title' => 'How to Check EC Online in AP: Step-by-Step IGRS AP (2026)',
   'meta_desc' => 'Detailed 2026 tutorial on how to check Encumbrance Certificate (EC) online in Andhra Pradesh. Use document number, SRO code, or survey details on IGRS AP.',
   'h1_title' => 'How to Check EC Online in AP: Step-by-Step Tutorial',
   'schema_type' => 'TechArticle',

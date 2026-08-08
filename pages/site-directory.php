@@ -2,7 +2,7 @@
 return array (
   'slug' => 'site-directory',
   'keyword' => 'econline site directory, all ec guides index, state encumbrance portals list',
-  'title' => 'Master Site Directory - ECOnline All State EC & Legal Guides',
+  'title' => 'Master Site Directory - ECOnline All State EC & Legal',
   'meta_desc' => 'Complete directory index of all 50 master Encumbrance Certificate guides, SRO registration portals, land record tools, and legal documentation topics.',
   'h1_title' => 'Master Site Directory: All State EC & Property Guides',
   'schema_type' => 'CollectionPage',
@@ -21,7 +21,7 @@ return array (
                 <li><a href="/how-to-get-ec-online-in-bangalore/" title="Bangalore EC Guide">Bangalore (BBMP PID) EC</a></li>
                 <li><a href="/kaveri-online-ec-download-pdf/" title="Kaveri PDF Download">Kaveri PDF EC Download</a></li>
                 <li><a href="/download-ec-online-karnataka/" title="Karnataka Step-by-Step">Karnataka EC Download Steps</a></li>
-                <li><a href="/india/khata-extract/" title="Khata Extract Guide">A-Khata vs B-Khata Extract</a></li>
+                <li><a href="/khata-extract/" title="Khata Extract Guide">A-Khata vs B-Khata Extract</a></li>
             </ul>
         </div>
         <div style="padding: 15px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface);">
@@ -63,23 +63,23 @@ return array (
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Comprehensive legal comparison of Encumbrance Certificate Form 15 vs Nil Encumbrance Form 16.</p>
         </div>
         <div style="padding: 15px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface);">
-            <h4 style="margin: 0 0 10px 0;"><a href="/india/title-search-report-guide/" title="Title Search Report Guide">Title Search Report (TSR)</a></h4>
+            <h4 style="margin: 0 0 10px 0;"><a href="/title-search-report-guide/" title="Title Search Report Guide">Title Search Report (TSR)</a></h4>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">12-Point advocate due diligence checklist for property titles and bank home loans.</p>
         </div>
         <div style="padding: 15px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface);">
-            <h4 style="margin: 0 0 10px 0;"><a href="/india/partition-deed/" title="Partition Deed Guide">Family Partition Deed</a></h4>
+            <h4 style="margin: 0 0 10px 0;"><a href="/partition-deed/" title="Partition Deed Guide">Family Partition Deed</a></h4>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Legal rules, blood-relation stamp duty concessions, and SRO deed registration.</p>
         </div>
         <div style="padding: 15px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface);">
-            <h4 style="margin: 0 0 10px 0;"><a href="/india/conveyance-deed/" title="Conveyance Deed Guide">Conveyance Deed Guide</a></h4>
+            <h4 style="margin: 0 0 10px 0;"><a href="/conveyance-deed/" title="Conveyance Deed Guide">Conveyance Deed Guide</a></h4>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Conveyance Deed vs Sale Deed, Deemed Conveyance for housing societies.</p>
         </div>
         <div style="padding: 15px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface);">
-            <h4 style="margin: 0 0 10px 0;"><a href="/india/gift-deed-stamp-duty/" title="Gift Deed Stamp Duty">Gift Deed Stamp Duty</a></h4>
+            <h4 style="margin: 0 0 10px 0;"><a href="/gift-deed-stamp-duty/" title="Gift Deed Stamp Duty">Gift Deed Stamp Duty</a></h4>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Section 122 Transfer of Property Act rules and blood relation stamp duty discounts.</p>
         </div>
         <div style="padding: 15px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface);">
-            <h4 style="margin: 0 0 10px 0;"><a href="/india/property-mutation-online/" title="Property Mutation Online">Property Mutation Guide</a></h4>
+            <h4 style="margin: 0 0 10px 0;"><a href="/property-mutation-online/" title="Property Mutation Online">Property Mutation Guide</a></h4>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">SRO Registration vs Revenue Mutation (Namantaran / Dakhil Kharij).</p>
         </div>
     </div>

@@ -2,7 +2,7 @@
 return array (
   'slug' => 'tnreginet-star-30',
   'keyword' => 'tnreginet star 30, star 3.0 tnreginet, tnreginet upgraded portal, star 3.0 login tamil nadu',
-  'title' => 'TNREGINET STAR 3.0 Portal: Features & Login Guide (2026)',
+  'title' => 'TNREGINET STAR 3.0 Portal: Features & Login (2026)',
   'meta_desc' => 'Guide to TNREGINET STAR 3.0 upgraded property registration portal in Tamil Nadu. Learn about instant EC search, e-payment, and SRO slot booking.',
   'h1_title' => 'TNREGINET STAR 3.0 Portal: Upgraded Features & Guide',
   'schema_type' => 'TechArticle',

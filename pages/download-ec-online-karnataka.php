@@ -2,8 +2,8 @@
 return array (
   'slug' => 'download-ec-online-karnataka',
   'keyword' => 'download ec online karnataka, karnataka ec download, free ec download karnataka, ec copy download karnataka',
-  'title' => 'Download EC Online Karnataka: Step-by-Step Kaveri 2.0 Guide (2026)',
-  'meta_desc' => 'How to download Encumbrance Certificate (EC) online in Karnataka. Step-by-step Kaveri 2.0 tutorial, citizen login, status tracking, and PDF download.',
+  'title' => 'Download EC Online Karnataka PDF: Kaveri 2.0 Free Search (2026)',
+  'meta_desc' => 'Instant Encumbrance Certificate download Karnataka online via Kaveri 2.0. Step-by-step PDF download guide, citizen login, status tracking & SRO fees.',
   'h1_title' => 'Download EC Online Karnataka: Kaveri 2.0 Step-by-Step Guide',
   'schema_type' => 'TechArticle',
   'faq_data' => '[{"question":"What is the fee to download an EC online in Karnataka?","answer":"Viewing an EC search result on Kaveri 2.0 is free. Requesting a digitally signed certified PDF EC costs Rs. 35 search fee (1st year) + Rs. 10/year for subsequent years + Rs. 100 certificate fee."},{"question":"Can I download an EC for agricultural land in Karnataka?","answer":"Yes. Enter your Survey Number, Hobli, Village, and SRO jurisdiction on Kaveri 2.0 to download certified Form 15/16 EC for agricultural land parcels."}]',

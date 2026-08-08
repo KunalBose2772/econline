@@ -2,7 +2,7 @@
 return array (
   'slug' => 'encumbrance-certificate-uttar-pradesh',
   'keyword' => 'encumbrance certificate uttar pradesh, igrsup up gov in ec, up ec search online, bhulekh up ror, up sro document search',
-  'title' => 'Encumbrance Certificate Uttar Pradesh: IGRSUP Search Guide (2026)',
+  'title' => 'Encumbrance Certificate Uttar Pradesh: IGRSUP Search (2026)',
   'meta_desc' => 'Search and download UP Encumbrance Certificate online via IGRSUP (igrsup.gov.in). Check SRO property deed search, circle rate UP, and Bhulekh Khatauni.',
   'h1_title' => 'Encumbrance Certificate Uttar Pradesh: IGRSUP Search Guide',
   'schema_type' => 'TechArticle',
@@ -305,5 +305,5 @@ function runUpCheck() {
         <li><strong>Verify Mortgage Discharge Certificates:</strong> If a prior mortgage appears on Form 15, ensure a registered Memorandum of Deposit of Title Deeds (MODTD) discharge receipt is attached.</li>
         <li><strong>Obtain Certified Search Copies for Missing Periods:</strong> If digital portal records show gaps due to historical digitisation limits (pre-1995 or pre-2004), submit a physical application for manual SRO index searches.</li>
 </div>
-'
+',
 );

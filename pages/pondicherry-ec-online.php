@@ -2,7 +2,7 @@
 return array (
   'slug' => 'pondicherry-ec-online',
   'keyword' => 'pondicherry ec online, puducherry ec online, nilavarai puducherry ec, regn puducherry gov in, ec search pondicherry',
-  'title' => 'Pondicherry EC Online: Puducherry Nilavarai Portal Guide (2026)',
+  'title' => 'Pondicherry EC Online: Puducherry Nilavarai Portal (2026)',
   'meta_desc' => 'Search and download Puducherry Encumbrance Certificate (EC) online via regn.py.gov.in and Nilavarai portal. Check SRO charges and guideline values.',
   'h1_title' => 'Pondicherry EC Online: Puducherry Portal Guide',
   'schema_type' => 'TechArticle',

@@ -2,7 +2,7 @@
 return array (
   'slug' => 'how-to-get-ec-online',
   'keyword' => 'how to get ec online, get encumbrance certificate online, online ec process india, step by step ec download',
-  'title' => 'How to Get EC Online: State-by-State Step-by-Step Guide (2026)',
+  'title' => 'How to Get EC Online: State-by-State Step-by-Step (2026)',
   'meta_desc' => 'Universal 2026 guide on how to get Encumbrance Certificate (EC) online across all Indian states. Kaveri 2.0, TNREGINET, IGRS TS, IGRS AP, PEARL, and e-Search.',
   'h1_title' => 'How to Get EC Online: State-by-State Guide',
   'schema_type' => 'TechArticle',

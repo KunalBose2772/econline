@@ -2,7 +2,7 @@
 return array (
   'slug' => 'online-ec-view-tamilnadu-english',
   'keyword' => 'online ec view tamilnadu english, tnreginet english portal, view villangam english tnreginet, tnreginet ec search in english',
-  'title' => 'Online EC View Tamil Nadu (English Interface): TNREGINET Guide (2026)',
+  'title' => 'Online EC View Tamil Nadu (English Interface): TNREGINET (2026)',
   'meta_desc' => 'Search and view Tamil Nadu Encumbrance Certificate (Villangam) online in English via TNREGINET portal. Step-by-step English menu translation and SRO guide.',
   'h1_title' => 'Online EC View Tamil Nadu (English Portal Guide)',
   'schema_type' => 'TechArticle',

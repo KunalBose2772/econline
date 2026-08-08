@@ -55,26 +55,49 @@ $redirected_slugs = [
     'tnreginet-patta' => true,
 ];
 
+$all_slugs = [];
+
+// 1. Scan physical hub files in pages/
+$pages_dir = __DIR__ . '/pages';
+if (is_dir($pages_dir)) {
+    $files = scandir($pages_dir);
+    foreach ($files as $f) {
+        if (substr($f, -4) === '.php') {
+            $s = substr($f, 0, -4);
+            if ($s !== 'home' && $s !== 'site-directory' && !isset($redirected_slugs[$s])) {
+                $fpath = $pages_dir . '/' . $f;
+                $lastmod = date('Y-m-d', filemtime($fpath));
+                $all_slugs[$s] = $lastmod;
+            }
+        }
+    }
+}
+
+// 2. Fetch database pages
 try {
-    // Get all published active pages (excluding redirected ones)
-    $stmt = $pdo->query("SELECT slug, updated_at FROM econline_pages WHERE status = 'published' AND slug != 'home' AND (redirect_to IS NULL OR redirect_to = '') ORDER BY id ASC");
+    $stmt = $pdo->query("SELECT slug, updated_at FROM econline_pages WHERE status = 'published' AND slug != 'home' AND slug != 'site-directory' AND (redirect_to IS NULL OR redirect_to = '') ORDER BY id ASC");
     $db_pages = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     foreach ($db_pages as $page) {
         $s = $page['slug'];
-        if (isset($redirected_slugs[$s])) {
-            continue;
+        if (!isset($redirected_slugs[$s]) && !isset($all_slugs[$s])) {
+            $lastmod = date('Y-m-d', strtotime($page['updated_at']));
+            $all_slugs[$s] = $lastmod;
         }
-        $lastmod = date('Y-m-d', strtotime($page['updated_at']));
-        echo '  <url>' . "\n";
-        echo '    <loc>' . htmlspecialchars(CANONICAL_BASE_URL) . htmlspecialchars($s) . '/</loc>' . "\n";
-        echo '    <lastmod>' . $lastmod . '</lastmod>' . "\n";
-        echo '    <changefreq>weekly</changefreq>' . "\n";
-        echo '    <priority>0.8</priority>' . "\n";
-        echo '  </url>' . "\n";
     }
 } catch (PDOException $e) {
     // Fallback if DB unavailable
+}
+
+// Output all deduplicated URLs
+ksort($all_slugs);
+foreach ($all_slugs as $s => $lastmod) {
+    echo '  <url>' . "\n";
+    echo '    <loc>' . htmlspecialchars(CANONICAL_BASE_URL) . htmlspecialchars($s) . '/</loc>' . "\n";
+    echo '    <lastmod>' . $lastmod . '</lastmod>' . "\n";
+    echo '    <changefreq>weekly</changefreq>' . "\n";
+    echo '    <priority>0.8</priority>' . "\n";
+    echo '  </url>' . "\n";
 }
 
 echo '</urlset>' . "\n";

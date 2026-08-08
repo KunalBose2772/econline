@@ -2,7 +2,7 @@
 return array (
   'slug' => 'ec-online-chennai',
   'keyword' => 'ec online chennai, encumbrance certificate chennai online, chennai sro zone ec, tnreginet chennai zone',
-  'title' => 'EC Online Chennai: TNREGINET Zone Search & SRO Guide (2026)',
+  'title' => 'EC Online Chennai: TNREGINET Zone Search & SRO (2026)',
   'meta_desc' => 'Search Encumbrance Certificate (EC) online in Chennai. Select Chennai SRO zones (Central, North, South), CMDA layout rules, and TNREGINET download.',
   'h1_title' => 'EC Online Chennai: TNREGINET Zone Search Guide',
   'schema_type' => 'TechArticle',

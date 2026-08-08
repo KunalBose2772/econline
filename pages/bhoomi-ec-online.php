@@ -2,7 +2,7 @@
 return array (
   'slug' => 'bhoomi-ec-online',
   'keyword' => 'bhoomi ec online, bhoomi ec online karnataka, ec bhoomi online, ec in bhoomi, bhoomi online ec',
-  'title' => 'Bhoomi EC Online Karnataka: Pahani RTC & Kaveri EC Guide (2026)',
+  'title' => 'Bhoomi EC Online Karnataka: Pahani RTC & Kaveri EC (2026)',
   'meta_desc' => 'Search Bhoomi RTC Pahani land records and Kaveri online EC in Karnataka. Learn how to verify agricultural land mutation status and SRO deeds.',
   'h1_title' => 'Bhoomi EC Online Karnataka: RTC Pahani & Kaveri Search Guide',
   'schema_type' => 'TechArticle',
