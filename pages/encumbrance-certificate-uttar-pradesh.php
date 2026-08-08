@@ -304,6 +304,6 @@ function runUpCheck() {
         <li><strong>Check Revenue Records vs. SRO Registrations:</strong> Verify that SRO registrations match local municipality records (Bhulekh Khatauni in UP, Satbara 7/12 in MH, Patta/Chitta in TN, RTC Bhoomi in KA, Adangal/1B in AP).</li>
         <li><strong>Verify Mortgage Discharge Certificates:</strong> If a prior mortgage appears on Form 15, ensure a registered Memorandum of Deposit of Title Deeds (MODTD) discharge receipt is attached.</li>
         <li><strong>Obtain Certified Search Copies for Missing Periods:</strong> If digital portal records show gaps due to historical digitisation limits (pre-1995 or pre-2004), submit a physical application for manual SRO index searches.</li>
-    </ol>
 </div>
-',Description:
+'
+);

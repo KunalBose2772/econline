@@ -44,6 +44,23 @@ try {
     foreach ($redirects as $old_slug => $new_slug) {
         $stmt_redir->execute(['target' => $new_slug, 'slug' => $old_slug]);
     }
+
+    // Auto-clean database: Delete duplicate DB rows for pages that exist as physical files in pages/
+    $pages_dir = __DIR__ . '/pages';
+    if (is_dir($pages_dir)) {
+        $dir_files = scandir($pages_dir);
+        $file_slugs = [];
+        foreach ($dir_files as $f) {
+            if (substr($f, -4) === '.php') {
+                $file_slugs[] = substr($f, 0, -4);
+            }
+        }
+        if (!empty($file_slugs)) {
+            $in_clause = implode(',', array_fill(0, count($file_slugs), '?'));
+            $stmt_del = $pdo->prepare("DELETE FROM econline_pages WHERE slug IN ($in_clause)");
+            $stmt_del->execute($file_slugs);
+        }
+    }
 } catch (PDOException $e) {
     // Fail silently
 }

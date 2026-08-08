@@ -186,10 +186,10 @@ return array (
             const transferDuty = val * 0.015;
             const total = stampDuty + regFee + transferDuty;
 
-            dutyDisplay.innerText = "₹" + total.toLocaleString('en-IN');
-            dutyBreakdown.innerHTML = "Stamp Duty (4%): ₹" + stampDuty.toLocaleString('en-IN') + 
-                " | Reg Fee (0.5%): ₹" + regFee.toLocaleString('en-IN') + 
-                " | Transfer Duty (1.5%): ₹" + transferDuty.toLocaleString('en-IN');
+            dutyDisplay.innerText = "₹" + total.toLocaleString(\'en-IN\');
+            dutyBreakdown.innerHTML = "Stamp Duty (4%): ₹" + stampDuty.toLocaleString(\'en-IN\') + 
+                " | Reg Fee (0.5%): ₹" + regFee.toLocaleString(\'en-IN\') + 
+                " | Transfer Duty (1.5%): ₹" + transferDuty.toLocaleString(\'en-IN\');
         }
 
         valInput.addEventListener("input", calculateDuty);

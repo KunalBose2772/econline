@@ -201,7 +201,7 @@ return array (
 
 <h2 id="heading-1">Overview of Online EC in Hyderabad & IGRS Telangana Portal</h2>
 <p class="content-text">
-    Performing an <strong>online ec in hyderabad</strong> is an indispensable requirement before acquiring any real estate within the Greater Hyderabad Metropolitan Area. Whether buying a flat in Gachibowli, a residential plot in Kompally, or a commercial space in Banjara Hills, verifying the property's 30-year transaction history through the official <strong>IGRS TS Portal</strong> (`registration.telangana.gov.in`) ensures that the title is free from active mortgages, court stays, or fraudulent secondary transfers.
+    Performing an <strong>online ec in hyderabad</strong> is an indispensable requirement before acquiring any real estate within the Greater Hyderabad Metropolitan Area. Whether buying a flat in Gachibowli, a residential plot in Kompally, or a commercial space in Banjara Hills, verifying the property\'s 30-year transaction history through the official <strong>IGRS TS Portal</strong> (`registration.telangana.gov.in`) ensures that the title is free from active mortgages, court stays, or fraudulent secondary transfers.
 </p>
 <p class="content-text">
     Through the portal, buyers and legal advocates can run a comprehensive <strong>hyderabad ec search</strong> by GHMC door number, conduct an <strong>hmda ec lookup</strong> by survey/plot number, examine the <strong>hyderabad sro list</strong>, and download certified <strong>igrs hyderabad ec</strong> statements bearing digital signatures.
@@ -257,7 +257,7 @@ return array (
 
 <h2 id="heading-4">Verifying Bank Mortgages (MODTD) on Hyderabad Properties</h2>
 <p class="content-text">
-    A major purpose of conducting an EC search in Hyderabad is checking for prior bank liens created via <strong>Memorandum of Deposit of Title Deeds (MODTD)</strong>. In Hyderabad's active real estate market, home buyers frequently take loans from nationalized or private banks.
+    A major purpose of conducting an EC search in Hyderabad is checking for prior bank liens created via <strong>Memorandum of Deposit of Title Deeds (MODTD)</strong>. In Hyderabad\'s active real estate market, home buyers frequently take loans from nationalized or private banks.
 </p>
 <p class="content-text">
     When a mortgage is created, the SRO registers an MODTD entry against the property survey and door number. When the loan is fully repaid, a registered <strong>Receipt of Discharge (Release Deed)</strong> must be executed by the bank at the SRO. If an MODTD appears on Form 15 without a corresponding Discharge Deed entry, the property remains legally encumbered under the SARFAESI Act.

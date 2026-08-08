@@ -241,7 +241,7 @@ return array (
     <li><strong>Access Marriage Module:</strong> Go to the top navigation bar and select <strong>"Application Building" &rarr; "Marriage Registration"</strong>.</li>
     <li><strong>Select Statutory Act:</strong> Choose the applicable registration law—either <em>Hindu Marriage Act, 1955</em>, <em>Special Marriage Act, 1954</em>, or <em>Tamil Nadu Registration of Marriages Act, 2009</em>.</li>
     <li><strong>Fill Husband & Wife Details:</strong> Input complete names, father’s/mother’s names, date of birth, age proof type, residential addresses, nationality, and marital status prior to marriage.</li>
-    <li><strong>Enter Marriage Event Details:</strong> Input date of marriage solemnization, venue/temple/hall address, and SRO jurisdiction office name (based on groom's address, bride's address, or marriage venue).</li>
+    <li><strong>Enter Marriage Event Details:</strong> Input date of marriage solemnization, venue/temple/hall address, and SRO jurisdiction office name (based on groom\'s address, bride\'s address, or marriage venue).</li>
     <li><strong>Upload Documents & Photos:</strong> Upload scanned copies of age proofs (Aadhaar, Passport, SSLC Marksheet), address proofs, marriage invitation card or temple receipt, joint photos, and individual passport photos.</li>
     <li><strong>Enter Witness Details:</strong> Provide details for three witnesses (Name, Father’s Name, Age, Address, Aadhaar Number).</li>
     <li><strong>Pay Fees & Book Token Slot:</strong> Submit the application, pay government fees online via net banking or credit card, and select an available SRO appointment time slot.</li>

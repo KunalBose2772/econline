@@ -200,7 +200,7 @@ return array (
 
 <h2 id="heading-1">Overview of Online EC Charges in Andhra Pradesh</h2>
 <p class="content-text">
-    Understanding official <strong>online ec charges ap</strong> is vital when conducting property title searches or applying for certified Encumbrance Certificates through the Registration and Stamps Department of Andhra Pradesh. All payments are collected securely through the state government's <strong>Comprehensive Financial Management System (CFMS)</strong> integrated into `registration.ap.gov.in`.
+    Understanding official <strong>online ec charges ap</strong> is vital when conducting property title searches or applying for certified Encumbrance Certificates through the Registration and Stamps Department of Andhra Pradesh. All payments are collected securely through the state government\'s <strong>Comprehensive Financial Management System (CFMS)</strong> integrated into `registration.ap.gov.in`.
 </p>
 <p class="content-text">
     Whether you are searching property records in Visakhapatnam, Vijayawada, Guntur, Tirupati, or Kurnool, calculating the exact <strong>ap ec search fee</strong> based on search duration ensures your application is processed without delay by local Sub-Registrar Offices.
