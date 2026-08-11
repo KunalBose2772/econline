@@ -23,6 +23,13 @@ RewriteRule ^sitemap\.xml$ sitemap.php [L]
 # Admin route protection - ignore rewrite for admin resources
 RewriteRule ^admin/(.*) - [L]
 
+# Protect direct HTTP access to physical template files in pages/ directory
+RewriteCond %{THE_REQUEST} \s/+pages/home\.php[\s?] [NC]
+RewriteRule ^ https://econline.in/ [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+pages/([^.\s]+)\.php[\s?] [NC]
+RewriteRule ^ https://econline.in/%1/ [R=301,L]
+
 # If it's a real file, stop rewriting
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]

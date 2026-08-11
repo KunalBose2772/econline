@@ -37,12 +37,12 @@ if ($is_localhost) {
 
     define('BASE_URL', rtrim($protocol . $hostPort . $base_dir, '/') . '/');
 
-    // DB Config for local
-    define('DB_HOST', 'localhost');
-    define('DB_PORT', '3306'); // Local XAMPP MySQL port is 3306
-    define('DB_USER', 'root');
-    define('DB_PASS', '');
-    define('DB_NAME', 'econline');
+    // Environment-based DB Config for local development
+    define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+    define('DB_PORT', getenv('DB_PORT') ?: '3306');
+    define('DB_USER', getenv('DB_USER') ?: 'root');
+    define('DB_PASS', getenv('DB_PASS') !== false ? getenv('DB_PASS') : '');
+    define('DB_NAME', getenv('DB_NAME') ?: 'econline');
 
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
@@ -79,7 +79,7 @@ function base_url($path = '')
  * 2. Pre-calculates unique IDs for all <h2> headings to prepare for Table of Contents
  * 3. Injects descriptive title attributes to all <a> tags
  */
-function optimize_content_for_seo($content) {
+function optimize_content_for_seo(string $content): array {
     // 1. Image Sanitizer
     $content = preg_replace_callback('/<img\s+([^>]*)\/?>/is', function($img_matches) {
         $attrs_string = $img_matches[1];
@@ -105,10 +105,6 @@ function optimize_content_for_seo($content) {
                     }
                 }
             }
-            if (!$resolved) {
-                $attrs['width'] = '800';
-                $attrs['height'] = '450';
-            }
         }
         $new_attrs = [];
         foreach ($attrs as $name => $val) {
@@ -124,7 +120,6 @@ function optimize_content_for_seo($content) {
         $h2_count++;
         $attrs_string = $h2_matches[1];
         $heading_text = strip_tags($h2_matches[2]);
-        $clean_id = 'heading-' . $h2_count;
         
         $attrs = [];
         if (!empty($attrs_string)) {
@@ -133,6 +128,7 @@ function optimize_content_for_seo($content) {
                 $attrs[strtolower($match[1])] = $match[2];
             }
         }
+        $clean_id = (!empty($attrs['id'])) ? $attrs['id'] : 'heading-' . $h2_count;
         $attrs['id'] = $clean_id;
         $new_attrs = [];
         foreach ($attrs as $name => $val) {

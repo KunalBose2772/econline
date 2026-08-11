@@ -1,6 +1,6 @@
 <?php
 return array (
-  'slug' => 'india/partition-deed',
+  'slug' => 'partition-deed',
   'keyword' => 'partition deed, family partition deed stamp duty, ancestral property partition, Hindu Succession Act partition, SRO partition registration',
   'title' => 'Family Partition Deed: Legal Rules & Stamp Duty (2026)',
   'meta_desc' => 'Comprehensive legal guide on Family Partition Deeds, ancestral property division, Hindu Succession Act rules, state SRO stamp duty concessions, and revenue mutation.',
@@ -32,103 +32,7 @@ return array (
         </ul>
     </div>
 
-    <div class="comprehensive-seo-depth-block" style="margin-top: 35px; border-top: 2px solid var(--border); padding-top: 25px; line-height: 1.8;">
-    <h2 style="color: var(--primary); font-size: 1.5rem;">Statutory Importance of Encumbrance Certificates under Indian Registration Laws</h2>
-    <p>Under the <strong>Registration Act of 1908</strong> and the <strong>Transfer of Property Act of 1882</strong>, verifying title deeds and encumbrances is the foundational legal step for any real estate transaction in India. An Encumbrance Certificate (EC) serves as an official legal transcript issued by the Sub-Registrar Office (SRO) within whose jurisdiction the property resides. It outlines all registered transactions—including sale deeds, mortgages, gifts, court attachments, partition deeds, and release deeds—executed over a designated search period (typically 13 to 30 years).</p>
-    
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Key Information Verified in an Official EC Search</h3>
-    <ul style="padding-left: 20px;">
-        <li><strong>Ownership Continuity:</strong> Chronological chain of title transfers from original grantor to current owner.</li>
-        <li><strong>Lien and Mortgage Disclosures:</strong> Details of equitable or registered mortgages created by financial institutions or nationalized banks under the SARFAESI Act.</li>
-        <li><strong>Court Injunctions & Lis Pendens:</strong> Registration of judicial stays, probate disputes, or suit notices under Section 52 of the Transfer of Property Act.</li>
-        <li><strong>Property Identifiers:</strong> Exact survey numbers, door numbers, plot measurements, boundary dimensions, and ward/village classification matching revenue records.</li>
-    </ul>
 
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Difference Between Form 15 and Form 16 EC</h3>
-    <div class="table-responsive">
-        <table class="styled-table" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-            <thead>
-                <tr style="background: var(--surface); text-align: left;">
-                    <th style="padding: 10px; border: 1px solid var(--border);">Feature Parameter</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Form 15 (Encumbrance Statement)</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Form 16 (Nil Encumbrance Certificate)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Transaction Record</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Contains listed registered deeds, volume/page numbers, and party details.</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Issued when ZERO registered encumbrances exist for the specified search duration.</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Bank Loan Acceptability</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Required by banks to inspect past mortgages, clear title, and deed references.</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Mandatory proof of unencumbered, clear title for home loan sanction.</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Verification Source</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Signed digitally by SRO or downloaded via state portals (Kaveri, TNREGINET, IGRS).</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Verified by SRO index register searches across Index I and Index II.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Essential Due Diligence Checklist Before Purchasing Property</h3>
-    <ol style="padding-left: 20px;">
-        <li><strong>Cross-Verify EC Entries with Original Sale Deeds:</strong> Ensure document numbers, registration dates, and SRO volumes correspond exactly to physical title documents.</li>
-        <li><strong>Check Revenue Records vs. SRO Registrations:</strong> Verify that SRO registrations match local municipality records (Patta/Chitta in TN, RTC Bhoomi in KA, Adangal/1B in AP, Dharani in TS, 7/12 in MH).</li>
-        <li><strong>Verify Mortgage Discharge Certificates:</strong> If a prior mortgage appears on Form 15, ensure a registered Memorandum of Deposit of Title Deeds (MODTD) discharge receipt is attached.</li>
-        <li><strong>Obtain Certified Search Copies for Missing Periods:</strong> If digital portal records show gaps due to historical digitisation limits (pre-1975 or pre-2004), submit a physical application for manual SRO index searches.</li>
-    </ol>
-</div>
-
-    <div class="comprehensive-seo-depth-block" style="margin-top: 35px; border-top: 2px solid var(--border); padding-top: 25px; line-height: 1.8;">
-    <h2 style="color: var(--primary); font-size: 1.5rem;">Official State Property Registration & Land Record Portals Directory</h2>
-    <div class="table-responsive">
-        <table class="styled-table" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-            <thead>
-                <tr style="background: var(--surface); text-align: left;">
-                    <th style="padding: 10px; border: 1px solid var(--border);">State Name</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Official Registration Portal</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Revenue Records System</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Tamil Nadu</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://tnreginet.gov.in" target="_blank" rel="noopener">tnreginet.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">e-Services Patta Chitta (eservices.tn.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Karnataka</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="noopener">kaverionline.karnataka.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Bhoomi RTC Portal (landrecords.karnataka.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Andhra Pradesh</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://registration.ap.gov.in" target="_blank" rel="noopener">registration.ap.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Webland AP (webland.ap.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Telangana</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://registration.telangana.gov.in" target="_blank" rel="noopener">registration.telangana.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Dharani Portal (dharani.telangana.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Kerala</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://keralaregistration.gov.in" target="_blank" rel="noopener">keralaregistration.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">PEARL / E-Rekha Portal</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Maharashtra</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://igrmarashtra.gov.in" target="_blank" rel="noopener">igrmarashtra.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">MahaBhulekh 7/12 (bhulekh.mahabhumi.gov.in)</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 
     <h2 id="section-1" style="color: var(--primary); font-size: 1.5rem; margin-top: 30px;">1. Frequently Asked Questions (FAQ)</h2>
     <div class="faq-container">
@@ -140,91 +44,6 @@ return array (
             <h4 class="faq-question">Q2: Can married daughters claim equal shares in ancestral property partition?</h4>
             <p class="faq-answer">Yes. Following the 2005 Amendment to the Hindu Succession Act, 1956 (confirmed in <em>Vineeta Sharma vs. Rakesh Sharma</em>), daughters have equal coparcenary rights by birth in ancestral property.</p>
         </div>
-    </div>
-</div>
-<div class="comprehensive-seo-depth-block" style="margin-top: 35px; border-top: 2px solid var(--border); padding-top: 25px; line-height: 1.8;">
-    <h2 style="color: var(--primary); font-size: 1.5rem;">Statutory Importance of Encumbrance Certificates in Real Estate Transactions</h2>
-    <p>Under the <strong>Registration Act of 1908</strong> and the <strong>Transfer of Property Act of 1882</strong>, verifying title deeds and encumbrances is the foundational legal step for any real estate transaction in India. An Encumbrance Certificate (EC) serves as an official legal transcript issued by the Sub-Registrar Office (SRO) within whose jurisdiction the property resides. It outlines all registered transactions—including sale deeds, mortgages, gifts, court attachments, partition deeds, and release deeds—executed over a designated search period (typically 13 to 30 years).</p>
-    
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Key Elements Verified in an Official SRO EC Search</h3>
-    <ul style="padding-left: 20px;">
-        <li><strong>Ownership Continuity:</strong> Chronological chain of title transfers from original grantor to current owner.</li>
-        <li><strong>Lien and Mortgage Disclosures:</strong> Details of equitable or registered mortgages created by financial institutions or nationalized banks under the SARFAESI Act.</li>
-        <li><strong>Court Injunctions & Lis Pendens:</strong> Registration of judicial stays, probate disputes, or suit notices under Section 52 of the Transfer of Property Act.</li>
-        <li><strong>Property Identifiers:</strong> Exact survey numbers, door numbers, plot measurements, boundary dimensions, and ward/village classification matching revenue records.</li>
-    </ul>
-
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Difference Between Form 15 and Form 16 EC</h3>
-    <div class="table-responsive">
-        <table class="styled-table" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-            <thead>
-                <tr style="background: var(--surface); text-align: left;">
-                    <th style="padding: 10px; border: 1px solid var(--border);">Feature Parameter</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Form 15 (Encumbrance Statement)</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Form 16 (Nil Encumbrance Certificate)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Transaction Record</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Contains listed registered deeds, volume/page numbers, and party details.</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Issued when ZERO registered encumbrances exist for the specified search duration.</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Bank Loan Acceptability</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Required by banks to inspect past mortgages, clear title, and deed references.</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Mandatory proof of unencumbered, clear title for home loan sanction.</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Verification Source</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Signed digitally by SRO or downloaded via state portals (Kaveri, TNREGINET, IGRS).</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Verified by SRO index register searches across Index I and Index II.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Essential Due Diligence Checklist Before Purchasing Immovable Property</h3>
-    <ol style="padding-left: 20px;">
-        <li><strong>Cross-Verify EC Entries with Original Sale Deeds:</strong> Ensure document numbers, registration dates, and SRO volumes correspond exactly to physical title documents.</li>
-        <li><strong>Check Revenue Records vs. SRO Registrations:</strong> Verify that SRO registrations match local municipality records (Patta/Chitta in TN, RTC Bhoomi in KA, Adangal/1B in AP, Dharani in TS, 7/12 in MH).</li>
-        <li><strong>Verify Mortgage Discharge Certificates:</strong> If a prior mortgage appears on Form 15, ensure a registered Memorandum of Deposit of Title Deeds (MODTD) discharge receipt is attached.</li>
-        <li><strong>Obtain Certified Search Copies for Missing Periods:</strong> If digital portal records show gaps due to historical digitisation limits (pre-1975 or pre-2004), submit a physical application for manual SRO index searches.</li>
-    </ol>
-
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Official State Property Registration & Land Record Portals</h3>
-    <div class="table-responsive">
-        <table class="styled-table" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-            <thead>
-                <tr style="background: var(--surface); text-align: left;">
-                    <th style="padding: 10px; border: 1px solid var(--border);">State Name</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Official Registration Portal</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Revenue Records System</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Tamil Nadu</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://tnreginet.gov.in" target="_blank" rel="noopener">tnreginet.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">e-Services Patta Chitta (eservices.tn.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Karnataka</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="noopener">kaverionline.karnataka.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Bhoomi RTC Portal (landrecords.karnataka.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Andhra Pradesh</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://registration.ap.gov.in" target="_blank" rel="noopener">registration.ap.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Webland AP (webland.ap.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Telangana</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://registration.telangana.gov.in" target="_blank" rel="noopener">registration.telangana.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Dharani Portal (dharani.telangana.gov.in)</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </div>
 <div class="comprehensive-seo-depth-block" style="margin-top: 35px; border-top: 2px solid var(--border); padding-top: 25px; line-height: 1.8;">
@@ -265,23 +84,5 @@ return array (
         <li><strong>Payment of Deficit Stamp Duty:</strong> Upon paying the determined deficit stamp duty and registration fee, the registered title deed is released with endorsement stamps.</li>
     </ol>
 </div>
-<div class="comprehensive-seo-depth-block" style="margin-top: 35px; border-top: 2px solid var(--border); padding-top: 25px; line-height: 1.8;">
-    <h2 style="color: var(--primary); font-size: 1.5rem;">SRO Guideline Value vs Market Rate & Stamp Duty Calculation Matrix</h2>
-    <p>When executing real estate deeds (Sale Deeds, Gift Deeds, Exchange Deeds, Partition Deeds, Release Deeds), stamp duty and registration fees are calculated based on state Stamp Acts. Under Section 47A of the Indian Stamp Act, state governments establish minimum benchmark valuation rates—known variously as <strong>Guideline Value</strong> (Tamil Nadu), <strong>Circle Rate</strong> (UP/Delhi), <strong>Ready Reckoner Rate</strong> (Maharashtra), or <strong>Unit Rate</strong> (Karnataka)—below which property conveyances cannot be registered without triggering undervalued document proceedings.</p>
-    
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Key Guidelines for Determining Applicable Stamp Duty Rates</h3>
-    <ul style="padding-left: 20px;">
-        <li><strong>Comparison Mandate:</strong> Stamp duty is charged on whichever amount is higher: the declared sale consideration in the agreement or the official SRO guideline value.</li>
-        <li><strong>Super Built-up vs Carpet Area Calculation:</strong> For apartment flats, municipal assessment rules mandate calculating guideline value based on super built-up area including undivided share of land (UDS).</li>
-        <li><strong>Road Width and Commercial Premium:</strong> Properties fronting national highways, main commercial arteries, or corner plots attract additional valuation surcharges (typically 10% to 25% higher than interior residential rates).</li>
-        <li><strong>E-Stamping and Digital Payment:</strong> Non-judicial e-stamp certificates must be purchased through authorized stock holding corporations (SHCIL) or state treasury portals prior to document presentation at the SRO.</li>
-    </ul>
-
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Discrepancy Resolution & Undervaluation Inquiries Under Section 47A</h3>
-    <ol style="padding-left: 20px;">
-        <li><strong>Notice of Undervaluation:</strong> If the Registering Officer (Sub-Registrar) believes the property value declared in the instrument is below prevailing market circle rates, the document is referred to the Collector of Stamps under Section 47A.</li>
-        <li><strong>Collector Hearing and Physical Inspection:</strong> The Collector conducts an independent valuation inquiry, measures physical plot structures, and issues a final determination order specifying deficit stamp duty.</li>
-        <li><strong>Payment of Deficit Stamp Duty:</strong> Upon paying the determined deficit stamp duty and registration fee, the registered title deed is released with endorsement stamps.</li>
-    </ol>
-</div>',
+',
 );

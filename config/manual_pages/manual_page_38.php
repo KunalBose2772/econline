@@ -1,7 +1,7 @@
 <?php
 // config/manual_pages/manual_page_38.php
 return [
-    'slug' => 'india/ec-form-15-vs-form-16',
+    'slug' => 'ec-form-15-vs-form-16',
     'keyword' => 'ec form 15 vs form 16',
     'title' => 'Form 15 vs Form 16 Encumbrance Certificate: Key Differences',
     'meta_desc' => 'Understand the difference between Form 15 and Form 16 Encumbrance Certificates (EC) in India. Learn when each is issued, how they are generated, and what they certify.',

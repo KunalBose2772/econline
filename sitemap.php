@@ -2,15 +2,19 @@
 require_once __DIR__ . '/config/config.php';
 
 header("Content-Type: application/xml; charset=utf-8");
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Pragma: no-cache");
+header("Cache-Control: public, max-age=3600, must-revalidate");
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
+// Determine file modification dates for root assets
+$home_lastmod = file_exists(__DIR__ . '/pages/home.php') ? date('Y-m-d', filemtime(__DIR__ . '/pages/home.php')) : date('Y-m-d');
+$dir_lastmod = file_exists(__DIR__ . '/pages/site-directory.php') ? date('Y-m-d', filemtime(__DIR__ . '/pages/site-directory.php')) : date('Y-m-d');
+
 // Add homepage
 echo '  <url>' . "\n";
 echo '    <loc>' . htmlspecialchars(CANONICAL_BASE_URL) . '</loc>' . "\n";
+echo '    <lastmod>' . $home_lastmod . '</lastmod>' . "\n";
 echo '    <changefreq>daily</changefreq>' . "\n";
 echo '    <priority>1.0</priority>' . "\n";
 echo '  </url>' . "\n";
@@ -18,42 +22,28 @@ echo '  </url>' . "\n";
 // Add site directory
 echo '  <url>' . "\n";
 echo '    <loc>' . htmlspecialchars(CANONICAL_BASE_URL) . 'site-directory/</loc>' . "\n";
+echo '    <lastmod>' . $dir_lastmod . '</lastmod>' . "\n";
 echo '    <changefreq>daily</changefreq>' . "\n";
 echo '    <priority>0.9</priority>' . "\n";
 echo '  </url>' . "\n";
 
-$redirected_slugs = [
-    'ec-apply-online-in-tamilnadu' => true,
-    'ec-check-online-tamilnadu' => true,
-    'ec-copy-online-tamilnadu' => true,
-    'get-ec-online-tamilnadu' => true,
-    'how-to-apply-ec-online-in-tamilnadu' => true,
-    'how-to-apply-for-ec-online-in-tamilnadu' => true,
-    'how-to-check-ec-online-in-tamilnadu' => true,
-    'how-to-check-ec-online-tamilnadu' => true,
-    'how-to-get-ec-online-in-tamilnadu' => true,
-    'how-to-take-ec-online-in-tamilnadu' => true,
-    'ecview-tnreginet' => true,
-    'ecview-tnreginet-net' => true,
-    'tnreginet-ec-online-view' => true,
-    'tnreginet-net-ec-view' => true,
-    'www-tnreginet-net-ec' => true,
-    'www-tnreginet-net-ec-view' => true,
-    'www-tnreginet-net-2018-ec' => true,
-    'tnreginet-ec-view-online' => true,
-    'guideline-value-tamilnadu' => true,
-    'tnreginet-guideline-value-tamilnadu' => true,
-    'tnreginet-net-guideline-value' => true,
-    'www-tnreginet-net-guideline-value' => true,
-    'wwwtnreginetnet-guideline-value-2023' => true,
-    'tnreginet-land-value' => true,
-    'patta-chitta-ec-online' => true,
-    'patta-chitta-ec-online-status-tamilnadu' => true,
-    'patta-chitta-ec-online-tamil' => true,
-    'tn-patta-chitta-ec-online' => true,
-    'tamil-nadu-patta-chitta-ec-online' => true,
-    'tnreginet-patta' => true,
-];
+$redirected_slugs = [];
+
+// Dynamically fetch redirected slugs from database
+try {
+    $stmt_red = $pdo->query("SELECT slug FROM econline_pages WHERE redirect_to IS NOT NULL AND redirect_to != ''");
+    while ($row_red = $stmt_red->fetch(PDO::FETCH_ASSOC)) {
+        $redirected_slugs[$row_red['slug']] = true;
+    }
+} catch (PDOException $e) {
+    // DB fallback
+}
+
+// Map static array redirects
+$static_redirects_keys = ['ec-apply-online-in-tamilnadu', 'ec-check-online-tamilnadu', 'ec-copy-online-tamilnadu', 'get-ec-online-tamilnadu', 'how-to-apply-ec-online-in-tamilnadu', 'how-to-apply-for-ec-online-in-tamilnadu', 'how-to-check-ec-online-in-tamilnadu', 'how-to-check-ec-online-tamilnadu', 'how-to-get-ec-online-in-tamilnadu', 'how-to-take-ec-online-in-tamilnadu', 'ecview-tnreginet', 'ecview-tnreginet-net', 'tnreginet-ec-online-view', 'tnreginet-net-ec-view', 'www-tnreginet-net-ec', 'www-tnreginet-net-ec-view', 'www-tnreginet-net-2018-ec', 'tnreginet-ec-view-online', 'guideline-value-tamilnadu', 'tnreginet-guideline-value-tamilnadu', 'tnreginet-net-guideline-value', 'www-tnreginet-net-guideline-value', 'wwwtnreginetnet-guideline-value-2023', 'tnreginet-land-value', 'patta-chitta-ec-online', 'patta-chitta-ec-online-status-tamilnadu', 'patta-chitta-ec-online-tamil', 'tn-patta-chitta-ec-online', 'tamil-nadu-patta-chitta-ec-online', 'tnreginet-patta'];
+foreach ($static_redirects_keys as $srk) {
+    $redirected_slugs[$srk] = true;
+}
 
 $all_slugs = [];
 

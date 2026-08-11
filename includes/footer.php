@@ -14,6 +14,9 @@
                 <li><a href="/online-ec-karnataka/" title="Read our guide on Karnataka online EC search">Karnataka EC</a></li>
                 <li><a href="/ec-online-telangana/" title="Read our guide on Telangana online EC search">Telangana EC</a></li>
                 <li><a href="/online-ec-ap/" title="Read our guide on Andhra Pradesh online EC search">Andhra Pradesh EC</a></li>
+                <li><a href="/online-ec-odisha/" title="Read our guide on Odisha online EC search">Odisha EC</a></li>
+                <li><a href="/encumbrance-certificate-maharashtra/" title="Read our guide on Maharashtra online EC search">Maharashtra EC</a></li>
+                <li><a href="/encumbrance-certificate-uttar-pradesh/" title="Read our guide on Uttar Pradesh online EC search">Uttar Pradesh EC</a></li>
             </ul>
         </div>
         <div class="footer-links-col">
@@ -128,8 +131,8 @@ document.addEventListener("DOMContentLoaded", function() {
                             // Redirect to the first validated guide slug
                             window.location.href = "/" + data[0].slug + "/";
                         } else {
-                            // Safe fallback to homepage with query param instead of triggering a 404
-                            window.location.href = "/?search_failed=1&q=" + encodeURIComponent(val);
+                            // Direct unmatched searches to the complete master site directory
+                            window.location.href = "/site-directory/";
                         }
                     })
                     .catch(() => {

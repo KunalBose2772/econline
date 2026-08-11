@@ -65,6 +65,13 @@ h1 {
     letter-spacing: -0.02em;
 }
 
+.article-h1 {
+    margin-bottom: 2rem;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
 h2 {
     font-size: 1.85rem;
     margin-bottom: 1rem;

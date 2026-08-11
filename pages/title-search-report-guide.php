@@ -1,6 +1,6 @@
 <?php
 return array (
-  'slug' => 'india/title-search-report-guide',
+  'slug' => 'title-search-report-guide',
   'keyword' => 'title search report, legal title search report, property title verification, advocate title opinion, 30 year title search, bank loan TSR',
   'title' => 'Title Search Report: Legal Due Diligence (2026)',
   'meta_desc' => 'Comprehensive legal guide on Title Search Reports (TSR), advocate legal opinions, 30-year SRO title trace, bank loan requirements, and public notice steps.',
@@ -153,91 +153,7 @@ return array (
         </div>
     </div>
 </div>
-<div class="comprehensive-seo-depth-block" style="margin-top: 35px; border-top: 2px solid var(--border); padding-top: 25px; line-height: 1.8;">
-    <h2 style="color: var(--primary); font-size: 1.5rem;">Statutory Importance of Encumbrance Certificates in Real Estate Transactions</h2>
-    <p>Under the <strong>Registration Act of 1908</strong> and the <strong>Transfer of Property Act of 1882</strong>, verifying title deeds and encumbrances is the foundational legal step for any real estate transaction in India. An Encumbrance Certificate (EC) serves as an official legal transcript issued by the Sub-Registrar Office (SRO) within whose jurisdiction the property resides. It outlines all registered transactions—including sale deeds, mortgages, gifts, court attachments, partition deeds, and release deeds—executed over a designated search period (typically 13 to 30 years).</p>
-    
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Key Elements Verified in an Official SRO EC Search</h3>
-    <ul style="padding-left: 20px;">
-        <li><strong>Ownership Continuity:</strong> Chronological chain of title transfers from original grantor to current owner.</li>
-        <li><strong>Lien and Mortgage Disclosures:</strong> Details of equitable or registered mortgages created by financial institutions or nationalized banks under the SARFAESI Act.</li>
-        <li><strong>Court Injunctions & Lis Pendens:</strong> Registration of judicial stays, probate disputes, or suit notices under Section 52 of the Transfer of Property Act.</li>
-        <li><strong>Property Identifiers:</strong> Exact survey numbers, door numbers, plot measurements, boundary dimensions, and ward/village classification matching revenue records.</li>
-    </ul>
 
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Difference Between Form 15 and Form 16 EC</h3>
-    <div class="table-responsive">
-        <table class="styled-table" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-            <thead>
-                <tr style="background: var(--surface); text-align: left;">
-                    <th style="padding: 10px; border: 1px solid var(--border);">Feature Parameter</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Form 15 (Encumbrance Statement)</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Form 16 (Nil Encumbrance Certificate)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Transaction Record</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Contains listed registered deeds, volume/page numbers, and party details.</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Issued when ZERO registered encumbrances exist for the specified search duration.</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Bank Loan Acceptability</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Required by banks to inspect past mortgages, clear title, and deed references.</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Mandatory proof of unencumbered, clear title for home loan sanction.</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Verification Source</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Signed digitally by SRO or downloaded via state portals (Kaveri, TNREGINET, IGRS).</td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Verified by SRO index register searches across Index I and Index II.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Essential Due Diligence Checklist Before Purchasing Immovable Property</h3>
-    <ol style="padding-left: 20px;">
-        <li><strong>Cross-Verify EC Entries with Original Sale Deeds:</strong> Ensure document numbers, registration dates, and SRO volumes correspond exactly to physical title documents.</li>
-        <li><strong>Check Revenue Records vs. SRO Registrations:</strong> Verify that SRO registrations match local municipality records (Patta/Chitta in TN, RTC Bhoomi in KA, Adangal/1B in AP, Dharani in TS, 7/12 in MH).</li>
-        <li><strong>Verify Mortgage Discharge Certificates:</strong> If a prior mortgage appears on Form 15, ensure a registered Memorandum of Deposit of Title Deeds (MODTD) discharge receipt is attached.</li>
-        <li><strong>Obtain Certified Search Copies for Missing Periods:</strong> If digital portal records show gaps due to historical digitisation limits (pre-1975 or pre-2004), submit a physical application for manual SRO index searches.</li>
-    </ol>
-
-    <h3 style="color: var(--primary); font-size: 1.25rem; margin-top: 25px;">Official State Property Registration & Land Record Portals</h3>
-    <div class="table-responsive">
-        <table class="styled-table" style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-            <thead>
-                <tr style="background: var(--surface); text-align: left;">
-                    <th style="padding: 10px; border: 1px solid var(--border);">State Name</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Official Registration Portal</th>
-                    <th style="padding: 10px; border: 1px solid var(--border);">Revenue Records System</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Tamil Nadu</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://tnreginet.gov.in" target="_blank" rel="noopener">tnreginet.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">e-Services Patta Chitta (eservices.tn.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Karnataka</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://kaverionline.karnataka.gov.in" target="_blank" rel="noopener">kaverionline.karnataka.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Bhoomi RTC Portal (landrecords.karnataka.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Andhra Pradesh</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://registration.ap.gov.in" target="_blank" rel="noopener">registration.ap.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Webland AP (webland.ap.gov.in)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><strong>Telangana</strong></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);"><a href="https://registration.telangana.gov.in" target="_blank" rel="noopener">registration.telangana.gov.in</a></td>
-                    <td style="padding: 10px; border: 1px solid var(--border);">Dharani Portal (dharani.telangana.gov.in)</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 <div class="comprehensive-seo-depth-block" style="margin-top: 35px; border-top: 2px solid var(--border); padding-top: 25px; line-height: 1.8;">
     <h2 style="color: var(--primary); font-size: 1.5rem;">SRO Register Index II Procedures & Revenue Land Classification Verification</h2>
     <p>In Indian property conveyancing and SRO administration, every physical or digital title registration generates an official entry in <strong>Register Index II</strong> maintained at the Sub-Registrar Office. Understanding how SRO index entries interact with revenue land classification records is crucial for preventing title disputes, invalid mortgages, and illegal layout acquisitions.</p>

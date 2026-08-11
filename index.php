@@ -64,19 +64,15 @@ if (php_sapi_name() === 'cli' || isset($_GET['admin_sync'])) {
             }
         }
     } catch (PDOException $e) {
-        // Fail silently
+        error_log("Database maintenance error: " . $e->getMessage());
     }
 }
 
-// Prevent browser and proxy caching for dynamic HTML content
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+// HTTP header configuration allowing conditional re-validation for search crawlers
+header("Cache-Control: public, max-age=3600, s-maxage=86400, must-revalidate");
 
 ob_start();
 
-// Helper function to map page slug to its state category for breadcrumbs
 function get_state_from_slug($slug) {
     $slug_lower = strtolower($slug);
     if (strpos($slug_lower, 'tamilnadu') !== false || strpos($slug_lower, 'tamil-nadu') !== false || strpos($slug_lower, 'tnreg') !== false || strpos($slug_lower, 'tn-') !== false || strpos($slug_lower, 'villangam') !== false) {
@@ -87,6 +83,16 @@ function get_state_from_slug($slug) {
         return ['name' => 'Telangana', 'url' => '/ec-online-telangana/'];
     } elseif (strpos($slug_lower, 'andhra') !== false || strpos($slug_lower, 'ap-') !== false || strpos($slug_lower, '-ap') !== false) {
         return ['name' => 'Andhra Pradesh', 'url' => '/online-ec-ap/'];
+    } elseif (strpos($slug_lower, 'odisha') !== false) {
+        return ['name' => 'Odisha', 'url' => '/online-ec-odisha/'];
+    } elseif (strpos($slug_lower, 'maharashtra') !== false) {
+        return ['name' => 'Maharashtra', 'url' => '/encumbrance-certificate-maharashtra/'];
+    } elseif (strpos($slug_lower, 'uttar-pradesh') !== false || strpos($slug_lower, '-up') !== false) {
+        return ['name' => 'Uttar Pradesh', 'url' => '/encumbrance-certificate-uttar-pradesh/'];
+    } elseif (strpos($slug_lower, 'deed') !== false || strpos($slug_lower, 'patta') !== false || strpos($slug_lower, 'khata') !== false) {
+        return ['name' => 'Deeds & Records', 'url' => '/site-directory/'];
+    } elseif (strpos($slug_lower, 'calculator') !== false || strpos($slug_lower, 'fee') !== false) {
+        return ['name' => 'Tools & Calculators', 'url' => '/site-directory/'];
     }
     return null;
 }
@@ -326,7 +332,28 @@ if (!$page) {
     $schema_type = 'WebPage';
     $toc_links = [];
 } else {
-    // 4. Set Dynamic SEO Metadata
+    // 4. Conditional HTTP Caching (Last-Modified & ETag)
+    if ($page && !empty($page['updated_at']) && !isset($_GET['q']) && !isset($_GET['search_failed']) && !isset($_GET['clear_cache'])) {
+        $last_modified_time = strtotime($page['updated_at']);
+        if ($last_modified_time > 0) {
+            $last_modified_gmt = gmdate('D, d M Y H:i:s \G\M\T', $last_modified_time);
+            $etag = '"' . md5($slug . '-' . $last_modified_time) . '"';
+            
+            header("Last-Modified: " . $last_modified_gmt);
+            header("ETag: " . $etag);
+            
+            $if_modified_since = isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? trim($_SERVER['HTTP_IF_MODIFIED_SINCE']) : false;
+            $if_none_match = isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false;
+            
+            if (($if_none_match && strpos($if_none_match, $etag) !== false) || 
+                ($if_modified_since && strtotime($if_modified_since) >= $last_modified_time)) {
+                header("HTTP/1.1 304 Not Modified");
+                exit;
+            }
+        }
+    }
+
+    // 5. Set Dynamic SEO Metadata
     $page_title = $page['title'];
     $meta_desc = $page['meta_desc'];
     $page_keywords = $page['keyword'] . ', ec online, encumbrance certificate, download ec online, check ec online';
@@ -367,10 +394,23 @@ if ($schema_type === 'Article') {
         "inLanguage" => "en-US",
         "datePublished" => $page ? $page['created_at'] : date('c'),
         "dateModified" => $page ? $page['updated_at'] : date('c'),
+        "author" => [
+            "@type" => "Person",
+            "name" => "Vikash",
+            "jobTitle" => "Land Records & Property Registration Specialist",
+            "url" => CANONICAL_BASE_URL . "about-us/",
+            "sameAs" => [
+                CANONICAL_BASE_URL . "about-us/"
+            ]
+        ],
         "publisher" => [
             "@type" => "Organization",
             "name" => "EC Online Guide",
-            "url" => CANONICAL_BASE_URL
+            "url" => CANONICAL_BASE_URL,
+            "logo" => [
+                "@type" => "ImageObject",
+                "url" => CANONICAL_BASE_URL . "econline_logo.png"
+            ]
         ]
     ];
 } else {
@@ -470,7 +510,7 @@ if ($slug !== 'home' && $page) {
                     "position" => $step_idx + 1,
                     "name" => "Step " . ($step_idx + 1),
                     "text" => $clean_step_text,
-                    "url" => $canonical_url . "#step-" . ($step_idx + 1)
+                    "url" => $canonical_url
                 ];
             }
             if (!empty($howto_steps)) {
@@ -563,7 +603,7 @@ if ($slug === 'home') {
     // MODULE 2: H1 Title
     ob_start();
     ?>
-    <h1 style="margin-bottom: 2rem; font-size: 2.25rem; font-weight: 800; color: var(--primary);"><?php echo htmlspecialchars($h1_title); ?></h1>
+    <h1 class="article-h1"><?php echo htmlspecialchars($h1_title); ?></h1>
     <?php
     $module_h1 = ob_get_clean();
     
@@ -630,7 +670,7 @@ if ($slug === 'home') {
             </div>
             <p style="margin: 0 0 0.5rem 0; font-size: 0.875rem; font-weight: 600; color: var(--accent);">Land Records & Property Registration Specialist</p>
             <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
-                Vikash is a senior property consultant and land registry advisor with over a decade of experience in navigating state stamps and registration portals (SROs). He specializes in property due diligence, title verification, and simplifying online Encumbrance Certificate (EC) downloads across India.
+                Vikash is a senior property consultant and land registry advisor with over a decade of experience in navigating state stamps and registration portals (SROs). He specializes in property due diligence, title verification, and simplifying online Encumbrance Certificate (EC) downloads across India. <a href="/about-us/" style="color: var(--accent); font-weight: 600; text-decoration: underline;" title="Read more about Vikash and our editorial standards">Read Author Profile &amp; Editorial Standards &rarr;</a>
             </p>
         </div>
     </div>
